@@ -26,12 +26,12 @@ export default function ProjectPage() {
       case 'project-001':
         return {
           title: 'reach',
-          intro: 'solve tedium.',
+          intro: 'eliminate tedium.',
           bgColor: '#3D3D3D',
           textColor: '#fff',
           description: [
             "reach consolidates existing llm agent tooling into a single platform.",
-            "as the ecosystem of llm offerings explode, there exists a need to drive towards simplicity, prioritize privacy, and deliver on made promises."
+            "as the ecosystem of llm offerings explodes, there exists a need to drive towards simplicity, prioritize privacy, and deliver on made promises."
           ],
           sidebarText: "simple can be harder than complex: you have to work hard to get your thinking clean to make it simple. but it’s worth it in the end because once you get there, you can move mountains."
         }
@@ -45,35 +45,36 @@ export default function ProjectPage() {
             "coming soon.",
             ""
           ],
-          sidebarText: "Simplicity is the ultimate sophistication. What remains after we remove everything that isn't essential is the purest form of expression."
+          sidebarText: "imagination is more important than knowledge. knowledge is limited. imagination encircles the world."
+"
         }
       case 'project-500':
         return {
           title: 'redacted',
-          intro: 'know nature.',
+          intro: 'learn nature.',
           bgColor: '#C3FF2A',
           textColor: '#000',
           description: [
             "coming soon.",
             ""
           ],
-          sidebarText: "The future isn't a subdued space. It's vibrant, energetic, and constantly in motion. We capture that energy in every pixel, every interaction."
+          sidebarText: "optimism is a strategy for making a better future. because unless you believe that the future can be better, you are unlikely to step up and take responsibility for making it so."
         }
       case 'about-us':
         return {
-          title: 'The Team',
-          intro: 'A collective of dreamers, thinkers, and makers creating new realities.',
+          title: 'general human optimizing strategic technology - projects',
+          intro: 'seek challenges.',
           bgColor: '#FF680A',
           textColor: '#fff',
           description: [
-            "We are a diverse group of creators united by our passion for pushing boundaries and challenging norms.",
-            "Our team thrives on collaboration, bringing together unique perspectives to solve complex problems in innovative ways."
+            "we're at the beginning of a technological renaissance.",
+            "there has never been a better time to push the bleeding edge. software is a solved problem and the entirety of human knowledge is at our fingertips; an individual's creativity is the only limit."
           ],
-          sidebarText: "Together we are more than the sum of our parts. Our collective imagination allows us to see possibilities that would remain invisible to the individual."
+          sidebarText: "we choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard."
         }
       case 'blog':
         return {
-          title: 'Our Thoughts',
+          title: 'ramblings',
           intro: 'Reflections on creativity, design, and the future of digital experiences.',
           bgColor: '#5C5C5C',
           textColor: '#fff',
@@ -81,7 +82,7 @@ export default function ProjectPage() {
             "Our blog is a space for sharing insights, discoveries, and ongoing conversations about design and technology.",
             "We explore emerging trends, document our process, and engage with the broader community of creators and thinkers."
           ],
-          sidebarText: "Ideas need to be shared to evolve. Through conversation and reflection, we transform abstract concepts into tangible realities."
+          sidebarText: "conformity is the jailer of freedom and the enemy of growth."
         }
       default:
         return {
@@ -163,7 +164,7 @@ export default function ProjectPage() {
             </div>
             
             {slug === 'project-001' && (
-              <div className="download-section">
+              <div className="">
                 <h2>download reach (test build)</h2>
                 <p>this is an unsigned test build. you may need to bypass security warnings during installation.</p>
 
@@ -181,42 +182,12 @@ export default function ProjectPage() {
                   download for windows (arm64)
                 </a>
 
-                <div className="install-notes">
+                <div className="">
                   <h4>installation notes:</h4>
                   <ul>
                     <li><strong>mac users:</strong> right-click the app and select &quot;open&quot; to bypass gatekeeper warnings</li>
                     <li><strong>windows users:</strong> click &quot;more info&quot; then &quot;run anyway&quot; if smartscreen warning appears</li>
                     <li><strong>download size:</strong> ~120MB for Mac, ~95MB for Windows</li>
-                  </ul>
-                </div>
-                
-                <div className="alternate-download">
-                  <h4>having trouble downloading?</h4>
-                  <ul>
-                    <li>
-                      <a 
-                        href="#" 
-                        className="text-link"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open('mailto:support@ghost-projects.com?subject=Download%20Issue%20with%20Reach&body=I%20am%20having%20trouble%20downloading%20Reach.%20Please%20help.', '_blank');
-                        }}
-                      >
-                        contact our support team
-                      </a>
-                    </li>
-                    <li>
-                      <a 
-                        href="#"
-                        className="text-link"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.open('https://discord.gg/your-invite', '_blank');
-                        }}
-                      >
-                        join our discord for alternative links
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </div>
