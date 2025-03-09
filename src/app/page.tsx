@@ -98,7 +98,7 @@ export default function Home() {
           {items.map((item) => (
             <li key={item}>
               <article>
-                <a href="#">
+                <a href={`/${item}`}>
                   <span aria-hidden="true">
                     {/* {(index + 1).toString().padStart(2, '0')}.&nbsp; */}
                   </span>
@@ -106,7 +106,7 @@ export default function Home() {
                 </a>
                 <div>
                   <div 
-                    className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-4 text-sm"
+                    className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-4 text-sm cursor-pointer"
                     style={{
                       backgroundColor: item === 'project-001' ? '#3D3D3D' :
                                      item === 'project-014' ? '#E7EAEE' :
@@ -116,6 +116,7 @@ export default function Home() {
                       color: item === 'project-014' || item === 'project-500' ? '#000' : '#fff',
                       height: '80%'
                     }}
+                    onClick={() => window.location.href = `/${item}`}
                   >
                     {item === 'project-001' ? '001' :
                      item === 'project-014' ? '014' :

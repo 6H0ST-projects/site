@@ -48,12 +48,14 @@
 @layer demo {
   .container {
     min-height: 100vh;
+    height: 100vh; /* Fixed height to prevent scroll */
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     justify-content: flex-start;
     padding-top: 1rem;
+    overflow: hidden; /* Prevent any scrolling on container */
     
     @media (min-width: 768px) {
       justify-content: center;
@@ -62,17 +64,21 @@
   }
 
   main {
-    flex: none;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-block: 0.25rem;
     min-height: 600px;
-    margin-top: 2rem;
+    height: calc(100vh - 200px); /* Adjust height to prevent overflow */
+    max-height: 600px;
+    margin-top: 0;
     touch-action: pan-x; /* Prevent vertical touch movements */
+    overflow: hidden; /* Prevent any vertical scrolling */
     
     @media (min-width: 768px) {
       margin-top: 0;
+      height: 600px;
     }
   }
 
@@ -142,7 +148,7 @@
   }
 
   li a {
-    cursor: grab;
+    cursor: pointer;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 0.625rem;
@@ -172,12 +178,19 @@
     padding: 1rem;
     flex-wrap: wrap;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    height: 180px;
+    max-height: 180px;
+    overflow: hidden;
+    
     @media (min-width: 768px) {
       padding-right: 6rem;
       position: absolute;
       top: 0;
       left: 0;
+      height: auto;
+      max-height: none;
+      margin-bottom: 0;
     }
   }
 
@@ -248,31 +261,11 @@
   header p {
     flex: 1;
   }
-  html {
-    background: light-dark(#000, #fff);
+  html, body {
+    background: #fff;
   }
 
-  body::before {
-    --size: 45px;
-    --line: color-mix(in hsl, canvasText, transparent 80%);
-    content: '';
-    inset: 0;
-    position: absolute;
-    background: linear-gradient(
-          90deg,
-          var(--line) 1px,
-          transparent 1px var(--size)
-        )
-        50% 50% / var(--size) var(--size),
-      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-        var(--size) var(--size);
-    mask: linear-gradient(150deg, transparent 50%, white);
-    top: 0;
-    left: 0;
-    transform-style: flat;
-    pointer-events: none;
-    z-index: -1;
-  }
+  /* Grid pattern removed in favor of pure white background */
   .container {
     border-radius: 0;
     overflow: hidden;
@@ -283,7 +276,7 @@
     position: absolute;
     z-index: -2;
     inset: 0;
-    background: light-dark(#fff, #000);
+    background: #fff;
   }
 }
 
@@ -339,6 +332,12 @@
   body {
     font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
       'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+    overflow: hidden; /* Prevent body scrolling */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Prevent any scrolling */
+    width: 100%;
   }
 
   /* Ghost link removed */

@@ -1,1 +1,2 @@
-// Document type extensions moved to page.tsx
+// This file is intentionally left empty
+// Type definitions for document are handled by TypeScript's DOM lib
