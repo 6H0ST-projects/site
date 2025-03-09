@@ -70,9 +70,9 @@
     justify-content: center;
     padding-block: 0.25rem;
     min-height: 600px;
-    height: calc(100vh - 200px); /* Adjust height to prevent overflow */
+    height: calc(100vh - 220px); /* Increased spacing from header */
     max-height: 600px;
-    margin-top: 0;
+    margin-top: 20px; /* Added margin to prevent overlap on mobile */
     touch-action: pan-x; /* Prevent vertical touch movements */
     overflow: hidden; /* Prevent any vertical scrolling */
     
@@ -178,7 +178,7 @@
     padding: 1rem;
     flex-wrap: wrap;
     position: relative;
-    margin-bottom: 0;
+    margin-bottom: 10px; /* Added bottom margin */
     height: 180px;
     max-height: 180px;
     overflow: hidden;
