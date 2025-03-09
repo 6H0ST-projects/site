@@ -46,7 +46,6 @@ export default function ProjectPage() {
             ""
           ],
           sidebarText: "imagination is more important than knowledge. knowledge is limited. imagination encircles the world."
-"
         }
       case 'project-500':
         return {
