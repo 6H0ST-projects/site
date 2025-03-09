@@ -2,14 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { Meteors } from '../components/ui/meteors'
 import './globals.css'
-
-declare global {
-  interface Document {
-    startViewTransition: ((callback: () => void) => void) | undefined
-  }
-}
 
 const items = [
   'project-001',
@@ -67,12 +60,11 @@ export default function Home() {
 
   return (
     <div className="container relative min-h-screen overflow-hidden">
-      <Meteors number={40} />
       <header className="relative z-10">
         <h1>ghost-projects</h1>
 
         <p>
-          its time to start dreaming again, never stop chasing ghosts.
+          never stop chasing ghosts.
         </p>
         <p>
           almost everything, all external expectations, all pride, 
@@ -97,14 +89,15 @@ export default function Home() {
                 </a>
                 <div>
                   <div 
-                    className="absolute inset-0 flex items-end justify-end p-4 text-sm"
+                    className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-8 text-4xl font-extrabold"
                     style={{
                       backgroundColor: item === 'project-001' ? '#3D3D3D' :
                                      item === 'project-014' ? '#E7EAEE' :
                                      item === 'project-027' ? '#C3FF2A' :
                                      item === 'about-us' ? '#FF680A' :
                                      '#5C5C5C',
-                      color: item === 'project-014' || item === 'project-027' ? '#000' : '#fff'
+                      color: item === 'project-014' || item === 'project-027' ? '#000' : '#fff',
+                      height: '75%'
                     }}
                   >
                     {item === 'project-001' ? '001' :
