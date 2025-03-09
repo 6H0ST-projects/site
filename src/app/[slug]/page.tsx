@@ -171,6 +171,7 @@ export default function ProjectPage() {
                 <a href="/downloads/AI%20Assistant-1.0.0-arm64.dmg" className="download-btn">
                   download for mac (apple silicon/arm64) - dmg
                 </a>
+                <a> </a>
                 <a href="/downloads/AI%20Assistant-1.0.0-arm64-mac.zip" className="download-btn">
                   download for mac (apple silicon/arm64) - zip
                 </a>
