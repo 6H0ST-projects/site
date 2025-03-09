@@ -18,17 +18,7 @@ export async function GET() {
       fontData = await fetch(fontUrl).then((res) => res.arrayBuffer());
     }
     
-    // Add grid background pattern
-    const gridPattern = `
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse">
-            <path d="M 45 0 L 0 0 0 45" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
-    `;
+    // Grid pattern is defined in CSS and not needed here
 
     return new ImageResponse(
       (

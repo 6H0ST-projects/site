@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import { Meteors } from '../components/ui/meteors'
 import './globals.css'
 
