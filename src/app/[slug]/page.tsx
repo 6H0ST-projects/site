@@ -26,7 +26,7 @@ export default function ProjectPage() {
       case 'project-001':
         return {
           title: 'reach',
-          intro: 'tedium resolved.',
+          intro: 'solve tedium.',
           bgColor: '#3D3D3D',
           textColor: '#fff',
           description: [
@@ -37,25 +37,25 @@ export default function ProjectPage() {
         }
       case 'project-014':
         return {
-          title: 'Minimal Constructs',
-          intro: 'Stripping away the unnecessary to reveal the essence of design.',
+          title: 'redacted',
+          intro: 'design matter.',
           bgColor: '#E7EAEE',
           textColor: '#000',
           description: [
-            "Our minimalist approach focuses on removing distractions to highlight what truly matters.",
-            "We believe in creating spaces that breathe, allowing ideas and interactions to take center stage."
+            "coming soon.",
+            ""
           ],
           sidebarText: "Simplicity is the ultimate sophistication. What remains after we remove everything that isn't essential is the purest form of expression."
         }
       case 'project-500':
         return {
-          title: 'Neon Frontiers',
-          intro: 'Pushing boundaries with vibrant approaches to interaction and form.',
+          title: 'redacted',
+          intro: 'know nature.',
           bgColor: '#C3FF2A',
           textColor: '#000',
           description: [
-            "Project 500 explores the vibrant world of bold colors and dynamic interactions.",
-            "We're redefining what's possible in digital experiences through playful experimentation and unconventional thinking."
+            "coming soon.",
+            ""
           ],
           sidebarText: "The future isn't a subdued space. It's vibrant, energetic, and constantly in motion. We capture that energy in every pixel, every interaction."
         }
@@ -184,8 +184,8 @@ export default function ProjectPage() {
                 <div className="install-notes">
                   <h4>installation notes:</h4>
                   <ul>
-                    <li><strong>mac users:</strong> right-click the app and select "open" to bypass gatekeeper warnings</li>
-                    <li><strong>windows users:</strong> click "more info" then "run anyway" if smartscreen warning appears</li>
+                    <li><strong>mac users:</strong> right-click the app and select &quot;open&quot; to bypass gatekeeper warnings</li>
+                    <li><strong>windows users:</strong> click &quot;more info&quot; then &quot;run anyway&quot; if smartscreen warning appears</li>
                     <li><strong>download size:</strong> ~120MB for Mac, ~95MB for Windows</li>
                   </ul>
                 </div>
