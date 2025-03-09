@@ -1,3 +1,1 @@
-interface Document {
-  startViewTransition?: (callback: () => void) => void;
-} 
+// Document type extensions moved to page.tsx
