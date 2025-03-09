@@ -84,7 +84,7 @@ export default function Home() {
       <header className="relative z-10">
         <h1>ghost-projects</h1>
 
-        <p>
+        <p className="mobile-visible">
         every great dream begins with a dreamer. always remember, 
         you have within you the strength, the patience, 
         and the passion to reach for the stars, to change the world.
@@ -92,7 +92,7 @@ export default function Home() {
         <p>
           never stop chasing ghosts.
         </p>
-        <p>
+        <p className="desktop-visible">
           almost everything, all external expectations, all pride, 
           all fear of embarrassment or failure, 
           these things just fall away in the face of death, 

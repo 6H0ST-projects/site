@@ -48,18 +48,22 @@
 @layer demo {
   .container {
     min-height: 100vh;
-    height: 100vh; /* Fixed height to prevent scroll */
+    height: auto; /* Allow container to grow on mobile */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     justify-content: flex-start;
     padding-top: 1rem;
-    overflow: hidden; /* Prevent any scrolling on container */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling on mobile */
     
     @media (min-width: 768px) {
+      height: 100vh; /* Fixed height on desktop */
       justify-content: center;
       padding-top: 0;
+      overflow: hidden; /* Prevent scrolling on desktop */
     }
   }
 
@@ -69,15 +73,16 @@
     align-items: center;
     justify-content: center;
     padding-block: 0.25rem;
-    min-height: 600px;
-    height: calc(100vh - 220px); /* Increased spacing from header */
+    min-height: 500px; /* Slightly reduced for mobile */
+    height: calc(100vh - 220px);
     max-height: 600px;
-    margin-top: 20px; /* Added margin to prevent overlap on mobile */
+    margin-top: 20px; /* Adjusted for the new mobile layout */
     touch-action: pan-x; /* Prevent vertical touch movements */
     overflow: hidden; /* Prevent any vertical scrolling */
     
     @media (min-width: 768px) {
       margin-top: 0;
+      min-height: 600px;
       height: 600px;
     }
   }
@@ -178,9 +183,10 @@
     padding: 1rem;
     flex-wrap: wrap;
     position: relative;
-    margin-bottom: 10px; /* Added bottom margin */
-    height: 180px;
-    max-height: 180px;
+    margin-bottom: 20px; /* Increased bottom margin for mobile */
+    min-height: 150px;
+    height: auto;
+    max-height: 200px; /* Optimized for mobile with fewer paragraphs */
     overflow: hidden;
     
     @media (min-width: 768px) {
@@ -332,14 +338,18 @@
   body {
     font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
       'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
-    overflow: hidden; /* Prevent body scrolling */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full viewport height */
-    position: fixed; /* Prevent any scrolling */
+    min-height: 100vh;
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
     opacity: 1;
+    
+    @media (min-width: 768px) {
+      overflow: hidden; /* Prevent body scrolling on desktop */
+      height: 100vh; /* Full viewport height on desktop */
+      position: fixed; /* Prevent scrolling on desktop */
+    }
   }
   
   /* Add transition states for page navigation */
@@ -361,6 +371,17 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+  }
+  
+  /* Responsive visibility classes */
+  .desktop-visible {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .desktop-visible {
+      display: block;
+    }
   }
 }
 

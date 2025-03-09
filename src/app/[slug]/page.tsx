@@ -168,16 +168,27 @@ export default function ProjectPage() {
                 <p>this is an unsigned test build. you may need to bypass security warnings during installation.</p>
 
                 <h3>macOS downloads</h3>
-                <a href="/downloads/AI%20Assistant-1.0.0-arm64.dmg" className="download-btn">
+                <a 
+                  href="/downloads/AI Assistant-1.0.0-arm64.dmg" 
+                  className="download-btn"
+                  download
+                >
                   download for mac (apple silicon/arm64) - dmg
                 </a>
-                <a> </a>
-                <a href="/downloads/AI%20Assistant-1.0.0-arm64-mac.zip" className="download-btn">
+                <a 
+                  href="/downloads/AI Assistant-1.0.0-arm64-mac.zip" 
+                  className="download-btn"
+                  download
+                >
                   download for mac (apple silicon/arm64) - zip
                 </a>
 
                 <h3>windows downloads</h3>
-                <a href="/downloads/reach%20Setup%201.0.0.exe" className="download-btn">
+                <a 
+                  href="/downloads/reach Setup 1.0.0.exe" 
+                  className="download-btn"
+                  download
+                >
                   download for windows (arm64)
                 </a>
 
@@ -189,6 +200,8 @@ export default function ProjectPage() {
                     <li><strong>download size:</strong> ~120MB for Mac, ~95MB for Windows</li>
                   </ul>
                 </div>
+                
+                
               </div>
             )}
           </div>
