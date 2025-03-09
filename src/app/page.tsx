@@ -119,15 +119,6 @@ export default function Home() {
           ))}
         </ul>
       </main>
-      <div className="ghost-link z-30">
-        <Image
-          src="/boo-2.png"
-          alt="Ghost logo"
-          width={48}
-          height={48}
-          priority
-        />
-      </div>
     </div>
   )
 }
