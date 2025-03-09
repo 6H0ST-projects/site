@@ -74,12 +74,12 @@ export default function ProjectPage() {
       case 'blog':
         return {
           title: 'ramblings',
-          intro: 'Reflections on creativity, design, and the future of digital experiences.',
+          intro: 'voice opinions.',
           bgColor: '#5C5C5C',
           textColor: '#fff',
           description: [
-            "Our blog is a space for sharing insights, discoveries, and ongoing conversations about design and technology.",
-            "We explore emerging trends, document our process, and engage with the broader community of creators and thinkers."
+            "coming soon.",
+            ""
           ],
           sidebarText: "conformity is the jailer of freedom and the enemy of growth."
         }
