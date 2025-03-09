@@ -3,10 +3,13 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ghost-projects',
-  description: 'its time to start dreaming again, never stop chasing ghosts.',
+  description: 'never stop chasing ghosts.',
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
   openGraph: {
+    type: 'website',
     title: 'ghost-projects',
-    description: 'its time to start dreaming again, never stop chasing ghosts.',
+    description: 'never stop chasing ghosts.',
+    siteName: 'ghost-projects',
     images: [{
       url: '/api/og',
       width: 1200,
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ghost-projects',
-    description: 'its time to start dreaming again, never stop chasing ghosts.',
+    description: 'never stop chasing ghosts.',
     images: ['/api/og']
   }
 }
