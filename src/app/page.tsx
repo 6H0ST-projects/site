@@ -2,12 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { Meteors } from '../components/ui/meteors'
 import './globals.css'
 
 const items = [
   'project-001',
   'project-014',
-  'project-027',
+  'project-500',
   'about-us',
   'blog',
 ]
@@ -60,9 +61,15 @@ export default function Home() {
 
   return (
     <div className="container relative min-h-screen overflow-hidden">
+      <Meteors number={40} />
       <header className="relative z-10">
         <h1>ghost-projects</h1>
 
+        <p>
+        every great dream begins with a dreamer. always remember, 
+        you have within you the strength, the patience, 
+        and the passion to reach for the stars, to change the world.
+        </p>
         <p>
           never stop chasing ghosts.
         </p>
@@ -89,20 +96,20 @@ export default function Home() {
                 </a>
                 <div>
                   <div 
-                    className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-8 text-4xl font-extrabold"
+                    className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-4 text-sm"
                     style={{
                       backgroundColor: item === 'project-001' ? '#3D3D3D' :
                                      item === 'project-014' ? '#E7EAEE' :
-                                     item === 'project-027' ? '#C3FF2A' :
+                                     item === 'project-500' ? '#C3FF2A' :
                                      item === 'about-us' ? '#FF680A' :
                                      '#5C5C5C',
-                      color: item === 'project-014' || item === 'project-027' ? '#000' : '#fff',
-                      height: '75%'
+                      color: item === 'project-014' || item === 'project-500' ? '#000' : '#fff',
+                      height: '80%'
                     }}
                   >
                     {item === 'project-001' ? '001' :
                      item === 'project-014' ? '014' :
-                     item === 'project-027' ? '500' :
+                     item === 'project-500' ? '500' :
                      item === 'about-us' ? 'about-us' :
                      'blog'}
                   </div>
