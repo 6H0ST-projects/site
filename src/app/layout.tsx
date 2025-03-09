@@ -32,6 +32,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <style>{`
+          /* Critical CSS for page transitions */
+          body {
+            transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
+          }
+        `}</style>
+      </head>
       <body>
         {children}
         <Script

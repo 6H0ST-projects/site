@@ -25,15 +25,15 @@ export default function ProjectPage() {
     switch(slug) {
       case 'project-001':
         return {
-          title: 'Shadows & Light',
-          intro: 'An exploration of contrast, form, and meaning in digital spaces.',
+          title: 'reach',
+          intro: 'tedium resolved.',
           bgColor: '#3D3D3D',
           textColor: '#fff',
           description: [
-            "Project 001 creates a seamless blend of dark aesthetics with functional design, offering a unique digital experience.",
-            "We're exploring the boundaries between form and function, creating spaces that feel alive and responsive."
+            "reach consolidates existing llm agent tooling into a single platform.",
+            "as the ecosystem of llm offerings explode, there exists a need to drive towards simplicity, prioritize privacy, and deliver on made promises."
           ],
-          sidebarText: "In darkness we find definition. The contrast between light and shadow creates the shapes that define our reality and perception."
+          sidebarText: "simple can be harder than complex: you have to work hard to get your thinking clean to make it simple. but it’s worth it in the end because once you get there, you can move mountains."
         }
       case 'project-014':
         return {
@@ -101,10 +101,19 @@ export default function ProjectPage() {
   const pageData = getPageData(slug)
   
   useEffect(() => {
-    // Set the background color on the body
-    document.body.style.backgroundColor = pageData.bgColor
-    document.body.style.color = pageData.textColor
-    document.body.classList.add('project-page')
+    // Start with opacity 0 for smooth transition
+    document.body.style.opacity = '0'
+    
+    // Small delay to ensure transition works
+    setTimeout(() => {
+      // Set the background color on the body
+      document.body.style.backgroundColor = pageData.bgColor
+      document.body.style.color = pageData.textColor
+      document.body.classList.add('project-page')
+      
+      // Fade in content
+      document.body.style.opacity = '1'
+    }, 50)
     
     return () => {
       // Clean up
@@ -121,7 +130,17 @@ export default function ProjectPage() {
       </div>
       
       <div className="content-container">
-        <Link href="/" className="back-link">
+        <Link 
+          href="/" 
+          className="back-link"
+          onClick={(e) => {
+            e.preventDefault();
+            document.body.classList.add('loading');
+            setTimeout(() => {
+              window.location.href = '/';
+            }, 200);
+          }}
+        >
           ← Back to home
         </Link>
         
@@ -142,6 +161,65 @@ export default function ProjectPage() {
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
+            
+            {slug === 'project-001' && (
+              <div className="download-section">
+                <h2>download reach (test build)</h2>
+                <p>this is an unsigned test build. you may need to bypass security warnings during installation.</p>
+
+                <h3>macOS downloads</h3>
+                <a href="/downloads/AI%20Assistant-1.0.0-arm64.dmg" className="download-btn">
+                  download for mac (apple silicon/arm64) - dmg
+                </a>
+                <a href="/downloads/AI%20Assistant-1.0.0-arm64-mac.zip" className="download-btn">
+                  download for mac (apple silicon/arm64) - zip
+                </a>
+
+                <h3>windows downloads</h3>
+                <a href="/downloads/reach%20Setup%201.0.0.exe" className="download-btn">
+                  download for windows (arm64)
+                </a>
+
+                <div className="install-notes">
+                  <h4>installation notes:</h4>
+                  <ul>
+                    <li><strong>mac users:</strong> right-click the app and select "open" to bypass gatekeeper warnings</li>
+                    <li><strong>windows users:</strong> click "more info" then "run anyway" if smartscreen warning appears</li>
+                    <li><strong>download size:</strong> ~120MB for Mac, ~95MB for Windows</li>
+                  </ul>
+                </div>
+                
+                <div className="alternate-download">
+                  <h4>having trouble downloading?</h4>
+                  <ul>
+                    <li>
+                      <a 
+                        href="#" 
+                        className="text-link"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open('mailto:support@ghost-projects.com?subject=Download%20Issue%20with%20Reach&body=I%20am%20having%20trouble%20downloading%20Reach.%20Please%20help.', '_blank');
+                        }}
+                      >
+                        contact our support team
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="#"
+                        className="text-link"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open('https://discord.gg/your-invite', '_blank');
+                        }}
+                      >
+                        join our discord for alternative links
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

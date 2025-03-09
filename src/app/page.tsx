@@ -21,6 +21,15 @@ export default function Home() {
   useEffect(() => {
     // Set light mode by default
     document.documentElement.dataset.theme = 'light'
+    
+    // Remove any loading class when home page loads
+    document.body.classList.remove('loading')
+    
+    // Add a small delay before showing content to ensure styles load
+    document.body.style.opacity = '0'
+    setTimeout(() => {
+      document.body.style.opacity = '1'
+    }, 100)
   }, [])
 
   useEffect(() => {

@@ -338,6 +338,14 @@
     height: 100vh; /* Full viewport height */
     position: fixed; /* Prevent any scrolling */
     width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    opacity: 1;
+  }
+  
+  /* Add transition states for page navigation */
+  body.loading {
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
 
   /* Ghost link removed */
