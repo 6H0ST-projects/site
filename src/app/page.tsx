@@ -5,12 +5,6 @@ import Image from 'next/image'
 import { Meteors } from '../components/ui/meteors'
 import './globals.css'
 
-declare global {
-  interface Document {
-    startViewTransition?: (callback: () => void) => void
-  }
-}
-
 const items = [
   'project-001',
   'project-014',
