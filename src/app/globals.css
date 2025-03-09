@@ -69,6 +69,7 @@
     padding-block: 0.25rem;
     min-height: 600px;
     margin-top: 2rem;
+    touch-action: pan-x; /* Prevent vertical touch movements */
     
     @media (min-width: 768px) {
       margin-top: 0;
@@ -81,13 +82,16 @@
     gap: 0.5rem;
     height: 600px;
     width: 100%;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     padding: 0;
     margin: 0;
     padding-inline: calc(50% - 150px);
     padding-block: 0.75rem;
     scrollbar-color: red #0000;
     scrollbar-width: thin;
+    overscroll-behavior-y: none;
+    scroll-snap-type: x proximity;
   }
 
   li {
@@ -98,9 +102,14 @@
     scroll-snap-align: center;
     height: 600px;
     flex: 0 0 300px;
+    position: relative;
+    overflow-y: hidden;
+    transform: translateZ(0); /* Force hardware acceleration */
+    will-change: transform; /* Optimize for animations */
     article {
       width: 100%;
       min-width: 300px;
+      position: absolute;
     }
   }
 

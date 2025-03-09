@@ -27,6 +27,14 @@ export default function Home() {
     const list = listRef.current
     if (!list) return
 
+    // Prevent vertical scrolling when wheeling in the horizontal area
+    const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+        e.preventDefault()
+        list.scrollLeft += e.deltaY
+      }
+    }
+
     const handleMouseDown = (e: MouseEvent) => {
       isDragging.current = true
       document.documentElement.dataset.dragging = 'true'
@@ -47,11 +55,14 @@ export default function Home() {
       list.scrollLeft = scrollLeft.current - walk
     }
 
+    // Add wheel event listener with passive: false to allow prevention
+    list.addEventListener('wheel', handleWheel, { passive: false })
     list.addEventListener('mousedown', handleMouseDown)
     document.addEventListener('mouseup', handleMouseUp)
     document.addEventListener('mousemove', handleMouseMove)
 
     return () => {
+      list.removeEventListener('wheel', handleWheel)
       list.removeEventListener('mousedown', handleMouseDown)
       document.removeEventListener('mouseup', handleMouseUp)
       document.removeEventListener('mousemove', handleMouseMove)
