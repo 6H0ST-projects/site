@@ -7,7 +7,7 @@ import './globals.css'
 
 declare global {
   interface Document {
-    startViewTransition?: (callback: () => void) => void
+    startViewTransition: ((callback: () => void) => void) | undefined
   }
 }
 
