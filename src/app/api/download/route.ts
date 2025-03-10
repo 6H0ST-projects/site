@@ -30,9 +30,18 @@ export async function GET(request: NextRequest) {
     // Get file metadata
     const fileInfo = fileMap[fileKey];
     
+    // Get the token from environment variables
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    
+    if (!token) {
+      console.error('BLOB_READ_WRITE_TOKEN is not defined in environment variables');
+      return NextResponse.json({ error: 'Blob storage configuration error' }, { status: 500 });
+    }
+    
     // List blobs to find the URL for the requested file
     const { blobs } = await list({
       prefix: `ghost-projects-blob/${fileInfo.filename}`,
+      token
     });
 
     // Find the matching blob

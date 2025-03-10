@@ -173,10 +173,17 @@ export default function ProjectPage() {
                   className="download-btn"
                   onClick={async (e) => {
                     e.preventDefault();
-                    const response = await fetch(`/api/download?file=mac-dmg`);
-                    const data = await response.json();
-                    if (data.url) {
-                      window.location.href = data.url;
+                    try {
+                      const response = await fetch(`/api/direct-download?file=mac-dmg`);
+                      const data = await response.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      } else {
+                        throw new Error('No download URL returned');
+                      }
+                    } catch (error) {
+                      console.error('Download error:', error);
+                      alert('Download error. Please try the alternative download method or contact support.');
                     }
                   }}
                 >
@@ -187,10 +194,17 @@ export default function ProjectPage() {
                   className="download-btn"
                   onClick={async (e) => {
                     e.preventDefault();
-                    const response = await fetch(`/api/download?file=mac-zip`);
-                    const data = await response.json();
-                    if (data.url) {
-                      window.location.href = data.url;
+                    try {
+                      const response = await fetch(`/api/direct-download?file=mac-zip`);
+                      const data = await response.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      } else {
+                        throw new Error('No download URL returned');
+                      }
+                    } catch (error) {
+                      console.error('Download error:', error);
+                      alert('Download error. Please try the alternative download method or contact support.');
                     }
                   }}
                 >
@@ -203,17 +217,24 @@ export default function ProjectPage() {
                   className="download-btn"
                   onClick={async (e) => {
                     e.preventDefault();
-                    const response = await fetch(`/api/download?file=windows`);
-                    const data = await response.json();
-                    if (data.url) {
-                      window.location.href = data.url;
+                    try {
+                      const response = await fetch(`/api/direct-download?file=windows`);
+                      const data = await response.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      } else {
+                        throw new Error('No download URL returned');
+                      }
+                    } catch (error) {
+                      console.error('Download error:', error);
+                      alert('Download error. Please try the alternative download method or contact support.');
                     }
                   }}
                 >
                   download for windows (arm64)
                 </a>
 
-                <div className="">
+                <div className="install-notes">
                   <h4>installation notes:</h4>
                   <ul>
                     <li><strong>mac users:</strong> right-click the app and select &quot;open&quot; to bypass gatekeeper warnings</li>
@@ -222,7 +243,30 @@ export default function ProjectPage() {
                   </ul>
                 </div>
                 
-                
+                <div className="alternate-download">
+                  <h4>download issues?</h4>
+                  <p>If you&apos;re having trouble downloading, please:</p>
+                  <ul>
+                    <li>
+                      <a 
+                        href="mailto:support@ghost-projects.com?subject=Download%20Issue%20with%20Reach&body=I%20am%20having%20trouble%20downloading%20Reach.%20Please%20help." 
+                        className="text-link"
+                      >
+                        contact our support team
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://ghost-projects-blob.vercel.app/AI%20Assistant-1.0.0-arm64.dmg" 
+                        className="text-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        direct download link (mac dmg)
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             )}
           </div>
