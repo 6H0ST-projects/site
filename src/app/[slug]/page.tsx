@@ -234,7 +234,7 @@ export default function ProjectPage() {
                   download for windows (arm64)
                 </a>
 
-                <div className="install-notes">
+                <div className="">
                   <h4>installation notes:</h4>
                   <ul>
                     <li><strong>mac users:</strong> right-click the app and select &quot;open&quot; to bypass gatekeeper warnings</li>
@@ -243,30 +243,6 @@ export default function ProjectPage() {
                   </ul>
                 </div>
                 
-                <div className="alternate-download">
-                  <h4>download issues?</h4>
-                  <p>If you&apos;re having trouble downloading, please:</p>
-                  <ul>
-                    <li>
-                      <a 
-                        href="mailto:support@ghost-projects.com?subject=Download%20Issue%20with%20Reach&body=I%20am%20having%20trouble%20downloading%20Reach.%20Please%20help." 
-                        className="text-link"
-                      >
-                        contact our support team
-                      </a>
-                    </li>
-                    <li>
-                      <a 
-                        href="https://ghost-projects-blob.vercel.app/AI%20Assistant-1.0.0-arm64.dmg" 
-                        className="text-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        direct download link (mac dmg)
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             )}
           </div>
