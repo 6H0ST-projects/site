@@ -208,7 +208,7 @@ export default function ProjectPage() {
                     }
                   }}
                 >
-                  download for mac (apple silicon/arm64) - zip
+                  download for mac (apple intel/x64) - dmg
                 </a>
 
                 <h3>windows downloads</h3>
@@ -231,7 +231,7 @@ export default function ProjectPage() {
                     }
                   }}
                 >
-                  download for windows (arm64)
+                  download installer for windows
                 </a>
                 <a 
                   href="#"
@@ -252,7 +252,7 @@ export default function ProjectPage() {
                     }
                   }}
                 >
-                  portable download for windows (arm64)
+                  portable download for windows
                 </a>
 
                 <div className="">
