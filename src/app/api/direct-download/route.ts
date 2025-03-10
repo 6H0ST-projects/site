@@ -13,7 +13,7 @@ const fileMap: Record<string, { url: string, filename: string, contentType: stri
     contentType: 'application/zip'
   },
   'windows': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-setup-f7gyYeGVwxoCmhS5VnSddWuY2pA0YD.exe',
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-setup-EKDdMHFTlA86UaUoD0zce0OLXAvMkC.exe',
     filename: 'reach-1.0.0-setup.exe',
     contentType: 'application/octet-stream'
   }
