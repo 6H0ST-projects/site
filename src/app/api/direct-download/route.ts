@@ -3,18 +3,18 @@ import { NextRequest, NextResponse } from 'next/server';
 // Map of file keys to their direct download URLs
 const fileMap: Record<string, { url: string, filename: string, contentType: string }> = {
   'mac-dmg': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/AI%20Assistant-1.0.0-arm64-Ux4WBG8KnD11kVJkfv6AKSDYCHCYjE.dmg',
-    filename: 'AI Assistant-1.0.0-arm64.dmg',
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-arm64-EDHj9UbOToabdc5vKyYyg0F1BvTF3U.dmg',
+    filename: 'reach-1.0.0-arm64.dmg',
     contentType: 'application/octet-stream'
   },
   'mac-zip': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/AI%20Assistant-1.0.0-arm64-mac-Mdzz2824FCwhWi4kigSAwMDVZjn8bE.zip',
-    filename: 'AI Assistant-1.0.0-arm64-mac.zip',
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-arm64-mtTGSJxJB97T5AZ1CsJUM6UhVO7Wru.zip',
+    filename: 'reach-1.0.0-arm64.zip',
     contentType: 'application/zip'
   },
   'windows': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach%20Setup%201.0.0-Wxgwf2DagjDoAf0kpW3iqNY0ShDkYP.exe',
-    filename: 'reach Setup 1.0.0.exe',
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-setup-f7gyYeGVwxoCmhS5VnSddWuY2pA0YD.exe',
+    filename: 'reach-1.0.0-setup.exe',
     contentType: 'application/octet-stream'
   }
 };
