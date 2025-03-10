@@ -233,12 +233,33 @@ export default function ProjectPage() {
                 >
                   download for windows (arm64)
                 </a>
+                <a 
+                  href="#"
+                  className="download-btn"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    try {
+                      const response = await fetch(`/api/direct-download?file=windows-portable`);
+                      const data = await response.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      } else {
+                        throw new Error('No download URL returned');
+                      }
+                    } catch (error) {
+                      console.error('Download error:', error);
+                      alert('Download error. Please try the alternative download method or contact support.');
+                    }
+                  }}
+                >
+                  portable download for windows (arm64)
+                </a>
 
                 <div className="">
                   <h4>installation notes:</h4>
                   <ul>
                     <li><strong>mac users:</strong> right-click the app and select &quot;open&quot; to bypass gatekeeper warnings</li>
-                    <li><strong>windows users:</strong> click &quot;more info&quot; then &quot;run anyway&quot; if smartscreen warning appears</li>
+                    <li><strong>windows users:</strong> click &quot;more info&quot; then &quot;run anyway&quot; if smartscreen warning appears. the portable version can be used if the installer version is not working.</li>
                     <li><strong>download size:</strong> ~120MB for Mac, ~95MB for Windows</li>
                   </ul>
                 </div>

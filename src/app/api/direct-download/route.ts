@@ -13,8 +13,13 @@ const fileMap: Record<string, { url: string, filename: string, contentType: stri
     contentType: 'application/zip'
   },
   'windows': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-setup-EKDdMHFTlA86UaUoD0zce0OLXAvMkC.exe',
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-setup-9vFuLBTwBhST1kHFZ1cR74Jt5Us6fc.exe',
     filename: 'reach-1.0.0-setup.exe',
+    contentType: 'application/octet-stream'
+  },
+  'windows-portable': { 
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-portable-Gl8kWXhPfc6VXS5ksR3Mrcm9AkpDz6.exe',
+    filename: 'reach-1.0.0-portable.exe',
     contentType: 'application/octet-stream'
   }
 };
