@@ -5,7 +5,7 @@ import { list } from '@vercel/blob';
 const fileMap: Record<string, { filename: string, contentType: string }> = {
   'mac-dmg': { 
     filename: 'AI Assistant-1.0.0-arm64.dmg',
-    contentType: 'application/x-apple-diskimage'
+    contentType: 'application/octet-stream'
   },
   'mac-zip': { 
     filename: 'AI Assistant-1.0.0-arm64-mac.zip',
@@ -13,7 +13,7 @@ const fileMap: Record<string, { filename: string, contentType: string }> = {
   },
   'windows': { 
     filename: 'reach Setup 1.0.0.exe',
-    contentType: 'application/vnd.microsoft.portable-executable'
+    contentType: 'application/octet-stream'
   }
 };
 
@@ -44,12 +44,12 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'File not found' }, { status: 404 });
     }
 
-    // Redirect to the URL with appropriate headers for download
-    return NextResponse.redirect(blob.url, {
-      headers: {
-        'Content-Disposition': `attachment; filename="${fileInfo.filename}"`,
-        'Content-Type': fileInfo.contentType
-      }
+    // Instead of redirecting, which can lose headers, return a JSON response with the URL
+    // The client can then fetch this URL directly
+    return NextResponse.json({ 
+      url: blob.url,
+      filename: fileInfo.filename,
+      contentType: fileInfo.contentType
     });
   } catch (error) {
     console.error('Download error:', error);

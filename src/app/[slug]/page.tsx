@@ -163,33 +163,57 @@ export default function ProjectPage() {
             </div>
             
             {slug === 'project-001' && (
-              <div className="download-section">
+              <div className="">
                 <h2>download reach (test build)</h2>
                 <p>this is an unsigned test build. you may need to bypass security warnings during installation.</p>
 
                 <h3>macOS downloads</h3>
                 <a 
-                  href="/api/download?file=mac-dmg" 
+                  href="#"
                   className="download-btn"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    const response = await fetch(`/api/download?file=mac-dmg`);
+                    const data = await response.json();
+                    if (data.url) {
+                      window.location.href = data.url;
+                    }
+                  }}
                 >
                   download for mac (apple silicon/arm64) - dmg
                 </a>
                 <a 
-                  href="/api/download?file=mac-zip" 
+                  href="#"
                   className="download-btn"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    const response = await fetch(`/api/download?file=mac-zip`);
+                    const data = await response.json();
+                    if (data.url) {
+                      window.location.href = data.url;
+                    }
+                  }}
                 >
                   download for mac (apple silicon/arm64) - zip
                 </a>
 
                 <h3>windows downloads</h3>
                 <a 
-                  href="/api/download?file=windows" 
+                  href="#"
                   className="download-btn"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    const response = await fetch(`/api/download?file=windows`);
+                    const data = await response.json();
+                    if (data.url) {
+                      window.location.href = data.url;
+                    }
+                  }}
                 >
                   download for windows (arm64)
                 </a>
 
-                <div className="install-notes">
+                <div className="">
                   <h4>installation notes:</h4>
                   <ul>
                     <li><strong>mac users:</strong> right-click the app and select &quot;open&quot; to bypass gatekeeper warnings</li>
@@ -198,33 +222,7 @@ export default function ProjectPage() {
                   </ul>
                 </div>
                 
-                <div className="alternate-download">
-                  <h4>download issues?</h4>
-                  <p>If you're having trouble downloading, please:</p>
-                  <ul>
-                    <li>
-                      <a 
-                        href="mailto:support@ghost-projects.com?subject=Download%20Issue%20with%20Reach&body=I%20am%20having%20trouble%20downloading%20Reach.%20Please%20help." 
-                        className="text-link"
-                      >
-                        contact our support team
-                      </a>
-                    </li>
-                    <li>
-                      <a 
-                        href="#"
-                        className="text-link"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          alert("Download started via alternative method");
-                          window.location.href = "/api/download?file=mac-dmg&alt=true";
-                        }}
-                      >
-                        try alternative download method
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                
               </div>
             )}
           </div>
