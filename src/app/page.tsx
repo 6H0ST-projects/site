@@ -92,15 +92,6 @@ export default function Home() {
         <p>
           never stop chasing ghosts.
         </p>
-        <p className="desktop-visible">
-          almost everything, all external expectations, all pride, 
-          all fear of embarrassment or failure, 
-          these things just fall away in the face of death, 
-          leaving only what is truly important. 
-          remembering that you are going to die is the best way I know to avoid the 
-          trap of thinking you have something to lose. 
-          you are already naked. there is no reason not to follow your heart.
-        </p>
       </header>
       <main className="relative z-10">
         <ul ref={listRef}>

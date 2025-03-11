@@ -66,7 +66,7 @@ export default function ProjectPage() {
           bgColor: '#FF680A',
           textColor: '#fff',
           description: [
-            "we're at the beginning of a technological renaissance.",
+            "almost everything, all external expectations, all pride, all fear of embarrassment or failure, these things just fall away in the face of death, leaving only what is truly important. remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose. you are already naked. there is no reason not to follow your heart.",
             "there has never been a better time to push the bleeding edge. software is a solved problem and the entirety of human knowledge is at our fingertips; an individual's creativity is the only limit."
           ],
           sidebarText: "we choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard."
@@ -164,6 +164,15 @@ export default function ProjectPage() {
             
             {slug === 'project-001' && (
               <div className="">
+                <div className="video-container" style={{ maxWidth: '800px' }}>
+                  <video controls style={{ width: '100%' }}>
+                    <source src="/project-001.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                
+                <div style={{ height: '20px' }}></div>
+                
                 <h2>download reach (test build)</h2>
                 <p>this is an unsigned test build. you may need to bypass security warnings during installation.</p>
 
