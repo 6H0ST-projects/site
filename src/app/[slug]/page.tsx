@@ -183,7 +183,7 @@ export default function ProjectPage() {
                   onClick={async (e) => {
                     e.preventDefault();
                     try {
-                      const response = await fetch(`/api/direct-download?file=mac-dmg`);
+                      const response = await fetch(`/api/direct-download?file=mac-universal`);
                       const data = await response.json();
                       if (data.url) {
                         window.location.href = data.url;
@@ -198,28 +198,6 @@ export default function ProjectPage() {
                 >
                   download for mac (apple silicon/arm64) - dmg
                 </a>
-                <a 
-                  href="#"
-                  className="download-btn"
-                  onClick={async (e) => {
-                    e.preventDefault();
-                    try {
-                      const response = await fetch(`/api/direct-download?file=mac-zip`);
-                      const data = await response.json();
-                      if (data.url) {
-                        window.location.href = data.url;
-                      } else {
-                        throw new Error('No download URL returned');
-                      }
-                    } catch (error) {
-                      console.error('Download error:', error);
-                      alert('Download error. Please try the alternative download method or contact support.');
-                    }
-                  }}
-                >
-                  download for mac (apple intel/x64) - dmg
-                </a>
-
                 <h3>windows downloads</h3>
                 <a 
                   href="#"
