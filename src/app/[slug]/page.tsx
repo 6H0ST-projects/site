@@ -196,7 +196,7 @@ export default function ProjectPage() {
                     }
                   }}
                 >
-                  download for mac (apple silicon/arm64) - dmg
+                  download for mac (apple universal) - dmg
                 </a>
                 <h3>windows downloads</h3>
                 <a 
