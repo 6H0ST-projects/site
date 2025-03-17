@@ -2,15 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // Map of file keys to their direct download URLs
 const fileMap: Record<string, { url: string, filename: string, contentType: string }> = {
-  'mac-dmg': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/Reach-1.0.0-arm64-HYNSGhpHAUy2zZROGHjWQTmWSswny4.dmg',
-    filename: 'Reach-1.0.0-arm64.dmg',
+  'mac-universal': { 
+    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/Reach-1.0.0-universal-IFrerTVlTI1bQY5hGoipjqWrowOZIZ.dmg',
+    filename: 'Reach-1.0.0-universal.dmg',
     contentType: 'application/octet-stream'
-  },
-  'mac-zip': { 
-    url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/Reach-1.0.0-x64-TPVLMBDicjw6z7BvMbH2pfxU4F8meu.dmg',
-    filename: 'Reach-1.0.0-x64.dmg',
-    contentType: 'application/zip'
   },
   'windows': { 
     url: 'https://gqzkgvpzdiquahcv.public.blob.vercel-storage.com/reach-1.0.0-setup-f6YbwihNtvLTkTW0A1olRo7LCzXQjx.exe',
