@@ -7,6 +7,7 @@ import './globals.css'
 
 const items = [
   'project-001',
+  'project-123',
   'project-014',
   'project-500',
   'about-us',
@@ -117,11 +118,12 @@ export default function Home() {
                     className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-4 text-sm cursor-pointer"
                     style={{
                       backgroundColor: item === 'project-001' ? '#3D3D3D' :
+                                     item === 'project-123' ? '#4A90E2' :
                                      item === 'project-014' ? '#E7EAEE' :
                                      item === 'project-500' ? '#C3FF2A' :
                                      item === 'about-us' ? '#FF680A' :
                                      '#5C5C5C',
-                      color: item === 'project-014' || item === 'project-500' ? '#000' : '#fff',
+                      color: item === 'project-014' || item === 'project-500' || item === 'project-123' ? '#000' : '#fff',
                       height: '80%'
                     }}
                     onClick={(e) => {
@@ -132,6 +134,7 @@ export default function Home() {
                     }}
                   >
                     {item === 'project-001' ? '001' :
+                     item === 'project-123' ? '123' :
                      item === 'project-014' ? '014' :
                      item === 'project-500' ? '500' :
                      item === 'about-us' ? 'about-us' :
