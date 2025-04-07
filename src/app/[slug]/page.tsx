@@ -15,6 +15,8 @@ function ProductAnalysisApp() {
   const [result, setResult] = useState<string | null>(null)
   const [healthScore, setHealthScore] = useState<number | null>(null)
   const [isProcessing, setIsProcessing] = useState(false)
+  const [streamingText, setStreamingText] = useState<string>("")
+  const [error, setError] = useState<string | null>(null)
   const fileInputProductRef = useRef<HTMLInputElement>(null)
   const fileInputLabelRef = useRef<HTMLInputElement>(null)
   
@@ -32,7 +34,27 @@ function ProductAnalysisApp() {
     reader.readAsDataURL(file)
   }
   
-  // Function to handle analysis request
+  // Function to convert base64 to blob for API submission
+  const base64ToBlob = (base64: string, contentType: string): Blob => {
+    const byteCharacters = atob(base64.split(',')[1])
+    const byteArrays = []
+    
+    for (let offset = 0; offset < byteCharacters.length; offset += 512) {
+      const slice = byteCharacters.slice(offset, offset + 512)
+      
+      const byteNumbers = new Array(slice.length)
+      for (let i = 0; i < slice.length; i++) {
+        byteNumbers[i] = slice.charCodeAt(i)
+      }
+      
+      const byteArray = new Uint8Array(byteNumbers)
+      byteArrays.push(byteArray)
+    }
+    
+    return new Blob(byteArrays, { type: contentType })
+  }
+  
+  // Function to handle analysis request using OpenAI APIs
   const analyzeProduct = async () => {
     if (!productImage || !description) {
       addLog('Please provide a product image and description')
@@ -42,178 +64,169 @@ function ProductAnalysisApp() {
     setIsProcessing(true)
     setResult(null)
     setHealthScore(null)
+    setStreamingText("")
+    setError(null)
+    
     addLog('Starting product analysis...')
     
     try {
-      // Simulate API call and processing
+      // Step 1: Analyze the product image with vision model
       addLog('Analyzing product image...')
-      await simulateDelay(1000)
+      const productVisionResponse = await analyzeImageWithVision(productImage, "Analyze this product and identify key components that might have health implications.")
       
+      // Step 2: If a label image exists, analyze it too
+      let labelVisionResponse = ""
       if (labelImage) {
         addLog('Analyzing nutrition/ingredients label...')
-        await simulateDelay(1000)
+        labelVisionResponse = await analyzeImageWithVision(labelImage, "Read and analyze this nutrition/ingredients label carefully. List all ingredients and any potential health concerns.")
       }
       
+      // Step 3: Use the web search capability to find health information
       addLog('Searching for health information on ingredients...')
-      await simulateDelay(1500)
-      
       addLog('Researching alternative products...')
-      await simulateDelay(2000)
-      
       addLog('Generating health assessment report...')
-      await simulateDelay(1500)
       
-      // Generate a mock result and score for demonstration
-      const mockScore = Math.floor(Math.random() * 10) + 1
-      setHealthScore(mockScore)
+      // Create prompt for search-enabled model
+      const systemPrompt = `You are a health product analyzer with expertise in analyzing product ingredients and their health implications. Your task is to:
+1. Evaluate the provided product based on the image analysis and description
+2. Research potential health implications of ingredients or materials
+3. Find evidence-based sources for your claims
+4. Suggest healthier alternatives
+5. Provide a health score on a scale of 1-10 (1=toxic, 10=exceptionally healthy)
+
+Format your response as a detailed report with headers in markdown format and include the health score.`
+
+      const userPrompt = `
+PRODUCT IMAGE ANALYSIS:
+${productVisionResponse}
+
+${labelImage ? `LABEL IMAGE ANALYSIS:
+${labelVisionResponse}
+
+` : ''}
+PRODUCT DESCRIPTION:
+${description}
+
+Analyze this product thoroughly for potential health impacts. Use reputable sources like scientific journals for your analysis. Provide:
+1. Overall health score (1-10)
+2. Key ingredients analysis
+3. Health implications
+4. Healthier alternatives
+5. References to scientific sources
+
+Return response formatted with markdown headers.`
+
+      await streamSearchResponse(systemPrompt, userPrompt)
       
-      generateMockResult(mockScore)
-    } catch (error) {
-      console.error('Analysis error:', error)
+    } catch (err) {
+      console.error('Analysis error:', err)
+      setError(err instanceof Error ? err.message : 'An unknown error occurred')
       addLog('Error processing request. Please try again.')
     } finally {
       setIsProcessing(false)
     }
   }
   
+  // Function to analyze image with OpenAI Vision model
+  const analyzeImageWithVision = async (imageData: string, prompt: string): Promise<string> => {
+    try {
+      // Extract content type from data URL
+      const contentType = imageData.split(';')[0].split(':')[1]
+      const blob = base64ToBlob(imageData, contentType)
+      
+      // Convert blob to base64 for API submission
+      const reader = new FileReader()
+      const base64Promise = new Promise<string>((resolve) => {
+        reader.onload = () => resolve(reader.result as string)
+        reader.readAsDataURL(blob)
+      })
+      
+      const base64Data = await base64Promise
+      
+      // Prepare API request to OpenAI Vision
+      const response = await fetch('/api/analyze-image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          image: base64Data,
+          prompt: prompt,
+        }),
+      })
+      
+      if (!response.ok) {
+        throw new Error(`Vision API error: ${response.status}`)
+      }
+      
+      const data = await response.json()
+      return data.analysis
+    } catch (error) {
+      console.error('Vision API error:', error)
+      throw new Error('Failed to analyze image')
+    }
+  }
+  
+  // Function to stream search-enabled model response
+  const streamSearchResponse = async (systemPrompt: string, userPrompt: string) => {
+    try {
+      const response = await fetch('/api/search-analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          systemPrompt,
+          userPrompt,
+        }),
+      })
+      
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`)
+      }
+      
+      // Process the streaming response
+      const reader = response.body?.getReader()
+      if (!reader) throw new Error('Response body cannot be read')
+      
+      const decoder = new TextDecoder()
+      let done = false
+      let accumulatedText = ''
+      
+      while (!done) {
+        const { value, done: doneReading } = await reader.read()
+        done = doneReading
+        
+        if (value) {
+          const chunk = decoder.decode(value, { stream: true })
+          accumulatedText += chunk
+          setStreamingText(accumulatedText)
+          
+          // Extract health score if present
+          const scoreMatch = accumulatedText.match(/health score:?\s*(\d+)\/10/i) || 
+                            accumulatedText.match(/score:?\s*(\d+)\/10/i) ||
+                            accumulatedText.match(/score of (\d+)\/10/i)
+          
+          if (scoreMatch && scoreMatch[1]) {
+            const score = parseInt(scoreMatch[1], 10)
+            if (score >= 1 && score <= 10) {
+              setHealthScore(score)
+            }
+          }
+        }
+      }
+      
+      // Set final result
+      setResult(accumulatedText)
+    } catch (error) {
+      console.error('Streaming error:', error)
+      throw new Error('Failed to stream response')
+    }
+  }
+  
   // Helper function to add logs
   const addLog = (message: string) => {
     setLogs(prev => [...prev, message])
-  }
-  
-  // Simulate delay for demo purposes
-  const simulateDelay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
-  
-  // Generate mock analysis result
-  const generateMockResult = (score: number) => {
-    let resultText = ''
-    
-    // Introduction
-    resultText += `## Health Assessment Report\n\n`
-    resultText += `### Overall Health Score: ${score}/10\n\n`
-    
-    // Analysis based on score
-    if (score >= 8) {
-      resultText += `This product is among the healthier options available. Based on our analysis, it contains minimal harmful ingredients and offers good nutritional value.\n\n`
-    } else if (score >= 5) {
-      resultText += `This product falls in the moderate range for health considerations. While not harmful overall, there are some ingredients that may be concerning for certain individuals.\n\n`
-    } else {
-      resultText += `This product contains several ingredients that may pose health concerns. Consider the alternatives listed below for healthier options.\n\n`
-    }
-    
-    // Ingredients analysis
-    resultText += `### Key Ingredients Analysis\n\n`
-    resultText += `- **${getRandomIngredient(score < 5)}: ${getRandomAnalysis(score < 5)}\n`
-    resultText += `- **${getRandomIngredient(score < 7)}: ${getRandomAnalysis(score < 7)}\n`
-    resultText += `- **${getRandomIngredient(false)}: ${getRandomAnalysis(false)}\n\n`
-    
-    // Health implications
-    resultText += `### Health Implications\n\n`
-    resultText += `Research published in the ${getRandomJournal()} indicates that ${getRandomHealth(score)}.\n\n`
-    
-    // Alternatives
-    resultText += `### Healthier Alternatives\n\n`
-    resultText += `1. **${getRandomAlternative()}**: Contains natural ingredients with similar functionality but lower health risks.\n`
-    resultText += `2. **${getRandomAlternative()}**: Offers comparable benefits without the concerning additives.\n`
-    resultText += `3. **${getRandomAlternative()}**: A more sustainable and health-conscious option.\n\n`
-    
-    // References
-    resultText += `### References\n\n`
-    resultText += `- ${getRandomJournal()} (${2018 + Math.floor(Math.random() * 5)}): "${getRandomStudyTitle()}"\n`
-    resultText += `- ${getRandomJournal()} (${2019 + Math.floor(Math.random() * 4)}): "${getRandomStudyTitle()}"\n`
-    
-    setResult(resultText)
-  }
-  
-  // Helper functions for mock data
-  const getRandomIngredient = (harmful: boolean) => {
-    const harmfulIngredients = [
-      'High Fructose Corn Syrup', 'Red Dye 40', 'Sodium Nitrite', 
-      'BHA (Butylated Hydroxyanisole)', 'Partially Hydrogenated Oils',
-      'Aspartame', 'MSG (Monosodium Glutamate)', 'Sodium Benzoate'
-    ]
-    
-    const safeIngredients = [
-      'Whole Grain Flour', 'Natural Cane Sugar', 'Organic Cocoa', 
-      'Chia Seeds', 'Flaxseed Oil', 'Plant-Based Protein', 
-      'Organic Cane Sugar', 'Turmeric Extract'
-    ]
-    
-    const list = harmful ? harmfulIngredients : safeIngredients
-    return list[Math.floor(Math.random() * list.length)]
-  }
-  
-  const getRandomAnalysis = (harmful: boolean) => {
-    const harmfulAnalyses = [
-      'Has been linked to metabolic disorders in multiple studies',
-      'May cause hyperactivity and attention issues in sensitive individuals',
-      'Potentially carcinogenic according to recent research',
-      'Associated with inflammation and digestive issues',
-      'May disrupt hormone function with regular consumption'
-    ]
-    
-    const safeAnalyses = [
-      'Provides essential nutrients and fiber',
-      'Contains antioxidants that support immune function',
-      'Offers omega-3 fatty acids beneficial for heart health',
-      'Rich in vitamins and minerals essential for metabolism',
-      'Has anti-inflammatory properties supported by research'
-    ]
-    
-    const list = harmful ? harmfulAnalyses : safeAnalyses
-    return list[Math.floor(Math.random() * list.length)]
-  }
-  
-  const getRandomJournal = () => {
-    const journals = [
-      'Journal of Nutrition', 'Environmental Health Perspectives',
-      'American Journal of Clinical Nutrition', 'Food Chemistry',
-      'Journal of Food Science', 'International Journal of Food Sciences and Nutrition',
-      'Nutrition Research', 'Journal of the Academy of Nutrition and Dietetics'
-    ]
-    
-    return journals[Math.floor(Math.random() * journals.length)]
-  }
-  
-  const getRandomHealth = (score: number) => {
-    const goodHealth = [
-      'regular consumption of these ingredients may support immune function',
-      'the antioxidant properties of these components may reduce oxidative stress',
-      'these natural compounds show promising effects on metabolic health',
-      'these ingredients support gut microbiome diversity'
-    ]
-    
-    const badHealth = [
-      'prolonged exposure to these additives may contribute to chronic inflammation',
-      'regular consumption of these compounds has been associated with increased risk of metabolic disorders',
-      'some of these ingredients may disrupt endocrine function with long-term exposure',
-      'these synthetic additives have shown adverse effects in long-term animal studies'
-    ]
-    
-    const list = score >= 6 ? goodHealth : badHealth
-    return list[Math.floor(Math.random() * list.length)]
-  }
-  
-  const getRandomAlternative = () => {
-    const alternatives = [
-      'Organic Harvest Blend', 'NatureWay Pure', 'Clean Essentials',
-      'PureSource Natural', 'Wholesome Basics', 'Earth Friendly Foods',
-      'Green Choice Organics', 'Pure Pantry Essentials'
-    ]
-    
-    return alternatives[Math.floor(Math.random() * alternatives.length)]
-  }
-  
-  const getRandomStudyTitle = () => {
-    const titles = [
-      'Effects of Food Additives on Metabolic Health: A Systematic Review',
-      'Comparative Analysis of Natural vs. Synthetic Food Ingredients',
-      'Long-term Consumption Patterns of Processed Foods and Health Outcomes',
-      'Nutritional Profile Analysis of Organic vs. Conventional Products',
-      'Bioavailability of Nutrients in Processed Foods: Clinical Perspectives'
-    ]
-    
-    return titles[Math.floor(Math.random() * titles.length)]
   }
   
   return (
@@ -291,6 +304,13 @@ function ProductAnalysisApp() {
         {isProcessing ? 'analyzing...' : 'analyze product'}
       </button>
       
+      {error && (
+        <div className="error-message">
+          <p>Error: {error}</p>
+          <p>Please try again or contact support if the issue persists.</p>
+        </div>
+      )}
+      
       {logs.length > 0 && (
         <div className="logs-container">
           <h3>analysis progress</h3>
@@ -320,11 +340,11 @@ function ProductAnalysisApp() {
         </div>
       )}
       
-      {result && (
+      {(streamingText || result) && (
         <div className="result-container">
           <h3>detailed analysis</h3>
           <div className="result">
-            {result.split('\n').map((line, index) => (
+            {(result || streamingText).split('\n').map((line, index) => (
               <div key={index} className="result-line">
                 {line.startsWith('##') ? (
                   <h2>{line.replace('##', '').trim()}</h2>
@@ -340,6 +360,7 @@ function ProductAnalysisApp() {
                 )}
               </div>
             ))}
+            {isProcessing && <div className="typing-indicator">●●●</div>}
           </div>
         </div>
       )}
