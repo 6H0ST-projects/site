@@ -4,7 +4,6 @@ import { useEffect, useState, useRef, ChangeEvent } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { Meteors } from '../../components/ui/meteors'
 import Link from 'next/link'
-import Image from 'next/image'
 import './project-page.css'
 
 // Product Analysis App Component
@@ -629,7 +628,7 @@ export default function ProjectPage() {
               </div>
             )}
 
-            {(slug === 'project-123' || slug === 'project-529') && (
+            {slug === 'project-529' && (
               <ProductAnalysisApp />
             )}
           </div>
