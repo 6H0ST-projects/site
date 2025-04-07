@@ -398,7 +398,7 @@ export default function ProjectPage() {
           ],
           sidebarText: "simple can be harder than complex: you have to work hard to get your thinking clean to make it simple. but it’s worth it in the end because once you get there, you can move mountains."
         }
-      case 'project-123':
+      case 'project-529':
         return {
           title: 'redacted',
           intro: 'optimize consumption.',
