@@ -59,13 +59,13 @@ export async function POST(req: NextRequest) {
       },
     });
     
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error in search-analyze API:', error);
     
     return new Response(
       JSON.stringify({ 
         error: 'Failed to generate analysis',
-        details: error.message 
+        details: error instanceof Error ? error.message : 'Unknown error' 
       }),
       { 
         status: 500, 

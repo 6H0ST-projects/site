@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, ChangeEvent } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { Meteors } from '../../components/ui/meteors'
 import Link from 'next/link'
+import Image from 'next/image'
 import './project-page.css'
 
 // Product Analysis App Component
@@ -244,7 +245,10 @@ Return response formatted with markdown headers.`
             onClick={() => fileInputProductRef.current?.click()}
           >
             {productImage ? (
-              <img src={productImage} alt="Product" className="preview-image" />
+              <div className="preview-image-container">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={productImage} alt="Product" className="preview-image" />
+              </div>
             ) : (
               <div className="upload-placeholder">
                 <p>click to upload or take photo</p>
@@ -268,7 +272,10 @@ Return response formatted with markdown headers.`
             onClick={() => fileInputLabelRef.current?.click()}
           >
             {labelImage ? (
-              <img src={labelImage} alt="Product Label" className="preview-image" />
+              <div className="preview-image-container">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={labelImage} alt="Product Label" className="preview-image" />
+              </div>
             ) : (
               <div className="upload-placeholder">
                 <p>click to upload or take photo</p>
@@ -622,7 +629,7 @@ export default function ProjectPage() {
               </div>
             )}
 
-            {slug === 'project-123' && (
+            {(slug === 'project-123' || slug === 'project-529') && (
               <ProductAnalysisApp />
             )}
           </div>
