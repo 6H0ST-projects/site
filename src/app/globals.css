@@ -352,7 +352,7 @@
     }
   }
   
-  /* Add transition states for page navigation */
+  /* Page transition handling */
   body.loading {
     opacity: 0;
     transition: opacity 0.2s ease;

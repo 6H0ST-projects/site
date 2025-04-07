@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { Meteors } from '../../components/ui/meteors'
 import Link from 'next/link'
 import './project-page.css'
@@ -18,6 +18,7 @@ interface PageData {
 
 export default function ProjectPage() {
   const params = useParams()
+  const router = useRouter()
   const slug = params.slug as string
   
   // Page data for each slug
@@ -101,19 +102,13 @@ export default function ProjectPage() {
   const pageData = getPageData(slug)
   
   useEffect(() => {
-    // Start with opacity 0 for smooth transition
-    document.body.style.opacity = '0'
+    // Only run in browser environment
+    if (typeof window === 'undefined') return;
     
-    // Small delay to ensure transition works
-    setTimeout(() => {
-      // Set the background color on the body
-      document.body.style.backgroundColor = pageData.bgColor
-      document.body.style.color = pageData.textColor
-      document.body.classList.add('project-page')
-      
-      // Fade in content
-      document.body.style.opacity = '1'
-    }, 50)
+    // Apply styles immediately without transitions
+    document.body.style.backgroundColor = pageData.bgColor
+    document.body.style.color = pageData.textColor
+    document.body.classList.add('project-page')
     
     return () => {
       // Clean up
@@ -135,10 +130,9 @@ export default function ProjectPage() {
           className="back-link"
           onClick={(e) => {
             e.preventDefault();
-            document.body.classList.add('loading');
-            setTimeout(() => {
-              window.location.href = '/';
-            }, 200);
+            
+            // Navigate immediately without transition
+            router.push('/')
           }}
         >
           ← Back to home

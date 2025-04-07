@@ -30,18 +30,55 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Static layout without any client-side generated values to avoid hydration errors
   return (
     <html lang="en">
       <head>
-        <style>{`
-          /* Critical CSS for page transitions */
+        {/* Inline styles to prevent FOUC */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+          @import url('https://unpkg.com/normalize.css');
+          
+          /* Base critical styles - no transitions */
           body {
-            transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
+            background-color: #fff;
+            color: #000;
+            font-family: 'DM Sans', serif, system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* No transitions for instant navigation */
+            transition: none;
           }
-        `}</style>
+          
+          /* Ensure no animations at all */
+          html.instant-nav * {
+            animation: none !important;
+            transition: none !important;
+          }
+        `}} />
       </head>
       <body>
+        {/* Script to handle initial page load - only runs in browser */}
+        <Script id="instant-navigation" strategy="afterInteractive">{`
+          // Enable instant navigation between pages
+          (function() {
+            try {
+              // Add class to disable all transitions
+              document.documentElement.classList.add('instant-nav');
+              
+              // Handle any initial CSS setup
+              document.addEventListener('DOMContentLoaded', function() {
+                // Make sure styles are properly applied
+                document.body.style.backgroundColor = document.body.style.backgroundColor || '#fff';
+              });
+            } catch (e) {
+              console.log('Navigation setup error:', e);
+            }
+          })();
+        `}</Script>
+        
         {children}
+        
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
           strategy="lazyOnload"

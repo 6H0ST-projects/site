@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { Meteors } from '../components/ui/meteors'
 import './globals.css'
 
@@ -13,23 +14,22 @@ const items = [
 ]
 
 export default function Home() {
+  const router = useRouter()
   const listRef = useRef<HTMLUListElement>(null)
   const isDragging = useRef(false)
   const startX = useRef(0)
   const scrollLeft = useRef(0)
 
   useEffect(() => {
+    // This effect only runs in the browser
+    if (typeof window === 'undefined') return;
+    
     // Set light mode by default
     document.documentElement.dataset.theme = 'light'
     
-    // Remove any loading class when home page loads
-    document.body.classList.remove('loading')
-    
-    // Add a small delay before showing content to ensure styles load
-    document.body.style.opacity = '0'
-    setTimeout(() => {
-      document.body.style.opacity = '1'
-    }, 100)
+    // Apply initial styles immediately
+    document.body.style.backgroundColor = '#fff'
+    document.body.style.color = '#000'
   }, [])
 
   useEffect(() => {
@@ -98,7 +98,15 @@ export default function Home() {
           {items.map((item) => (
             <li key={item}>
               <article>
-                <a href={`/${item}`}>
+                <a 
+                  href={`/${item}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    
+                    // Navigate immediately without transition
+                    router.push(`/${item}`)
+                  }}
+                >
                   <span aria-hidden="true">
                     {/* {(index + 1).toString().padStart(2, '0')}.&nbsp; */}
                   </span>
@@ -116,7 +124,12 @@ export default function Home() {
                       color: item === 'project-014' || item === 'project-500' ? '#000' : '#fff',
                       height: '80%'
                     }}
-                    onClick={() => window.location.href = `/${item}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      
+                      // Navigate immediately without transition
+                      router.push(`/${item}`)
+                    }}
                   >
                     {item === 'project-001' ? '001' :
                      item === 'project-014' ? '014' :
