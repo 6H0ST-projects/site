@@ -3,35 +3,23 @@
 import { useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { Meteors } from '../components/ui/meteors'
-import './globals.css'
 
 const items = [
   'project-001',
-  'project-529',
   'project-014',
   'project-500',
+  'project-529',
   'about-us',
   'blog',
 ]
 
-export default function Home() {
+// Home page content separated for better class management
+function HomePageContent() {
   const router = useRouter()
   const listRef = useRef<HTMLUListElement>(null)
   const isDragging = useRef(false)
   const startX = useRef(0)
   const scrollLeft = useRef(0)
-
-  useEffect(() => {
-    // This effect only runs in the browser
-    if (typeof window === 'undefined') return;
-    
-    // Set light mode by default
-    document.documentElement.dataset.theme = 'light'
-    
-    // Apply initial styles immediately
-    document.body.style.backgroundColor = '#fff'
-    document.body.style.color = '#000'
-  }, [])
 
   useEffect(() => {
     const list = listRef.current
@@ -103,8 +91,6 @@ export default function Home() {
                   href={`/${item}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    
-                    // Navigate immediately without transition
                     router.push(`/${item}`)
                   }}
                 >
@@ -128,8 +114,6 @@ export default function Home() {
                     }}
                     onClick={(e) => {
                       e.preventDefault();
-                      
-                      // Navigate immediately without transition
                       router.push(`/${item}`)
                     }}
                   >
@@ -148,4 +132,33 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export default function Home() {
+  // Class and style setting handled at root level
+  useEffect(() => {
+    // This effect only runs in the browser
+    if (typeof window === 'undefined') return;
+    
+    // Set light mode by default
+    document.documentElement.dataset.theme = 'light'
+    
+    // Reset any project-page class first
+    document.body.classList.remove('project-page')
+    
+    // Apply initial styles
+    document.body.style.backgroundColor = '#fff'
+    document.body.style.color = '#000'
+    
+    // Add a class to the body for home page specific styling
+    document.body.classList.add('home-page')
+    
+    return () => {
+      // Remove the home page class when navigating away
+      document.body.classList.remove('home-page')
+      // No need to reset inline styles - the project page will handle its own styles
+    }
+  }, [])
+  
+  return <HomePageContent />
 }
