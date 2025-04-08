@@ -203,16 +203,31 @@ Return response formatted with markdown headers.`
           accumulatedText += chunk
           setStreamingText(accumulatedText)
           
-          // Extract health score if present
-          const scoreMatch = accumulatedText.match(/health score:?\s*(\d+)\/10/i) || 
-                            accumulatedText.match(/score:?\s*(\d+)\/10/i) ||
-                            accumulatedText.match(/score of (\d+)\/10/i)
-          
-          if (scoreMatch && scoreMatch[1]) {
-            const score = parseInt(scoreMatch[1], 10)
-            if (score >= 1 && score <= 10) {
-              setHealthScore(score)
+          // Extract health score if present - try multiple regex patterns
+          try {
+            const scoreMatches = [
+              accumulatedText.match(/health score:?\s*(\d+)\/10/i),
+              accumulatedText.match(/score:?\s*(\d+)\/10/i),
+              accumulatedText.match(/score of (\d+)\/10/i),
+              accumulatedText.match(/score: (\d+)\/10/i),
+              accumulatedText.match(/score (\d+)\/10/i),
+              accumulatedText.match(/(\d+)\/10 health score/i),
+              accumulatedText.match(/overall health score:?\s*(\d+)\/10/i),
+              accumulatedText.match(/: (\d+)\/10/i)
+            ]
+            
+            // Find the first successful match
+            for (const match of scoreMatches) {
+              if (match && match[1]) {
+                const score = parseInt(match[1], 10)
+                if (score >= 1 && score <= 10) {
+                  setHealthScore(score)
+                  break
+                }
+              }
             }
+          } catch (error) {
+            console.error('Error extracting health score:', error)
           }
         }
       }
@@ -351,22 +366,63 @@ Return response formatted with markdown headers.`
         <div className="result-container">
           <h3>detailed analysis</h3>
           <div className="result">
-            {(result || streamingText).split('\n').map((line, index) => (
-              <div key={index} className="result-line">
-                {line.startsWith('##') ? (
-                  <h2>{line.replace('##', '').trim().toLowerCase()}</h2>
-                ) : line.startsWith('###') ? (
-                  <h3>{line.replace('###', '').trim().toLowerCase()}</h3>
-                ) : line.startsWith('- **') ? (
-                  <div className="ingredient-analysis">
-                    <strong>{line.split('**')[1]}</strong>
-                    <span>{line.split('**')[2]}</span>
-                  </div>
-                ) : (
-                  <p>{line}</p>
-                )}
-              </div>
-            ))}
+            {(result || streamingText).split('\n').map((line, index) => {
+              // Check for markdown link pattern: [text](url)
+              const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+              const hasLinks = linkPattern.test(line);
+              
+              // Reset the regex pattern for use in the actual rendering
+              linkPattern.lastIndex = 0;
+              
+              try {
+                if (line.startsWith('##')) {
+                  return <h2 key={index}>{line.replace('##', '').trim().toLowerCase()}</h2>;
+                } else if (line.startsWith('###')) {
+                  return <h3 key={index}>{line.replace('###', '').trim().toLowerCase()}</h3>;
+                } else if (line.startsWith('- **')) {
+                  // Check if the line has the expected format with at least 3 parts after splitting
+                  const parts = line.split('**');
+                  if (parts.length >= 3) {
+                    return (
+                      <div key={index} className="ingredient-analysis">
+                        <strong>{parts[1]}</strong>
+                        <span dangerouslySetInnerHTML={{ 
+                          __html: parts[2].replace(
+                            linkPattern, 
+                            '<a href="$2" target="_blank" rel="noopener noreferrer" class="analysis-link">$1</a>'
+                          ) 
+                        }} />
+                      </div>
+                    );
+                  } else {
+                    // Fallback for malformed lines
+                    return <p key={index}>{line}</p>;
+                  }
+                } else if (hasLinks) {
+                  // For lines with links, use dangerouslySetInnerHTML to render HTML links
+                  try {
+                    return (
+                      <p key={index} dangerouslySetInnerHTML={{ 
+                        __html: line.replace(
+                          linkPattern, 
+                          '<a href="$2" target="_blank" rel="noopener noreferrer" class="analysis-link">$1</a>'
+                        ) 
+                      }} />
+                    );
+                  } catch (error) {
+                    // If there's an error with the replacement, just render the plain text
+                    console.error('Error rendering link:', error);
+                    return <p key={index}>{line}</p>;
+                  }
+                } else {
+                  return <p key={index}>{line}</p>;
+                }
+              } catch (error) {
+                // Global error handler - if anything goes wrong, just show the plain text
+                console.error('Error rendering line:', error);
+                return <p key={index}>{line}</p>;
+              }
+            })}
             {isProcessing && <div className="typing-indicator">●●●</div>}
           </div>
         </div>

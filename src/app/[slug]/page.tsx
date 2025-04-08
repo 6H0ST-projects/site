@@ -127,7 +127,7 @@ export default function ProjectPage() {
             "a language model agent that evaluates products for health implications using computer vision and research capabilities.",
             "upload a photo of a product, its label, and provide a description to receive an analysis and healthier alternatives."
           ],
-          sidebarText: "Be a yardstick of quality. Some people aren't used to an environment where excellence is expected."
+          sidebarText: "Be a yardstick of quality. Some people aren&apos;t used to an environment where excellence is expected."
         }
       case 'project-014':
         return {
