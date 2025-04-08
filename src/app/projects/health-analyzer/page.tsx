@@ -15,7 +15,7 @@ export default function HealthAnalyzerRedirect() {
     document.body.classList.add('project-page')
     
     // Set project-specific colors
-    document.body.style.backgroundColor = '#4A90E2'
+    document.body.style.backgroundColor = '#BBBDC3'
     document.body.style.color = '#000'
     
     // Redirect after a short delay

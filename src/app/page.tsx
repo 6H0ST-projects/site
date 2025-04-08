@@ -104,7 +104,7 @@ function HomePageContent() {
                     className="absolute bottom-0 left-0 right-0 flex items-end justify-end p-4 text-sm cursor-pointer"
                     style={{
                       backgroundColor: item === 'project-001' ? '#3D3D3D' :
-                                     item === 'project-529' ? '#4A90E2' :
+                                     item === 'project-529' ? '#BBBDC3' :
                                      item === 'project-014' ? '#E7EAEE' :
                                      item === 'project-500' ? '#C3FF2A' :
                                      item === 'about-us' ? '#FF680A' :

@@ -121,7 +121,7 @@ export default function ProjectPage() {
         return {
           title: 'redacted',
           intro: 'optimize consumption.',
-          bgColor: '#4A90E2',
+          bgColor: '#BBBDC3',
           textColor: '#000',
           description: [
             "a language model agent that evaluates products for health implications using computer vision and research capabilities.",
