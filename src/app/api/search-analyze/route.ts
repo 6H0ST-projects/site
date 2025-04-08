@@ -34,7 +34,6 @@ export async function POST(req: NextRequest) {
         }
       ],
       stream: true,
-      temperature: 0.7,
     });
 
     // Create a streaming response for the client
