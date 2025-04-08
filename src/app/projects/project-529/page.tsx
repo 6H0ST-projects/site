@@ -313,8 +313,8 @@ Return response formatted with markdown headers.`
       
       {error && (
         <div className="error-message">
-          <p>Error: {error}</p>
-          <p>Please try again or contact support if the issue persists.</p>
+          <p>error: {error}</p>
+          <p>please try again or contact support if the issue persists.</p>
         </div>
       )}
       
@@ -341,7 +341,7 @@ Return response formatted with markdown headers.`
               {healthScore}/10
             </div>
             <div className="score-label">
-              {healthScore <= 3 ? 'Concerning' : healthScore <= 7 ? 'Moderate' : 'Healthy'}
+              {healthScore <= 3 ? 'concerning' : healthScore <= 7 ? 'moderate' : 'healthy'}
             </div>
           </div>
         </div>
@@ -354,9 +354,9 @@ Return response formatted with markdown headers.`
             {(result || streamingText).split('\n').map((line, index) => (
               <div key={index} className="result-line">
                 {line.startsWith('##') ? (
-                  <h2>{line.replace('##', '').trim()}</h2>
+                  <h2>{line.replace('##', '').trim().toLowerCase()}</h2>
                 ) : line.startsWith('###') ? (
-                  <h3>{line.replace('###', '').trim()}</h3>
+                  <h3>{line.replace('###', '').trim().toLowerCase()}</h3>
                 ) : line.startsWith('- **') ? (
                   <div className="ingredient-analysis">
                     <strong>{line.split('**')[1]}</strong>
@@ -412,7 +412,7 @@ export default function Project529Page() {
             router.push('/')
           }}
         >
-          ← Back to home
+          ← back to home
         </Link>
         
         <div className="two-column-layout">

@@ -86,7 +86,7 @@ function ProjectPageContent({ pageData, slug }: { pageData: PageData, slug: stri
               <div className="redirect-container">
                 <Link href="/projects/project-529">
                   <div className="redirect-button">
-                    Go to Product Health Analyzer
+                    go to product health analyzer
                   </div>
                 </Link>
               </div>
@@ -100,7 +100,7 @@ function ProjectPageContent({ pageData, slug }: { pageData: PageData, slug: stri
 
 export default function ProjectPage() {
   const params = useParams()
-  const slug = params.slug as string
+  const slug = params?.slug as string || ''
   
   // Page data for each slug
   const getPageData = (slug: string): PageData => {

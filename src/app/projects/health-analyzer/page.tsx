@@ -8,22 +8,44 @@ export default function HealthAnalyzerRedirect() {
   const router = useRouter()
   
   useEffect(() => {
-    router.push('/projects/project-529')
+    if (typeof window === 'undefined') return;
+    
+    // Add project page class to maintain styling consistency
+    document.body.classList.remove('home-page')
+    document.body.classList.add('project-page')
+    
+    // Set project-specific colors
+    document.body.style.backgroundColor = '#4A90E2'
+    document.body.style.color = '#000'
+    
+    // Redirect after a short delay
+    const redirectTimer = setTimeout(() => {
+      router.push('/projects/project-529')
+    }, 1000)
+    
+    return () => {
+      clearTimeout(redirectTimer)
+      document.body.classList.remove('project-page')
+      document.body.style.backgroundColor = ''
+      document.body.style.color = ''
+    }
   }, [router])
   
   return (
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      height: '100vh',
-      flexDirection: 'column',
-      gap: '1rem',
-      backgroundColor: '#4A90E2',
-      color: '#fff'
-    }}>
-      <h1>Redirecting to Product Health Analyzer...</h1>
-      <p>If you are not redirected automatically, please <Link href="/projects/project-529" style={{ color: '#fff', textDecoration: 'underline' }}>click here</Link>.</p>
+    <div className="page-wrapper">
+      <div className="content-container" style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        gap: '1rem'
+      }}>
+        <h1 style={{ fontWeight: 300, fontSize: '2rem' }}>redirecting to product health analyzer</h1>
+        <p style={{ fontWeight: 300, opacity: 0.8 }}>
+          If you are not redirected automatically, please <Link href="/projects/project-529" style={{ textDecoration: 'underline' }}>click here</Link>.
+        </p>
+      </div>
     </div>
   )
 } 

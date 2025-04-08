@@ -3,49 +3,47 @@ import OpenAI from 'openai';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY
 });
 
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const { image, prompt } = await request.json();
-
-    if (!image || !prompt) {
+    const { image, prompt } = await req.json();
+    
+    if (!image) {
       return NextResponse.json(
-        { error: 'Image and prompt are required' },
+        { error: 'Image data is required' },
         { status: 400 }
       );
     }
 
     // Call OpenAI Vision API
     const response = await openai.chat.completions.create({
-      model: "gpt-4-vision-preview",
+      model: "gpt-4o",
       messages: [
-        {
-          role: "system",
-          content: "You are a product health analyzer with expertise in analyzing ingredients, materials, and health implications."
-        },
         {
           role: "user",
           content: [
-            { type: "text", text: prompt },
+            { type: "text", text: prompt || "Analyze this image in detail." },
             {
               type: "image_url",
               image_url: {
                 url: image,
-              },
-            },
-          ],
-        },
+                detail: "high"
+              }
+            }
+          ]
+        }
       ],
       max_tokens: 1000,
     });
 
-    return NextResponse.json({
-      analysis: response.choices[0]?.message?.content || "No analysis generated",
-    });
+    // Extract and return the analysis
+    const analysis = response.choices[0]?.message?.content || "Analysis could not be generated.";
+    
+    return NextResponse.json({ analysis });
   } catch (error) {
-    console.error('Vision API error:', error);
+    console.error('Error processing image analysis:', error);
     return NextResponse.json(
       { error: 'Failed to analyze image' },
       { status: 500 }

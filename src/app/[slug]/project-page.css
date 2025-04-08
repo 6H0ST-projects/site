@@ -596,3 +596,25 @@ body.project-page {
   border-radius: 6px;
   color: inherit;
 }
+
+/* Redirect button styling */
+.redirect-container {
+  margin-top: 2rem;
+}
+
+.redirect-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.redirect-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}

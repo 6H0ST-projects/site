@@ -1,32 +1,32 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import OpenAI from 'openai';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY
 });
 
-export const maxDuration = 60; // Extend timeout for this API route to 60 seconds
-
-// This function handles streaming responses from the OpenAI API to the client
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const { systemPrompt, userPrompt } = await request.json();
-
+    const { systemPrompt, userPrompt } = await req.json();
+    
     if (!userPrompt) {
-      return NextResponse.json(
-        { error: 'Prompt is required' },
-        { status: 400 }
+      return new Response(
+        JSON.stringify({ error: 'User prompt is required' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    // Create streaming response by utilizing the OpenAI API's streaming capability
+    // Create a streaming response using the web search enabled model
     const stream = await openai.chat.completions.create({
-      model: "gpt-4-turbo",
+      model: "gpt-4o-search-preview", // Use the search-enabled model
+      web_search_options: {
+        search_context_size: "medium",
+      },
       messages: [
         {
           role: "system",
-          content: systemPrompt || "You are a health product analyzer with expertise in analyzing product ingredients and their health implications."
+          content: systemPrompt || "You are a helpful health product analyzer that uses web search to find evidence-based information."
         },
         {
           role: "user",
@@ -35,37 +35,42 @@ export async function POST(request: NextRequest) {
       ],
       stream: true,
       temperature: 0.7,
-      max_tokens: 2500,
     });
 
-    // Set up a readable stream to send back to the client
-    const encoder = new TextEncoder();
+    // Create a streaming response for the client
+    const textEncoder = new TextEncoder();
     const readableStream = new ReadableStream({
       async start(controller) {
-        // Iterate through the stream as chunks come in
         for await (const chunk of stream) {
-          const content = chunk.choices[0]?.delta?.content || "";
+          const content = chunk.choices[0]?.delta?.content || '';
           if (content) {
-            // Send each content chunk to the client
-            controller.enqueue(encoder.encode(content));
+            controller.enqueue(textEncoder.encode(content));
           }
         }
         controller.close();
       },
     });
 
-    // Return the stream in the response
-    return new NextResponse(readableStream, {
+    // Return the streaming response
+    return new Response(readableStream, {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
-        'Transfer-Encoding': 'chunked',
+        'Cache-Control': 'no-cache',
       },
     });
+    
   } catch (error) {
     console.error('Error in search-analyze API:', error);
-    return NextResponse.json(
-      { error: 'Failed to analyze product' },
-      { status: 500 }
+    
+    return new Response(
+      JSON.stringify({ 
+        error: 'Failed to generate analysis',
+        details: error instanceof Error ? error.message : 'Unknown error' 
+      }),
+      { 
+        status: 500, 
+        headers: { 'Content-Type': 'application/json' } 
+      }
     );
   }
 }
