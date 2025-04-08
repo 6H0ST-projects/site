@@ -1,24 +1,55 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Ghost Projects
+
+A showcase of experimental projects.
+
+## Features
+
+- **Dynamic Project Pages**: Each project has its own customized page with unique styling.
+- **Smooth Animations**: Various UI animations including meteors, transitions, and hover effects.
+- **Responsive Design**: Fully responsive layout that adapts to different screen sizes.
+- **Product Health Analyzer**: AI-powered tool that evaluates products for health implications using computer vision and research capabilities.
+
+## Product Health Analyzer
+
+The Product Health Analyzer is a dedicated tool that allows users to:
+
+1. Upload a product image
+2. Upload a nutrition/ingredients label (optional)
+3. Describe the product
+4. Receive a comprehensive health analysis including:
+   - Overall health score (1-10)
+   - Detailed ingredients analysis
+   - Health implications
+   - Healthier alternatives
+   - Scientific references
+
+The analyzer uses OpenAI's Vision and GPT models to process images and generate detailed health assessments.
+
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Copy `.env.example` to `.env.local` and add your OpenAI API key
+4. Run the development server: `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following:
+
+```
+OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- OpenAI API
 
 ## Learn More
 

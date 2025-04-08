@@ -1,5 +1,7 @@
 import Script from 'next/script'
 import type { Metadata } from 'next'
+// Importing the globals.css here to ensure consistent loading
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'ghost-projects',
@@ -34,49 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Inline styles to prevent FOUC */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-          @import url('https://unpkg.com/normalize.css');
-          
-          /* Base critical styles - no transitions */
-          body {
-            background-color: #fff;
-            color: #000;
-            font-family: 'DM Sans', serif, system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            /* No transitions for instant navigation */
-            transition: none;
-          }
-          
-          /* Ensure no animations at all */
-          html.instant-nav * {
-            animation: none !important;
-            transition: none !important;
-          }
-        `}} />
+        {/* Removed inline styles to prevent style duplication */}
       </head>
       <body>
-        {/* Script to handle initial page load - only runs in browser */}
-        <Script id="instant-navigation" strategy="afterInteractive">{`
-          // Enable instant navigation between pages
-          (function() {
-            try {
-              // Add class to disable all transitions
-              document.documentElement.classList.add('instant-nav');
-              
-              // Handle any initial CSS setup
-              document.addEventListener('DOMContentLoaded', function() {
-                // Make sure styles are properly applied
-                document.body.style.backgroundColor = document.body.style.backgroundColor || '#fff';
-              });
-            } catch (e) {
-              console.log('Navigation setup error:', e);
-            }
-          })();
-        `}</Script>
-        
         {children}
         
         <Script
