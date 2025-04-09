@@ -248,13 +248,13 @@ Return response formatted with markdown headers.`
   return (
     <div className="product-analysis-container">
       <h2>product health analyzer</h2>
-      <p className="">
+      <p className="project-description">
         analyze products for potential health concerns and discover healthier alternatives
       </p>
       
       <div className="input-section">
         <div className="upload-container">
-          <p>1. upload product image</p>
+        <p className="project-description">1. upload product image</p>
           <div 
             className={`upload-area ${productImage ? 'has-image' : ''}`}
             onClick={() => fileInputProductRef.current?.click()}
@@ -281,7 +281,7 @@ Return response formatted with markdown headers.`
         </div>
         
         <div className="upload-container">
-          <p>2. upload label image (optional)</p>
+        <p className="project-description">2. upload label image (optional)</p>
           <div 
             className={`upload-area ${labelImage ? 'has-image' : ''}`}
             onClick={() => fileInputLabelRef.current?.click()}
@@ -309,7 +309,7 @@ Return response formatted with markdown headers.`
       </div>
       
       <div className="description-container">
-        <p>3. describe the product</p>
+        <p className="project-description">3. describe the product</p>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -335,7 +335,7 @@ Return response formatted with markdown headers.`
       
       {logs.length > 0 && (
         <div className="logs-container">
-          <p>analysis progress</p>
+          <p className="project-description">analysis progress</p>
           <div className="logs">
             {logs.map((log, index) => (
               <div key={index} className="log-entry">
@@ -364,7 +364,7 @@ Return response formatted with markdown headers.`
       
       {(streamingText || result) && (
         <div className="">
-          <p>detailed analysis</p>
+          <p className="project-description">detailed analysis</p>
           <div className="result">
             {(result || streamingText).split('\n').map((line, index) => {
               // Check for markdown link pattern: [text](url)
