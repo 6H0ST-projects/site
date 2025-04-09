@@ -8,7 +8,7 @@ import '../../[slug]/project-page.css'
 import './styles.css'
 
 // Product Analysis App Component
-function ProductAnalysisApp() {
+export function ProductAnalysisApp() {
   const [productImage, setProductImage] = useState<string | null>(null)
   const [labelImage, setLabelImage] = useState<string | null>(null)
   const [description, setDescription] = useState('')
@@ -247,11 +247,6 @@ Return response formatted with markdown headers.`
   
   return (
     <div className="product-analysis-container">
-      <h2>product health analyzer</h2>
-      <p className="project-description">
-        analyze products for potential health concerns and discover healthier alternatives
-      </p>
-      
       <div className="input-section">
         <div className="upload-container">
         <p className="project-description">1. upload product image</p>
@@ -311,10 +306,12 @@ Return response formatted with markdown headers.`
       <div className="description-container">
         <p className="project-description">3. describe the product</p>
         <textarea
+          className="text-black"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="e.g., cereal box, dietary supplement, cleaning product, cosmetic item, etc."
+          placeholder="e.g., cereal box, dietary supplement, you can also list ingredients, ask about certifications, or anything else you'd like to know."
           rows={3}
+          style={{ '::placeholder': { color: '#666' } }}
         />
       </div>
       
@@ -480,7 +477,6 @@ export default function Project529Page() {
           </div>
           
           <div className="main-content">
-            <h2>redacted</h2>
             <p className="project-intro">optimize consumption.</p>
             
             <div className="project-description">

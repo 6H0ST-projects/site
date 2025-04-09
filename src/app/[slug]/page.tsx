@@ -5,6 +5,22 @@ import { useParams, useRouter } from 'next/navigation'
 import { Meteors } from '../../components/ui/meteors'
 import Link from 'next/link'
 import './project-page.css'
+import dynamic from 'next/dynamic'
+
+// Define the interface for the imported module
+interface ProductAnalysisAppModule {
+  ProductAnalysisApp: React.ComponentType;
+}
+
+// Dynamically import the ProductAnalysisApp to prevent SSR issues
+const ProductAnalysisApp = dynamic(
+  () => import('../projects/project-529/page').then(mod => {
+    // Extract the ProductAnalysisApp component from the module
+    const { ProductAnalysisApp } = mod as ProductAnalysisAppModule;
+    return ProductAnalysisApp;
+  }),
+  { ssr: false }
+)
 
 // Define the page data interface
 interface PageData {
@@ -83,12 +99,8 @@ function ProjectPageContent({ pageData, slug }: { pageData: PageData, slug: stri
             )}
             
             {slug === 'project-529' && (
-              <div className="redirect-container">
-                <Link href="/projects/project-529">
-                  <div className="redirect-button">
-                    go to product health analyzer
-                  </div>
-                </Link>
+              <div className="product-analyzer-container">
+                <ProductAnalysisApp />
               </div>
             )}
           </div>
@@ -124,10 +136,10 @@ export default function ProjectPage() {
           bgColor: '#BBBDC3',
           textColor: '#000',
           description: [
-            "a language model agent that evaluates products for health implications using computer vision and research capabilities.",
-            "upload a photo of a product, its label, and provide a description to receive an analysis and healthier alternatives."
+            "redacted evaluates products for various health impacts using computer vision and novel research capabilities.",
+            "upload a photo of a product, its label, and provide a description to receive comprehensive analysis on indgredients, certifications, and healthier alternatives."
           ],
-          sidebarText: "Be a yardstick of quality. Some people aren&apos;t used to an environment where excellence is expected."
+          sidebarText: "Be a yardstick of quality. Some people aren't used to an environment where excellence is expected."
         }
       case 'project-014':
         return {
