@@ -248,13 +248,13 @@ Return response formatted with markdown headers.`
   return (
     <div className="product-analysis-container">
       <h2>product health analyzer</h2>
-      <p className="analyzer-intro">
+      <p className="">
         analyze products for potential health concerns and discover healthier alternatives
       </p>
       
       <div className="input-section">
         <div className="upload-container">
-          <h3>1. upload product image</h3>
+          <p>1. upload product image</p>
           <div 
             className={`upload-area ${productImage ? 'has-image' : ''}`}
             onClick={() => fileInputProductRef.current?.click()}
@@ -281,7 +281,7 @@ Return response formatted with markdown headers.`
         </div>
         
         <div className="upload-container">
-          <h3>2. upload label image (optional)</h3>
+          <p>2. upload label image (optional)</p>
           <div 
             className={`upload-area ${labelImage ? 'has-image' : ''}`}
             onClick={() => fileInputLabelRef.current?.click()}
@@ -309,7 +309,7 @@ Return response formatted with markdown headers.`
       </div>
       
       <div className="description-container">
-        <h3>3. describe the product</h3>
+        <p>3. describe the product</p>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -335,7 +335,7 @@ Return response formatted with markdown headers.`
       
       {logs.length > 0 && (
         <div className="logs-container">
-          <h3>analysis progress</h3>
+          <p>analysis progress</p>
           <div className="logs">
             {logs.map((log, index) => (
               <div key={index} className="log-entry">
@@ -350,7 +350,7 @@ Return response formatted with markdown headers.`
       
       {healthScore !== null && (
         <div className="health-score-container">
-          <h3>health score</h3>
+          <p>health score</p>
           <div className="score-display">
             <div className={`score-value score-${healthScore <= 3 ? 'low' : healthScore <= 7 ? 'medium' : 'high'}`}>
               {healthScore}/10
@@ -363,8 +363,8 @@ Return response formatted with markdown headers.`
       )}
       
       {(streamingText || result) && (
-        <div className="result-container">
-          <h3>detailed analysis</h3>
+        <div className="">
+          <p>detailed analysis</p>
           <div className="result">
             {(result || streamingText).split('\n').map((line, index) => {
               // Check for markdown link pattern: [text](url)
@@ -475,7 +475,7 @@ export default function Project529Page() {
           <div className="sidebar">
             <h1>ghost-projects</h1>
             <p className="sidebar-text">
-              Be a yardstick of quality. Some people aren&apos;t used to an environment where excellence is expected.
+              Be a yardstick of quality. Some people aren't used to an environment where excellence is expected.
             </p>
           </div>
           
