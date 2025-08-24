@@ -33,5 +33,53 @@
 </head>
 <body class="{{ block "body-class" . }}{{ end }}">
     {{ block "main" . }}{{ end }}
+    
+    <!-- Desktop-only telemetry script -->
+    <script>
+        (function() {
+            'use strict';
+            
+            // Only run on desktop
+            if (window.innerWidth < 768) return;
+            
+            function updateMetrics() {
+                const perf = performance;
+                const timing = perf.timing;
+                const now = Date.now();
+                
+                // Load time (total page load)
+                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                if (loadTime > 0) {
+                    document.getElementById('load-time').textContent = loadTime + 'ms';
+                }
+                
+                // DOM ready time
+                const domTime = timing.domContentLoadedEventEnd - timing.navigationStart;
+                if (domTime > 0) {
+                    document.getElementById('dom-time').textContent = domTime + 'ms';
+                }
+                
+                // First paint time (if available)
+                if ('getEntriesByType' in perf) {
+                    const paintEntries = perf.getEntriesByType('paint');
+                    const firstPaint = paintEntries.find(entry => entry.name === 'first-contentful-paint');
+                    if (firstPaint) {
+                        document.getElementById('paint-time').textContent = Math.round(firstPaint.startTime) + 'ms';
+                    }
+                }
+            }
+            
+            // Update metrics when page loads
+            if (document.readyState === 'complete') {
+                updateMetrics();
+            } else {
+                window.addEventListener('load', updateMetrics);
+            }
+            
+            // Update metrics periodically for dynamic values
+            setTimeout(updateMetrics, 100);
+            setTimeout(updateMetrics, 500);
+        })();
+    </script>
 </body>
 </html>
