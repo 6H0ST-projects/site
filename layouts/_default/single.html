@@ -15,9 +15,6 @@
             
             <div class="main-content">
                 <h2>{{ .Params.projectTitle | default .Title }}</h2>
-                {{ if .Params.intro }}
-                <p class="project-intro">{{ .Params.intro }}</p>
-                {{ end }}
                 
                 <div class="project-description">
                     {{ .Content }}
