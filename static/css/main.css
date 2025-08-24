@@ -244,45 +244,49 @@ body.project-page {
 
 /* Desktop-only telemetry */
 .desktop-only {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .desktop-only {
-    display: block;
-  }
+  display: none !important;
 }
 
 .telemetry {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
-  font-size: 0.875rem;
-  font-weight: 300;
-  opacity: 0.8;
-  line-height: 1.5;
-  z-index: 10;
+  display: none !important;
 }
 
-.metric {
-  display: flex;
-  gap: 0.5rem;
-  text-align: right;
-}
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block !important;
+  }
+  
+  .telemetry {
+    display: flex !important;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+    font-size: 0.875rem;
+    font-weight: 300;
+    opacity: 0.8;
+    line-height: 1.5;
+    z-index: 10;
+  }
 
-.metric-label {
-  color: inherit;
-  opacity: 1;
-}
+  .metric {
+    display: flex;
+    gap: 0.5rem;
+    text-align: right;
+  }
 
-.metric-value {
-  font-weight: 300;
-  min-width: 3rem;
-  text-align: right;
+  .metric-label {
+    color: inherit;
+    opacity: 1;
+  }
+
+  .metric-value {
+    font-weight: 300;
+    min-width: 3rem;
+    text-align: right;
+  }
 }
 
 /* Page-specific background colors */
