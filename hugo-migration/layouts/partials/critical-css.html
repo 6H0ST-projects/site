@@ -1,0 +1,113 @@
+/* Critical CSS - Inlined for performance */
+
+/* Reset and base styles */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
+    'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  height: auto;
+  position: static;
+}
+
+html {
+  color-scheme: light;
+}
+
+/* Home page layout */
+body.home-page {
+  overflow-y: auto;
+  height: auto;
+  position: static;
+}
+
+@media (min-width: 768px) {
+  body.home-page {
+    overflow-y: auto;
+    height: auto;
+    position: static;
+  }
+}
+
+/* Container and main layout */
+.container {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  padding-top: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+    justify-content: center;
+    padding-top: 0;
+    overflow: hidden;
+  }
+}
+
+/* Header styles */
+header {
+  flex: 0 0 auto;
+  font-size: 0.875rem;
+  font-weight: 300;
+  padding: 1rem;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+  text-align: left;
+}
+
+header p {
+  max-width: 60ch;
+  margin: 0 0 1rem 0;
+  text-wrap: pretty;
+  opacity: 0.8;
+  text-align: left;
+  line-height: 1.5;
+}
+
+header p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile visibility */
+.mobile-visible {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-visible {
+    display: none;
+  }
+}

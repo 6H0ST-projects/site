@@ -1,0 +1,26 @@
+baseURL = 'https://ghost-projects.com'
+languageCode = 'en-us'
+title = 'ghost-projects'
+
+# Disable unnecessary features for speed
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap']
+disableHugoGeneratorInject = true
+
+# Optimization settings
+minify = true
+buildFuture = true
+buildExpired = true
+
+# Markup settings for clean HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+# Params for site configuration
+[params]
+  description = "never stop chasing ghosts."
+  author = "ghost-projects"
