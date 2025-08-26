@@ -314,8 +314,9 @@ body.blog {
 }
 
 .project-description svg {
-  max-width: 100%;
-  height: auto;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
   display: block;
   margin: 2rem auto;
 }
@@ -325,6 +326,11 @@ body.blog {
   .project-description img,
   .project-description svg {
     margin: 1.5rem auto;
-    max-width: calc(100vw - 4rem);
+    max-width: calc(100vw - 4rem) !important;
+    width: calc(100vw - 4rem) !important;
+  }
+  
+  .content-container {
+    padding: 1.5rem;
   }
 }
