@@ -3,7 +3,7 @@ title: "project-014"
 projectTitle: "project-014"
 bgColor: "#E7EAEE"
 textColor: "#000"
-sidebarText: "if I could give one piece of advice to new researchers, it would be to never stop looking for new avenues of research. on top of what you have been given, ask yourself, what might be necessary ten years from now? what will society need? find your own research theme, and every day, little by little, you have to keep working on it"
+sidebarText: "if I could give one piece of advice to new researchers, it would be to never stop looking for new avenues of research. on top of what you have been given, ask yourself, what might be necessary ten years from now? what will society need? find your own research theme, and every day, little by little, you have to keep working on it."
 ---
 
 magnets need to move into the 21st century. the NdFeB incumbent, which dominates over 60% of a $30B magnet market, was discovered in the 80s... surely we can do better.
