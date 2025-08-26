@@ -304,3 +304,27 @@ body.blog {
   background-color: #5C5C5C !important;
   color: #fff !important;
 }
+
+/* Responsive SVG styling */
+.project-description img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+.project-description svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Mobile-specific adjustments for images and SVGs */
+@media (max-width: 768px) {
+  .project-description img,
+  .project-description svg {
+    margin: 1.5rem auto;
+    max-width: calc(100vw - 4rem);
+  }
+}

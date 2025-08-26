@@ -10,8 +10,10 @@ magnets need to move into the 21st century. the NdFeB incumbent that dominates o
 
 project-14 aims to create novel generative and machine learning methods for discovering the next generation of magnetic materials.
 
-curie temperature, thermodynamic stability, magneto crystalline anisotropy, and total mag density are already being accurately predicted by project-14's models.
+curie temperature, thermodynamic stability, magneto-crystalline anisotropy energy, and total mag density are already being accurately predicted by project-14's models.
 
 ![Drawing](/drawingExport.svg)
+
+an adapted monte-carlo tree search algorithm, a custom scoring function built from the project-14 property predictors, and an ensemble of inorganic crystal specific generative models defines a reinforcement learning environment that empowers the leading large language models to navigate the complex space of potential new magnets.
 
 more to come...
