@@ -14,7 +14,7 @@ walk beside me… just be my friend."
             tree searching conclusions 1st iteration
         </a>
         <div class="link-preview-description">
-            diving into the results and limitations of the first tree search build
+            diving into the results and limitations of the first tree search build. the generative step is a growing bottleneck
         </div>
         <div class="link-preview-url">https://ouro.foundation/posts/will/tree-searching-conclusions-1st-iteration</div>
         <div class="link-preview-meta">
