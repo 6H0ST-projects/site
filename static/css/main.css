@@ -334,3 +334,109 @@ body.blog {
     padding: 1.5rem;
   }
 }
+
+/* Blog page styles */
+body.blog-page {
+  background-color: #5C5C5C !important;
+  color: #fff !important;
+}
+
+.blog-content {
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* ASCII Link Preview Styles */
+.link-preview {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-preview-content {
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.link-preview-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.link-preview-title:hover {
+  text-decoration: underline;
+}
+
+.link-preview-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.link-preview-url {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.link-preview-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.link-preview-domain {
+  font-weight: 500;
+}
+
+.link-preview-date {
+  opacity: 0.7;
+}
+
+/* ASCII Art Decoration */
+.ascii-decoration {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 1rem 0;
+  text-align: center;
+  white-space: pre;
+}
+
+/* Responsive adjustments for link previews */
+@media (max-width: 768px) {
+  .link-preview {
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .link-preview-content {
+    padding: 1rem 0;
+  }
+  
+  .link-preview::before,
+  .link-preview::after {
+    font-size: 0.7rem;
+  }
+}

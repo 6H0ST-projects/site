@@ -1,0 +1,26 @@
+{{ define "body-class" }}blog-page{{ end }}
+
+{{ define "main" }}
+<div class="page-wrapper">
+    <div class="content-container">
+        <a href="/" class="back-link">← Back to home</a>
+        
+        <div class="two-column-layout">
+            <div class="sidebar">
+                <h1>ghost-projects</h1>
+                <p class="sidebar-text">
+                    {{ .Params.sidebarText | default "Don't walk in front of me… I may not follow. Don't walk behind me… I may not lead. Walk beside me… just be my friend." }}
+                </p>
+            </div>
+            
+            <div class="main-content">
+                <h2>{{ .Params.projectTitle | default .Title }}</h2>
+                
+                <div class="blog-content">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
