@@ -354,7 +354,7 @@ body.blog-page {
 /* ASCII Link Preview Styles */
 .link-preview {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   padding: 1.5rem;
   margin: 2rem 0;
   font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
