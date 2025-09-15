@@ -36,7 +36,10 @@
     {{ $textColor := .Params.textColor | default "#fff" }}
     {{ $displayText := cond (eq $pageTitle "project-014") "014" (cond (eq $pageTitle "special-projects") "sp" $pageTitle) }}
     
-    <meta property="og:image" content="data:image/svg+xml;base64,{{ printf '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="%s"/><text x="60" y="120" font-family="DM Sans, sans-serif" font-size="72" font-weight="300" fill="%s">%s</text></svg>' $bgColor $textColor $displayText | base64Encode }}">
+    {{ $svgTemplate := printf '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="%s"/><text x="60" y="120" font-family="DM Sans, sans-serif" font-size="72" font-weight="300" fill="%s">%s</text></svg>' $bgColor $textColor $displayText }}
+    {{ $svgBase64 := $svgTemplate | base64Encode }}
+    
+    <meta property="og:image" content="data:image/svg+xml;base64,{{ $svgBase64 }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }} - {{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -45,7 +48,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
     <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="twitter:image" content="data:image/svg+xml;base64,{{ printf '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="%s"/><text x="60" y="120" font-family="DM Sans, sans-serif" font-size="72" font-weight="300" fill="%s">%s</text></svg>' $bgColor $textColor $displayText | base64Encode }}">
+    <meta name="twitter:image" content="data:image/svg+xml;base64,{{ $svgBase64 }}">
     
     <!-- Additional Meta -->
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
