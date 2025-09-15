@@ -175,7 +175,7 @@ body.project-page {
 }
 
 .main-content h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -209,11 +209,11 @@ body.project-page {
     align-items: flex-start;
   }
   
-.sidebar {
-  flex: 0 0 300px;
-  position: relative;
-  top: 3rem;
-}
+  .sidebar {
+    flex: 0 0 300px;
+    position: sticky;
+    top: 0;
+  }
   
   .main-content {
     flex: 1;
@@ -308,7 +308,7 @@ body.blog {
   color: #fff !important;
 }
 
-/* Responsive image styling */
+/* Responsive SVG styling */
 .project-description img {
   max-width: 100%;
   height: auto;
@@ -317,7 +317,7 @@ body.blog {
 }
 
 
-/* Mobile-specific adjustments for images */
+/* Mobile-specific adjustments for images and SVGs */
 @media (max-width: 768px) {
   .project-description img {
     margin: 1.5rem auto;
