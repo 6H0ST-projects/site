@@ -23,7 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/boo.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.ico">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
@@ -32,14 +33,9 @@
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ $pageTitle := .Params.projectTitle | default (.Title | lower) }}
-    {{ $bgColor := .Params.bgColor | default "#000" }}
-    {{ $textColor := .Params.textColor | default "#fff" }}
-    {{ $displayText := cond (eq $pageTitle "project-014") "014" (cond (eq $pageTitle "special-projects") "sp" $pageTitle) }}
+    {{ $ogImage := printf "og-image-%s.png" $pageTitle }}
     
-    {{ $svgTemplate := printf "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"630\" viewBox=\"0 0 1200 630\"><rect width=\"1200\" height=\"630\" fill=\"%s\"/><text x=\"60\" y=\"120\" font-family=\"DM Sans, sans-serif\" font-size=\"72\" font-weight=\"300\" fill=\"%s\">%s</text></svg>" $bgColor $textColor $displayText }}
-    {{ $svgBase64 := $svgTemplate | base64Encode }}
-    
-    <meta property="og:image" content="data:image/svg+xml;base64,{{ $svgBase64 }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }} - {{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -48,7 +44,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
     <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="twitter:image" content="data:image/svg+xml;base64,{{ $svgBase64 }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
     
     <!-- Additional Meta -->
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">

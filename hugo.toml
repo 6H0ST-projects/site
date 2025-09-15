@@ -1,4 +1,4 @@
-baseURL = 'https://ghost-projects.com'
+baseURL = 'https://ghost-projects.com/'
 languageCode = 'en-us'
 title = 'ghost-projects'
 
