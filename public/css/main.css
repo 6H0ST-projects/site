@@ -308,7 +308,7 @@ body.blog {
   color: #fff !important;
 }
 
-/* Responsive SVG styling */
+/* Responsive image styling */
 .project-description img {
   max-width: 100%;
   height: auto;
@@ -317,7 +317,7 @@ body.blog {
 }
 
 
-/* Mobile-specific adjustments for images and SVGs */
+/* Mobile-specific adjustments for images */
 @media (max-width: 768px) {
   .project-description img {
     margin: 1.5rem auto;
