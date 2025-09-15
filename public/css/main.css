@@ -357,6 +357,61 @@ body.blog-page {
   margin-bottom: 1.5rem;
 }
 
+/* Page Link Preview Styles */
+.page-link-preview {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin: 2rem 0;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 0;
+  border: none;
+}
+
+.page-link-preview:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-link-preview-text {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  font-size: 0.875rem;
+  font-weight: 300;
+  z-index: 2;
+}
+
+/* Page-specific colors for link previews */
+.page-link-preview.project-014 {
+  background-color: #E7EAEE;
+  color: #000;
+}
+
+.page-link-preview.about-us {
+  background-color: #FF680A;
+  color: #fff;
+}
+
+.page-link-preview.blog {
+  background-color: #5C5C5C;
+  color: #fff;
+}
+
+.page-link-preview.special-projects {
+  background-color: #006FFF;
+  color: #fff;
+}
+
+.page-link-preview.ghost-projects {
+  background-color: #000;
+  color: #fff;
+}
+
 /* ASCII Link Preview Styles */
 .link-preview {
   border: none;

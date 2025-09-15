@@ -1,6 +1,7 @@
 ---
 title: "blog"
 projectTitle: "ramblings"
+description: ""
 bgColor: "#5C5C5C"
 textColor: "#fff"
 sidebarText: "don't walk in front of me… i may not follow.
