@@ -316,7 +316,9 @@ body.blog {
   margin: 2rem auto;
 }
 
-.project-description svg {
+/* Background SVG for project-014 */
+body.project-014::before {
+  content: "";
   position: fixed;
   top: 50%;
   left: 50%;
@@ -325,10 +327,13 @@ body.blog {
   height: 80vh;
   max-width: 1200px;
   max-height: 800px;
+  background-image: url('/drawingExport.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   opacity: 0.08;
   z-index: 0;
   pointer-events: none;
-  object-fit: contain;
 }
 
 /* Mobile-specific adjustments for images and SVGs */
@@ -339,7 +344,7 @@ body.blog {
     width: calc(100vw - 4rem) !important;
   }
   
-  .project-description svg {
+  body.project-014::before {
     width: 90vw;
     height: 60vh;
     max-width: none;
