@@ -209,11 +209,11 @@ body.project-page {
     align-items: flex-start;
   }
   
-  .sidebar {
-    flex: 0 0 300px;
-    position: sticky;
-    top: 3rem;
-  }
+.sidebar {
+  flex: 0 0 300px;
+  position: relative;
+  top: 3rem;
+}
   
   .main-content {
     flex: 1;
@@ -316,22 +316,22 @@ body.blog {
   margin: 2rem auto;
 }
 
-/* Background SVG for project-014 */
-body.project-014::before {
+/* Background SVG for project-014 sidebar */
+body.project-014 .sidebar::before {
   content: "";
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
-  height: 80vh;
-  max-width: 1200px;
-  max-height: 800px;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
   background-image: url('/drawingExport.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.08;
+  opacity: 0.15;
   z-index: 0;
   pointer-events: none;
 }
@@ -344,11 +344,9 @@ body.project-014::before {
     width: calc(100vw - 4rem) !important;
   }
   
-  body.project-014::before {
-    width: 90vw;
-    height: 60vh;
-    max-width: none;
-    max-height: none;
+  body.project-014 .sidebar::before {
+    max-width: 300px;
+    max-height: 300px;
   }
   
   .content-container {
