@@ -88,6 +88,11 @@ main {
   color: #fff;
 }
 
+.project-card.special-projects {
+  background-color: #006FFF;
+  color: #fff;
+}
+
 /* Project page styles */
 body.project-page {
   overflow-y: auto !important;
@@ -305,6 +310,11 @@ body.about-us {
 
 body.blog {
   background-color: #5C5C5C !important;
+  color: #fff !important;
+}
+
+body.special-projects {
+  background-color: #006FFF !important;
   color: #fff !important;
 }
 
