@@ -26,7 +26,7 @@ main {
   display: grid;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   grid-template-columns: 1fr;
 }
 
@@ -38,7 +38,7 @@ main {
 
 @media (min-width: 768px) {
   .project-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -359,9 +359,9 @@ body.blog-page {
 
 /* ASCII Link Preview Styles */
 .link-preview {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
   background: transparent;
-  padding: 1.5rem;
+  padding: 0;
   margin: 2rem 0;
   font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
   font-size: 0.875rem;
@@ -371,7 +371,7 @@ body.blog-page {
 }
 
 .link-preview-content {
-  padding: 1.5rem 0;
+  padding: 0;
   position: relative;
   z-index: 1;
   display: flex;
@@ -420,7 +420,7 @@ body.blog-page {
 .link-preview-description {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 
 .link-preview-url {
@@ -462,12 +462,12 @@ body.blog-page {
 /* Responsive adjustments for link previews */
 @media (max-width: 768px) {
   .link-preview {
-    padding: 1rem;
+    padding: 0;
     margin: 1.5rem 0;
   }
   
   .link-preview-content {
-    padding: 1rem 0;
+    padding: 0;
     flex-direction: column;
     gap: 1rem;
   }
@@ -478,3 +478,4 @@ body.blog-page {
     align-self: flex-start;
   }
 }
+
