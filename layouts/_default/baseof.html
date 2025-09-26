@@ -32,7 +32,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    {{ $pageTitle := .Params.projectTitle | default (.Title | lower) }}
+    {{ $pageTitle := .Title | lower }}
     {{ $ogImage := printf "og-image-%s.png" $pageTitle }}
     
     <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
