@@ -32,7 +32,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    {{ $pageTitle := .Title | lower }}
+    {{ $pageTitle := .Title | default "ghost-projects" | lower }}
     {{ $ogImage := printf "og-image-%s.png" $pageTitle }}
     
     <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
@@ -45,6 +45,7 @@
     <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
     <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ $ogImage }}">
+    <meta name="twitter:image:alt" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
     
     <!-- Additional Meta -->
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">

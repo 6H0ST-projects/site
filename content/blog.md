@@ -12,6 +12,24 @@ walk beside me… just be my friend."
 <div class="link-preview">
     <div class="link-preview-content">
         <div class="link-preview-text">
+            <a href="https://ouro.foundation/posts/will/building-a-physically-comparable-magnetic-hysteresis-simulation-framework" class="link-preview-title" target="_blank" rel="noopener">
+                building a physically comparable magnetic hysteresis simulation framework
+            </a>
+            <div class="link-preview-description">
+                overview of the current work and future enhancements for magnetic hysteresis simulations
+            </div>
+            <div class="link-preview-url">https://ouro.foundation/posts/will/building-a-physically-comparable-magnetic-hysteresis-simulation-framework</div>
+            <div class="link-preview-meta">
+                <span class="link-preview-domain">ouro.foundation</span>
+                <span class="link-preview-date">2025-10-08</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="link-preview">
+    <div class="link-preview-content">
+        <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/using-mae-to-filter-permanent-magnet-candidates-from-soft-magnets" class="link-preview-title" target="_blank" rel="noopener">
                 using mae to filter permanent magnet candidates from soft magnets
             </a>
