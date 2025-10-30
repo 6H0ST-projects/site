@@ -11,9 +11,8 @@
         {{ partial "critical-css.html" . | safeCSS }}
     </style>
     
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null,this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css">
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
