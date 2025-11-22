@@ -16,7 +16,9 @@ walk beside me… just be my friend."
                 round-trip reinforcement learning experiments
             </a>
             <div class="link-preview-description">
-                training a model to convert crystallography data from CIF to JSON using reinforcement learning, where a judge model evaluates how well the conversion preserves information by computing reverse-probability scores
+                experiementing with round-trip reinforcement learning as a means to
+                help an llm build a bidirectionally coherent internal model of 
+                inorganic crystals
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/round-trip-reinforcement-learning-experiments</div>
             <div class="link-preview-meta">
