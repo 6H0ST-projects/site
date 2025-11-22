@@ -12,6 +12,24 @@ walk beside me… just be my friend."
 <div class="link-preview">
     <div class="link-preview-content">
         <div class="link-preview-text">
+            <a href="https://ouro.foundation/posts/will/round-trip-reinforcement-learning-experiments" class="link-preview-title" target="_blank" rel="noopener">
+                round-trip reinforcement learning experiments
+            </a>
+            <div class="link-preview-description">
+                training a model to convert crystallography data from CIF to JSON using reinforcement learning, where a judge model evaluates how well the conversion preserves information by computing reverse-probability scores
+            </div>
+            <div class="link-preview-url">https://ouro.foundation/posts/will/round-trip-reinforcement-learning-experiments</div>
+            <div class="link-preview-meta">
+                <span class="link-preview-domain">ouro.foundation</span>
+                <span class="link-preview-date">2025-11-21</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="link-preview">
+    <div class="link-preview-content">
+        <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/building-a-physically-comparable-magnetic-hysteresis-simulation-framework" class="link-preview-title" target="_blank" rel="noopener">
                 building a physically comparable magnetic hysteresis simulation framework
             </a>
