@@ -180,10 +180,12 @@ body.project-page {
 }
 
 .main-content h2 {
+  font-family: 'Instrument Serif', serif;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 0;
   margin-bottom: 0.75rem;
+  text-transform: capitalize;
 }
 
 .project-intro {

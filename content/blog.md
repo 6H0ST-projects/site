@@ -1,23 +1,23 @@
 ---
-title: "blog"
-projectTitle: "ramblings"
+title: "Blog"
+projectTitle: "Ramblings"
 description: ""
 bgColor: "#5C5C5C"
 textColor: "#fff"
-sidebarText: "don't walk in front of me… i may not follow.
-don't walk behind me… i may not lead.
-walk beside me… just be my friend."
+sidebarText: "Don't walk in front of me… I may not follow.
+Don't walk behind me… I may not lead.
+Walk beside me… just be my friend."
 ---
 
 <div class="link-preview">
     <div class="link-preview-content">
         <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/round-trip-reinforcement-learning-experiments" class="link-preview-title" target="_blank" rel="noopener">
-                round-trip reinforcement learning experiments
+                Round-Trip Reinforcement Learning Experiments
             </a>
             <div class="link-preview-description">
-                experiementing with round-trip reinforcement learning as a means to
-                help an llm build a bidirectionally coherent internal model of 
+                Experimenting with round-trip reinforcement learning as a means to
+                help an LLM build a bidirectionally coherent internal model of
                 inorganic crystals
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/round-trip-reinforcement-learning-experiments</div>
@@ -33,10 +33,10 @@ walk beside me… just be my friend."
     <div class="link-preview-content">
         <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/building-a-physically-comparable-magnetic-hysteresis-simulation-framework" class="link-preview-title" target="_blank" rel="noopener">
-                building a physically comparable magnetic hysteresis simulation framework
+                Building a Physically Comparable Magnetic Hysteresis Simulation Framework
             </a>
             <div class="link-preview-description">
-                overview of the current work and future enhancements for magnetic hysteresis simulations
+                Overview of the current work and future enhancements for magnetic hysteresis simulations
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/building-a-physically-comparable-magnetic-hysteresis-simulation-framework</div>
             <div class="link-preview-meta">
@@ -51,10 +51,10 @@ walk beside me… just be my friend."
     <div class="link-preview-content">
         <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/using-mae-to-filter-permanent-magnet-candidates-from-soft-magnets" class="link-preview-title" target="_blank" rel="noopener">
-                using mae to filter permanent magnet candidates from soft magnets
+                Using MAE to Filter Permanent Magnet Candidates from Soft Magnets
             </a>
             <div class="link-preview-description">
-                explanations on how mae factors into a crucial permanent magnet property, coercivity, and how we can use calculated mae values to get a good feel for which candidates have permanent magnet potential
+                Explanations on how MAE factors into a crucial permanent magnet property, coercivity, and how we can use calculated MAE values to get a good feel for which candidates have permanent magnet potential
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/using-mae-to-filter-permanent-magnet-candidates-from-soft-magnets</div>
             <div class="link-preview-meta">
@@ -69,10 +69,10 @@ walk beside me… just be my friend."
     <div class="link-preview-content">
         <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/tree-searching-conclusions-1st-iteration" class="link-preview-title" target="_blank" rel="noopener">
-                tree searching conclusions 1st iteration
+                Tree Searching Conclusions 1st Iteration
             </a>
             <div class="link-preview-description">
-                diving into the results and limitations of the first tree search build. the generative step is a growing bottleneck
+                Diving into the results and limitations of the first tree search build. The generative step is a growing bottleneck
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/tree-searching-conclusions-1st-iteration</div>
             <div class="link-preview-meta">
@@ -87,10 +87,10 @@ walk beside me… just be my friend."
     <div class="link-preview-content">
         <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/tree-searching-for-new-magnets" class="link-preview-title" target="_blank" rel="noopener">
-                tree searching for new magnets
+                Tree Searching for New Magnets
             </a>
             <div class="link-preview-description">
-                adapting sakana ai's work on tree search based prompt optimizers to intelligently navigate towards promising rare-earth free permanent magnet candidates
+                Adapting Sakana AI's work on tree search based prompt optimizers to intelligently navigate towards promising rare-earth free permanent magnet candidates
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/tree-searching-for-new-magnets</div>
             <div class="link-preview-meta">

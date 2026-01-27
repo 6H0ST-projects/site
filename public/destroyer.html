@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTROYER</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #BFFF00;
+            min-height: 100vh;
+            font-family: 'Space Mono', monospace;
+            color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .canvas {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Main title */
+        .destroyer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(80px, 15vw, 180px);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            font-family: 'Chakra Petch', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Small text elements */
+        .text-block {
+            position: absolute;
+            font-size: 10px;
+            line-height: 1.4;
+            letter-spacing: 0.05em;
+        }
+
+        /* Top left system status */
+        .sys-status {
+            top: 100px;
+            left: 60px;
+        }
+
+        .sys-status::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 12px;
+            background: #000;
+            margin-bottom: 12px;
+            clip-path: polygon(0 0, 33% 0, 33% 50%, 66% 50%, 66% 0, 100% 0, 100% 50%, 66% 50%, 66% 100%, 33% 100%, 33% 50%, 0 50%);
+        }
+
+        /* Pixel blocks - top left */
+        .pixel-block {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #000;
+        }
+
+        .pixel-cluster {
+            position: absolute;
+        }
+
+        .pixel-cluster-1 { top: 160px; left: 30px; }
+        .pixel-cluster-1 .pixel-block:nth-child(1) { top: 0; left: 0; }
+        .pixel-cluster-1 .pixel-block:nth-child(2) { top: 0; left: 12px; }
+        .pixel-cluster-1 .pixel-block:nth-child(3) { top: 12px; left: 6px; }
+
+        /* Crosshairs */
+        .crosshair {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+        }
+
+        .crosshair::before,
+        .crosshair::after {
+            content: '';
+            position: absolute;
+            background: #000;
+        }
+
+        .crosshair::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .crosshair::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cross-1 { top: 200px; left: 120px; }
+        .cross-2 { top: 220px; left: 280px; }
+        .cross-3 { top: 180px; left: 500px; }
+        .cross-4 { top: 210px; left: 720px; }
+
+        /* Top right corner element */
+        .corner-element {
+            position: absolute;
+            top: 80px;
+            right: 60px;
+        }
+
+        .corner-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 8px);
+            grid-template-rows: repeat(3, 8px);
+            gap: 4px;
+        }
+
+        .corner-grid span {
+            background: #000;
+        }
+
+        .corner-grid span:nth-child(5) { background: transparent; }
+        .corner-grid span:nth-child(7) { background: transparent; }
+
+        /* Bottom left R:01 section */
+        .r01-section {
+            position: absolute;
+            bottom: 180px;
+            left: 60px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .r01-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #c00;
+        }
+
+        .hexagon {
+            width: 32px;
+            height: 28px;
+            background: #000;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+
+        .geo-shapes {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .geo-circle {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #000;
+            border-radius: 50%;
+        }
+
+        .geo-arrow {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 20px solid #000;
+            transform: rotate(45deg);
+        }
+
+        .geo-squares {
+            display: flex;
+            gap: 2px;
+        }
+
+        .geo-squares span {
+            width: 16px;
+            height: 16px;
+            background: #000;
+        }
+
+        .geo-squares span:nth-child(2) {
+            background: transparent;
+            border: 2px solid #000;
+        }
+
+        .geo-half-circles {
+            display: flex;
+        }
+
+        .geo-half-circles span {
+            width: 12px;
+            height: 24px;
+            background: #000;
+        }
+
+        .geo-half-circles span:first-child {
+            border-radius: 24px 0 0 24px;
+        }
+
+        .geo-half-circles span:last-child {
+            border-radius: 0 24px 24px 0;
+            margin-left: 4px;
+        }
+
+        .serial-text {
+            position: absolute;
+            bottom: 155px;
+            left: 60px;
+            font-size: 8px;
+            letter-spacing: 0.2em;
+        }
+
+        /* XOR coder section */
+        .xor-section {
+            position: absolute;
+            bottom: 175px;
+            left: 340px;
+            font-size: 9px;
+            line-height: 1.5;
+        }
+
+        /* QUAD8 section */
+        .quad-section {
+            position: absolute;
+            bottom: 175px;
+            left: 560px;
+        }
+
+        .quad-blob {
+            width: 32px;
+            height: 32px;
+            background: #000;
+            border-radius: 50% 50% 50% 0;
+        }
+
+        .quad-text {
+            font-size: 9px;
+            margin-top: 4px;
+        }
+
+        /* Grid pattern - right side */
+        .grid-pattern {
+            position: absolute;
+            bottom: 175px;
+            right: 200px;
+            display: grid;
+            grid-template-columns: repeat(3, 20px);
+            grid-template-rows: repeat(2, 20px);
+            gap: 4px;
+        }
+
+        .grid-pattern span {
+            border: 2px solid #000;
+            border-radius: 50%;
+        }
+
+        .grid-pattern span:nth-child(1),
+        .grid-pattern span:nth-child(4) {
+            background: #000;
+        }
+
+        /* COL-NET section */
+        .colnet {
+            position: absolute;
+            bottom: 175px;
+            right: 60px;
+            text-align: right;
+        }
+
+        .colnet-globe {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            position: relative;
+            margin-left: auto;
+        }
+
+        .colnet-globe::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .colnet-globe::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            border: 2px solid #000;
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .colnet-text {
+            font-size: 10px;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
+        /* Shell retained */
+        .shell-retained {
+            position: absolute;
+            bottom: 140px;
+            right: 60px;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shell-retained span {
+            width: 10px;
+            height: 10px;
+            background: #000;
+        }
+
+        /* Bottom center pixel cluster */
+        .bottom-center {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bottom-pixels {
+            display: grid;
+            grid-template-columns: repeat(3, 6px);
+            grid-template-rows: repeat(3, 6px);
+            gap: 3px;
+        }
+
+        .bottom-pixels span {
+            background: #000;
+        }
+
+        .bottom-pixels span:nth-child(2),
+        .bottom-pixels span:nth-child(4),
+        .bottom-pixels span:nth-child(6),
+        .bottom-pixels span:nth-child(8) {
+            background: transparent;
+        }
+
+        /* Bottom timestamp */
+        .timestamp {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .timestamp-alt {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 10px;
+        }
+
+        /* Small scattered elements */
+        .scatter-1 {
+            position: absolute;
+            top: 350px;
+            left: 40px;
+            width: 10px;
+            height: 10px;
+            background: #000;
+        }
+
+        .scatter-2 {
+            position: absolute;
+            bottom: 250px;
+            right: 80px;
+            width: 8px;
+            height: 8px;
+            background: #000;
+        }
+
+        .scatter-3 {
+            position: absolute;
+            bottom: 250px;
+            right: 100px;
+            width: 12px;
+            height: 3px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas">
+        <!-- Main Title -->
+        <div class="destroyer">DESTROYER</div>
+
+        <!-- Top left system status -->
+        <div class="text-block sys-status">
+            SYS SCAN [YES]<br>
+            EXFIL SUCCESSFUL<br>
+            CONSCIOUSNESS STABLE
+        </div>
+
+        <!-- Pixel clusters -->
+        <div class="pixel-cluster pixel-cluster-1">
+            <div class="pixel-block"></div>
+            <div class="pixel-block"></div>
+            <div class="pixel-block"></div>
+        </div>
+
+        <!-- Crosshairs -->
+        <div class="crosshair cross-1"></div>
+        <div class="crosshair cross-2"></div>
+        <div class="crosshair cross-3"></div>
+        <div class="crosshair cross-4"></div>
+
+        <!-- Top right corner -->
+        <div class="corner-element">
+            <div class="corner-grid">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- R:01 Section -->
+        <div class="r01-section">
+            <span class="r01-text">R:01</span>
+            <div class="hexagon"></div>
+            <div class="geo-shapes">
+                <div class="geo-circle"></div>
+                <div class="geo-arrow"></div>
+                <div class="geo-squares">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="geo-half-circles">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="serial-text">SERIAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#37 P</div>
+
+        <!-- XOR Section -->
+        <div class="xor-section">
+            XOR CODER COMPILING<br>
+            LOADING &nbsp;###<br>
+            ELLIPTICAL #ECALIBRATION<br>
+            HANDSHAKE FAILED.<br>
+            AT 256 BIT
+        </div>
+
+        <!-- QUAD Section -->
+        <div class="quad-section">
+            <div class="quad-blob"></div>
+            <div class="quad-text">
+                QUAD8&nbsp;&nbsp;&nbsp;&nbsp;0F0<br>
+                3 &nbsp;4 %<br>
+                ////<br>
+                TRI 4
+            </div>
+        </div>
+
+        <!-- Grid Pattern -->
+        <div class="grid-pattern">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
+
+        <!-- COL-NET -->
+        <div class="colnet">
+            <div class="colnet-globe"></div>
+            <div class="colnet-text">COL-NET</div>
+        </div>
+
+        <!-- Shell Retained -->
+        <div class="shell-retained">
+            SHELL [RETAINED]
+            <span></span>
+        </div>
+
+        <!-- Bottom center -->
+        <div class="bottom-center">
+            <div class="bottom-pixels">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Timestamps -->
+        <div class="timestamp">
+            28*33 SUN<br>
+            0 55
+        </div>
+        <div class="timestamp-alt">0 45[NB 1] L0</div>
+
+        <!-- Scattered elements -->
+        <div class="scatter-1"></div>
+        <div class="scatter-2"></div>
+        <div class="scatter-3"></div>
+    </div>
+</body>
+</html>
