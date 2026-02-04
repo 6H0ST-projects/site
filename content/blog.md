@@ -12,6 +12,24 @@ Walk beside me… just be my friend."
 <div class="link-preview">
     <div class="link-preview-content">
         <div class="link-preview-text">
+            <a href="https://ouro.foundation/posts/will/diffusion-experiments-for-generating-crystal-structures" class="link-preview-title" target="_blank" rel="noopener">
+                Diffusion Experiments for Generating Crystal Structures
+            </a>
+            <div class="link-preview-description">
+                Exploring hand-rolled diffusion models for crystal structure generation, focusing on larger supercells to enable more complex structures and error tolerance
+            </div>
+            <div class="link-preview-url">https://ouro.foundation/posts/will/diffusion-experiments-for-generating-crystal-structures</div>
+            <div class="link-preview-meta">
+                <span class="link-preview-domain">ouro.foundation</span>
+                <span class="link-preview-date">2026-02-03</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="link-preview">
+    <div class="link-preview-content">
+        <div class="link-preview-text">
             <a href="https://ouro.foundation/posts/will/round-trip-reinforcement-learning-experiments" class="link-preview-title" target="_blank" rel="noopener">
                 Round-Trip Reinforcement Learning Experiments
             </a>
