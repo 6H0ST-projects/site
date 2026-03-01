@@ -1,5 +1,38 @@
 /* Critical CSS - Inlined for performance */
 
+/* PP Fraktion Sans font faces */
+@font-face {
+  font-family: 'PP Fraktion Sans';
+  src: url('/fonts/PPFraktionSans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Fraktion Sans';
+  src: url('/fonts/PPFraktionSans-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Fraktion Sans';
+  src: url('/fonts/PPFraktionSans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Fraktion Sans';
+  src: url('/fonts/PPFraktionSans-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Reset and base styles */
 *,
 *:after,
@@ -10,8 +43,7 @@
 body {
   background-color: #fff;
   color: #000;
-  font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
-    'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  font-family: 'PP Fraktion Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -88,10 +120,10 @@ header {
 
 h1 {
   margin: 0 0 1rem 0;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
   text-align: left;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 header p {
