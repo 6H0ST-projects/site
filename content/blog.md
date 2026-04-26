@@ -16,7 +16,7 @@ Walk beside me… just be my friend."
                 Pushing State of the Art: GPSK-01, GPSK-05, and GPSK-300
             </a>
             <div class="link-preview-description">
-                Generating inorganic crystal structures with TRELLIS.2 inspired flow matching. Explorations with different feature representations and their impact on diffusion transformer training.  
+                Generating inorganic crystal structures with TRELLIS.2 inspired flow matching, and explorations with different feature representations and their impact on diffusion transformer training  
             </div>
             <div class="link-preview-url">https://ouro.foundation/posts/will/pushing-state-of-the-art-gpsk-01-gpsk-05-and-gpsk-300</div>
             <div class="link-preview-meta">
