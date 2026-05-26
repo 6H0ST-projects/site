@@ -115,7 +115,7 @@ body.project-page {
   position: relative;
   z-index: 10;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 44rem;
   margin: 0 auto;
   background: transparent;
   min-height: 100vh;
@@ -164,20 +164,20 @@ body.project-page {
   z-index: 2;
 }
 
+/* match the home page header (critical-css h1 + header p) exactly */
 .sidebar h1 {
   font-size: 2rem;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
 }
 
 .sidebar-text {
   font-size: 0.875rem;
+  font-weight: 300;
   line-height: 1.5;
   opacity: 0.8;
-  font-weight: 300;
-  max-width: 40ch;
-  margin-top: 1rem;
+  max-width: 60ch;
+  margin: 0 0 1rem 0;
   position: relative;
 }
 
@@ -256,45 +256,51 @@ body.project-page {
   }
   
   .two-column-layout {
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
   }
-  
+
+  /* sidebar at top:2rem left:2rem so it occupies the EXACT same
+     viewport coordinate as the home page <header> on desktop —
+     navigating between home and a project leaves GHOST PROJECTS
+     pinned in place. Width sized to keep the h1 on one line. */
   .sidebar {
-    flex: 0 0 300px;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 18rem;
+    max-width: 18rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    margin-bottom: 0;
+    z-index: 10;
   }
-  
-  .main-content {
-    flex: 1;
-    padding-left: 4rem;
-  }
-  
+
   .sidebar h1 {
-    font-size: 2.5rem;
+    white-space: nowrap;
   }
-  
+
+  .sidebar-text {
+    max-width: 18rem;
+  }
+
+  .main-content {
+    padding-left: 0;
+  }
+
   .main-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
-  
+
   .project-intro {
     font-size: 1.25rem;
     margin-bottom: 2.5rem;
   }
 }
 
-/* Responsive header adjustments */
-@media (min-width: 1200px) {
-  header {
-    padding: 3rem 1rem 2rem 1rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-}
+/* (the 1200px+ overrides were re-introducing padding on header — removed
+   so the home page <header> stays at padding:0 across all desktop widths,
+   matching the project sidebar exactly) */
 
 /* Desktop-only telemetry */
 .desktop-only {

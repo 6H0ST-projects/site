@@ -116,12 +116,19 @@ header {
     text-align: left;
     z-index: 10;
   }
+
+  /* match project sidebar-text width on desktop so paragraphs wrap the
+     same amount on home and project pages */
+  header p {
+    max-width: 18rem;
+  }
 }
 
 h1 {
   margin: 0 0 1rem 0;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
+  font-size: 2rem;
   text-align: left;
   text-transform: uppercase;
 }
