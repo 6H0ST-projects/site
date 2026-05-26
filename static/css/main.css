@@ -200,12 +200,54 @@ body.project-page {
   font-style: italic;
 }
 
+/* Research-paper style: shared column width for text, figures, and math.
+   Text + figures live inside the same column so widths line up. */
+.project-description {
+  max-width: 38rem;
+}
+
 .project-description p {
   margin-bottom: 1.5rem;
   font-weight: 300;
   line-height: 1.6;
-  max-width: 60ch;
 }
+
+/* Figures: image/video flush-left within the column, caption directly under */
+.project-description figure {
+  margin: 2.25rem 0;
+}
+.project-description figure img,
+.project-description figure video,
+.project-description figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.project-description figcaption {
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.5;
+  opacity: 0.78;
+  margin-top: 0.55rem;
+  max-width: 100%;
+}
+.project-description figcaption strong {
+  font-style: normal;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* KaTeX: keep inline math the same x-height as surrounding text,
+   give block math its own breathing room and horizontal scroll if too wide */
+.project-description .katex { font-size: 1em; }
+.project-description .katex-display {
+  margin: 1.6rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+.project-description .katex-display > .katex { white-space: nowrap; }
 
 /* Media queries for responsive layout */
 @media (min-width: 768px) {
@@ -322,21 +364,28 @@ body.special-projects {
   color: #fff !important;
 }
 
-/* Responsive SVG styling */
-.project-description img {
+/* Responsive SVG styling (bare img/video not wrapped in a figure) */
+.project-description > img,
+.project-description > video {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 2rem auto;
+  margin: 2rem 0;
 }
 
 
 /* Mobile-specific adjustments for images and SVGs */
 @media (max-width: 768px) {
-  .project-description img {
-    margin: 1.5rem auto;
-    max-width: calc(100vw - 4rem) !important;
-    width: calc(100vw - 4rem) !important;
+  .project-description {
+    max-width: 100%;
+  }
+  .project-description > img,
+  .project-description > video,
+  .project-description figure img,
+  .project-description figure video {
+    margin: 1.5rem 0;
+    max-width: 100% !important;
+    width: 100% !important;
   }
   
   

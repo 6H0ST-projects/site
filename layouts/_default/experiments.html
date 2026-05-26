@@ -1,0 +1,664 @@
+{{ define "body-class" }}experiments-page{{ end }}
+
+{{ define "main" }}
+<style>
+  body.experiments-page {
+    background: #0a0a0a;
+    color: #e7eaee;
+    margin: 0;
+    overflow-y: auto !important;
+    height: auto !important;
+    position: static !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  }
+  .exp-wrapper { min-height: 100vh; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+  .exp-header { margin-bottom: 2rem; }
+  .exp-header h1 {
+    font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2rem;
+    margin: 0 0 0.25rem 0; text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  .exp-header p { margin: 0; opacity: 0.6; font-weight: 300; font-size: 0.95rem; }
+  .exp-back {
+    display: inline-block; color: inherit; text-decoration: none;
+    font-size: 0.85rem; opacity: 0.7; margin-bottom: 1.5rem;
+  }
+  .exp-back:hover { opacity: 1; }
+  .exp-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; }
+  @media (max-width: 900px) { .exp-layout { grid-template-columns: 1fr; } }
+  .exp-canvases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 700px) { .exp-canvases { grid-template-columns: 1fr; } }
+  .exp-panel {
+    background: #111; border: 1px solid #222; aspect-ratio: 1 / 1;
+    position: relative; overflow: hidden;
+  }
+  .exp-panel canvas {
+    width: 100%; height: 100%; image-rendering: pixelated; display: block;
+  }
+  .exp-panel-label {
+    position: absolute; top: 0.5rem; left: 0.75rem;
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.9rem;
+    opacity: 0.85; text-shadow: 0 0 4px rgba(0,0,0,0.8); pointer-events: none; z-index: 2;
+  }
+  .exp-panel-sublabel {
+    position: absolute; bottom: 0.5rem; right: 0.75rem;
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    opacity: 0.4; pointer-events: none;
+  }
+  .exp-density-row { margin-top: 1rem; display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; }
+  @media (max-width: 700px) { .exp-density-row { grid-template-columns: 1fr; } }
+  .exp-info {
+    background: #111; border: 1px solid #222; padding: 1rem;
+    font-size: 0.75rem; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    opacity: 0.85; line-height: 1.6;
+  }
+  .exp-info code { color: #FF680A; }
+  .exp-controls {
+    background: #111; border: 1px solid #222; padding: 1.25rem;
+    height: fit-content; position: sticky; top: 1rem;
+  }
+  .exp-controls h3 {
+    font-family: 'Playfair Display', serif; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    font-size: 0.8rem; margin: 0 0 1rem 0; opacity: 0.7;
+  }
+  .exp-group { margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid #1c1c1c; }
+  .exp-group:last-child { border-bottom: none; margin-bottom: 0; }
+  .exp-row { display: flex; flex-direction: column; margin-bottom: 0.6rem; }
+  .exp-row label {
+    display: flex; justify-content: space-between;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+    opacity: 0.65; margin-bottom: 0.25rem;
+  }
+  .exp-row label .v {
+    color: #FF680A; opacity: 1;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .exp-row input[type="range"] { width: 100%; accent-color: #FF680A; background: transparent; }
+  .exp-row select {
+    width: 100%; background: #0a0a0a; color: #e7eaee;
+    border: 1px solid #2a2a2a; padding: 0.35rem 0.5rem;
+    font-size: 0.8rem; font-family: inherit;
+  }
+  .exp-checkbox {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+    opacity: 0.85; cursor: pointer;
+  }
+  .exp-checkbox input { accent-color: #FF680A; }
+  .exp-btn {
+    width: 100%; background: #1a1a1a; color: #e7eaee;
+    border: 1px solid #2a2a2a; padding: 0.5rem;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+    cursor: pointer; margin-top: 0.5rem; font-family: inherit;
+  }
+  .exp-btn:hover { background: #222; }
+  .exp-btn.primary { background: #FF680A; border-color: #FF680A; color: #fff; }
+  .exp-btn.primary:hover { background: #ff7a25; }
+  .exp-fps { font-size: 0.65rem; font-family: ui-monospace, "SF Mono", Menlo, monospace; opacity: 0.5; margin-top: 0.5rem; }
+</style>
+
+<div class="exp-wrapper">
+  <a href="/" class="exp-back">← back</a>
+
+  <div class="exp-header">
+    <h1>Reciprocal Space</h1>
+    <p>Live FFT of a 2D atomic density field. Re(F), Im(F), and intensity |F|².</p>
+  </div>
+
+  <div class="exp-layout">
+    <div>
+      <div class="exp-canvases">
+        <div class="exp-panel">
+          <div class="exp-panel-label">Re(F)</div>
+          <div class="exp-panel-sublabel">real</div>
+          <canvas id="canvas-re" width="128" height="128"></canvas>
+        </div>
+        <div class="exp-panel">
+          <div class="exp-panel-label">Im(F)</div>
+          <div class="exp-panel-sublabel">imag</div>
+          <canvas id="canvas-im" width="128" height="128"></canvas>
+        </div>
+        <div class="exp-panel">
+          <div class="exp-panel-label">|F|²</div>
+          <div class="exp-panel-sublabel">intensity</div>
+          <canvas id="canvas-mag" width="128" height="128"></canvas>
+        </div>
+      </div>
+
+      <div class="exp-density-row">
+        <div class="exp-panel">
+          <div class="exp-panel-label">ρ(r)</div>
+          <div class="exp-panel-sublabel">real space</div>
+          <canvas id="canvas-density" width="128" height="128"></canvas>
+        </div>
+        <div class="exp-info">
+          <div>FFT of Gaussian atomic density on an N×N periodic grid.</div>
+          <div>Density: <code>ρ(r) = Σ Zⱼ · exp(-|r - rⱼ|² / 2σ²)</code></div>
+          <div>Transform: <code>F(k) = FFT[ρ(r)]</code> · channels: <code>Re(F)</code>, <code>Im(F)</code></div>
+          <div style="margin-top:0.5rem;opacity:0.6;">Adapted from <code>diffraction_gen/compute_reciprocal.py</code> in <code>rtrl</code>.</div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="exp-controls">
+      <h3>Config</h3>
+
+      <div class="exp-group">
+        <div class="exp-row">
+          <label>Lattice <span class="v" id="v-lattice">FCC</span></label>
+          <select id="c-lattice">
+            <option value="cubic">Cubic (1 atom)</option>
+            <option value="bcc">BCC (2 atoms)</option>
+            <option value="fcc" selected>FCC (4 atoms)</option>
+            <option value="nacl">NaCl basis</option>
+            <option value="honeycomb">Honeycomb</option>
+            <option value="kagome">Kagome</option>
+            <option value="ghost">Ghost (asymmetric)</option>
+            <option value="random">Random basis</option>
+          </select>
+        </div>
+        <div class="exp-row">
+          <label>Tile (n × n) <span class="v" id="v-tile">4</span></label>
+          <input type="range" id="c-tile" min="1" max="12" step="1" value="4">
+        </div>
+        <div class="exp-row">
+          <label>Atomic Z <span class="v" id="v-z">26</span></label>
+          <input type="range" id="c-z" min="1" max="92" step="1" value="26">
+        </div>
+        <div class="exp-row">
+          <label>Z contrast <span class="v" id="v-contrast">1.00</span></label>
+          <input type="range" id="c-contrast" min="0" max="4" step="0.05" value="1.0">
+        </div>
+      </div>
+
+      <div class="exp-group">
+        <div class="exp-row">
+          <label>Grid N <span class="v" id="v-grid">128</span></label>
+          <select id="c-grid">
+            <option value="32">32</option>
+            <option value="64">64</option>
+            <option value="128" selected>128</option>
+            <option value="256">256</option>
+          </select>
+        </div>
+        <div class="exp-row">
+          <label>σ (atom width) <span class="v" id="v-sigma">1.50</span></label>
+          <input type="range" id="c-sigma" min="0.4" max="6" step="0.05" value="1.5">
+        </div>
+      </div>
+
+      <div class="exp-group">
+        <div class="exp-row">
+          <label>Rotation (rad/s) <span class="v" id="v-rot">0.00</span></label>
+          <input type="range" id="c-rot" min="-2" max="2" step="0.01" value="0">
+        </div>
+        <div class="exp-row">
+          <label>Shear (rad/s) <span class="v" id="v-shear">0.00</span></label>
+          <input type="range" id="c-shear" min="-1" max="1" step="0.01" value="0">
+        </div>
+        <div class="exp-row">
+          <label>Jitter <span class="v" id="v-jitter">0.00</span></label>
+          <input type="range" id="c-jitter" min="0" max="0.5" step="0.005" value="0">
+        </div>
+        <div class="exp-row">
+          <label>Drift (rad/s) <span class="v" id="v-drift">0.00</span></label>
+          <input type="range" id="c-drift" min="0" max="3" step="0.01" value="0">
+        </div>
+      </div>
+
+      <div class="exp-group">
+        <div class="exp-row">
+          <label>Re/Im colormap</label>
+          <select id="c-cmap-diverging">
+            <option value="twilight" selected>twilight</option>
+            <option value="coolwarm">coolwarm</option>
+            <option value="rdbu">RdBu</option>
+            <option value="bwr">bwr</option>
+            <option value="prgn">PRGn</option>
+          </select>
+        </div>
+        <div class="exp-row">
+          <label>|F|² colormap</label>
+          <select id="c-cmap-seq">
+            <option value="magma" selected>magma</option>
+            <option value="inferno">inferno</option>
+            <option value="viridis">viridis</option>
+            <option value="plasma">plasma</option>
+            <option value="gray">gray</option>
+            <option value="orange">ghost-orange</option>
+          </select>
+        </div>
+        <div class="exp-row">
+          <label>Re/Im gain <span class="v" id="v-gain">1.00</span></label>
+          <input type="range" id="c-gain" min="0.1" max="6" step="0.05" value="1.0">
+        </div>
+        <div class="exp-row">
+          <label>|F|² gamma <span class="v" id="v-gamma">0.35</span></label>
+          <input type="range" id="c-gamma" min="0.1" max="1.5" step="0.01" value="0.35">
+        </div>
+        <div class="exp-row">
+          <label class="exp-checkbox"><input type="checkbox" id="c-log"> Log scale (|F|²)</label>
+        </div>
+      </div>
+
+      <div class="exp-group">
+        <div class="exp-row">
+          <label>High-pass (k_min) <span class="v" id="v-hp">0</span></label>
+          <input type="range" id="c-hp" min="0" max="64" step="1" value="0">
+        </div>
+        <div class="exp-row">
+          <label>Low-pass (k_max) <span class="v" id="v-lp">64</span></label>
+          <input type="range" id="c-lp" min="1" max="64" step="1" value="64">
+        </div>
+      </div>
+
+      <div class="exp-group">
+        <button class="exp-btn" id="btn-pause">Pause</button>
+        <button class="exp-btn" id="btn-reset">Reset config</button>
+        <button class="exp-btn primary" id="btn-snap">Snapshot PNG</button>
+        <div class="exp-fps" id="fps">— fps</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  function fft1d(re, im, inverse) {
+    const n = re.length;
+    for (let i = 1, j = 0; i < n; i++) {
+      let bit = n >> 1;
+      for (; j & bit; bit >>= 1) j ^= bit;
+      j ^= bit;
+      if (i < j) {
+        const tr = re[i]; re[i] = re[j]; re[j] = tr;
+        const ti = im[i]; im[i] = im[j]; im[j] = ti;
+      }
+    }
+    const sign = inverse ? 1 : -1;
+    for (let len = 2; len <= n; len <<= 1) {
+      const half = len >> 1;
+      const ang = sign * 2 * Math.PI / len;
+      const wpr = Math.cos(ang), wpi = Math.sin(ang);
+      for (let i = 0; i < n; i += len) {
+        let wr = 1, wi = 0;
+        for (let k = 0; k < half; k++) {
+          const tr = wr * re[i + k + half] - wi * im[i + k + half];
+          const ti = wr * im[i + k + half] + wi * re[i + k + half];
+          re[i + k + half] = re[i + k] - tr;
+          im[i + k + half] = im[i + k] - ti;
+          re[i + k] += tr;
+          im[i + k] += ti;
+          const nwr = wr * wpr - wi * wpi;
+          wi = wr * wpi + wi * wpr;
+          wr = nwr;
+        }
+      }
+    }
+    if (inverse) for (let i = 0; i < n; i++) { re[i] /= n; im[i] /= n; }
+  }
+  function fft2d(re, im, n) {
+    const tr = new Float64Array(n), ti = new Float64Array(n);
+    for (let r = 0; r < n; r++) {
+      const off = r * n;
+      for (let c = 0; c < n; c++) { tr[c] = re[off + c]; ti[c] = im[off + c]; }
+      fft1d(tr, ti, false);
+      for (let c = 0; c < n; c++) { re[off + c] = tr[c]; im[off + c] = ti[c]; }
+    }
+    for (let c = 0; c < n; c++) {
+      for (let r = 0; r < n; r++) { tr[r] = re[r * n + c]; ti[r] = im[r * n + c]; }
+      fft1d(tr, ti, false);
+      for (let r = 0; r < n; r++) { re[r * n + c] = tr[r]; im[r * n + c] = ti[r]; }
+    }
+  }
+  function fftshift2d(arr, n) {
+    const half = n >> 1;
+    const tmp = new Float64Array(arr.length);
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+      tmp[((r + half) % n) * n + (c + half) % n] = arr[r * n + c];
+    }
+    arr.set(tmp);
+  }
+
+  const BASES = {
+    cubic: [[0, 0]],
+    bcc: [[0, 0], [0.5, 0.5]],
+    fcc: [[0, 0], [0.5, 0.5], [0.5, 0], [0, 0.5]],
+    nacl: [
+      [0, 0, 1], [0.5, 0.5, 1], [0.5, 0, -1], [0, 0.5, -1]
+    ],
+    honeycomb: [[1/3, 1/3], [2/3, 2/3]],
+    kagome: [[0, 0], [0.5, 0], [0, 0.5]],
+    ghost: [[0.08, 0.08, 1.0], [0.55, 0.15, 0.7], [0.15, 0.55, 0.7], [0.65, 0.65, 0.4]],
+    random: null
+  };
+  let randomBasis = null;
+  function makeRandomBasis(seed) {
+    const n = 4 + Math.floor(seed * 5);
+    const out = [];
+    let s = Math.floor(seed * 1e9);
+    function rng() { s = (1103515245 * s + 12345) >>> 0; return (s >>> 0) / 0x100000000; }
+    for (let i = 0; i < n; i++) out.push([rng(), rng(), 0.5 + rng()]);
+    return out;
+  }
+
+  function lerpRgb(a, b, t) { return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t]; }
+  function gradient(stops, t) {
+    if (t <= stops[0].t) return stops[0].c;
+    if (t >= stops[stops.length-1].t) return stops[stops.length-1].c;
+    for (let i = 1; i < stops.length; i++) if (t <= stops[i].t) {
+      const u = (t - stops[i-1].t) / (stops[i].t - stops[i-1].t);
+      return lerpRgb(stops[i-1].c, stops[i].c, u);
+    }
+    return stops[stops.length-1].c;
+  }
+  const DIVERGING = {
+    twilight: [{t:0,c:[226,217,226]},{t:.15,c:[180,156,196]},{t:.3,c:[114,100,168]},{t:.5,c:[33,28,60]},{t:.7,c:[122,70,100]},{t:.85,c:[200,142,130]},{t:1,c:[231,215,195]}],
+    coolwarm: [{t:0,c:[59,76,192]},{t:.5,c:[221,221,221]},{t:1,c:[180,4,38]}],
+    rdbu: [{t:0,c:[33,102,172]},{t:.5,c:[247,247,247]},{t:1,c:[178,24,43]}],
+    bwr: [{t:0,c:[0,0,255]},{t:.5,c:[255,255,255]},{t:1,c:[255,0,0]}],
+    prgn: [{t:0,c:[118,42,131]},{t:.5,c:[247,247,247]},{t:1,c:[27,120,55]}]
+  };
+  const SEQUENTIAL = {
+    magma: [{t:0,c:[0,0,4]},{t:.25,c:[80,18,123]},{t:.5,c:[183,55,121]},{t:.75,c:[251,137,97]},{t:1,c:[252,253,191]}],
+    inferno: [{t:0,c:[0,0,4]},{t:.25,c:[87,16,110]},{t:.5,c:[187,55,84]},{t:.75,c:[249,142,9]},{t:1,c:[252,255,164]}],
+    viridis: [{t:0,c:[68,1,84]},{t:.25,c:[59,82,139]},{t:.5,c:[33,144,141]},{t:.75,c:[93,201,99]},{t:1,c:[253,231,37]}],
+    plasma: [{t:0,c:[13,8,135]},{t:.25,c:[126,3,168]},{t:.5,c:[204,71,120]},{t:.75,c:[248,149,64]},{t:1,c:[240,249,33]}],
+    gray: [{t:0,c:[0,0,0]},{t:1,c:[255,255,255]}],
+    orange: [{t:0,c:[10,10,10]},{t:.5,c:[120,50,0]},{t:.85,c:[255,104,10]},{t:1,c:[255,220,180]}]
+  };
+  function makeLUT(stopsObj, name, fallback) {
+    const stops = stopsObj[name] || stopsObj[fallback];
+    const N = 512, lut = new Uint8Array(N * 3);
+    for (let i = 0; i < N; i++) {
+      const c = gradient(stops, i / (N - 1));
+      lut[i*3] = c[0]|0; lut[i*3+1] = c[1]|0; lut[i*3+2] = c[2]|0;
+    }
+    return lut;
+  }
+
+  const cfg = {
+    lattice: 'fcc', tile: 4, z: 26, contrast: 1.0,
+    grid: 128, sigma: 1.5,
+    rot: 0.0, shear: 0.0, jitter: 0.0, drift: 0.0,
+    cmapDiv: 'twilight', cmapSeq: 'magma',
+    gain: 1.0, gamma: 0.35, log: false,
+    hp: 0, lp: 64
+  };
+  const defaults = JSON.parse(JSON.stringify(cfg));
+  const ids = {
+    lattice: 'c-lattice', tile: 'c-tile', z: 'c-z', contrast: 'c-contrast',
+    grid: 'c-grid', sigma: 'c-sigma',
+    rot: 'c-rot', shear: 'c-shear', jitter: 'c-jitter', drift: 'c-drift',
+    cmapDiv: 'c-cmap-diverging', cmapSeq: 'c-cmap-seq',
+    gain: 'c-gain', gamma: 'c-gamma', log: 'c-log',
+    hp: 'c-hp', lp: 'c-lp'
+  };
+  const labelIds = {
+    lattice: 'v-lattice', tile: 'v-tile', z: 'v-z', contrast: 'v-contrast',
+    grid: 'v-grid', sigma: 'v-sigma',
+    rot: 'v-rot', shear: 'v-shear', jitter: 'v-jitter', drift: 'v-drift',
+    gain: 'v-gain', gamma: 'v-gamma', hp: 'v-hp', lp: 'v-lp'
+  };
+  function fmt(k) {
+    const v = cfg[k];
+    if (typeof v === 'number') {
+      if (k === 'tile' || k === 'z' || k === 'grid' || k === 'hp' || k === 'lp') return String(v|0);
+      return v.toFixed(2);
+    }
+    return String(v).toUpperCase();
+  }
+  function syncLabels() {
+    for (const k in labelIds) { const el = document.getElementById(labelIds[k]); if (el) el.textContent = fmt(k); }
+  }
+  function reflect() {
+    for (const k in ids) {
+      const el = document.getElementById(ids[k]);
+      if (!el) continue;
+      if (el.type === 'checkbox') el.checked = cfg[k];
+      else el.value = cfg[k];
+    }
+  }
+  function clampHpLp() {
+    const half = cfg.grid >> 1;
+    const hpEl = document.getElementById(ids.hp), lpEl = document.getElementById(ids.lp);
+    hpEl.max = half; lpEl.max = half;
+    if (cfg.lp > half) cfg.lp = half;
+    if (cfg.hp > half) cfg.hp = half;
+    if (cfg.hp >= cfg.lp) cfg.hp = Math.max(0, cfg.lp - 1);
+    hpEl.value = cfg.hp; lpEl.value = cfg.lp;
+  }
+
+  function attachControls() {
+    function on(id, key, parse) {
+      const el = document.getElementById(id);
+      const ev = (el.type === 'range' || el.tagName === 'SELECT') ? 'input' : 'change';
+      el.addEventListener(ev, () => {
+        let v = el.type === 'checkbox' ? el.checked : el.value;
+        if (parse) v = parse(v);
+        cfg[key] = v;
+        if (key === 'lattice' && v === 'random') randomBasis = makeRandomBasis(Math.random());
+        if (key === 'grid') resizeBuffers(cfg.grid);
+        if (key === 'grid' || key === 'hp' || key === 'lp') clampHpLp();
+        syncLabels();
+      });
+    }
+    on(ids.lattice, 'lattice');
+    on(ids.tile, 'tile', v => parseInt(v));
+    on(ids.z, 'z', v => parseInt(v));
+    on(ids.contrast, 'contrast', v => parseFloat(v));
+    on(ids.grid, 'grid', v => parseInt(v));
+    on(ids.sigma, 'sigma', v => parseFloat(v));
+    on(ids.rot, 'rot', v => parseFloat(v));
+    on(ids.shear, 'shear', v => parseFloat(v));
+    on(ids.jitter, 'jitter', v => parseFloat(v));
+    on(ids.drift, 'drift', v => parseFloat(v));
+    on(ids.cmapDiv, 'cmapDiv');
+    on(ids.cmapSeq, 'cmapSeq');
+    on(ids.gain, 'gain', v => parseFloat(v));
+    on(ids.gamma, 'gamma', v => parseFloat(v));
+    on(ids.log, 'log');
+    on(ids.hp, 'hp', v => parseInt(v));
+    on(ids.lp, 'lp', v => parseInt(v));
+
+    document.getElementById('btn-pause').addEventListener('click', () => {
+      paused = !paused;
+      document.getElementById('btn-pause').textContent = paused ? 'Resume' : 'Pause';
+      if (!paused) requestAnimationFrame(loop);
+    });
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      Object.assign(cfg, defaults);
+      reflect(); syncLabels(); resizeBuffers(cfg.grid); clampHpLp();
+    });
+    document.getElementById('btn-snap').addEventListener('click', snapshot);
+  }
+
+  const canv = {
+    re: document.getElementById('canvas-re'),
+    im: document.getElementById('canvas-im'),
+    mag: document.getElementById('canvas-mag'),
+    den: document.getElementById('canvas-density')
+  };
+  const ctxs = {
+    re: canv.re.getContext('2d'),
+    im: canv.im.getContext('2d'),
+    mag: canv.mag.getContext('2d'),
+    den: canv.den.getContext('2d')
+  };
+
+  let N = cfg.grid;
+  let density, fre, fim, imgRe, imgIm, imgMag, imgDen;
+  let divLUT = makeLUT(DIVERGING, cfg.cmapDiv, 'twilight');
+  let seqLUT = makeLUT(SEQUENTIAL, cfg.cmapSeq, 'magma');
+  let lastDiv = cfg.cmapDiv, lastSeq = cfg.cmapSeq;
+
+  function resizeBuffers(n) {
+    N = n;
+    density = new Float64Array(N * N);
+    fre = new Float64Array(N * N);
+    fim = new Float64Array(N * N);
+    for (const k of ['re', 'im', 'mag', 'den']) {
+      canv[k].width = N; canv[k].height = N;
+    }
+    imgRe = ctxs.re.createImageData(N, N);
+    imgIm = ctxs.im.createImageData(N, N);
+    imgMag = ctxs.mag.createImageData(N, N);
+    imgDen = ctxs.den.createImageData(N, N);
+  }
+  resizeBuffers(N);
+
+  function buildDensity(t) {
+    density.fill(0);
+    const basis = cfg.lattice === 'random'
+      ? (randomBasis || (randomBasis = makeRandomBasis(0.42)))
+      : BASES[cfg.lattice];
+    const tile = cfg.tile, sigma = cfg.sigma;
+    const r = Math.max(1, Math.ceil(3 * sigma));
+    const cosA = Math.cos(cfg.rot * t), sinA = Math.sin(cfg.rot * t);
+    const shear = cfg.shear * Math.sin(t * 0.5);
+    const drift = cfg.drift * t;
+    const Zbase = cfg.z * cfg.contrast;
+    const cx = 0.5, cy = 0.5;
+    function jh(i) { return Math.sin((i + 1) * 12.9898 + t * 1.7) * 43758.5453; }
+    for (let ix = 0; ix < tile; ix++) for (let iy = 0; iy < tile; iy++) {
+      for (let b = 0; b < basis.length; b++) {
+        const bx = basis[b][0], by = basis[b][1];
+        const zw = basis[b].length > 2 ? basis[b][2] : 1.0;
+        let fx0 = (ix + bx) / tile;
+        let fy0 = (iy + by) / tile;
+        if (cfg.jitter > 0) {
+          const j1 = jh(ix*31 + iy*7 + b), j2 = jh(ix*7 + iy*31 + b*11);
+          fx0 += (j1 - Math.floor(j1)) * cfg.jitter - cfg.jitter * 0.5;
+          fy0 += (j2 - Math.floor(j2)) * cfg.jitter - cfg.jitter * 0.5;
+        }
+        const fxs = fx0 + shear * (fy0 - cy);
+        const fys = fy0;
+        const dx = fxs - cx, dy = fys - cy;
+        let fx = cx + (dx * cosA - dy * sinA);
+        let fy = cy + (dx * sinA + dy * cosA);
+        fx += drift / (Math.PI * 4);
+        fx = ((fx % 1) + 1) % 1;
+        fy = ((fy % 1) + 1) % 1;
+        const gx = Math.floor(fx * N), gy = Math.floor(fy * N);
+        const weight = Zbase * zw;
+        for (let dyk = -r; dyk <= r; dyk++) {
+          const ny = ((gy + dyk) % N + N) % N;
+          const off = ny * N;
+          const dyk2 = dyk * dyk;
+          for (let dxk = -r; dxk <= r; dxk++) {
+            const nx = ((gx + dxk) % N + N) % N;
+            const r2 = dxk * dxk + dyk2;
+            density[off + nx] += weight * Math.exp(-r2 / (2 * sigma * sigma));
+          }
+        }
+      }
+    }
+  }
+
+  function computeF() {
+    fre.set(density); fim.fill(0);
+    fft2d(fre, fim, N);
+    fftshift2d(fre, N); fftshift2d(fim, N);
+    const half = N >> 1;
+    const hp2 = cfg.hp * cfg.hp, lp2 = cfg.lp * cfg.lp;
+    if (cfg.hp > 0 || cfg.lp < half) {
+      for (let r = 0; r < N; r++) {
+        const kr = r - half;
+        for (let c = 0; c < N; c++) {
+          const kc = c - half;
+          const k2 = kr * kr + kc * kc;
+          if (k2 < hp2 || k2 > lp2) { fre[r * N + c] = 0; fim[r * N + c] = 0; }
+        }
+      }
+    }
+  }
+
+  function renderDiverging(buf, img, gain) {
+    let mx = 1e-12;
+    for (let i = 0; i < buf.length; i++) { const a = Math.abs(buf[i]); if (a > mx) mx = a; }
+    const lut = divLUT, lutN = lut.length / 3;
+    const data = img.data, inv = 1 / mx;
+    for (let i = 0; i < buf.length; i++) {
+      let v = buf[i] * inv * gain;
+      if (v > 1) v = 1; else if (v < -1) v = -1;
+      const t = (v + 1) * 0.5;
+      const li = Math.min(lutN - 1, Math.max(0, t * (lutN - 1) | 0)) * 3;
+      const p = i * 4;
+      data[p] = lut[li]; data[p+1] = lut[li+1]; data[p+2] = lut[li+2]; data[p+3] = 255;
+    }
+  }
+  function renderSequential(buf, img, gamma, log) {
+    let mx = 1e-12;
+    for (let i = 0; i < buf.length; i++) if (buf[i] > mx) mx = buf[i];
+    const lut = seqLUT, lutN = lut.length / 3;
+    const data = img.data, inv = 1 / mx;
+    const logScale = log ? 1 / Math.log1p(mx) : 0;
+    for (let i = 0; i < buf.length; i++) {
+      let v = buf[i] * inv;
+      if (v < 0) v = 0;
+      if (log) v = Math.log1p(buf[i]) * logScale;
+      v = Math.pow(Math.max(0, Math.min(1, v)), gamma);
+      const li = Math.min(lutN - 1, Math.max(0, v * (lutN - 1) | 0)) * 3;
+      const p = i * 4;
+      data[p] = lut[li]; data[p+1] = lut[li+1]; data[p+2] = lut[li+2]; data[p+3] = 255;
+    }
+  }
+
+  let paused = false, frameT = performance.now(), frames = 0;
+  function loop() {
+    if (paused) return;
+    if (document.hidden) { requestAnimationFrame(loop); return; }
+    const now = performance.now(), t = now * 0.001;
+    if (cfg.cmapDiv !== lastDiv) { divLUT = makeLUT(DIVERGING, cfg.cmapDiv, 'twilight'); lastDiv = cfg.cmapDiv; }
+    if (cfg.cmapSeq !== lastSeq) { seqLUT = makeLUT(SEQUENTIAL, cfg.cmapSeq, 'magma'); lastSeq = cfg.cmapSeq; }
+
+    buildDensity(t);
+    computeF();
+    const mag = new Float64Array(N * N);
+    for (let i = 0; i < mag.length; i++) mag[i] = fre[i] * fre[i] + fim[i] * fim[i];
+
+    renderDiverging(fre, imgRe, cfg.gain);
+    renderDiverging(fim, imgIm, cfg.gain);
+    renderSequential(mag, imgMag, cfg.gamma, cfg.log);
+    renderSequential(density, imgDen, 0.6, false);
+
+    ctxs.re.putImageData(imgRe, 0, 0);
+    ctxs.im.putImageData(imgIm, 0, 0);
+    ctxs.mag.putImageData(imgMag, 0, 0);
+    ctxs.den.putImageData(imgDen, 0, 0);
+
+    frames++;
+    if (now - frameT > 500) {
+      const fps = (frames * 1000 / (now - frameT)) | 0;
+      document.getElementById('fps').textContent = fps + ' fps · N=' + N;
+      frames = 0; frameT = now;
+    }
+    requestAnimationFrame(loop);
+  }
+
+  function snapshot() {
+    const W = N * 2, H = N * 2;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#0a0a0a'; ctx.fillRect(0, 0, W, H);
+    ctx.drawImage(canv.re, 0, 0);
+    ctx.drawImage(canv.im, N, 0);
+    ctx.drawImage(canv.mag, 0, N);
+    ctx.drawImage(canv.den, N, N);
+    const url = c.toDataURL('image/png');
+    const a = document.createElement('a');
+    a.href = url; a.download = 'reciprocal-' + Date.now() + '.png';
+    a.click();
+  }
+
+  attachControls();
+  reflect();
+  syncLabels();
+  clampHpLp();
+  requestAnimationFrame(loop);
+})();
+</script>
+{{ end }}

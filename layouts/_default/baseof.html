@@ -49,6 +49,7 @@
     <!-- Additional Meta -->
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="author" content="{{ .Site.Title }}">
+    {{ block "extra-head" . }}{{ end }}
 </head>
 <body class="{{ block "body-class" . }}{{ end }}">
     {{ block "main" . }}{{ end }}
