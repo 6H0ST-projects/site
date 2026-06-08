@@ -479,8 +479,8 @@ The L1₀ family is a primary target for rare-earth-free permanent magnets: tetr
 </figure>
 
 <figure>
-  <img src="/img/gpsk300_consistency.png" alt="Six independent generated samples each for FePt, MgO, and SmCo5, showing recovery and off-target behavior are both consistent across samples." style="width:100%;max-width:680px;display:block;margin:0 auto;" />
-  <figcaption><strong>Figure 9b.</strong> The behavior in Figure 9a is typical across samples, not a cherry-picked best-of-N. Six independent generations are shown for a recovered metal magnet (FePt), a recovered rock-salt oxide (MgO), and the held-out hexagonal family (SmCo₅). Every FePt sample returns the L1₀ tetragonal motif and every MgO sample the rock-salt cell, while every SmCo₅ sample is tall rather than the squat CaCu₅ geometry. Recovery and off-target behavior are both reproducible, not artifacts of selecting the best of many tries.</figcaption>
+  <img src="/img/gpsk300_consistency.png" alt="Three independent generated samples each for FePt, MgO, and SmCo5, showing recovery and off-target behavior are both consistent across samples." style="width:100%;max-width:720px;display:block;margin:0 auto;" />
+  <figcaption><strong>Figure 9b.</strong> The behavior in Figure 9a is typical across samples, not a cherry-picked best-of-N. Three independent generations are shown for a recovered metal magnet (FePt), a recovered rock-salt oxide (MgO), and the held-out hexagonal family (SmCo₅). Every FePt sample returns the L1₀ tetragonal motif and every MgO sample the rock-salt cell, while every SmCo₅ sample is tall rather than the squat CaCu₅ geometry. Recovery and off-target behavior are both reproducible, not artifacts of selecting the best of many tries.</figcaption>
 </figure>
 
 
@@ -602,7 +602,7 @@ The emergence above concerns *property* response, for which a strong guidance sc
 </figure>
 
 <figure>
-  <img src="/img/gpsk300_conditioning.png" alt="GPSK-300 conditioning response: a cell-angle versus c/a scatter where the requested crystal system forms three clusters, plus band-gap and formation-energy response curves." style="width:100%;max-width:680px;display:block;margin:0 auto;" />
+  <img src="/img/gpsk300_conditioning.png" alt="GPSK-300 conditioning response: a cell-angle versus c/a scatter where the requested crystal system forms three clusters, plus band-gap and formation-energy response curves." style="width:100%;max-width:768px;display:block;margin:0 auto;" />
   <figcaption><strong>Figure 13.</strong> GPSK-300 responds to each conditioning channel. Left: each point is one generated Fe₂O₃ cell, read closed-form from the grid, and the requested crystal system places it in a distinct region of cell-angle (γ) and anisotropy (c/a) space; hexagonal separates on γ ≈ 120°, while cubic and tetragonal separate on c/a (≈1.1 vs ≈1.35). Right: the continuous-property channels track the request, with SiO₂'s a-axis falling as the requested band gap rises and TiO₂'s c-axis falling as formation energy rises. Magnetic ordering, by contrast, leaves the lattice essentially unchanged: switching FM↔AFM across the trained magnet families moves the recovered c/a by ≤0.04, a more physical response than a strong magnetostructural coupling would be.</figcaption>
 </figure>
 
