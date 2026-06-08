@@ -249,6 +249,44 @@ body.project-page {
 }
 .project-description .katex-display > .katex { white-space: nowrap; }
 
+/* Tables — booktabs research-paper style: top/bottom rules, no verticals,
+   tabular numerals, modest font, right-aligned numeric columns via markdown
+   `---:` alignment syntax (Hugo emits style="text-align: right" on those). */
+.project-description table {
+  width: 100%;
+  margin: 1.75rem 0 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+}
+.project-description table thead {
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+.project-description table tbody {
+  border-bottom: 1px solid currentColor;
+}
+.project-description table th {
+  font-weight: 500;
+  text-align: left;
+  padding: 0.45rem 0.7rem 0.45rem 0;
+  letter-spacing: 0.01em;
+}
+.project-description table td {
+  padding: 0.35rem 0.7rem 0.35rem 0;
+  vertical-align: top;
+}
+.project-description table th:last-child,
+.project-description table td:last-child { padding-right: 0; }
+.project-description table th:first-child,
+.project-description table td:first-child { padding-left: 0; }
+
+/* Caption / label sentence sitting above a table (the "Table N." paragraph) —
+   read it as small caps muted text */
+.project-description p:has(+ table) strong { font-weight: 600; }
+
 /* Media queries for responsive layout */
 @media (min-width: 768px) {
   .content-container {

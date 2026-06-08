@@ -1,0 +1,32 @@
+{{ define "body-class" }}project-page {{ .File.BaseFileName }}{{ end }}
+
+{{ define "extra-head" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+{{ end }}
+
+{{ define "main" }}
+<div class="page-wrapper">
+    <div class="content-container">
+        <a href="/" class="back-link">← Back to home</a>
+
+        <div class="two-column-layout">
+            <div class="sidebar">
+                <h1>Ghost Projects</h1>
+                <p class="sidebar-text">
+                    {{ .Params.sidebarText | default "Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars, to change the world." }}
+                </p>
+            </div>
+
+            <div class="main-content">
+                <h2>{{ .Params.projectTitle | default .Title }}</h2>
+
+                <div class="project-description">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
