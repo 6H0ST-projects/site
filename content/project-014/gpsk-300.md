@@ -1,7 +1,7 @@
 ---
 title: "GPSK-300: A Reciprocal-Space Diffusion Model for L1₀ Magnet Structure Prediction"
 projectTitle: "GPSK-300"
-description: "A 304M-parameter multimodal diffusion transformer that generates crystals in a three-channel reciprocal-space representation whose lattice is recovered in closed form, with the atomic basis reconstructed by inverse FFT under a composition prompt. Near-perfect lattice recovery on the L1₀ tetragonal magnet family."
+description: "A 302M-parameter multimodal diffusion transformer that generates crystals in a three-channel reciprocal-space representation whose lattice is recovered in closed form, with the atomic basis reconstructed by inverse FFT under a composition prompt. Near-perfect lattice recovery on the L1₀ tetragonal magnet family."
 bgColor: "#E7EAEE"
 textColor: "#000"
 sidebarText: "If I could give one piece of advice to new researchers, it would be to never stop looking for new avenues of research. On top of what you have been given, ask yourself, what might be necessary ten years from now? What will society need? Find your own research theme, and every day, little by little, you have to keep working on it."
@@ -13,7 +13,7 @@ sidebarText: "If I could give one piece of advice to new researchers, it would b
 
 Current generative models for inorganic crystal structures (MatterGen [10], CDVAE [25], DiffCSP [26], FlowMM [27]) encode each crystal in real space as fractional atomic coordinates inside an explicit lattice variable, with the lattice itself produced by a learned head: regressed from a latent (CDVAE) or co-diffused with the atomic positions on a separate manifold (MatterGen, DiffCSP, FlowMM). Standard evaluation centers on Stable–Unique–Novel (SUN) metrics, which reward structures distinct from those in the training distribution and structurally penalize canonical-structure recovery, the behavior expected of a crystal-structure-prediction (CSP) system.
 
-We present GPSK-300, a 304M-parameter multimodal diffusion transformer that samples in a learned reciprocal-space representation. Each crystal is encoded as a 64³ grid on integer Miller indices with three channels: Re F(h), Im F(h), and the reciprocal-metric field 1/d²(h). Lattice parameters and atomic positions are recoverable from the model output by closed-form arithmetic, a linear least-squares fit on the reciprocal-metric channel for the lattice, and an inverse Fourier transform on the structure-factor channels for the atomic basis; element identity is then assigned heuristically under the composition prompt (Section 3.6), not solved independently. Training uses rectified flow matching in a 16³×128 latent learned by a small 3D VAE; inference is 50 forward Euler steps with classifier-free guidance.
+We present GPSK-300, a 302M-parameter multimodal diffusion transformer that samples in a learned reciprocal-space representation. Each crystal is encoded as a 64³ grid on integer Miller indices with three channels: Re F(h), Im F(h), and the reciprocal-metric field 1/d²(h). Lattice parameters and atomic positions are recoverable from the model output by closed-form arithmetic, a linear least-squares fit on the reciprocal-metric channel for the lattice, and an inverse Fourier transform on the structure-factor channels for the atomic basis; element identity is then assigned heuristically under the composition prompt (Section 3.6), not solved independently. Training uses rectified flow matching in a 16³×128 latent learned by a small 3D VAE; inference is 50 forward Euler steps with classifier-free guidance.
 
 On a targeted permanent-magnet benchmark, GPSK-300 recovers the trained L1₀ tetragonal magnets (FePt, CoPt, FeNi, MnAl) within ±4% on both lattice constants and respects the conditioning signals it was trained on. Sampling takes approximately five seconds per candidate, against hours to days for classical CSP. A controlled composition/family holdout locates the model's reliability precisely: held-out *compositions* within a trained family recover at nearly the in-distribution rate (≈48% vs ≈58% exact structure match, for the held-out L1₀ pair FePd and MnGa), while an entirely held-out structural *family*, the hexagonal CaCu₅ rare-earth–transition-metal magnets (SmCo₅, YCo₅, CeCo₅), is not recovered, the model defaulting to the wrong cell (though the family is cheaply re-acquired by few-shot fine-tuning). Reliability sits at interpolation within represented motifs rather than extrapolation to new ones. GPSK-300 is best understood as a fast, amortized structure *proposer* for magnet-relevant families, calibrated by family-level recovery on known reference structures rather than by SUN-style novelty metrics. Downstream synthesizability and microstructural questions that govern whether a candidate composition can be realized as a functional magnet are not addressed.
 
@@ -23,14 +23,14 @@ Crystal structure prediction (CSP), determining the equilibrium crystal structur
 
 This paper proposes an alternative representation in which the lattice is recovered by linear algebra rather than predicted by a learned head. Generation moves into reciprocal space, where a crystal is naturally described by its structure factor \(F(\mathbf{h})\) on integer Miller indices, augmented with the reciprocal-metric field \(1/d^2(\mathbf{h}) = \mathbf{h}^T G^\ast \mathbf{h}\). The metric field is a quadratic form whose six independent coefficients are the components of the reciprocal metric tensor \(G^\ast\) and uniquely determine the six real-space lattice parameters \((a, b, c, \alpha, \beta, \gamma)\). When sampled on a dense Miller-index grid, the lattice is recovered from the quadratic field by ordinary least squares, and atomic positions are recovered by inverse Fourier transform of the structure factor. The model is responsible only for generating a coherent grid.
 
-We evaluate this representation through GPSK-300, a 304M-parameter multimodal diffusion transformer trained with rectified flow matching on a curated 2,000,115-structure corpus drawn from public DFT and experimental databases. The primary evaluation targets the two structural families most directly relevant to permanent-magnet design: the L1₀ tetragonal binaries (FePt, CoPt, FeNi, FePd, MnAl, MnGa) [3, 4, 5] and the hexagonal rare-earth–transition-metal compounds (SmCo₅, YCo₅, CeCo₅) [6]. On the trained L1₀ family the model recovers reference structures within ±4% on both \(a\) and \(c\) lattice constants, generates a candidate in approximately five seconds on a single GPU, and responds to the conditioning modalities it was trained on (composition, crystal system, space group, band gap, formation energy, energy above hull, magnetic ordering). The hexagonal family, together with the L1₀ compositions FePd and MnGa, is deliberately held out of training as a controlled generalization study (Section 5.7).
+We evaluate this representation through GPSK-300, a 302M-parameter multimodal diffusion transformer trained with rectified flow matching on a curated 2,000,115-structure corpus drawn from public DFT and experimental databases. The primary evaluation targets the two structural families most directly relevant to permanent-magnet design: the L1₀ tetragonal binaries (FePt, CoPt, FeNi, FePd, MnAl, MnGa) [3, 4, 5] and the hexagonal rare-earth–transition-metal (RE-TM) compounds (SmCo₅, YCo₅, CeCo₅) [6]. On the trained L1₀ family the model recovers reference structures within ±4% on both \(a\) and \(c\) lattice constants, generates a candidate in approximately five seconds on a single GPU, and responds to the conditioning modalities it was trained on (composition, crystal system, space group, band gap, formation energy, energy above hull, magnetic ordering). The hexagonal family, together with the L1₀ compositions FePd and MnGa, is deliberately held out of training as a controlled generalization study (Section 5.7).
 
 Two components of the broader permanent-magnet design problem are explicitly out of scope. Synthesizability (whether a candidate crystal structure can be realized through a tractable physical process) and microstructural engineering (control of grain size, crystallographic texture, domain-wall pinning, and second-phase distributions, all of which govern the gap between intrinsic and extrinsic magnetic figures of merit) are equally critical to producing a working magnet from a candidate composition, and neither is addressed in this work. GPSK-300 returns a candidate crystal structure given a composition prompt; downstream filtering for thermodynamic stability, synthesis pathway, and microstructural performance is the province of property-prediction models, multi-scale simulation, and experimental validation.
 
 The contributions of this paper are:
 
 1. A three-channel reciprocal-space representation for crystals in which the lattice is recovered in closed form, encoded as a smooth quadratic field rather than supplied as metadata or predicted by a separate learned head, with the atomic basis reconstructed by inverse FFT and element identity assigned under the composition prompt rather than solved independently.
-2. GPSK-300, a 304M-parameter multimodal diffusion transformer operating in a 16³×128 latent over this representation, trained with rectified flow matching and classifier-free guidance.
+2. GPSK-300, a 302M-parameter multimodal diffusion transformer operating in a 16³×128 latent over this representation, trained with rectified flow matching and classifier-free guidance.
 3. A reframing of how generative CSP systems should be evaluated: by per-family recovery against known reference structures rather than by SUN-style novelty rewards, which structurally penalize the kind of accuracy a useful CSP system should exhibit.
 
 The remainder of the paper is organized as follows. Section 2 reviews the structure-factor representation, the reciprocal metric tensor, and the diffusion machinery on which the model is built. Section 3 describes the encoder, generator, and closed-form decoder. Section 4 covers the training data and protocol. Section 5 reports invertibility, L1₀ magnet recovery, the composition/family holdout, conditioning-modality emergence, and the rock-salt halide undershoot. Section 6 discusses the system's scope and limits, and Section 7 outlines next-step directions.
@@ -157,7 +157,7 @@ where \(G^\ast = G^{-1}\) is the reciprocal metric tensor and \(G\) is the real-
 
 #### 2.3  Diffusion models and rectified flow matching
 
-The dominant family of modern generative models for continuous data fits a probability path \(p_t\) between a tractable prior \(p_0\) (Gaussian noise) and the data distribution \(p_1\), and learns to traverse that path with a learned vector field [12]. Score-based diffusion [13] parameterises this through the score \(\nabla_x \log p_t(x)\); flow matching [14] parameterises it directly as a velocity field \(v_\theta(x, t)\) trained to match a chosen target.
+The dominant family of modern generative models for continuous data fits a probability path \(p_t\) between a tractable prior \(p_0\) (Gaussian noise) and the data distribution \(p_1\), and learns to traverse that path with a learned vector field [12]. Score-based diffusion [13] parameterizes this through the score \(\nabla_x \log p_t(x)\); flow matching [14] parameterizes it directly as a velocity field \(v_\theta(x, t)\) trained to match a chosen target.
 
 Rectified flow [15] is the special case in which the path between paired \((x_0, x_1)\) is a straight line:
 
@@ -216,7 +216,7 @@ A small 3D convolutional VAE (\(\approx\)2.6M parameters) maps \(\mathbb{R}^{64^
 
 #### 3.3  MMDiT generator
 
-The generator is a multimodal diffusion transformer (MMDiT, ≈304M parameters) operating on the 16³×128 latent. Each block is double-stream: image tokens (sequenced from the spatial latent) and conditioning tokens (composition, crystal system, space group, band gap, formation energy, energy above hull, magnetic ordering) attend jointly through a shared attention mechanism, allowing conditioning tokens to attend to specific spatial regions of the latent rather than only modulating activations globally. AdaLN-Zero modulation [18, 19] on every block provides an additional global conditioning signal initialized so that residual blocks start as identity, which stabilizes training at this scale. After the double-stream blocks, the model passes into single-stream blocks operating on the merged token sequence.
+The generator is a multimodal diffusion transformer (MMDiT, ≈302M parameters) operating on the 16³×128 latent. Each block is double-stream: image tokens (sequenced from the spatial latent) and conditioning tokens (composition, crystal system, space group, band gap, formation energy, energy above hull, magnetic ordering) attend jointly through a shared attention mechanism [19], allowing conditioning tokens to attend to specific spatial regions of the latent rather than only modulating activations globally. AdaLN-Zero modulation [18] on every block provides an additional global conditioning signal initialized so that residual blocks start as identity, which stabilizes training at this scale. After the double-stream blocks, the model passes into single-stream blocks operating on the merged token sequence.
 
 #### 3.4  Training: rectified flow matching
 
@@ -224,7 +224,7 @@ Given a data latent \(z_1 \sim p_\text{data}\) and an isotropic Gaussian sample 
 
 $$z_t \;=\; (1-t)\,z_0 + t\,z_1, \qquad t \sim \mathcal{U}(0,1)$$
 
-and minimize the rectified-flow objective from Section 2.3:
+and we minimize the rectified-flow objective from Section 2.3:
 
 $$\mathcal{L}(\theta) \;=\; \mathbb{E}_{t,\,z_0,\,z_1,\,c}\!\left[\,\bigl\|\,v_\theta(z_t, t, c) - (z_1 - z_0)\,\bigr\|^2\,\right]$$
 
@@ -236,7 +236,7 @@ Sampling integrates the ODE \(\dot{z} = v_\theta(z, t)\) from \(t = 0\) to \(t =
 
 $$\tilde{v}_\theta(z_t, t, c) \;=\; v_\theta(z_t, t, \varnothing) \,+\, w\,\bigl(\,v_\theta(z_t, t, c) - v_\theta(z_t, t, \varnothing)\,\bigr)$$
 
-The default guidance scale is \(w = 6.0\), substantially higher than typical image-generation values. The dominant signal that needs amplification is property-conditioning on continuous values (formation energy, band gap, energy above hull); at \(w \le 1\) the model averages over the data distribution and the property knob has no measurable effect on the output, while at \(w \approx 6\) the response curves are monotonic in the conditioning value (Section 5.4). End-to-end sampling takes approximately five seconds per candidate on a single GPU.
+The default guidance scale is \(w = 6.0\), substantially higher than typical image-generation values. The dominant signal that needs amplification is property-conditioning on continuous values (formation energy, band gap, energy above hull); at \(w \le 1\) the model averages over the data distribution and the property knob has no measurable effect on the output, while at \(w \approx 6\) the response curves are monotonic in the conditioning value (Section 5.4). Lattice recovery prefers gentler guidance, so the structural evaluations use \(w \approx 3\) (Figure 12). End-to-end sampling takes approximately five seconds per candidate on a single GPU.
 
 <figure>
   <svg viewBox="0 10 600 120" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
@@ -287,7 +287,7 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <text x="68" y="306" text-anchor="middle" font-size="8" fill="#888" font-style="italic">7 tokens · p_drop = 0.1</text>
     <line x1="126" y1="282" x2="146" y2="282" stroke="#FF680A" stroke-width="0.7"/>
     <polygon points="149,282 144,280 144,284" fill="#FF680A"/>
-    <text x="210" y="195" text-anchor="middle" font-size="10" font-weight="500" fill="#222">MMDiT · ~304M params</text>
+    <text x="210" y="195" text-anchor="middle" font-size="10" font-weight="500" fill="#222">MMDiT · ~302M params</text>
     <text x="210" y="213" text-anchor="middle" font-size="9" fill="#666" font-style="italic">image latent (from z<tspan baseline-shift="sub" font-size="0.78em">t</tspan>)</text>
     <rect x="150" y="218" width="120" height="22" fill="none" stroke="#888" stroke-width="0.6"/>
     <text x="210" y="232" text-anchor="middle" font-size="9" fill="#444">linear projection</text>
@@ -325,7 +325,7 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <rect x="385" y="335" width="130" height="22" fill="#FF680A" fill-opacity="0.15" stroke="#FF680A" stroke-width="0.6"/>
     <text x="450" y="349" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">64³ × 3 grid</text>
   </svg>
-  <figcaption><strong>Figure 5b.</strong> The seven conditioning streams are each tokenized, individually dropped during training with p<sub>drop</sub> = 0.1, and fed as a separate token stream into the MMDiT's double-stream blocks, where they attend jointly with the latent image tokens. The MMDiT (≈304M params) processes the latent through a linear projection, N double-stream blocks (joint attention plus AdaLN-Zero), M single-stream blocks (merged self-attention plus AdaLN-Zero), and a linear output head producing the velocity field v<sub>θ</sub>. The VAE decoder (≈2.6M params) is a cascade of 3D transposed convolutions upsampling the 16³ × 128 latent to a 64³ × 3 grid, terminating in a 1×1×1 channel projection.</figcaption>
+  <figcaption><strong>Figure 5b.</strong> The seven conditioning streams are each tokenized, individually dropped during training with p<sub>drop</sub> = 0.1, and fed as a separate token stream into the MMDiT's double-stream blocks, where they attend jointly with the latent image tokens. The MMDiT (≈302M params) processes the latent through a linear projection, N double-stream blocks (joint attention plus AdaLN-Zero), M single-stream blocks (merged self-attention plus AdaLN-Zero), and a linear output head producing the velocity field v<sub>θ</sub>. The VAE decoder (≈2.6M params) is a cascade of 3D transposed convolutions upsampling the 16³ × 128 latent to a 64³ × 3 grid, terminating in a 1×1×1 channel projection.</figcaption>
 </figure>
 
 <figure>
@@ -429,14 +429,14 @@ $$a = \sqrt{G_{11}},\; b = \sqrt{G_{22}},\; c = \sqrt{G_{33}}, \quad \cos\alpha 
     <text x="330" y="243" text-anchor="middle" font-size="10" fill="#444" font-style="italic">input perturbation</text>
     <text x="34" y="130" text-anchor="middle" font-size="10" fill="#444" font-style="italic" transform="rotate(-90 34 130)">near-Z element-ID accuracy</text>
   </svg>
-  <figcaption><strong>Figure 8.</strong> Element-identity accuracy on near-Z pairs (Fe/Co/Ni, Mn/Fe) holds for the brightness heuristic but not for a Cromer-Mann magnitude fit as reconstruction error increases. Both are exact on clean and white-noise-perturbed inputs, but under realistic VAE reconstruction error the magnitude fit overfits the error to neighbouring atomic numbers and degrades, while the heuristic, reading inverse-FFT peak heights, remains exact. The heuristic is therefore retained in the deployed decode.</figcaption>
+  <figcaption><strong>Figure 8.</strong> Element-identity accuracy on near-Z pairs (Fe/Co/Ni, Mn/Fe) holds for the brightness heuristic but not for a Cromer-Mann magnitude fit as reconstruction error increases. Both are exact on clean and white-noise-perturbed inputs, but under realistic VAE reconstruction error the magnitude fit overfits the error to neighboring atomic numbers and degrades, while the heuristic, reading inverse-FFT peak heights, remains exact. The heuristic is therefore retained in the deployed decode.</figcaption>
 </figure>
 
 ### 4  Experimental Setup
 
 #### 4.1  Dataset
 
-GPSK-300 is trained on the GPSK-Inorganic-Crystals dataset [28], 2,000,115 structures drawn from LeMat-Bulk [20], Materials Project [21], Alexandria [22], OQMD [29], the Crystallographic Open Database [30], and MAGNDATA [31], deduplicated by entalpic fingerprint and joint-balanced across (space group × n_sites bin × chemical family) to preserve the long tail of rare structural families (L1₀ tetragonal, hex RE-TM, perovskite_cubic, rock_salt_oxide). For the held-out generalization study (Section 5.7), a 0.31% slice, the entire hex RE-TM family together with the FePd and MnGa compositions, is excluded from training before the representation is precomputed; all other structures are included. The three-channel representation is computed for each structure following Section 3.1.
+GPSK-300 is trained on the GPSK-Inorganic-Crystals dataset [28], 2,000,115 structures drawn from LeMat-Bulk [20], Materials Project [21], Alexandria [22], OQMD [29], the Crystallographic Open Database [30], and MAGNDATA [31], deduplicated by entalpic fingerprint and joint-balanced across (space group × n_sites bin × chemical family) to preserve the long tail of rare structural families (L1₀ tetragonal, hexagonal RE-TM, cubic perovskite, rock-salt oxide). For the held-out generalization study (Section 5.7), a 0.31% slice, the entire hexagonal RE-TM family together with the FePd and MnGa compositions, is excluded from training before the representation is precomputed; all other structures are included. The three-channel representation is computed for each structure following Section 3.1.
 
 #### 4.2  Composition tokens
 
@@ -448,11 +448,11 @@ Seven conditioning streams are supplied to the model: composition (raw counts), 
 
 #### 4.4  Training
 
-Training runs for 500k optimization steps with AdamW on the rectified-flow loss in two phases: (a) the three-channel grids are precomputed once and cached as parquet; (b) the VAE is trained first to convergence and frozen, after which the MMDiT is trained on the cached latents. The two-phase stack prevents the diffusion model from absorbing encoder noise during its own optimization.
+Training proceeds in stages: the three-channel grids are precomputed once and cached as parquet, the VAE is trained to convergence and frozen, and the MMDiT is then trained for 500k optimization steps with AdamW on the rectified-flow loss over the cached latents. Freezing the VAE before the MMDiT trains prevents the diffusion model from absorbing encoder noise during its own optimization.
 
 #### 4.5  Inference
 
-Inference uses 50 forward Euler steps with \(w = 6.0\) classifier-free guidance and best-of-N candidate selection. For the magnetic evaluation, N = 10 candidates are drawn per (composition, crystal system, space group, magnetic ordering) prompt and the closest match to reference is reported.
+Inference uses 50 forward Euler steps with classifier-free guidance and best-of-N candidate selection. The guidance scale is task-dependent (Section 5.4): the structural evaluations use \(w \approx 3\), the lattice-recovery optimum, while the property-conditioning sweeps use the \(w = 6\) serving default. N likewise varies by experiment: 10 candidates per (composition, crystal system, space group, magnetic ordering) prompt for the magnetic evaluation, 16 for the L1₀ recovery in Table 1, and 48 for the holdout study (Section 5.7), with the closest match to reference reported.
 
 ### 5  Results
 
@@ -462,7 +462,7 @@ A first sanity check is the round-trip: take a known structure, encode to the th
 
 #### 5.2  L1₀ tetragonal family
 
-The L1₀ family is a primary target for rare-earth-free permanent magnets: tetragonal P4/mmm intermetallics with a c/a ratio just under unity, alternating A/B atomic planes along the c axis. The four trained members, FePt, CoPt, FeNi, MnAl, recover to within ±4% on both \(a\) and \(c\) (Table 1, best of N = 16); two further members, FePd and MnGa, are held out of training and recover at nearly the same rate (Section 5.7). The c/a ratio, the most important structural number for L1₀ magnets, because it controls the magnetocrystalline anisotropy that makes these compounds useful, is preserved to within ~3% across the family.
+The L1₀ family is a primary target for rare-earth-free permanent magnets: tetragonal P4/mmm intermetallics with alternating A/B atomic planes along the c axis. (Two cell conventions coexist for L1₀: the conventional face-centered description has c/a just under unity, while the primitive tetragonal cell used throughout this paper, whose a is smaller by √2, has c/a ≈ 1.37.) The four trained members, FePt, CoPt, FeNi, MnAl, recover to within ±4% on both \(a\) and \(c\) (Table 1, best of N = 16); two further members, FePd and MnGa, are held out of training and recover at nearly the same rate (Section 5.7). The c/a ratio, the most important structural number for L1₀ magnets, because it controls the magnetocrystalline anisotropy that makes these compounds useful, is preserved to within ~3% across the family.
 
 **Table 1.** L1₀ tetragonal magnet recovery (trained members; best of N = 16). Reference parameters from published crystallography [3, 4, 5]. Ratios are *recovered/reference*; values near 1.00 are best.
 
@@ -486,9 +486,9 @@ The L1₀ family is a primary target for rare-earth-free permanent magnets: tetr
 
 #### 5.3  Hexagonal rare-earth–transition-metal magnets
 
-The CaCu₅-type hexagonal RE-Co structures (space group P6/mmm) are the second key magnetic family, and they serve as the family-level arm of the holdout study (Section 5.7): the **entire hex RE-TM family is excluded from training** (Section 4.1). On this held-out family the model does *not* reproduce the squat CaCu₅ geometry, across SmCo₅, YCo₅, and CeCo₅ it defaults to tall cells (generated c/a ≈ 1.3–1.6 against the squat target ≈ 0.80), a 0% structure-match rate (Table 2). This is the negative control that validates the holdout methodology: the model's "hexagonal" prior, learned from non-RE-TM hexagonal structures that are predominantly tall, defaults to tall when asked for a squat motif it never saw.
+The CaCu₅-type hexagonal RE-TM structures (space group P6/mmm) are the second key magnetic family, and they serve as the family-level arm of the holdout study (Section 5.7): the **entire hexagonal RE-TM family is excluded from training** (Section 4.1). On this held-out family the model does *not* reproduce the squat CaCu₅ geometry: across SmCo₅, YCo₅, and CeCo₅ it defaults to tall cells (generated c/a ≈ 1.3–1.6 in the Table 2 run, and tall in every replicate across runs, against the squat target ≈ 0.80), a 0% structure-match rate (Table 2). This is the negative control that validates the holdout methodology: the model's "hexagonal" prior, learned from non-RE-TM hexagonal structures that are predominantly tall, defaults to tall when asked for a squat motif it never saw.
 
-**Table 2.** Held-out hexagonal RE-Co family, ship model, never trained on this family. Squat CaCu₅ target c/a ≈ 0.80.
+**Table 2.** Held-out hexagonal RE-TM family, ship model, never trained on this family. Squat CaCu₅ target c/a ≈ 0.80.
 
 | Composition | target c/a | generated c/a | structure-match |
 |---|---:|---:|:---:|
@@ -528,10 +528,10 @@ This family-level failure is not permanent, however. Fine-tuning the trained mod
 
 #### 5.4  Conditioning modality emergence
 
-For each modality, the correlation between requested conditioning value and the measured value in the generated structure (or, for categorical conditioning, the fraction of samples respecting the requested label) was tracked across the training schedule. Each modality shows a clear emergence checkpoint where signal moves from indistinguishable from noise to strong, and the order is not the naive expectation, symmetry information comes in first, continuous properties last (per-modality numbers in Table A1).
+For each modality, the correlation between requested conditioning value and the measured value in the generated structure (or, for categorical conditioning, the fraction of samples respecting the requested label) was tracked across the training schedule. Each modality shows a clear emergence checkpoint where signal moves from indistinguishable from noise to strong, and the order is not the naive expectation: symmetry information comes in first, continuous properties last (per-modality numbers in Table A1).
 
 
-Concrete monotonic trends confirm this ordering on the continuous-property channels (Figure 13): TiO₂'s c-axis scales smoothly with the formation-energy condition (≈4.4 Å at −3 eV/atom falling to ≈3.0 Å at 0), and SiO₂'s \(a\)-axis scales smoothly with the band-gap condition (≈3.3 Å at 0 eV to ≈2.2 Å by 4 eV). Magnetic ordering, by contrast, leaves the lattice essentially unchanged: across the L1₀ magnet families the recovered c/a shifts by ≤0.04 between FM and AFM conditioning. The cell is set by composition and symmetry; magnetic ordering registers as a property condition that does not measurably reshape it, a more physical behavior than a strong magnetostructural coupling would be.
+Concrete monotonic trends confirm this ordering on the continuous-property channels (Figure 13): TiO₂'s c-axis scales smoothly with the formation-energy condition (≈4.4 Å at −3 eV/atom falling to ≈3.0 Å at 0), and SiO₂'s \(a\)-axis scales smoothly with the band-gap condition (≈3.3 Å at 0 eV to ≈2.2 Å by 4 eV). The response is monotonic but not calibrated: the magnitudes the sweep traverses are not physical (a 2.2 Å SiO₂ \(a\)-axis does not exist), so the continuous-property channels should be read as directional knobs the model has learned to respond to, not as quantitative controls. Magnetic ordering, by contrast, leaves the lattice essentially unchanged: across the L1₀ magnet families the recovered c/a shifts by ≤0.04 between FM and AFM conditioning. The cell is set by composition and symmetry; magnetic ordering registers as a property condition that does not measurably reshape it, a more physical behavior than a strong magnetostructural coupling would be.
 
 <figure>
   <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
@@ -567,10 +567,10 @@ Concrete monotonic trends confirm this ordering on the continuous-property chann
     <text x="535" y="232" text-anchor="middle" font-size="9" fill="#666">300k</text>
     <text x="340" y="248" text-anchor="middle" font-size="10" fill="#444" font-style="italic">training step</text>
   </svg>
-  <figcaption><strong>Figure 11.</strong> Each modality's bar starts at the training step where its conditioning correlation first exceeded 0.3 and runs to the end of training; the trailing number is the final conditioning correlation. Symmetry conditioning emerges first (space group, then crystal system), composition next, continuous properties (band gap) and globally-defined properties (magnetic ordering, formation energy) last. Formation energy carries the strongest final signal, by a wide margin.</figcaption>
+  <figcaption><strong>Figure 11.</strong> Each modality's bar starts at the training step where its conditioning correlation first exceeded 0.3 and runs through the last emergence-tracking checkpoint (300k); the trailing number is the modality's final correlation (Table A1). Symmetry conditioning emerges first (space group, then crystal system), composition next, continuous properties (band gap) and globally-defined properties (magnetic ordering, formation energy) last. Formation energy carries the strongest final signal, by a wide margin.</figcaption>
 </figure>
 
-The emergence above concerns *property* response, for which a strong guidance scale (w = 6) is needed; *lattice* recovery, by contrast, responds to guidance non-monotonically. Sweeping w over the L1₀ families gives an inverted-U with a clear optimum near **w ≈ 3**: best-of-N lattice error is minimized there and rises roughly fourfold by w = 6, where the exact-match rate also collapses, strong guidance over-sharpens and distorts the cell (the same mechanism that drives the unseen hex family further from its true c/a at high w). The two demands trade off, w ≈ 6 maximizes property response at a measurable lattice-accuracy cost, w ≈ 3 is the lattice-recovery optimum, and the structural evaluations in this paper use w ≈ 3.
+The emergence above concerns *property* response, for which a strong guidance scale (w = 6) is needed; *lattice* recovery, by contrast, responds to guidance non-monotonically. Sweeping w over the L1₀ families gives an inverted-U with a clear optimum near **w ≈ 3**: best-of-N lattice error is minimized there and rises roughly fourfold by w = 6, where the exact-match rate also collapses: strong guidance over-sharpens and distorts the cell (the same mechanism that drives the unseen hex family further from its true c/a at high w). The two demands trade off, w ≈ 6 maximizes property response at a measurable lattice-accuracy cost, w ≈ 3 is the lattice-recovery optimum, and the structural evaluations in this paper use w ≈ 3.
 
 <figure>
   <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
@@ -608,13 +608,13 @@ The emergence above concerns *property* response, for which a strong guidance sc
 
 #### 5.5  Magnetic batch
 
-A batch of 195 generated structures across 28 magnetic prompts gives the population-level picture (a representative subsample scored with LeMat-GenBench [23]; the full-scale batch is a straightforward larger run). Validity is high: 100% of structures are charge-neutral and 99.0% are physically plausible (sensible angles, pymatgen-parseable); 67% additionally pass the strictest interatomic-distance check, the remainder carrying a single near-contact from the peak-finding decode. The Herfindahl-Hirschman composition risk score sits in the moderate band (`HHI_combined_mean ≈ 2.66`), reflecting the Co-, Fe-, and Pt-rich magnetic prompts rather than a model bias. Uniqueness is 64%: distinct prompts yield distinct structures, and best-of-N resampling retains meaningful diversity rather than collapsing to a single mode.
+A batch of 195 generated structures across 28 magnetic prompts gives the population-level picture (a representative subsample scored with LeMat-GenBench [20]; the full-scale batch is a straightforward larger run). Validity is high: 100% of structures are charge-neutral and 99.0% are physically plausible (sensible angles, pymatgen-parseable); 67% additionally pass the strictest interatomic-distance check, the remainder carrying a single near-contact from the peak-finding decode. The Herfindahl-Hirschman composition risk score [23] sits in the moderate band (combined mean ≈ 2.66), reflecting the Co-, Fe-, and Pt-rich magnetic prompts rather than a model bias. Uniqueness is 64%: distinct prompts yield distinct structures, and repeated samples of one prompt spread around that prompt's dominant motif (per-sample match rates of ~50–60% on recovered families, Section 5.7) rather than collapsing to byte-identical outputs.
 
 The exact-fingerprint novelty metric reports ≈100% novel, but this is the metric pathology discussed in Section 6, not a generation property. GPSK-300 returns *approximately* correct cells (the lattice within a few percent, Section 5.2), and the BAWL structure fingerprint is exact, so an approximately-right structure registers as "not in the database" even when it is the canonical compound. Whether the model returns the correct structure for a known composition is therefore read from the `StructureMatcher` recovery rates (Sections 5.2, 5.7), not from exact-fingerprint novelty.
 
 #### 5.6  Failure modes
 
-Rock-salt ionics divide cleanly along anion type. The rock-salt **oxide** is recovered: MgO matches its reference structure exactly (per-atom volume within ~20% of reference, exact `StructureMatcher` match). The systematic undershoot is confined to rock-salt **halides**, NaCl and KCl generate cells roughly half the reference per-atom volume (Table 3). Other failure modes are family-specific, Si (diamond cubic) fails the decode entirely because the FCC selection rule sends Im F to zero on \(l=0\) and our peak-finder misses the diagonal-pair structure on a single slice; LiFePO₄ (olivine) recovers but with a poor lattice ratio reflecting low training-set coverage of that family.
+Rock-salt ionics divide cleanly along anion type. The rock-salt **oxide** is recovered: MgO matches its reference structure exactly (per-atom volume ratio 1.21, exact `StructureMatcher` match). The systematic undershoot is confined to rock-salt **halides**: NaCl and KCl generate cells roughly half the reference per-atom volume (Table 3). Other failure modes are family-specific. Si (diamond cubic) decodes to geometrically valid cells but shows the same volume undershoot as the sparse ionics (median per-atom volume ratio ≈ 0.53; 2 of 8 samples still match the diamond reference, at the matcher's tolerance edge). LiFePO₄ (olivine) does not recover: every sample returns a single-formula-unit, 7-atom cell in place of the 28-atom olivine cell, with per-atom volume close to correct (≈ 0.94), the same too-small-cell behavior as the complexity ceiling of Section 5.9.
 
 **Table 3.** Rock-salt family (per-atom volume ratio; 1.0 = correct).
 
@@ -635,7 +635,7 @@ The L1₀ recovery above (Section 5.2) is measured on a family GPSK-300 was trai
 
 Each held-out target is prompted by composition + symmetry, sampled best-of-N, and scored against its reference with the full structure-level metric set of Section 5 (StructureMatcher match, space-group recovery, bond-validity, volume ratio) rather than lattice ratios alone.
 
-The two levels separate cleanly, and the separation is the honest scope of the prediction claim. **Held-out *compositions* in a seen family recover at nearly the seen rate.** Scoring exact `StructureMatcher` matches over N = 48 samples per prompt, FePd and MnGa reach a per-sample match rate of 50% and 46% (48% combined) against 58% for the four seen L1₀ families, full-motif matches with correct c/a, not merely right-sized cells. The model interpolates within a learned motif rather than reproducing exact training entries; at these per-sample rates, best-of-N recovery is effectively certain. **The held-out *family* does not recover at all.** Across a sweep of guidance and magnetic-conditioning settings, generated hex RE-TM cells never reproduce the squat CaCu₅ c/a ≈ 0.8, 0% StructureMatcher match and 0% even geometrically valid, defaulting to the tall c/a > 1 learned from other hexagonal structures. **The boundary, interpolation within a represented motif, not extrapolation to an unseen one, is the scope within which a "novel" candidate from GPSK-300 should be trusted.**
+The two levels separate cleanly, and the separation is the honest scope of the prediction claim. **Held-out *compositions* in a seen family recover at nearly the seen rate.** Scoring exact `StructureMatcher` matches over N = 48 samples per prompt, FePd and MnGa reach a per-sample match rate of 50% and 46% (48% combined) against 58% for the four seen L1₀ families, full-motif matches with correct c/a, not merely right-sized cells. The model interpolates within a learned motif rather than reproducing exact training entries; at these per-sample rates, best-of-N recovery is effectively certain. **The held-out *family* does not recover at all.** Across a sweep of guidance and magnetic-conditioning settings, generated hexagonal RE-TM cells never reproduce the squat CaCu₅ c/a ≈ 0.8: 0% StructureMatcher match, and no sample passes the geometric-validity check (the closed-form lattice read still succeeds, which is how the tall cells are measured), defaulting to the tall c/a > 1 learned from other hexagonal structures. **The boundary, interpolation within a represented motif, not extrapolation to an unseen one, is the scope within which a "novel" candidate from GPSK-300 should be trusted.**
 
 **Table 4.** Holdout recovery (ship checkpoint, N = 48 samples/prompt). Rate = fraction of samples that are exact `StructureMatcher` matches to the prototype reference. Held-out *composition* recovers near the seen rate; held-out *family* is the negative control.
 
@@ -644,9 +644,9 @@ The two levels separate cleanly, and the separation is the honest scope of the p
 | FePt, CoPt, FeNi, MnAl | none, seen reference | 58% | ✓ |
 | **FePd** | composition (L1₀ family seen) | **50%** | ✓ |
 | **MnGa** | composition (L1₀ family seen) | **46%** | ✓ |
-| SmCo₅, YCo₅, CeCo₅ | family (hex RE-TM unseen) | **0%** | ✗ |
+| SmCo₅, YCo₅, CeCo₅ | family (hexagonal RE-TM unseen) | **0%** | ✗ |
 
-The reported checkpoint is the best of GPSK-300's training trajectory: per-sample recovery peaked at ~80% of the schedule and declined as the learning rate annealed to zero (the endpoint over-sharpens and loses the sample diversity that best-of-N relies on), so the checkpoint at the recovery peak (400k) is used throughout.
+The reported checkpoint is the best of GPSK-300's training trajectory: per-sample recovery peaked at the 400k-step checkpoint, four-fifths of the way through the schedule, and declined as the learning rate annealed to zero (the endpoint over-sharpens and loses the sample diversity that best-of-N relies on), so that checkpoint is used throughout.
 
 <figure>
   <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
@@ -667,7 +667,7 @@ The reported checkpoint is the best of GPSK-300's training trajectory: per-sampl
     <rect x="390" y="206" width="90" height="4" fill="#999"/>
     <text x="435" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#999">0%</text>
     <text x="435" y="226" text-anchor="middle" font-size="10" fill="#333">held-out family</text>
-    <text x="435" y="238" text-anchor="middle" font-size="8.5" fill="#888" font-style="italic">hex RE-Co</text>
+    <text x="435" y="238" text-anchor="middle" font-size="8.5" fill="#888" font-style="italic">hex RE-TM</text>
     <text x="232" y="34" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">interpolation within a learned motif ✓</text>
     <text x="435" y="184" text-anchor="middle" font-size="10" font-style="italic" fill="#999">extrapolation ✗</text>
   </svg>
@@ -697,7 +697,7 @@ The reported checkpoint is the best of GPSK-300's training trajectory: per-sampl
     <text x="325" y="242" text-anchor="middle" font-size="10" fill="#444" font-style="italic">training step</text>
     <text x="34" y="130" text-anchor="middle" font-size="10" fill="#444" font-style="italic" transform="rotate(-90 34 130)">structure-match recovery</text>
   </svg>
-  <figcaption><strong>Figure 15.</strong> Structure-match recovery on the seen and held-out L1₀ families changes across training checkpoints. Both rise to a maximum near 80% of the schedule (the 400k-step checkpoint, used as the deployed model) and decline as the learning rate anneals to zero, since the over-sharpened endpoint loses the sample diversity that best-of-N selection relies on. This motivates selecting the peak checkpoint rather than the final one.</figcaption>
+  <figcaption><strong>Figure 15.</strong> Structure-match recovery on the seen and held-out L1₀ families changes across training checkpoints (N = 10 samples per prompt; Table A4). Both rise to a maximum near 80% of the schedule (the 400k-step checkpoint, used as the deployed model) and decline as the learning rate anneals to zero, since the over-sharpened endpoint loses the sample diversity that best-of-N selection relies on. This motivates selecting the peak checkpoint rather than the final one.</figcaption>
 </figure>
 
 
@@ -706,7 +706,7 @@ The family-level failure is not permanent: a brief fine-tune on a handful of exa
 
 #### 5.8  Breadth beyond the magnet families
 
-The evaluation so far targets magnet families by design. To map where the reciprocal-space representation generalizes and where it is family-specific, GPSK-300 was probed on a panel of canonical prototypes spanning bonding types, ionic, covalent, oxide, metallic, each scored against a prototype reference with the Section 5 structure-level metrics (Table A2). The picture is one of *narrow, coverage-tracking competence*.
+The evaluation so far targets magnet families by design. To map where the reciprocal-space representation generalizes and where it is family-specific, GPSK-300 was probed on a panel of canonical prototypes spanning bonding types (ionic, covalent, oxide, metallic), each scored against a prototype reference with the Section 5 structure-level metrics (Table A2). The picture is one of *narrow, coverage-tracking competence*.
 
 
 Exact recovery is confined to simple metals and the (training-rich) rock-salt oxide; most other prototypes produce geometrically valid but structurally incorrect cells, and the families sparsest in training (rock-salt halides) fail even on cell size. The clean tell is that rock-salt *oxide* recovers while rock-salt *halide* does not, competence tracks training coverage, not structural simplicity. **The magnet-family accuracy does not broadly generalize**, which is the empirical basis for positioning GPSK-300 as an amortized proposer for represented families rather than a general-purpose CSP engine. (Annealing sharpens these rates but does not broaden them: across checkpoints, metal recovery peaks at the same point as magnet recovery, and the never-matched families stay at zero.)
@@ -745,7 +745,7 @@ Exact recovery is confined to simple metals and the (training-rich) rock-salt ox
 
 #### 5.9  Complexity ceiling
 
-The closed-form decode locates atoms as peaks in the inverse-FFT density, which bounds the cell complexity it can resolve. A ladder of increasing atom count makes the ceiling explicit (Table A3): small-to-moderate cells recover, but beyond roughly 20–40 atoms the decode collapses, it either undershoots the atom count badly or returns invalid geometry. Nd₂Fe₁₄B, the commercial permanent magnet, is a 68-atom cell; the model emits a single-formula-unit, 17-atom fragment.
+The closed-form decode locates atoms as peaks in the inverse-FFT density, which bounds the cell complexity it can resolve. A ladder of increasing atom count makes the ceiling explicit (Table A3): small-to-moderate cells recover, but beyond roughly 20–40 atoms the decode collapses: it either undershoots the atom count badly or returns invalid geometry. Nd₂Fe₁₄B, the commercial permanent magnet [1, 2], is a 68-atom cell; the model emits a single-formula-unit, 17-atom fragment.
 
 
 Critically, **this is not a grid-resolution limit.** A closed-form encode→decode round-trip on real structures resolves all atoms losslessly up to at least 128 atoms at the current 64³ Miller grid, and doubling the grid to 128³ yields no improvement at any atom count. The ceiling is instead the *generative* model emitting too-small cells for complex compositions (a training-coverage effect, large cells are rare in the corpus) compounded by the peak-finder's sensitivity on dense cells. The remedy is coverage and decode refinement, not finer sampling, and it bounds the honest reading of "invertibility," which holds for small-to-moderate well-represented cells and degrades as peak density grows.
@@ -807,10 +807,10 @@ The central representational claim is that the reciprocal-metric channel makes l
 GPSK-300 is best described as a fast crystal structure prediction system, not a novel-materials generator. The L1₀ recovery result is the right way to evaluate it: near-perfect lattice recovery across a family of high practical relevance, bounded by the controlled holdout (Section 5.7) that shows where that reliability extends. The standard LeMat-GenBench [20] family of metrics, especially the SUN (Stable ∩ Unique ∩ Novel) rate, structurally undersells this kind of system:
 
 - **Stable**: required, ✓.
-- **Unique**: ✗ by design. Best-of-N collapses to a near-deterministic mode per prompt, exactly the behavior you want from CSP.
+- **Unique**: ✗ by design. Repeated sampling of one prompt concentrates on a single structural motif (per-sample exact-match rates of ~50–60% on recovered families, Section 5.7) rather than exploring alternatives, exactly the behavior you want from CSP.
 - **Novel**: ✗ by design. The known answer for FePt is itself, not a "novel" L1₀ variant.
 
-The metric structurally rewards lattice imprecision: a wrong lattice → fingerprint mismatch → label "novel". GPSK-05's 99.9% novelty was earned partly by its 25% lattice undershoot on simple ionics. Accuracy was being penalized for not appearing novel.
+The metric structurally rewards lattice imprecision: a wrong lattice → fingerprint mismatch → label "novel". The ≈100% exact-fingerprint novelty in Section 5.5 is earned exactly this way: an approximately-right cell registers as absent from the database even when it is the canonical compound. Accuracy is penalized for not appearing novel.
 
 The right benchmark for this class of model is per-family recovery: take held-out known compositions in a family F, prompt with composition + symmetry, compare to reference by lattice RMSD plus atom-position match, and report family-level accuracy. The magnetic evaluation in Section 5 establishes the trained L1₀ family at high recovery accuracy. The right way to interpret a *novel* L1₀ candidate generated by GPSK-300 is then "as reliable as the family-level recovery rate suggests." Recovering the trained L1₀ family establishes strong in-distribution accuracy; on its own, however, it does not separate genuine structure prediction from retrieval of a family well-represented in training. Establishing that separation requires recovering compositions the model never saw, a composition/family holdout (Section 5.7), which we treat as the load-bearing experiment for any novelty claim.
 
@@ -822,7 +822,7 @@ The rock-salt halide undershoot in Section 5.6 is a clean, narrow failure mode r
 
 **Stability-aware reward.** RL fine-tuning against a CHGNet-style universal MLIP [24], or diffusion-time optimization against the same energy oracle, so the model is pulled toward energetic optima rather than only the data-distribution average. A prototype using GRPO with per-prompt EMA baseline and a strong KL anchor (β ≈ 0.3) ran stably on the magnetic domain across 80 fine-tuning steps without degrading the L1₀ accuracy reported here. The full retrain target is to extend that stability gain to the simple ionics where the base model undershoots, with the explicit reward being lattice RMSD against reference rather than raw MLIP energy.
 
-**Data rebalancing.** LeMat-Bulk lifts coverage of every family used in this paper into the regime where supervised flow matching trains cleanly (perovskite_cubic 575 → 12k samples, spinels 2.9k → 17k, hex RE-TM 1.5k → 5.9k). Rock-salt oxide remains at ~240 samples even after this lift and is the next family to upweight explicitly. The training pipeline supports a `--rebalance-alpha` family-importance term that we have not yet swept exhaustively.
+**Data rebalancing.** LeMat-Bulk lifts coverage of every family used in this paper into the regime where supervised flow matching trains cleanly (cubic perovskite 575 → 12k samples, spinels 2.9k → 17k, hexagonal RE-TM 1.5k → 5.9k). Rock-salt oxide remains at ~430 samples even after this lift and is the next family to upweight explicitly. The training pipeline supports a tunable family-importance rebalancing weight that we have not yet swept exhaustively.
 
 **Robust element disambiguation (open).** Element assignment is not the bottleneck we initially expected: the brightness heuristic recovers near-Z identities reliably under reconstruction error (Section 3.6). The natural alternative, a joint Cromer-Mann least-squares fit predicting F(hkl) from candidate assignments, is exact on noise-free structures (6/6 SmCo₅, 4/4 Fe/Co at ΔZ=1) but, we found, *less* robust than the heuristic under realistic VAE error, overfitting reconstruction noise to neighboring atomic numbers (~60% vs the heuristic's 100% on near-Z binaries). A disambiguation method that is both error-robust and physically grounded, e.g. constraining the magnitude fit with the recovered density peak heights rather than fitting F-magnitudes alone, remains open; the current heuristic is the operating choice.
 
@@ -845,9 +845,9 @@ The figures in Section 5 carry the headline results; the full per-family numbers
 | Magnetic ordering  | 0.57 | strong   | late |
 | Formation energy   | 0.84 | strong   | late |
 
-**Table A2.** Breadth across structural families (ship checkpoint). Match = exact `StructureMatcher` rate; cell-size = median per-atom volume ratio (1.0 = correct).
+**Table A2.** Breadth across structural families (ship checkpoint). Match = exact `StructureMatcher` rate; cell-scale = median *linear* cell-scale ratio, the cube root of the per-atom volume ratio (1.0 = correct). Table 3 reports the same rock-salt data as volume ratios, which is why its numbers look harsher (a 0.73 linear scale is a 0.39 volume ratio).
 
-| structure family | match rate | cell-size | verdict |
+| structure family | match rate | cell-scale | verdict |
 |---|:---:|:---:|---|
 | bcc / fcc metals (Fe, Cu) | 100% / 93% | ~1.0 | recovered |
 | rock-salt oxide (MgO) | 100% | ~1.05 | recovered |
@@ -863,7 +863,7 @@ The figures in Section 5 carry the headline results; the full per-family numbers
 | Sm₂Co₁₇ | 2:17 | ~38 | invalid geometry |
 | Nd₂Fe₁₄B | NdFeB | 68 | 17-atom fragment |
 
-**Table A4.** Per-checkpoint structure-match recovery on the seen and held-out L1₀ families (the per-checkpoint numbers plotted in the training-trajectory figure). The 400k checkpoint is the deployed model.
+**Table A4.** Per-checkpoint structure-match recovery on the seen and held-out L1₀ families, measured at N = 10 samples per prompt (the trajectory run plotted in Figure 15). The 400k checkpoint is the deployed model; its headline rates in Table 4 (58% seen, 48% held-out) come from the higher-precision N = 48 tiebreak run, and the N = 10 row here sits within that run's sampling noise.
 
 | checkpoint | seen L1₀ | held-out L1₀ |
 |---|---:|---:|
