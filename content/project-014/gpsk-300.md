@@ -33,7 +33,7 @@ The contributions of this paper are:
 2. GPSK-300, a 302M-parameter multimodal diffusion transformer operating in a 16³×128 latent over this representation, trained with rectified flow matching and classifier-free guidance.
 3. A reframing of how generative CSP systems should be evaluated: by per-family recovery against known reference structures rather than by SUN-style novelty rewards, which structurally penalize the kind of accuracy a useful CSP system should exhibit.
 
-The remainder of the paper is organized as follows. Section 2 reviews the structure-factor representation, the reciprocal metric tensor, and the diffusion machinery on which the model is built. Section 3 describes the encoder, generator, and closed-form decoder. Section 4 covers the training data and protocol. Section 5 reports invertibility, L1₀ magnet recovery, the composition/family holdout, conditioning-modality emergence, and the rock-salt halide undershoot. Section 6 discusses the system's scope and limits, and Section 7 outlines next-step directions.
+The remainder of the paper is organized as follows. Section 2 reviews the structure-factor representation, the reciprocal metric tensor, and the diffusion machinery on which the model is built. Section 3 describes the encoder, generator, and closed-form decoder. Section 4 covers the training data and protocol. Section 5 reports invertibility, L1₀ magnet recovery, the composition/family holdout, conditioning-modality emergence, and the rock-salt failure analysis. Section 6 discusses the system's scope and limits, and Section 7 outlines next-step directions.
 
 ### 2  Background
 
@@ -475,7 +475,7 @@ The L1₀ family is a primary target for rare-earth-free permanent magnets: tetr
 
 <figure>
   <img src="/img/gpsk300_gallery.png" alt="Generated versus expected crystal structures across the competence spectrum: recovered L1₀ magnets, metals and rock-salt oxide; held-out compositions; and characteristic failures." style="width:100%;max-width:600px;display:block;margin:0 auto;" />
-  <figcaption><strong>Figure 9a.</strong> GPSK-300's outputs span its competence spectrum, each shown as the generated crystal beside the expected reference at a common scale. The recovered families (L1₀ magnets, simple metals, and the training-rich rock-salt oxide) reproduce the expected cell; held-out compositions (FePd, MnGa) recover at nearly the seen rate; and the off-target cases are visible directly: the unseen hexagonal family produces a tall cell rather than the squat CaCu₅ geometry, rock-salt halides and perovskite generate coherent but structurally wrong cells, and the 68-atom Nd₂Fe₁₄B exceeds the decode's ~20–40-atom ceiling and returns only a fragment. Per-structure metrics are in Tables 1–4 and Appendix A.</figcaption>
+  <figcaption><strong>Figure 9a.</strong> GPSK-300's outputs span its competence spectrum, each shown as the generated crystal beside the expected reference at a common scale. The recovered families (L1₀ magnets, simple metals, and the rock-salt oxide, recovered despite ~430 training samples) reproduce the expected cell; held-out compositions (FePd, MnGa) recover at nearly the seen rate; and the off-target cases are visible directly: the unseen hexagonal family produces a tall cell rather than the squat CaCu₅ geometry, rock-salt halides and perovskite generate coherent but structurally wrong cells, and the 68-atom Nd₂Fe₁₄B exceeds the decode's ~20–40-atom ceiling and returns only a fragment. Per-structure metrics are in Tables 1–4 and Appendix A.</figcaption>
 </figure>
 
 <figure>
@@ -614,17 +614,21 @@ The exact-fingerprint novelty metric reports ≈100% novel, but this is the metr
 
 #### 5.6  Failure modes
 
-Rock-salt ionics divide cleanly along anion type. The rock-salt **oxide** is recovered: MgO matches its reference structure exactly (per-atom volume ratio 1.21, exact `StructureMatcher` match). The systematic undershoot is confined to rock-salt **halides**: NaCl and KCl generate cells roughly half the reference per-atom volume (Table 3). Other failure modes are family-specific. Si (diamond cubic) decodes to geometrically valid cells but shows the same volume undershoot as the sparse ionics (median per-atom volume ratio ≈ 0.53; 2 of 8 samples still match the diamond reference, at the matcher's tolerance edge). LiFePO₄ (olivine) does not recover: every sample returns a single-formula-unit, 7-atom cell in place of the 28-atom olivine cell, with per-atom volume close to correct (≈ 0.94), the same too-small-cell behavior as the complexity ceiling of Section 5.9.
+Rock-salt ionics initially appear to divide along anion type: MgO recovers exactly while NaCl and KCl report per-atom volumes roughly half their references. Tracing where the error lives overturns that reading. The lattice read closed-form from the generated grids, before any atom placement, is never undersized: LiF and MgO land on the correct primitive cell, while CaO, NaCl, and KCl come out 13–30% *oversized* on edge length (Table 3). The "undershoot" enters at decode. The peak-count heuristic of Section 3.6 assumes ≈12 ų per atom; for targets whose true atomic volume is far larger (CaO 14, NaCl 22, KCl 31 ų/atom) it over-counts formula units, and the top-N picker promotes noise peaks to fill the quota, collapsing nearest-neighbor distances and forcing the reported per-atom volume back toward 12 ų regardless of the generated cell. Re-decoding the *same grids* with the occupancy set from the composition's true atomic volume recovers exact `StructureMatcher` matches the stock decode scored at zero: CaO goes from 0/8 to 7/8 and NaCl from 0/8 to 2/8, while KCl stays at 0/8 (Table 3). The split is therefore not anion chemistry, and CaO, an oxide that stock-decodes at 0/8, breaks the anion-type divide outright: MgO (9.3 ų/atom) and LiF (8.2) recover because their atomic densities sit near the decoder's prior and round to the correct atom count, and LiF is itself a halide.
 
-**Table 3.** Rock-salt family (per-atom volume ratio; 1.0 = correct).
+What remains after the decode artifact is a genuine generative error that grows as conditional support thins: the corpus holds 29 MgO entries at the prompted symmetry but only 8 for NaCl and 3 for KCl, and the generated cell oversize grows in the same order (MgO ≈ 0%, NaCl +15%, KCl +30%), leaving KCl unrecoverable even with oracle occupancy. Other failure modes are family-specific. Si (diamond cubic) is a genuine generative miss: the generated cells sit near the volume of the *one-atom fcc primitive* rather than the two-atom diamond cell (≈ 0.53× reference volume per atom), as if the model emits the lattice without the basis doubling; 2 of 8 samples still match the reference at the matcher's tolerance edge. LiFePO₄ (olivine) does not recover: every sample returns a single-formula-unit, 7-atom cell in place of the 28-atom olivine cell, with per-atom volume close to correct (≈ 0.94), the same too-small-cell behavior as the complexity ceiling of Section 5.9.
 
-| Composition | type | vol/atom ratio | match |
-|---|:---:|---:|:---:|
-| MgO  | oxide  | 1.21 | ✓ |
-| NaCl | halide | 0.52 | ✗ |
-| KCl  | halide | 0.39 | ✗ |
+**Table 3.** Rock-salt family (ship checkpoint, N = 8 per composition, w = 3; the MgO match rate is from the N = 16 breadth run). nn = nearest-neighbor distance ratio from the stock decode, which is independent of atom count and so reflects the generated geometry; vol/atom = stock-decode per-atom volume ratio, which carries the occupancy artifact. Match is exact `StructureMatcher`, stock decode → same grids re-decoded with composition-aware occupancy.
 
-The halide undershoot is consistent with the failure mode expected of a supervised conditional generator trained without an explicit energetic objective: the model converges to the conditional mode of the training distribution for each prompt, and for the sparsely-covered halides the conditional mode is offset from the equilibrium-volume cell implied by the chemistry. The remedy is at the objective level rather than the representation level (Section 7).
+| Composition | type | true ų/atom | vol/atom ratio | nn ratio | match (stock → fixed occupancy) |
+|---|:---:|---:|---:|---:|:---:|
+| MgO  | oxide  | 9.3 | 1.18 | 1.04 | ✓ 16/16 |
+| LiF  | halide | 8.2 | 0.95 | 0.95 | ✓ 6/8 |
+| CaO  | oxide  | 13.9 | 0.73 | 0.71 | ✗ 0/8 → **7/8** |
+| NaCl | halide | 22.4 | 0.51 | 0.57 | ✗ 0/8 → 2/8 |
+| KCl  | halide | 31.1 | 0.39 | 0.23 | ✗ 0/8 → 0/8 |
+
+The remedy splits accordingly. The occupancy artifact is a decode-level fix (composition-aware atomic volumes in the formula-unit estimate) requiring no retraining (Section 7). The residual cell oversize is the part a learning signal can address, and it is the natural target for the stability-aware reward of Section 7.
 
 #### 5.7  Holdout generalization: composition vs family
 
@@ -709,7 +713,7 @@ The family-level failure is not permanent: a brief fine-tune on a handful of exa
 The evaluation so far targets magnet families by design. To map where the reciprocal-space representation generalizes and where it is family-specific, GPSK-300 was probed on a panel of canonical prototypes spanning bonding types (ionic, covalent, oxide, metallic), each scored against a prototype reference with the Section 5 structure-level metrics (Table A2). The picture is one of *narrow, coverage-tracking competence*.
 
 
-Exact recovery is confined to simple metals and the (training-rich) rock-salt oxide; most other prototypes produce geometrically valid but structurally incorrect cells, and the families sparsest in training (rock-salt halides) fail even on cell size. The clean tell is that rock-salt *oxide* recovers while rock-salt *halide* does not, competence tracks training coverage, not structural simplicity. **The magnet-family accuracy does not broadly generalize**, which is the empirical basis for positioning GPSK-300 as an amortized proposer for represented families rather than a general-purpose CSP engine. (Annealing sharpens these rates but does not broaden them: across checkpoints, metal recovery peaks at the same point as magnet recovery, and the never-matched families stay at zero.)
+Exact recovery is confined to simple metals and the rock-salt oxide MgO; most other prototypes produce geometrically valid but structurally incorrect cells. The MgO recovery comes *despite* representation, not because of it: rock-salt oxide is one of the rarest labeled families in the corpus (~430 of 2M samples, against ~4,200 rock-salt halides), and the halide failure traces to the decode's occupancy prior rather than to coverage (Section 5.6). Coverage still matters where it is genuinely thin at the prompted conditional (KCl's cell oversize tracks its three corpus entries at the prompted symmetry), but the simple oxide-recovers-because-it-is-well-covered story does not survive the corpus counts. **The magnet-family accuracy does not broadly generalize**, which is the empirical basis for positioning GPSK-300 as an amortized proposer for represented families rather than a general-purpose CSP engine. (Annealing sharpens these rates but does not broaden them: across checkpoints, metal recovery peaks at the same point as magnet recovery, and the never-matched families stay at zero.)
 
 <figure>
   <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
@@ -740,7 +744,7 @@ Exact recovery is confined to simple metals and the (training-rich) rock-salt ox
     <text x="520" y="221" text-anchor="middle" font-size="9" fill="#666">100%</text>
     <text x="335" y="239" text-anchor="middle" font-size="10" fill="#444" font-style="italic">StructureMatcher recovery rate</text>
   </svg>
-  <figcaption><strong>Figure 16.</strong> Exact-structure recovery varies sharply across canonical prototypes spanning ionic, covalent, oxide, and metallic bonding. Recovery is confined to simple metals and the training-rich rock-salt oxide; families sparser in training recover at 0%, producing valid-looking but structurally incorrect cells. Competence tracks training coverage: rock-salt <em>oxide</em> recovers while rock-salt <em>halide</em> does not, so magnet-family accuracy does not broadly generalize.</figcaption>
+  <figcaption><strong>Figure 16.</strong> Exact-structure recovery varies sharply across canonical prototypes spanning ionic, covalent, oxide, and metallic bonding. Recovery is confined to simple metals and the rock-salt oxide MgO, which recovers despite rock-salt oxide being among the rarest labeled families in the corpus (~430 samples); the rock-salt halide failure traces to the decode's occupancy prior rather than to training coverage (Section 5.6). The remaining prototypes produce valid-looking but structurally incorrect cells, so magnet-family accuracy does not broadly generalize.</figcaption>
 </figure>
 
 #### 5.9  Complexity ceiling
@@ -816,13 +820,15 @@ The right benchmark for this class of model is per-family recovery: take held-ou
 
 The speed comparison against classical CSP methods is the practical claim of the work. USPEX [7], CALYPSO [8], and AIRSS [9] all evaluate hundreds-to-thousands of candidates per composition through DFT scoring and take hours to days per query. GPSK-300 returns a candidate in ≈5 seconds, and on the family where its family-level recovery rate is high (L1₀), the candidate it returns matches the canonical reference structure. For magnet candidate screening at the volume needed to displace NdFeB, i.e., thousands of compositions, fast iteration, this is the order-of-magnitude shift the field needs.
 
-The rock-salt halide undershoot in Section 5.6 is a clean, narrow failure mode rather than a fundamental model breakdown. The model is producing structures that are *almost* right, right motif, right symmetry, right composition, wrong volume. The cleanest path to closing the gap is at the objective level, not the representation level: introduce a stability-aware reward signal at training or inference time so that volume errors that move the structure away from its energy minimum are explicitly penalized.
+The rock-salt failure in Section 5.6 decomposes into two narrow problems rather than a fundamental model breakdown. The larger share is decode-side: a fixed 12 ų/atom occupancy prior that over-fills large-volume-per-atom cells, fixable with composition-aware atomic volumes and no retraining (re-decoding the same grids takes CaO from 0/8 to 7/8 exact matches). The remainder is a modest generative oversize of the cell that grows as conditional support thins, and that part is the natural target for a stability-aware reward signal at training or inference time, so that lattice errors that move the structure away from its energy minimum are explicitly penalized.
 
 ### 7  Future Work
 
-**Stability-aware reward.** RL fine-tuning against a CHGNet-style universal MLIP [24], or diffusion-time optimization against the same energy oracle, so the model is pulled toward energetic optima rather than only the data-distribution average. A prototype using GRPO with per-prompt EMA baseline and a strong KL anchor (β ≈ 0.3) ran stably on the magnetic domain across 80 fine-tuning steps without degrading the L1₀ accuracy reported here. The full retrain target is to extend that stability gain to the simple ionics where the base model undershoots, with the explicit reward being lattice RMSD against reference rather than raw MLIP energy.
+**Stability-aware reward.** RL fine-tuning against a CHGNet-style universal MLIP [24], or diffusion-time optimization against the same energy oracle, so the model is pulled toward energetic optima rather than only the data-distribution average. A prototype using GRPO with per-prompt EMA baseline and a strong KL anchor (β ≈ 0.3) ran stably on the magnetic domain across 80 fine-tuning steps without degrading the L1₀ accuracy reported here. The full retrain target is to extend that stability gain to the simple ionics where the generated cells drift oversized as conditional support thins (Section 5.6), with the explicit reward being lattice RMSD against reference rather than raw MLIP energy.
 
-**Data rebalancing.** LeMat-Bulk lifts coverage of every family used in this paper into the regime where supervised flow matching trains cleanly (cubic perovskite 575 → 12k samples, spinels 2.9k → 17k, hexagonal RE-TM 1.5k → 5.9k). Rock-salt oxide remains at ~430 samples even after this lift and is the next family to upweight explicitly. The training pipeline supports a tunable family-importance rebalancing weight that we have not yet swept exhaustively.
+**Composition-aware decode occupancy.** The atom-count heuristic assumes a fixed 12 ų per atom, and Section 5.6 shows this single constant is responsible for most of the rock-salt failure. Replacing it with per-element atomic volumes (or selecting the formula-unit count at the largest gap in the peak-intensity ranking) is a decode-only change with no retraining, and the corrected-occupancy re-decode already bounds the gain: CaO 0/8 → 7/8 and NaCl 0/8 → 2/8 exact matches on identical grids.
+
+**Data rebalancing.** LeMat-Bulk lifts coverage of every family used in this paper into the regime where supervised flow matching trains cleanly (cubic perovskite 575 → 12.9k in the merged pool, of which 3.9k survive joint balancing; spinels 2.9k → 16.8k; hexagonal RE-TM 1.5k → 5.9k). Rock-salt oxide remains at ~430 samples even after this lift and is the next family to upweight explicitly. The training pipeline supports a tunable family-importance rebalancing weight that we have not yet swept exhaustively.
 
 **Robust element disambiguation (open).** Element assignment is not the bottleneck we initially expected: the brightness heuristic recovers near-Z identities reliably under reconstruction error (Section 3.6). The natural alternative, a joint Cromer-Mann least-squares fit predicting F(hkl) from candidate assignments, is exact on noise-free structures (6/6 SmCo₅, 4/4 Fe/Co at ΔZ=1) but, we found, *less* robust than the heuristic under realistic VAE error, overfitting reconstruction noise to neighboring atomic numbers (~60% vs the heuristic's 100% on near-Z binaries). A disambiguation method that is both error-robust and physically grounded, e.g. constraining the magnitude fit with the recovered density peak heights rather than fitting F-magnitudes alone, remains open; the current heuristic is the operating choice.
 
@@ -836,14 +842,14 @@ The figures in Section 5 carry the headline results; the full per-family numbers
 
 **Table A1.** Conditioning modality response measured over training. Minimum pairwise correlation is taken across the conditioning sweep; "emergence" is the step at which sustained correlation \(>\) 0.3 was first observed. The emergence *ordering*, symmetry first, continuous and global properties last, is the robust, reproducible finding; the step counts are approximate and illustrate the dynamics.
 
-| Modality | min correlation | strength | emergence |
-|---|---:|:---:|---:|
-| Space group        | 0.55 | strong   | ~70k |
-| Crystal system     | 0.52 | strong   | ~110k |
-| Composition        | 0.49 | strong   | ~150k |
-| Band gap           | 0.43 | strong   | ~250k |
-| Magnetic ordering  | 0.57 | strong   | late |
-| Formation energy   | 0.84 | strong   | late |
+| Modality | min correlation | emergence |
+|---|---:|---:|
+| Space group        | 0.55 | ~70k |
+| Crystal system     | 0.52 | ~110k |
+| Composition        | 0.49 | ~150k |
+| Band gap           | 0.43 | ~250k |
+| Magnetic ordering  | 0.57 | late |
+| Formation energy   | 0.84 | late |
 
 **Table A2.** Breadth across structural families (ship checkpoint). Match = exact `StructureMatcher` rate; cell-scale = median *linear* cell-scale ratio, the cube root of the per-atom volume ratio (1.0 = correct). Table 3 reports the same rock-salt data as volume ratios, which is why its numbers look harsher (a 0.73 linear scale is a 0.39 volume ratio).
 
@@ -851,7 +857,7 @@ The figures in Section 5 carry the headline results; the full per-family numbers
 |---|:---:|:---:|---|
 | bcc / fcc metals (Fe, Cu) | 100% / 93% | ~1.0 | recovered |
 | rock-salt oxide (MgO) | 100% | ~1.05 | recovered |
-| rock-salt halide (NaCl, KCl) | 0% | 0.73–0.81 | cells ~20% small; sparse in training |
+| rock-salt halide (NaCl, KCl) | 0% | 0.73–0.81 | decode occupancy artifact; generated cells 15–30% oversized (§5.6) |
 | perovskite (SrTiO₃, BaTiO₃) | 0% (87% valid) | ~1.00 | right size, wrong internal structure |
 | zinc-blende / fluorite / rutile | 0% (valid varies) | 0.8–0.9 | geometrically valid, wrong motif |
 
