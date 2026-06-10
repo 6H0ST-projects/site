@@ -475,7 +475,7 @@ The L1₀ family is a primary target for rare-earth-free permanent magnets: tetr
 
 <figure>
   <img src="/img/gpsk300_gallery.png" alt="Generated versus expected crystal structures across the competence spectrum: recovered L1₀ magnets, metals, rock-salt, fluorite, and zinc-blende prototypes; held-out compositions; ternary and quaternary intermetallics absent from the corpus; and characteristic failures." style="width:100%;max-width:600px;display:block;margin:0 auto;" />
-  <figcaption><strong>Figure 9a.</strong> GPSK-300's outputs span its competence spectrum, each shown as the generated crystal beside the expected reference at a common scale. The recovered group covers the L1₀ magnets, the simple metals, the rock-salt ionics (MgO, LiF, NaCl), fluorite, and the zinc-blende covalents; held-out compositions (FePd, MnGa) recover at nearly the seen rate; and intermetallics absent from the corpus under their own formulas interpolate the same way: Co₂MnSi and the quaternary CoFeMnSi recover the Heusler cell, while NiMnSb produces the correct half-Heusler framework with the near-Z Ni/Mn pair swapped. The off-target cases are visible directly: the unseen hexagonal family produces a tall cell rather than the squat CaCu₅ geometry; KCl, CsCl, the perovskite, the chalcopyrite, and the kesterite generate coherent but structurally wrong cells; and the large cells (LiFePO₄, Nd₂Fe₁₄B) exceed the decode's ~20–40-atom ceiling and return fragments. Per-structure metrics are in Tables 1–4 and Appendix A.</figcaption>
+  <figcaption><strong>Figure 9a.</strong> GPSK-300's outputs span its competence spectrum, each shown as the generated crystal beside the expected reference at a common scale. The recovered group covers the L1₀ magnets, the simple metals, the rock-salt ionics (MgO, LiF, NaCl), fluorite, and the zinc-blende covalents; held-out compositions (FePd, MnGa) recover at nearly the seen rate; and intermetallics absent from the corpus under their own formulas interpolate the same way: Co₂MnSi and the quaternary CoFeMnSi recover the Heusler cell, while NiMnSb produces the correct half-Heusler framework with the near-Z Ni/Mn pair swapped. The off-target cases are visible directly: the unseen hexagonal family produces a tall cell rather than the squat CaCu₅ geometry; KCl, CsCl, the perovskite, the chalcopyrite, and the kesterite generate coherent but structurally wrong cells; and the large cells (LiFePO₄, Nd₂Fe₁₄B) return full-size cells whose atomic positions blur as the cell grows (Section 5.9). Per-structure metrics are in Tables 1–4 and Appendix A.</figcaption>
 </figure>
 
 <figure>
@@ -614,7 +614,7 @@ The exact-fingerprint novelty metric reports ≈100% novel, but this is the metr
 
 #### 5.6  Failure modes
 
-Most rock-salt ionics recover. MgO, LiF, and NaCl match their reference structures in 8 of 8 samples each, and CaO in 5 of 8, with decoded cells running 10–60% large on volume but well within match tolerance (Table 3). KCl is the failure case: no sample matches; the cells decode at approximately the right atomic density but the arrangement is not rock-salt, with nearest-neighbor distances ~12% short and inconsistent atom counts across samples. The failure tracks conditional support rather than chemistry: the corpus holds 29 MgO entries at the prompted composition and symmetry against 3 for KCl, and the most weakly supported prompt is the one that fails. Other failure modes are family-specific. Si (diamond cubic) is a generative miss: the generated cells sit near the volume of the *one-atom fcc primitive* rather than the two-atom diamond cell (≈ 0.55× reference volume per atom), as if the model emits the lattice without the basis doubling; 1 of 8 samples still matches the reference at the matcher's tolerance edge. LiFePO₄ (olivine) does not recover: every sample returns a single-formula-unit, 7-atom cell in place of the 28-atom olivine cell, with per-atom volume close to correct (≈ 0.94), the same too-small-cell behavior as the complexity ceiling of Section 5.9.
+Most rock-salt ionics recover. MgO, LiF, and NaCl match their reference structures in 8 of 8 samples each, and CaO in 5 of 8, with decoded cells running 10–60% large on volume but well within match tolerance (Table 3). KCl is the failure case: no sample matches; the cells decode at approximately the right atomic density but the arrangement is not rock-salt, with nearest-neighbor distances ~12% short and inconsistent atom counts across samples. The failure tracks conditional support rather than chemistry: the corpus holds 29 MgO entries at the prompted composition and symmetry against 3 for KCl, and the most weakly supported prompt is the one that fails. Other failure modes are family-specific. Si (diamond cubic) is a generative miss: the generated cells sit near the volume of the *one-atom fcc primitive* rather than the two-atom diamond cell (≈ 0.55× reference volume per atom), as if the model emits the lattice without the basis doubling; 1 of 8 samples still matches the reference at the matcher's tolerance edge. LiFePO₄ (olivine) returns its full 28-atom cell at near-clean geometry but does not land the olivine arrangement (0/8 match), part of the cell-size precision decay of Section 5.9.
 
 **Table 3.** Rock-salt family (ship checkpoint, N = 8 per composition, w = 3). vol/atom = median per-atom volume ratio (1.0 = correct); match = exact `StructureMatcher` rate.
 
@@ -755,38 +755,47 @@ Ternary and quaternary prototypes matter more than the binary panel suggests: 60
   <figcaption><strong>Figure 16.</strong> Exact-structure recovery across canonical prototypes spanning ionic, covalent, oxide, and metallic bonding. Recovery is broad across the simple binary prototypes (metals, rock-salt, zinc-blende) and does not track raw family counts: rock-salt oxide is among the rarest labeled families in the corpus (~430 samples), yet MgO recovers. NiMnSb, a ternary absent from the corpus under its own formula, produces the correct half-Heusler framework in every sample (light bar, species-blind matching); its exact rate is set by element assignment on the near-Z Ni/Mn pair. The failures are the extreme-volume thin-support ionics (KCl) and the multi-sublattice oxides (perovskite), which generate coherent cells with the wrong motif.</figcaption>
 </figure>
 
-#### 5.9  Complexity ceiling
+#### 5.9  Cell-size scaling
 
-The closed-form decode locates atoms as peaks in the inverse-FFT density, which bounds the cell complexity it can resolve. A ladder of increasing atom count makes the ceiling explicit (Table A3): small-to-moderate cells recover, but beyond roughly 20–40 atoms the decode collapses: it either undershoots the atom count badly or returns invalid geometry. Nd₂Fe₁₄B, the commercial permanent magnet [1, 2], is a 68-atom cell; the model emits one- to two-formula-unit fragments (17–34 atoms, never the full cell), none geometrically valid.
+Because composition tokens carry full-cell atom counts (Section 4.2), the prompt sets the cell contents, and the model honors it across the size ladder: prompted with the 68-atom cell counts of Nd₂Fe₁₄B, the commercial permanent magnet [1, 2], every sample returns exactly 68 atoms, and the same holds at 14, 28, and 38 atoms (Table A3). What changes with cell size is *positional precision*. Small cells decode cleanly (FePt, Co₂MnSi, and the 14-atom spinel cell at 7 of 8 samples passing the strict validity gate). At 28 atoms (LiFePO₄) roughly 1% of atom pairs sit in close contact, with individual samples fully clean. By 68 atoms roughly half the atoms are within a close contact of a neighbor and lattice edges drift 5–20%, against ±4% on small cells, so no sample passes the all-or-nothing validity gate even though the cells are recognizably the right size and density.
 
 
-Critically, **this is not a grid-resolution limit.** A closed-form encode→decode round-trip on real structures resolves all atoms losslessly up to at least 128 atoms at the current 64³ Miller grid, and doubling the grid to 128³ yields no improvement at any atom count. The ceiling is instead the *generative* model emitting too-small cells for complex compositions (a training-coverage effect, large cells are rare in the corpus) compounded by the peak-finder's sensitivity on dense cells. The remedy is coverage and decode refinement, not finer sampling, and it bounds the honest reading of "invertibility," which holds for small-to-moderate well-represented cells and degrades as peak density grows.
+Critically, **this is not a grid-resolution limit.** A closed-form encode→decode round-trip on real structures resolves all atoms losslessly up to at least 128 atoms at the current 64³ Miller grid, and doubling the grid to 128³ yields no improvement at any atom count. The decay is generative: cells above 40 atoms make up 1.5% of the corpus, and a larger basis means a denser, more intricate F(hkl) pattern that the VAE and flow model must render at the precision the peak decode demands. The honest reading of "invertibility" follows the same slope: exact for small well-represented cells, near-exact at moderate size, and noisy at the largest cells.
+
+A small targeted fine-tune does not buy back the missing precision. Fine-tuning the ship model on 64 large cells with the Section 5.3 recipe leaves the 68-atom contact rate unchanged while collapsing small-cell recovery (MgO 8/8 → 3/8, NaCl 8/8 → 1/8); a gentler pass that replays small cells alongside the large ones protects most of the small-cell accuracy (NaCl and GaAs hold 8/8) but still gains nothing at 68 atoms. The contrast with Section 5.3 is the instructive part: a coarse motif prior is installable from a handful of examples, while positional precision on large cells behaves like a property of the pretrained flow field that post-training nudges degrade rather than sharpen, leaving corpus-scale coverage as the lever.
 
 <figure>
   <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <line x1="262" y1="48" x2="262" y2="200" stroke="#FF680A" stroke-width="0.8" stroke-dasharray="3,3"/>
-    <text x="262" y="40" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF680A">decode ceiling ~20–40 atoms</text>
+    <text x="120" y="38" text-anchor="start" font-size="9.5" font-style="italic" fill="#FF680A">positional precision decays</text>
+    <line x1="255" y1="34" x2="500" y2="34" stroke="#FF680A" stroke-width="0.8"/>
+    <polygon points="508,34 496,29 496,39" fill="#FF680A"/>
     <line x1="90" y1="200" x2="545" y2="200" stroke="#888" stroke-width="0.6"/>
     <line x1="90" y1="42" x2="90" y2="200" stroke="#888" stroke-width="0.5"/>
-    <text x="84" y="79" text-anchor="end" font-size="9.5" fill="#FF680A">recovered</text>
-    <circle cx="103" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
-    <text x="103" y="60" text-anchor="middle" font-size="8.5" fill="#555">FePt</text>
-    <circle cx="192" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
-    <text x="192" y="60" text-anchor="middle" font-size="8.5" fill="#555">Co₂MnSi</text>
-    <text x="84" y="129" text-anchor="end" font-size="9.5" fill="#999">fails</text>
-    <text x="333" y="129" text-anchor="middle" font-size="12" fill="#999">✕</text>
-    <text x="333" y="145" text-anchor="middle" font-size="8.5" fill="#555">Sm₂Co₁₇</text>
-    <text x="448" y="129" text-anchor="middle" font-size="12" fill="#999">✕</text>
-    <text x="448" y="145" text-anchor="middle" font-size="8.5" fill="#555">MgAl₂O₄</text>
-    <text x="525" y="129" text-anchor="middle" font-size="12" fill="#999">✕</text>
-    <text x="525" y="145" text-anchor="middle" font-size="8.5" fill="#1f2937" font-weight="600">Nd₂Fe₁₄B</text>
-    <text x="103" y="214" text-anchor="middle" font-size="9" fill="#666">2</text>
-    <text x="192" y="214" text-anchor="middle" font-size="9" fill="#666">16</text>
-    <text x="333" y="214" text-anchor="middle" font-size="9" fill="#666">38</text>
-    <text x="525" y="214" text-anchor="middle" font-size="9" fill="#666">68</text>
-    <text x="317" y="236" text-anchor="middle" font-size="10" fill="#444" font-style="italic">unit-cell atom count</text>
+    <text x="84" y="79" text-anchor="end" font-size="9.5" fill="#FF680A">clean</text>
+    <circle cx="100" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
+    <text x="100" y="60" text-anchor="middle" font-size="8.5" fill="#555">FePt</text>
+    <circle cx="176" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
+    <text x="160" y="95" text-anchor="middle" font-size="8.5" fill="#555">Mg₂Al₄O₈</text>
+    <circle cx="189" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
+    <text x="205" y="60" text-anchor="middle" font-size="8.5" fill="#555">Co₂MnSi</text>
+    <circle cx="265" cy="110" r="6" fill="#FF680A" fill-opacity="0.55"/>
+    <text x="265" y="95" text-anchor="middle" font-size="8.5" fill="#555">LiFePO₄</text>
+    <text x="265" y="126" text-anchor="middle" font-size="8" font-style="italic" fill="#888">~1% contact pairs</text>
+    <text x="84" y="159" text-anchor="end" font-size="9.5" fill="#999">noisy</text>
+    <circle cx="328" cy="155" r="6" fill="#999" fill-opacity="0.7"/>
+    <text x="328" y="140" text-anchor="middle" font-size="8.5" fill="#555">Sm₂Co₁₇</text>
+    <text x="328" y="171" text-anchor="middle" font-size="8" font-style="italic" fill="#888">2/8 valid</text>
+    <circle cx="518" cy="155" r="6" fill="#999" fill-opacity="0.7"/>
+    <text x="518" y="140" text-anchor="middle" font-size="8.5" fill="#1f2937" font-weight="600">Nd₂Fe₁₄B</text>
+    <text x="518" y="171" text-anchor="middle" font-size="8" font-style="italic" fill="#888">half of atoms in contacts</text>
+    <text x="100" y="214" text-anchor="middle" font-size="9" fill="#666">2</text>
+    <text x="182" y="214" text-anchor="middle" font-size="9" fill="#666">14–16</text>
+    <text x="265" y="214" text-anchor="middle" font-size="9" fill="#666">28</text>
+    <text x="328" y="214" text-anchor="middle" font-size="9" fill="#666">38</text>
+    <text x="518" y="214" text-anchor="middle" font-size="9" fill="#666">68</text>
+    <text x="317" y="236" text-anchor="middle" font-size="10" fill="#444" font-style="italic">unit-cell atom count (full-cell prompt)</text>
   </svg>
-  <figcaption><strong>Figure 17.</strong> Structure recovery falls off with unit-cell atom count. Cells up to ~16 atoms recover; beyond ~20–40 atoms the decode collapses, returning mostly invalid geometry (Sm₂Co₁₇) or a partial fragment (Nd₂Fe₁₄B, the 68-atom commercial magnet, decodes only 17–34 atoms). The limit is not grid resolution (a closed-form round-trip resolves ≥128 atoms at this grid) but the generative model emitting too-small cells, compounded by peak-finding on dense cells.</figcaption>
+  <figcaption><strong>Figure 17.</strong> Positional precision decays with unit-cell atom count while the atom count itself follows the prompt. Small cells decode cleanly (FePt, Co₂MnSi, and the 14-atom spinel cell at 7/8 valid); at 28 atoms (LiFePO₄) about 1% of atom pairs sit in close contact, with individual samples fully clean; by 68 atoms (Nd₂Fe₁₄B, the commercial magnet) roughly half the atoms carry a close contact and no sample passes the strict validity gate. The limit is not grid resolution (a closed-form round-trip resolves ≥128 atoms at this grid) but the precision of the generated density on large, sparsely represented cells.</figcaption>
 </figure>
 
 #### 5.10  Ablation: is the 1/d² channel load-bearing?
@@ -838,7 +847,7 @@ On the data side, the lever is coverage at the conditional rather than family re
 
 The decode's open problem is element assignment beyond binaries. The brightness heuristic is reliable on binaries but loses near-Z sublattices on ternary frameworks: NiMnSb decodes to the correct half-Heusler framework in every sample yet assigns Ni/Mn correctly in only 3 of 8 (Section 5.8). A joint Cromer-Mann fit does not close the gap, since it is exact noise-free but overfits VAE reconstruction error to neighboring atomic numbers (~60% on near-Z binaries against the heuristic's 100%). The promising middle ground is a constrained search that holds the recovered framework fixed, enumerates only the near-Z permutations of the assignment, and scores each jointly against the density peak heights and the F(hkl) pattern; for a few species this is a handful of candidates rather than a free fit, so the noise-overfitting failure mode is structurally excluded.
 
-The complexity ceiling of Section 5.9 calls for a large-cell decode. The ~20–40-atom limit is not grid resolution, since closed-form round-trips resolve 128 atoms at 64³; it is the model emitting fragments of complex cells, compounded by peak-finding on dense densities. The two levers are corpus coverage of large cells and a peak-finder that uses the requested stoichiometry as a structural constraint rather than only a target count.
+Large cells need positional precision rather than a different decode. Cell contents follow the prompt to at least 68 atoms (Section 5.9); what decays with size is the accuracy of the generated density, with close contacts spreading through the cell as the basis grows. Small targeted fine-tunes do not improve this and risk the small-cell accuracy (Section 5.9), so the lever is corpus-scale coverage, paired with a peak-finder that uses the requested stoichiometry as a structural constraint rather than only a target count.
 
 Unconditional generation needs a scale anchor. Without a composition prompt the model must resolve an \(\alpha \times Z\) scale ambiguity that the F(hkl) magnitudes cannot break alone; the cleanest fix is a fourth channel carrying the per-structure normalization constant, so the model emits its own absolute scale at generation time.
 
@@ -876,13 +885,15 @@ The figures in Section 5 carry the headline results; the full per-family numbers
 | perovskite (SrTiO₃, BaTiO₃) | 0% (100% valid) | 1.27–1.29 | cells ≈2× volume, wrong motif |
 | chalcopyrite / kesterite / spinel | 0% | 1.04–1.14 | not recovered |
 
-**Table A3.** Recovery vs. unit-cell complexity (ship checkpoint).
+**Table A3.** Positional precision vs. unit-cell size (ship checkpoint, full-cell prompts, N = 8). Every prompt returns the requested atom count; what degrades with size is geometric precision. Contact pairs are atom pairs closer than 0.6× summed atomic radii.
 
-| compound | motif | atoms | outcome |
+| compound (prompt) | motif | atoms | outcome |
 |---|---|:---:|---|
 | FePt, Co₂MnSi | L1₀, Heusler | 2, 16 | recovered |
-| Sm₂Co₁₇ | 2:17 | ~38 | 19–38 atoms decoded, 2/8 valid |
-| Nd₂Fe₁₄B | NdFeB | 68 | 17–34-atom fragment, 0/8 valid |
+| MgAl₂O₄ (Mg2 Al4 O8) | spinel | 14 | 7/8 pass validity |
+| LiFePO₄ (Li4 Fe4 P4 O16) | olivine | 28 | full cell; ~1% contact pairs, individual samples clean |
+| Sm₂Co₁₇ (Sm4 Co34) | 2:17 | 38 | full cell; 2/8 valid |
+| Nd₂Fe₁₄B (Nd8 Fe56 B4) | NdFeB | 68 | full cell; ≈half of atoms in close contacts |
 
 **Table A4.** Per-checkpoint structure-match recovery on the seen and held-out L1₀ families, measured at N = 10 samples per prompt (the trajectory run plotted in Figure 15). The 400k checkpoint is the deployed model; its headline rates in Table 4 (58% seen, 48% held-out) come from the higher-precision N = 48 tiebreak run, and the N = 10 row here sits within that run's sampling noise.
 
