@@ -52,7 +52,7 @@ $$f_Z(s) \;=\; \sum_{i=1}^{4} a_i^{(Z)}\,e^{-b_i^{(Z)}\,s^2}$$
 
 Element identity therefore shapes the magnitude of \(F\) at every Miller index, not only through a single atomic number.
 
-\(F\) is generally complex, and \(F(-\mathbf{h}) = F(\mathbf{h})^\*\) whenever the basis charge density is real. Re F is then even in \(\mathbf{h}\), while Im F is odd and vanishes everywhere for a centrosymmetric basis, where every atom at \(\mathbf{r}_j\) has a partner at \(-\mathbf{r}_j\) and the sine terms cancel in pairs. Inversion symmetry is common, so this constraint holds for a large share of the training set, and the model can use it to simplify what it has to generate.
+\(F\) is generally complex, and \(F(-\mathbf{h}) = F(\mathbf{h})^*\) whenever the basis charge density is real. Re F is then even in \(\mathbf{h}\), while Im F is odd and vanishes everywhere for a centrosymmetric basis, where every atom at \(\mathbf{r}_j\) has a partner at \(-\mathbf{r}_j\) and the sine terms cancel in pairs. Inversion symmetry is common, so this constraint holds for a large share of the training set, and the model can use it to simplify what it has to generate.
 
 <figure>
   <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">

@@ -631,3 +631,75 @@ body.blog-page {
   }
 }
 
+/* ---- Print / PDF: classic academic paper styling (screen view is unchanged) ---- */
+@media print {
+  @page { size: letter; margin: 0.85in 0.9in; }
+
+  /* strip web chrome */
+  .back-link,
+  .sidebar { display: none !important; }
+
+  /* single full-width column */
+  .page-wrapper { overflow: visible; min-height: 0; }
+  .content-container { max-width: none; margin: 0; padding: 0; min-height: 0; }
+  .two-column-layout { display: block; gap: 0; }
+  .main-content { width: 100%; }
+  .project-description { max-width: none; }
+
+  /* serif body */
+  body { font-family: Georgia, 'Times New Roman', serif; color: #000; background: #fff; }
+  .project-description,
+  .project-description p,
+  .project-description li,
+  .project-description td,
+  .project-description th {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: #000;
+  }
+  .project-description p {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 0.6rem;
+  }
+  .project-description li { font-size: 10.5pt; line-height: 1.45; }
+
+  /* title block */
+  .main-content h2 {
+    text-align: center;
+    font-size: 24pt;
+    margin: 0 0 0.3rem 0;
+  }
+  /* byline = first paragraph of the content */
+  .project-description > p:first-of-type {
+    text-align: center;
+    font-size: 11pt;
+    margin-bottom: 1.6rem;
+    hyphens: none;
+  }
+
+  /* section + subsection headings: bold serif */
+  .project-description h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 13.5pt;
+    font-weight: 700;
+    margin: 1.4rem 0 0.5rem;
+    break-after: avoid;
+  }
+  .project-description h4 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    margin: 1.1rem 0 0.4rem;
+    break-after: avoid;
+  }
+
+  /* keep tables and small figures intact across page breaks */
+  .project-description table { break-inside: avoid; font-size: 9.5pt; }
+  .project-description figure { break-inside: avoid; }
+  .project-description figcaption { break-before: avoid; font-size: 9pt; }
+}
+
