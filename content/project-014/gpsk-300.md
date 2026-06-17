@@ -31,7 +31,6 @@ The contributions of this paper are:
 
 1. A three-channel reciprocal-space representation for crystals that recovers the lattice in closed form, encoding it as a smooth quadratic field rather than supplying it as metadata or predicting it with a separate learned head, and that reconstructs the atomic basis by inverse FFT while assigning element identity under the composition prompt rather than solving for it independently.
 2. GPSK-300, a 302M-parameter multimodal diffusion transformer that operates in a 16³×128 latent over this representation, trained with rectified flow matching and classifier-free guidance.
-3. A composition-versus-family holdout protocol that separates interpolation within a learned motif from extrapolation to an unseen one, locating where a novel CSP prediction from a generative model can be trusted.
 
 The remainder of the paper proceeds as follows. Section 2 introduces the structure-factor representation, the reciprocal metric tensor, and the diffusion methods the model builds on. Section 3 describes the encoder, generator, and closed-form decoder. Section 4 covers the training data and protocol. Section 5 reports invertibility, L1₀ magnet recovery, the composition/family holdout, conditioning-modality emergence, and breadth and failure-mode analysis. Section 6 discusses the system's scope and limits, and Section 7 outlines next steps.
 
