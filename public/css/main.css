@@ -698,8 +698,15 @@ body.blog-page {
   }
 
   /* keep tables and small figures intact across page breaks */
-  .project-description table { break-inside: avoid; font-size: 9.5pt; }
-  .project-description figure { break-inside: avoid; }
-  .project-description figcaption { break-before: avoid; font-size: 9pt; }
+  .project-description table { break-inside: avoid; page-break-inside: avoid; font-size: 9.5pt; }
+  .project-description figure { break-inside: avoid; page-break-inside: avoid; }
+  .project-description figcaption { break-before: avoid; page-break-before: avoid; font-size: 9pt; }
+
+  /* oversized galleries are sliced into per-group strips that each fit a page;
+     keep each strip whole so page breaks fall between groups, not mid-row */
+  .gal-part { break-inside: avoid; page-break-inside: avoid; }
 }
+
+/* gallery strips stack seamlessly into one centered figure (screen + print) */
+.project-description figure img.gal-part { max-width: 600px; margin: 0 auto; }
 

@@ -473,7 +473,11 @@ The L1₀ family is a primary target for rare-earth-free permanent magnets: tetr
 | MnAl | 2.78 | 3.56 | 0.965 | 0.998 | τ-MnAl RE-free |
 
 <figure>
-  <img src="/img/gpsk300_gallery.png" alt="Generated versus expected crystal structures across the model's range: recovered L1₀ magnets, metals, rock-salt, fluorite, and zinc-blende prototypes; held-out compositions; ternary and quaternary intermetallics absent from the corpus; and characteristic failures." style="width:100%;max-width:600px;display:block;margin:0 auto;" />
+  <img src="/img/gpsk300_gallery_1.png" class="gal-part" alt="Generated versus expected crystal structures across the model's range: recovered L1₀ magnets, metals, rock-salt, fluorite, and zinc-blende prototypes; held-out compositions; ternary and quaternary intermetallics absent from the corpus; and characteristic failures." />
+  <img src="/img/gpsk300_gallery_2.png" class="gal-part" alt="" />
+  <img src="/img/gpsk300_gallery_3.png" class="gal-part" alt="" />
+  <img src="/img/gpsk300_gallery_4.png" class="gal-part" alt="" />
+  <img src="/img/gpsk300_gallery_5.png" class="gal-part" alt="" />
   <figcaption><strong>Figure 9a.</strong> GPSK-300's outputs span the model's range, from recovered families to characteristic failures, each shown as the generated crystal beside the expected reference at a common scale. The recovered group covers the L1₀ magnets, the simple metals, the rock-salt ionics (MgO, LiF, NaCl), fluorite, and the zinc-blende covalents; held-out compositions (FePd, MnGa) recover at nearly the seen rate; and intermetallics absent from the corpus under their own formulas interpolate the same way: Co₂MnSi and the quaternary CoFeMnSi recover the Heusler cell, while NiMnSb produces the correct half-Heusler framework with the near-Z Ni/Mn pair swapped. The off-target cases are visible directly: the unseen hexagonal family produces a tall cell rather than the squat CaCu₅ geometry; KCl, CsCl, the perovskite, the chalcopyrite, and the kesterite generate coherent but structurally wrong cells; and the large cells (LiFePO₄, Nd₂Fe₁₄B) return full-size cells whose atomic positions lose precision as the cell grows (Section 5.9). Per-structure metrics are in Tables 1–4 and Appendix A.</figcaption>
 </figure>
 
