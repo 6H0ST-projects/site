@@ -1,6 +1,7 @@
 ---
 title: "A Calibrated Screening Dataset of Magnetocrystalline Anisotropy for Rare-Earth-Free Magnet Discovery"
 projectTitle: "Magnet-Anisotropy-Screening"
+ogImage: "og-image-magnet-anisotropy-dataset.png"
 description: "2,242 computed magnetocrystalline anisotropy labels for uniaxial rare-earth-free crystals (K1, saturation magnetization, magnetic hardness, easy axis, Curie temperature, stability, and energy-product estimates), with relaxed structures, a 287-point high-accuracy calibration tier, and a quantified per-label error model."
 bgColor: "#E7EAEE"
 textColor: "#000"

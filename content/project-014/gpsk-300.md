@@ -1,6 +1,7 @@
 ---
 title: "GPSK-300: A Reciprocal-Space Diffusion Model for L1₀ Magnet Structure Prediction"
 projectTitle: "GPSK-300"
+ogImage: "og-image-project-014.png"
 description: "A 302M-parameter multimodal diffusion transformer that generates crystals in a three-channel reciprocal-space representation whose lattice is recovered in closed form, with the atomic basis reconstructed by inverse FFT under a composition prompt. High-accuracy lattice recovery on the L1₀ tetragonal magnet family."
 bgColor: "#E7EAEE"
 textColor: "#000"
