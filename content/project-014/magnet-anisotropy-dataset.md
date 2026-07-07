@@ -164,7 +164,7 @@ compares the two scales, and its practical meaning is geometric: when \(\kappa >
     <text x="510" y="188" font-size="11" text-anchor="middle" fill="#1f2937">L1₀ FePt: very hard</text>
     <text x="310" y="212" font-size="10.5" text-anchor="middle" fill="#888">the two energy scales, MJ/m³ (literature values); hard means the orange bar wins</text>
   </svg>
-  <figcaption><strong>Figure 2.</strong> Hardness is a ratio of two energy scales. Iron carries an enormous magnetization (tall gray bar, µ₀Ms² ≈ 3.7 MJ/m³) but almost no anisotropy to defend it (K₁ ≈ 0.05), so it demagnetizes itself: κ ≈ 0.1. Nd₂Fe₁₄B and L1₀ FePt hold less magnetization but defend it with anisotropy several times the self-field scale. The dataset's κ label encodes this contest for every entry, and the κ = 1 line in Figure 5 is the boundary where the orange bar starts winning.</figcaption>
+  <figcaption><strong>Figure 2.</strong> Hardness is a ratio of two energy scales. Iron carries an enormous magnetization (tall gray bar, µ₀Ms² ≈ 3.7 MJ/m³) but almost no anisotropy to defend it (K₁ ≈ 0.05), so it demagnetizes itself: κ ≈ 0.1. Nd₂Fe₁₄B and L1₀ FePt hold less magnetization but defend it with anisotropy several times the self-field scale. The dataset's κ label encodes this contest for every entry, and the κ = 1 line in Figure 6 is the boundary where the orange bar starts winning.</figcaption>
 </figure>
 
 #### 2.3  From intrinsic numbers to a working magnet
@@ -228,6 +228,122 @@ The stages, with their exact settings:
 4. **Intrinsic magnetism.** Curie temperature and magnetization density from dedicated property models [16]; the Curie estimate should be treated as method-level (such estimates typically run high).
 5. **Anisotropy.** The expensive stage, described in Section 3.2. Outputs \(K_1\), \(M_s\), \(\kappa\), and the easy-axis direction.
 6. **Microstructure sweep** (gate-passing compounds only). A micromagnetic proxy model sweeps seven microstructure parameters (degree of chemical order, texture spread, grain size, grain-boundary exchange and magnetization, soft-phase fraction, dead-layer thickness) over 2,000 Latin-hypercube samples, reporting the peak energy product \((BH)_{max}\), peak remanence, and a robustness score: the share of sampled microstructures that clear coercivity ≥ 600 kA/m, remanence ≥ 0.8 T, and \((BH)_{max}\) ≥ 100 kJ/m³, weighted by their margin above those thresholds.
+
+<figure>
+  <svg viewBox="0 0 620 280" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
+    <text x="167.0" y="26" font-size="12" font-style="italic" text-anchor="middle" fill="#222">The object the sweep models</text>
+    <text x="167.0" y="41" font-size="9.5" text-anchor="middle" fill="#888">textured polycrystal: shade = grain alignment</text>
+    <polygon points="101,149 102,165 100,174 89,184 86,184 55,157 80,136" fill="#FF680A" fill-opacity="0.39" stroke="#fff" stroke-width="2"/>
+    <polygon points="185,93 210,79 211,62 167,62" fill="#FF680A" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
+    <polygon points="66,248 75,225 87,224 95,237 93,242" fill="#FF680A" fill-opacity="0.71" stroke="#fff" stroke-width="2"/>
+    <polygon points="80,81 63,76 42,81 42,84 56,94" fill="#FF680A" fill-opacity="0.45" stroke="#fff" stroke-width="2"/>
+    <polygon points="272,154 292,153 292,201 265,181" fill="#FF680A" fill-opacity="0.79" stroke="#fff" stroke-width="2"/>
+    <polygon points="152,172 120,164 148,143 156,147 159,168" fill="#FF680A" fill-opacity="0.70" stroke="#fff" stroke-width="2"/>
+    <polygon points="237,132 237,133 233,136 199,137 183,127 183,102 219,109" fill="#FF680A" fill-opacity="0.83" stroke="#fff" stroke-width="2"/>
+    <polygon points="88,223 91,190 89,184 86,184 56,199 63,217 75,225 87,224" fill="#FF680A" fill-opacity="0.92" stroke="#fff" stroke-width="2"/>
+    <polygon points="217,212 198,199 190,186 199,137 233,136 221,198" fill="#FF680A" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
+    <polygon points="244,132 268,152 221,198 233,136 237,133" fill="#FF680A" fill-opacity="0.70" stroke="#fff" stroke-width="2"/>
+    <polygon points="276,88 279,112 292,118 292,74 279,83" fill="#FF680A" fill-opacity="0.80" stroke="#fff" stroke-width="2"/>
+    <polygon points="183,127 199,137 190,186 159,168 156,147 170,134" fill="#FF680A" fill-opacity="0.83" stroke="#fff" stroke-width="2"/>
+    <polygon points="136,195 100,174 102,165 120,164 152,172" fill="#FF680A" fill-opacity="0.89" stroke="#fff" stroke-width="2"/>
+    <polygon points="115,215 91,190 88,223" fill="#FF680A" fill-opacity="0.85" stroke="#fff" stroke-width="2"/>
+    <polygon points="276,88 256,99 242,81 247,71 279,83" fill="#FF680A" fill-opacity="0.53" stroke="#fff" stroke-width="2"/>
+    <polygon points="159,100 183,100 183,102 183,127 170,134 144,106" fill="#FF680A" fill-opacity="0.77" stroke="#fff" stroke-width="2"/>
+    <polygon points="66,248 75,225 63,217 42,245 42,252 62,252" fill="#FF680A" fill-opacity="0.56" stroke="#fff" stroke-width="2"/>
+    <polygon points="159,100 146,70 121,93 135,107 144,106" fill="#FF680A" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
+    <polygon points="219,109 183,102 183,100 185,93 210,79 217,84" fill="#FF680A" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
+    <polygon points="276,88 279,112 250,124 256,99" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <polygon points="56,94 42,84 42,122 65,117" fill="#FF680A" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
+    <polygon points="101,149 102,165 120,164 148,143 135,133 107,142" fill="#FF680A" fill-opacity="0.29" stroke="#fff" stroke-width="2"/>
+    <polygon points="292,252 292,201 265,181 219,215 229,252" fill="#FF680A" fill-opacity="0.90" stroke="#fff" stroke-width="2"/>
+    <polygon points="121,93 108,92 99,87 96,81 96,62 152,62 146,70" fill="#FF680A" fill-opacity="0.78" stroke="#fff" stroke-width="2"/>
+    <polygon points="62,252 95,252 93,242 66,248" fill="#FF680A" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
+    <polygon points="136,195 152,172 159,168 190,186 198,199 139,215" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <polygon points="63,76 59,62 42,62 42,81" fill="#FF680A" fill-opacity="0.15" stroke="#fff" stroke-width="2"/>
+    <polygon points="268,152 221,198 217,212 219,215 265,181 272,154" fill="#FF680A" fill-opacity="0.67" stroke="#fff" stroke-width="2"/>
+    <polygon points="121,93 108,92 107,142 135,133 135,107" fill="#FF680A" fill-opacity="0.73" stroke="#fff" stroke-width="2"/>
+    <polygon points="80,81 56,94 65,117 72,118 99,87 96,81" fill="#FF680A" fill-opacity="0.74" stroke="#fff" stroke-width="2"/>
+    <polygon points="42,245 42,196 56,199 63,217" fill="#FF680A" fill-opacity="0.67" stroke="#fff" stroke-width="2"/>
+    <polygon points="159,100 183,100 185,93 167,62 152,62 146,70" fill="#FF680A" fill-opacity="0.84" stroke="#fff" stroke-width="2"/>
+    <polygon points="237,132 234,85 217,84 219,109" fill="#FF680A" fill-opacity="0.82" stroke="#fff" stroke-width="2"/>
+    <polygon points="56,199 86,184 55,157 42,157 42,196" fill="#FF680A" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
+    <polygon points="279,83 292,74 292,62 247,62 247,71" fill="#FF680A" fill-opacity="0.59" stroke="#fff" stroke-width="2"/>
+    <polygon points="256,99 250,124 244,132 237,133 237,132 234,85 242,81" fill="#FF680A" fill-opacity="0.91" stroke="#fff" stroke-width="2"/>
+    <polygon points="80,81 63,76 59,62 96,62 96,81" fill="#FF680A" fill-opacity="0.64" stroke="#fff" stroke-width="2"/>
+    <polygon points="115,215 91,190 89,184 100,174 136,195 139,215 134,225" fill="#FF680A" fill-opacity="0.79" stroke="#fff" stroke-width="2"/>
+    <polygon points="134,231 142,252 229,252 219,215 217,212 198,199 139,215 134,225" fill="#FF680A" fill-opacity="0.82" stroke="#fff" stroke-width="2"/>
+    <polygon points="99,87 108,92 107,142 101,149 80,136 72,118" fill="#FF680A" fill-opacity="0.28" stroke="#fff" stroke-width="2"/>
+    <polygon points="93,242 95,237 134,231 142,252 95,252" fill="#FF680A" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
+    <polygon points="244,132 268,152 272,154 292,153 292,118 279,112 250,124" fill="#FF680A" fill-opacity="0.68" stroke="#fff" stroke-width="2"/>
+    <polygon points="144,106 170,134 156,147 148,143 135,133 135,107" fill="#FF680A" fill-opacity="0.74" stroke="#fff" stroke-width="2"/>
+    <polygon points="242,81 234,85 217,84 210,79 211,62 247,62 247,71" fill="#FF680A" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
+    <polygon points="72,118 80,136 55,157 42,157 42,122 65,117" fill="#FF680A" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
+    <polygon points="134,231 134,225 115,215 88,223 87,224 95,237" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <rect x="42" y="62" width="250" height="190" fill="none" stroke="#bbb" stroke-width="0.7"/>
+    <ellipse cx="198" cy="205" rx="11" ry="7" fill="#3b4552" opacity="0.55"/>
+    <ellipse cx="96" cy="120" rx="8" ry="6" fill="#3b4552" opacity="0.55"/>
+    <line x1="30" y1="234" x2="30" y2="80" stroke="#888" stroke-width="0.8"/>
+    <polygon points="30,74 27,82 33,82" fill="#888"/>
+    <text x="20" y="157.0" font-size="10" font-style="italic" fill="#444" text-anchor="middle" transform="rotate(-90 20 157.0)">alignment axis</text>
+    <text x="477.0" y="26" font-size="12" font-style="italic" text-anchor="middle" fill="#222">The sweep output (HfGaFe₄, 2,000 samples)</text>
+    <text x="477.0" y="41" font-size="9.5" text-anchor="middle" fill="#888">share of samples passing all three thresholds</text>
+    <rect x="372" y="62" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="414" y="62" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="456" y="62" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="498" y="62" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="540" y="62" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="372" y="93" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="414" y="93" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="456" y="93" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="498" y="93" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="540" y="93" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="372" y="124" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="414" y="124" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="456" y="124" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="498" y="124" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <text x="518.0" y="142.5" font-size="9" text-anchor="middle" fill="#1f2937">10%</text>
+    <rect x="540" y="124" width="40" height="29" fill="#FF680A" opacity="0.25"/>
+    <text x="560.0" y="142.5" font-size="9" text-anchor="middle" fill="#1f2937">25%</text>
+    <rect x="372" y="155" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="414" y="155" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="456" y="155" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <text x="476.0" y="173.5" font-size="9" text-anchor="middle" fill="#1f2937">4%</text>
+    <rect x="498" y="155" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <text x="518.0" y="173.5" font-size="9" text-anchor="middle" fill="#1f2937">11%</text>
+    <rect x="540" y="155" width="40" height="29" fill="#FF680A" opacity="0.42"/>
+    <text x="560.0" y="173.5" font-size="9" text-anchor="middle" fill="#1f2937">42%</text>
+    <rect x="372" y="186" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="414" y="186" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="456" y="186" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <text x="476.0" y="204.5" font-size="9" text-anchor="middle" fill="#1f2937">5%</text>
+    <rect x="498" y="186" width="40" height="29" fill="#FF680A" opacity="0.19"/>
+    <text x="518.0" y="204.5" font-size="9" text-anchor="middle" fill="#1f2937">19%</text>
+    <rect x="540" y="186" width="40" height="29" fill="#FF680A" opacity="0.38"/>
+    <text x="560.0" y="204.5" font-size="9" text-anchor="middle" fill="#1f2937">38%</text>
+    <rect x="372" y="217" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="414" y="217" width="40" height="29" fill="#000" fill-opacity="0.04"/>
+    <rect x="456" y="217" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <text x="476.0" y="235.5" font-size="9" text-anchor="middle" fill="#1f2937">3%</text>
+    <rect x="498" y="217" width="40" height="29" fill="#FF680A" opacity="0.19"/>
+    <text x="518.0" y="235.5" font-size="9" text-anchor="middle" fill="#1f2937">19%</text>
+    <rect x="540" y="217" width="40" height="29" fill="#FF680A" opacity="0.39"/>
+    <text x="560.0" y="235.5" font-size="9" text-anchor="middle" fill="#1f2937">39%</text>
+    <text x="392.0" y="262" font-size="9" text-anchor="middle" fill="#888">0.6</text>
+    <text x="434.0" y="262" font-size="9" text-anchor="middle" fill="#888">0.7</text>
+    <text x="476.0" y="262" font-size="9" text-anchor="middle" fill="#888">0.8</text>
+    <text x="518.0" y="262" font-size="9" text-anchor="middle" fill="#888">0.9</text>
+    <text x="560.0" y="262" font-size="9" text-anchor="middle" fill="#888">1.0</text>
+    <text x="365" y="80.5" font-size="9" text-anchor="end" fill="#888">1.0</text>
+    <text x="365" y="111.5" font-size="9" text-anchor="end" fill="#888">0.5</text>
+    <text x="365" y="142.5" font-size="9" text-anchor="end" fill="#888">0.1</text>
+    <text x="365" y="173.5" font-size="9" text-anchor="end" fill="#888">0.05</text>
+    <text x="365" y="204.5" font-size="9" text-anchor="end" fill="#888">0.01</text>
+    <text x="365" y="235.5" font-size="9" text-anchor="end" fill="#888">0.0</text>
+    <text x="477.0" y="278" font-size="10" font-style="italic" text-anchor="middle" fill="#444">chemical order parameter</text>
+    <text x="330" y="155" font-size="10" font-style="italic" text-anchor="middle" fill="#444" transform="rotate(-90 330 155)">boundary exchange fraction</text>
+    </svg>
+  <figcaption><strong>Figure 5.</strong> The microstructure sweep of stage 6. Left: the object the sweep parameterizes, a textured polycrystal in which each grain's shade encodes its misalignment from the pressing axis, grain boundaries carry reduced exchange and magnetization, and the gray inclusions are soft phase. Right: real sweep output for HfGaFe₄, the 2,000 Latin-hypercube samples aggregated onto the two most sensitive axes. The share of samples clearing all three thresholds concentrates at high chemical order and low grain-boundary exchange; that concentration is the acceptable window the dataset reports for each gate-passing compound.</figcaption>
+</figure>
 
 Two gate configurations were used. The discovery configuration enforces magnet-viability floors (Curie temperature ≥ 400 K, \(M_s\) ≥ 0.5 MA/m, hull distance ≤ 200 meV/atom, \(\kappa > 1\), easy axis along the crystallographic c-axis). The dataset-building configuration relaxes those floors (Curie ≥ 0 K, \(M_s\) ≥ 0.1 MA/m, hull distance ≤ 500 meV/atom) so that the anisotropy label is captured for any uniaxial magnetic structure, including ones that make poor magnets. Most of the dataset was built in the second configuration, which is why its label distribution covers soft and hard compounds alike. The anisotropy stage dominates the cost: a production calculation takes 8 to 15 minutes per compound and the high-accuracy recomputations up to several hours, for roughly 2,900 anisotropy calculations in total over the eight-day screening period.
 
@@ -303,7 +419,7 @@ The relaxed structures make the set graph-model-ready: a crystal-graph network c
 
 #### 4.1  Database-level statistics
 
-The labeled set spans 60 elements and 72 space groups across the three uniaxial crystal systems. Figures 5 through 7 show what is in it: a hardness distribution balanced across soft and hard compounds, chemistry concentrated on the magnetic 3d row with an oxide-rich anion population, and a rare-earth row that is empty by construction.
+The labeled set spans 60 elements and 72 space groups across the three uniaxial crystal systems. Figures 6 through 8 show what is in it: a hardness distribution balanced across soft and hard compounds, chemistry concentrated on the magnetic 3d row with an oxide-rich anion population, and a rare-earth row that is empty by construction.
 
 <figure>
   <svg viewBox="0 0 620 210" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
@@ -332,7 +448,7 @@ The labeled set spans 60 elements and 72 space groups across the three uniaxial 
     <text x="540" y="188" font-size="11" text-anchor="middle" fill="#888">&gt; 4</text>
     <text x="310" y="207" font-size="11" text-anchor="middle" fill="#888">corrected magnetic hardness κ (2,044 reliable labels)</text>
   </svg>
-  <figcaption><strong>Figure 5.</strong> The corrected hardness distribution is deliberately balanced: roughly a third soft (gray), a third moderate, a third hard, rather than the survivor-only distribution a discovery screen would leave behind. Easy-axis and easy-plane labels split 966 : 1,078, nearly even, so a classifier trained on the set sees both outcomes in force.</figcaption>
+  <figcaption><strong>Figure 6.</strong> The corrected hardness distribution is deliberately balanced: roughly a third soft (gray), a third moderate, a third hard, rather than the survivor-only distribution a discovery screen would leave behind. Easy-axis and easy-plane labels split 966 : 1,078, nearly even, so a classifier trained on the set sees both outcomes in force.</figcaption>
 </figure>
 
 <figure>
@@ -590,7 +706,7 @@ The labeled set spans 60 elements and 72 space groups across the three uniaxial 
     <text x="549" y="240" font-size="8.5" fill="#888" font-style="italic">no fully-relativistic</text>
     <text x="549" y="251" font-size="8.5" fill="#888" font-style="italic">pseudopotentials</text>
     </svg>
-  <figcaption><strong>Figure 6.</strong> Label coverage across the periodic table: the count of κ-reliable labels containing each element. The magnetic 3d row dominates (Mn 741, Fe 672, Cr 414, Co 272), oxygen leads the anions (825), and the alkali and alkaline-earth counts reflect the oxide and chalcogenide population. Crossed cells (Sc, Y, the lanthanides) are uncomputable: the fully-relativistic pseudopotential set behind the anisotropy stage does not include them, which is what makes the dataset rare-earth-free by construction.</figcaption>
+  <figcaption><strong>Figure 7.</strong> Label coverage across the periodic table: the count of κ-reliable labels containing each element. The magnetic 3d row dominates (Mn 741, Fe 672, Cr 414, Co 272), oxygen leads the anions (825), and the alkali and alkaline-earth counts reflect the oxide and chalcogenide population. Crossed cells (Sc, Y, the lanthanides) are uncomputable: the fully-relativistic pseudopotential set behind the anisotropy stage does not include them, which is what makes the dataset rare-earth-free by construction.</figcaption>
 </figure>
 
 <figure>
@@ -670,7 +786,7 @@ The labeled set spans 60 elements and 72 space groups across the three uniaxial 
     <text x="525" y="132" font-size="8.5" fill="#888">319</text>
     <text x="310" y="184" text-anchor="middle" font-size="10" fill="#444" font-style="italic">2,044 κ-reliable labels</text>
     </svg>
-  <figcaption><strong>Figure 7.</strong> Marginal distributions of the reliable labels. Magnetization and Curie temperature are right-skewed, with the strong, hot compounds in the rare tail; two-thirds of labels sit within 100 meV/atom of the convex hull; trigonal and tetragonal cells dominate the uniaxial population.</figcaption>
+  <figcaption><strong>Figure 8.</strong> Marginal distributions of the reliable labels. Magnetization and Curie temperature are right-skewed, with the strong, hot compounds in the rare tail; two-thirds of labels sit within 100 meV/atom of the convex hull; trigonal and tetragonal cells dominate the uniaxial population.</figcaption>
 </figure>
 
 #### 4.2  Precious metals in, rare earths out
@@ -709,12 +825,12 @@ The two element groups that dominate commercial hard magnets play opposite roles
     <text x="548" y="190" font-size="10.5" text-anchor="middle" fill="#888">&gt; 4</text>
     <text x="318" y="212" font-size="10.5" text-anchor="middle" fill="#888">corrected magnetic hardness κ, share within each group, %</text>
   </svg>
-  <figcaption><strong>Figure 8.</strong> The hardness distribution split by chemistry, each group normalized to its own size. The precious-metal subset (gray) concentrates in the hard bands, since heavy 5d elements supply anisotropy through spin–orbit coupling, while the precious-free majority (orange) still populates every band, including 519 easy-axis compounds with κ &gt; 1. Rare-earth-containing entries number zero by construction: the anisotropy route's pseudopotential set has no lanthanides, so the dataset maps the rare-earth-free landscape it is meant for.</figcaption>
+  <figcaption><strong>Figure 9.</strong> The hardness distribution split by chemistry, each group normalized to its own size. The precious-metal subset (gray) concentrates in the hard bands, since heavy 5d elements supply anisotropy through spin–orbit coupling, while the precious-free majority (orange) still populates every band, including 519 easy-axis compounds with κ &gt; 1. Rare-earth-containing entries number zero by construction: the anisotropy route's pseudopotential set has no lanthanides, so the dataset maps the rare-earth-free landscape it is meant for.</figcaption>
 </figure>
 
 #### 4.3  What the screen surfaces: candidates and their microstructure windows
 
-Table 4 collects the leading candidates, and Figure 9 shows the screened cells behind the three rare-earth-free families. A manufactured magnet, however, is a polycrystal, and the properties a user sees depend on grain size, grain alignment, and grain-boundary chemistry as much as on the cell itself (Figure 10). For every gate-passing compound the sweep stage therefore tests 2,000 sampled microstructures and records the *acceptable window*: the region of processing space in which the compound still clears the magnet thresholds (Figure 11).
+Table 4 collects the leading candidates, and Figure 10 shows the screened cells behind the three rare-earth-free families. A manufactured magnet, however, is a polycrystal, and the properties a user sees depend on grain size, grain alignment, and grain-boundary chemistry as much as on the cell itself (Figure 5). For every gate-passing compound the sweep stage therefore tests 2,000 sampled microstructures and records the *acceptable window*: the region of processing space in which the compound still clears the magnet thresholds (Figure 11).
 
 **Table 4.** Leading candidates from the screen, with the L1₀ FePt benchmark as the precious-metal reference. Robustness is the share of 2,000 sampled microstructures that clear all magnet thresholds, weighted by their margin above them; the peak energy product is the sweep's best case. Sintered Nd–Fe–B delivers ≈400 kJ/m³.
 
@@ -730,55 +846,7 @@ Table 4 collects the leading candidates, and Figure 9 shows the screened cells b
 
 <figure>
 <img src="/img/fig9-structures.png" alt="Ball-and-stick unit cells of Mn2SbTe, HfGaFe4, and (Fe,Mn)2B" style="width:100%;max-width:640px;display:block;margin:0 auto">
-  <figcaption><strong>Figure 9.</strong> The screened cells behind Table 4's three rare-earth-free families, drawn from the dataset's structure files. Left: Mn₂SbTe, a layered hexagonal cell in which Mn planes (orange) alternate with Sb (dark gray) and Te (light gray); the stacking supplies the anisotropy that makes it the most robust lead. Center: HfGaFe₄, the trigonal A-Fe motif, an iron framework (orange) with an A site (Hf, dark gray) that flips the easy axis from plane to c and an anion site (Ga, light gray) that tunes the hardness. Right: the tetragonal (Fe,Mn)₂B parent cell (boron in dark gray); substituting one iron site with Mn in a supercell of this structure produces the Fe₁₅MnB₈ and Fe₇MnB₄ leads.</figcaption>
-</figure>
-
-Between the unit cell and the finished magnet sits the microstructure. Figure 10 shows the object the sweep stage models: a polycrystal whose grains each carry the crystal's easy axis, imperfectly aligned from grain to grain, joined at boundaries whose chemistry is never as clean as the bulk.
-
-<figure>
-  <svg viewBox="0 0 620 268" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <text x="185" y="20" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Inside the acceptable window</text>
-    <text x="185" y="35" text-anchor="middle" font-size="10" fill="#888">tight texture, clean thin boundaries, no inclusions</text>
-    <text x="495" y="20" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Outside the window</text>
-    <text x="495" y="35" text-anchor="middle" font-size="10" fill="#888">spread texture, degraded boundary layer,</text>
-    <text x="495" y="47" text-anchor="middle" font-size="10" fill="#888">soft-phase inclusion, dead rims</text>
-    <polygon points="60,62 155,62 138,132 60,147" fill="#000" fill-opacity="0.02" stroke="#bbb" stroke-width="1.0"/>
-    <polygon points="155,62 241,62 228,117 138,132" fill="#000" fill-opacity="0.05" stroke="#bbb" stroke-width="1.0"/>
-    <polygon points="241,62 310,62 310,157 228,117" fill="#000" fill-opacity="0.03" stroke="#bbb" stroke-width="1.0"/>
-    <polygon points="60,147 138,132 159,177 129,222 60,222" fill="#000" fill-opacity="0.04" stroke="#bbb" stroke-width="1.0"/>
-    <polygon points="138,132 228,117 254,172 159,177" fill="#000" fill-opacity="0.02" stroke="#bbb" stroke-width="1.0"/>
-    <polygon points="228,117 310,157 310,222 237,222 254,172" fill="#000" fill-opacity="0.03" stroke="#bbb" stroke-width="1.0"/>
-    <polygon points="159,177 254,172 237,222 129,222" fill="#000" fill-opacity="0.05" stroke="#bbb" stroke-width="1.0"/>
-    <g transform="rotate(-2 105 103)"><line x1="105" y1="115" x2="105" y2="95" stroke="#FF680A" stroke-width="2.4"/><polygon points="105,89 101,98 109,98" fill="#FF680A"/></g>
-    <g transform="rotate(3 188 93)"><line x1="188" y1="105" x2="188" y2="85" stroke="#FF680A" stroke-width="2.4"/><polygon points="188,79 184,88 192,88" fill="#FF680A"/></g>
-    <g transform="rotate(-1 273 107)"><line x1="273" y1="119" x2="273" y2="99" stroke="#FF680A" stroke-width="2.4"/><polygon points="273,93 269,102 277,102" fill="#FF680A"/></g>
-    <g transform="rotate(2 100 182)"><line x1="100" y1="194" x2="100" y2="174" stroke="#FF680A" stroke-width="2.4"/><polygon points="100,168 96,177 104,177" fill="#FF680A"/></g>
-    <g transform="rotate(-3 194 147)"><line x1="194" y1="159" x2="194" y2="139" stroke="#FF680A" stroke-width="2.4"/><polygon points="194,133 190,142 198,142" fill="#FF680A"/></g>
-    <g transform="rotate(1 277 187)"><line x1="277" y1="199" x2="277" y2="179" stroke="#FF680A" stroke-width="2.4"/><polygon points="277,173 273,182 281,182" fill="#FF680A"/></g>
-    <g transform="rotate(0 191 199)"><line x1="191" y1="211" x2="191" y2="191" stroke="#FF680A" stroke-width="2.4"/><polygon points="191,185 187,194 195,194" fill="#FF680A"/></g>
-    <polygon points="370,62 465,62 448,132 370,147" fill="#000" fill-opacity="0.02" stroke="#999" stroke-width="2.4"/>
-    <polygon points="465,62 551,62 538,117 448,132" fill="#000" fill-opacity="0.05" stroke="#999" stroke-width="2.4"/>
-    <polygon points="551,62 620,62 620,157 538,117" fill="#000" fill-opacity="0.03" stroke="#999" stroke-width="2.4"/>
-    <polygon points="370,147 448,132 469,177 439,222 370,222" fill="#000" fill-opacity="0.04" stroke="#999" stroke-width="2.4"/>
-    <polygon points="448,132 538,117 564,172 469,177" fill="#000" fill-opacity="0.02" stroke="#999" stroke-width="2.4"/>
-    <polygon points="538,117 620,157 620,222 547,222 564,172" fill="#000" fill-opacity="0.03" stroke="#999" stroke-width="2.4"/>
-    <polygon points="469,177 564,172 547,222 439,222" fill="#000" fill-opacity="0.05" stroke="#999" stroke-width="2.4"/>
-    <polygon points="472,68 541,68 531,112 458,124" fill="none" stroke="#888" stroke-width="0.8" stroke-dasharray="3,3"/>
-    <ellipse cx="590" cy="203" rx="12" ry="8" fill="#1f2937" opacity="0.25"/>
-    <g transform="rotate(-11 415 103)"><line x1="415" y1="115" x2="415" y2="95" stroke="#FF680A" stroke-width="2.4"/><polygon points="415,89 411,98 419,98" fill="#FF680A"/></g>
-    <g transform="rotate(8 498 93)"><line x1="498" y1="105" x2="498" y2="85" stroke="#FF680A" stroke-width="2.4"/><polygon points="498,79 494,88 502,88" fill="#FF680A"/></g>
-    <g transform="rotate(-5 583 107)"><line x1="583" y1="119" x2="583" y2="99" stroke="#FF680A" stroke-width="2.4"/><polygon points="583,93 579,102 587,102" fill="#FF680A"/></g>
-    <g transform="rotate(16 410 182)"><line x1="410" y1="194" x2="410" y2="174" stroke="#FF680A" stroke-width="2.4"/><polygon points="410,168 406,177 414,177" fill="#FF680A"/></g>
-    <g transform="rotate(-19 504 147)"><line x1="504" y1="159" x2="504" y2="139" stroke="#FF680A" stroke-width="2.4"/><polygon points="504,133 500,142 508,142" fill="#FF680A"/></g>
-    <g transform="rotate(9 587 187)"><line x1="587" y1="199" x2="587" y2="179" stroke="#FF680A" stroke-width="2.4"/><polygon points="587,173 583,182 591,182" fill="#FF680A"/></g>
-    <g transform="rotate(-14 501 199)"><line x1="501" y1="211" x2="501" y2="191" stroke="#FF680A" stroke-width="2.4"/><polygon points="501,185 497,194 505,194" fill="#FF680A"/></g>
-    <line x1="34" y1="200" x2="34" y2="100" stroke="#888" stroke-width="0.8"/>
-    <polygon points="34,93 31,101 37,101" fill="#888"/>
-    <text x="24" y="150" text-anchor="middle" font-size="10" fill="#444" font-style="italic" transform="rotate(-90 24 150)">alignment axis</text>
-    <text x="185" y="248" text-anchor="middle" font-size="12" font-style="italic" fill="#222">delivers its peak (BH)<tspan font-size="9" dy="2">max</tspan></text>
-    <text x="495" y="248" text-anchor="middle" font-size="12" font-style="italic" fill="#FF680A">coercivity collapses</text>
-</svg>
-  <figcaption><strong>Figure 10.</strong> The same polycrystal inside and outside the sweep's acceptable window. Each grain carries the compound's easy axis (arrows), aligned to the pressing direction within the texture spread. Left: tight texture, thin clean grain boundaries, no defects; the magnet delivers its peak energy product. Right: the texture spread widens, the boundary layer thickens with reduced exchange and magnetization, a soft-phase inclusion (gray) and dead rims (dashed) appear, and coercivity collapses. The sweep varies seven such parameters over 2,000 Latin-hypercube samples per compound, and the acceptable window of Figure 11 is the region where the left panel's behavior survives.</figcaption>
+  <figcaption><strong>Figure 10.</strong> The screened cells behind Table 4's three rare-earth-free families, drawn from the dataset's structure files. Left: Mn₂SbTe, a layered hexagonal cell in which Mn planes (orange) alternate with Sb (dark gray) and Te (light gray); the stacking supplies the anisotropy that makes it the most robust lead. Center: HfGaFe₄, the trigonal A-Fe motif, an iron framework (orange) with an A site (Hf, dark gray) that flips the easy axis from plane to c and an anion site (Ga, light gray) that tunes the hardness. Right: the tetragonal (Fe,Mn)₂B parent cell (boron in dark gray); substituting one iron site with Mn in a supercell of this structure produces the Fe₁₅MnB₈ and Fe₇MnB₄ leads.</figcaption>
 </figure>
 
 <figure>
@@ -4459,7 +4527,7 @@ A permanent magnet must satisfy three intrinsic requirements at once, and Figure
     <text x="315" y="154" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₃Pt</text>
     <text x="268" y="218" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">Co₃Cu</text>
     <text x="206" y="145" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₃Co₃</text>
-    <circle cx="468" cy="46" r="3" fill="#FF680A"/><text x="476" y="49" font-size="9" fill="#1f2937">3D Pareto set (n = 28)</text>
+    <circle cx="468" cy="46" r="3" fill="#FF680A"/><text x="476" y="49" font-size="9" fill="#1f2937">Pareto set (n = 28)</text>
     <circle cx="468" cy="60" r="1.4" fill="#1f2937" opacity="0.3"/><text x="476" y="63" font-size="9" fill="#1f2937">one compound</text>
     </svg>
   <figcaption><strong>Figure 13.</strong> The dataset in the three intrinsic dimensions a magnet must satisfy at once: hardness (log κ), magnetization, and Curie temperature. Orange stems mark the 28 compounds that are Pareto-optimal in all three, projected onto the κ-Tc floor for readability. The dashed floor line is κ = 1. The conjunction thins the candidate list further than either two-dimensional view: Mn₂SbTe falls off this frontier (Curie point too low), the (Fe,Mn)₂B borides stay on it, and the high-Curie end belongs to cobalt-rich soft compounds that lack a hardening mechanism.</figcaption>
