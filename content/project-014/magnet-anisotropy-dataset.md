@@ -279,9 +279,10 @@ The stages, with their exact settings:
     <polygon points="242,81 234,85 217,84 210,79 211,62 247,62 247,71" fill="#FF680A" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
     <polygon points="72,118 80,136 55,157 42,157 42,122 65,117" fill="#FF680A" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
     <polygon points="134,231 134,225 115,215 88,223 87,224 95,237" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <polygon points="100,173 111,164 102,156" fill="#3b4552" opacity="0.75" stroke="#3b4552" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="156,146 141,148 142,138" fill="#3b4552" opacity="0.75" stroke="#3b4552" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="210,207 219,204 221,219" fill="#3b4552" opacity="0.75" stroke="#3b4552" stroke-width="4" stroke-linejoin="round"/>
     <rect x="42" y="62" width="250" height="190" fill="none" stroke="#bbb" stroke-width="0.7"/>
-    <ellipse cx="198" cy="205" rx="11" ry="7" fill="#3b4552" opacity="0.55"/>
-    <ellipse cx="96" cy="120" rx="8" ry="6" fill="#3b4552" opacity="0.55"/>
     <line x1="30" y1="234" x2="30" y2="80" stroke="#888" stroke-width="0.8"/>
     <polygon points="30,74 27,82 33,82" fill="#888"/>
     <text x="20" y="157.0" font-size="10" font-style="italic" fill="#444" text-anchor="middle" transform="rotate(-90 20 157.0)">alignment axis</text>
@@ -342,7 +343,7 @@ The stages, with their exact settings:
     <text x="477.0" y="278" font-size="10" font-style="italic" text-anchor="middle" fill="#444">chemical order parameter</text>
     <text x="330" y="155" font-size="10" font-style="italic" text-anchor="middle" fill="#444" transform="rotate(-90 330 155)">boundary exchange fraction</text>
     </svg>
-  <figcaption><strong>Figure 5.</strong> The microstructure sweep of stage 6. Left: the object the sweep parameterizes, a textured polycrystal in which each grain's shade encodes its misalignment from the pressing axis, grain boundaries carry reduced exchange and magnetization, and the gray inclusions are soft phase. Right: real sweep output for HfGaFe₄, the 2,000 Latin-hypercube samples aggregated onto the two most sensitive axes. The share of samples clearing all three thresholds concentrates at high chemical order and low grain-boundary exchange; that concentration is the acceptable window the dataset reports for each gate-passing compound.</figcaption>
+  <figcaption><strong>Figure 5.</strong> The microstructure sweep of stage 6. Left: the object the sweep parameterizes, a textured polycrystal in which each grain's shade encodes its misalignment from the pressing axis, grain boundaries carry reduced exchange and magnetization, and the gray pockets at the triple junctions are soft phase. Right: real sweep output for HfGaFe₄, the 2,000 Latin-hypercube samples aggregated onto the two most sensitive axes. The share of samples clearing all three thresholds concentrates at high chemical order and low grain-boundary exchange; that concentration is the acceptable window the dataset reports for each gate-passing compound.</figcaption>
 </figure>
 
 Two gate configurations were used. The discovery configuration enforces magnet-viability floors (Curie temperature ≥ 400 K, \(M_s\) ≥ 0.5 MA/m, hull distance ≤ 200 meV/atom, \(\kappa > 1\), easy axis along the crystallographic c-axis). The dataset-building configuration relaxes those floors (Curie ≥ 0 K, \(M_s\) ≥ 0.1 MA/m, hull distance ≤ 500 meV/atom) so that the anisotropy label is captured for any uniaxial magnetic structure, including ones that make poor magnets. Most of the dataset was built in the second configuration, which is why its label distribution covers soft and hard compounds alike. The anisotropy stage dominates the cost: a production calculation takes 8 to 15 minutes per compound and the high-accuracy recomputations up to several hours, for roughly 2,900 anisotropy calculations in total over the eight-day screening period.
