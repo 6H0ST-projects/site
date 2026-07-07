@@ -7703,17 +7703,18 @@ The easy-axis label is most reliable in the strongly anisotropic bands, where it
 
 #### 5.1  Benchmark against literature
 
-**Table 6.** Computed versus literature \(K_1\) (MJ/m³) for canonical hard magnets. "Production" is the as-computed value at screening settings; "refined" is the tightened-settings recomputation (completed for FePt); experiment and DFT columns are literature values [12, 13].
+**Table 6.** Computed versus literature \(K_1\) (MJ/m³) for canonical hard magnets. "Production" is the as-computed value at screening settings; "refined" is the tightened-settings recomputation, completed for all rows in July 2026; experiment and DFT columns are literature values [12, 13, 19]. The refined easy axis is noted where it differs from production.
 
 | compound | easy axis (ours) | \(K_1\) production | \(K_1\) refined | \(K_1\) experiment | \(K_1\) DFT literature |
 |---|:---:|---:|---:|---:|---:|
 | FePt (L1₀) | 001 ✓ | 15.9 | 10.6 | ~6.6 | 7–11 |
-| CoPt (L1₀) | 001 ✓ | 8.9 | — | ~4.9 | 5–8 |
-| FePd (L1₀) | in-plane ✗ | 1.5 | — | ~1.8 | 2–3 |
-| Fe₂B | 001 ✓ | 1.4 | — | ~0.8 | 0.5–1 |
-| CrPt, MnPt | non-001 | 10.4, 6.7 | — | antiferromagnets | — |
+| FeCoPt₂ | 001 | 20.5 | 10.0 | — | 10–20 |
+| CoPt (L1₀) | 001 ✓ | 8.9 | 2.5 (→ in-plane ✗) | ~4.9 | 5–8 |
+| FePd (L1₀) | in-plane ✗ | 1.5 | 1.8 (→ 001 ✓) | ~1.8 | 2–3 |
+| Fe₂B | 001 ✗ | 1.4 | 0.6 (→ plane ✓) | −0.8 (easy-plane) | ≈0, near boundary |
+| CrPt, MnPt | non-001 | 10.4, 6.7 | 17.7, 8.4 | antiferromagnets | — |
 
-Four observations, stated in the order a user should weigh them. The pipeline recovers the correct hardness ordering (FePt > CoPt > FePd) and the correct easy axis for the well-defined hard magnets. The refined FePt value lands inside the published DFT range but remains ~1.6× the experimental constant: the well-documented gap between zero-temperature density-functional anisotropy and room-temperature measurement [12, 13], a property of the method class rather than this pipeline. The refinement moves FePt by −33% in \(K_1\), more than the 2–4 band median, confirming that the hardest compounds sit in the correction's tail. And FePd, a marginal magnet with \(\kappa \approx 1\), comes out easy-plane against the known easy-axis, an error the `easy_axis_confidence` column anticipates, since \(\kappa \approx 1\) is the band where flips concentrate. The two antiferromagnets, included as controls, correctly fail to present as easy-axis ferromagnets; their large anisotropy energies are spin–orbit scales, not usable permanent-magnet constants.
+The pipeline recovers the correct hardness ordering (FePt > CoPt > FePd), and refinement moves the hardest values into the published DFT ranges (FePt 15.9 → 10.6, FeCoPt₂ 20.5 → 10.0 MJ/m³) while they remain above room-temperature experiment, the well-documented gap between zero-temperature density-functional anisotropy and measurement [12, 13]. Refinement also corrects both marginal easy-axis errors: FePd moves from in-plane to the known 001 axis with K1 = 1.8 MJ/m³, matching experiment, and Fe₂B moves from 001 to the easy plane, matching its measured K1 of −0.8 MJ/m³ at room temperature [19]. The Fe₂B result anchors the boride story of Section 4.3 in the literature: the parent compound is easy-plane, and hardening it requires substitution, the role Mn plays in Fe₁₅MnB₈ as Co does in (Fe,Co)₂B alloys [19]. CoPt is the exception, flipping to in-plane against the known easy axis under refinement; single calculations carry the Section 5 per-label variance at either setting, and near-boundary compositions can flip in either direction. The two antiferromagnets, included as controls, fail to present as easy-axis ferromagnets at both settings; their large anisotropy energies are spin–orbit scales, not usable permanent-magnet constants.
 
 ### 6  Usage notes
 
@@ -7781,3 +7782,6 @@ The anisotropy, relaxation, stability, Curie-temperature, and magnetic-property 
 [17] S. Curtarolo et al. *AFLOW: An automatic framework for high-throughput materials discovery*. Comput. Mater. Sci. 58, 218 (2012). [DOI:10.1016/j.commatsci.2012.02.005](https://doi.org/10.1016/j.commatsci.2012.02.005)
 
 [18] H. Sahasrabuddhe, J. Zheng et al. *A High-Throughput ab initio Database of Harmonic Phonon Properties for Inorganic Crystals*. ChemRxiv preprint (2026). [DOI:10.26434/chemrxiv.15004632](https://doi.org/10.26434/chemrxiv.15004632)
+
+
+[19] A. Edström, M. Werwiński, D. Iuşan, J. Rusz, O. Eriksson, K. P. Skokov, I. A. Radulov, S. Ener, M. D. Kuz'min, J. Hong, et al. *Magnetic properties of (Fe1−xCox)2B alloys and the effect of doping by 5d elements*. Phys. Rev. B 92, 174413 (2015). [DOI:10.1103/PhysRevB.92.174413](https://doi.org/10.1103/PhysRevB.92.174413)
