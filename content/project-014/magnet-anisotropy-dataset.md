@@ -833,9 +833,9 @@ The two element groups that dominate commercial hard magnets play opposite roles
 
 Table 4 collects the leading candidates, and Figure 10 shows the screened cells behind the three rare-earth-free families. A manufactured magnet, however, is a polycrystal, and the properties a user sees depend on grain size, grain alignment, and grain-boundary chemistry as much as on the cell itself (Figure 5). For every gate-passing compound the sweep stage therefore tests 2,000 sampled microstructures and records the *acceptable window*: the region of processing space in which the compound still clears the magnet thresholds (Figure 11).
 
-**Table 4.** Leading candidates from the screen, with the L1₀ FePt benchmark as the precious-metal reference. Robustness is the share of 2,000 sampled microstructures that clear all magnet thresholds, weighted by their margin above them; the peak energy product is the sweep's best case. Sintered Nd–Fe–B delivers ≈400 kJ/m³.
+**Table 4.** Leading candidates from the screen alongside the established permanent magnets, all run through the same 2,000-point microstructure sweep. Candidate rows carry pipeline intrinsic properties (κ corrected as in Section 4); the established-magnet rows are seeded with experimental room-temperature intrinsic values from the standard tables [2, 3], since the pipeline's pseudopotential set excludes the lanthanides. Robustness is the share of sampled microstructures that clear all magnet thresholds (coercivity ≥ 600 kA/m, remanence ≥ 0.8 T, \((BH)_{max}\) ≥ 100 kJ/m³), weighted by their margin above them; the peak energy product is the sweep's best case. Sintered Nd–Fe–B delivers ≈400 kJ/m³ in production.
 
-| compound | family | κ (corr) | \(M_s\) (MA/m) | \(T_c\) (K) | \(E_{hull}\) (meV) | peak \((BH)_{max}\) (kJ/m³) | robustness | note |
+| compound | family | κ | \(M_s\) (MA/m) | \(T_c\) (K) | \(E_{hull}\) (meV) | peak \((BH)_{max}\) (kJ/m³) | robustness | note |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|---|
 | FePt | L1₀ (precious ref.) | 3.15 | 1.09 | 538 | 0 | 372 | 0.91 | large hardness margin |
 | Mn₂SbTe | layered pnictide-chalcogenide | 4.14 | 0.79 | 438 | 4 | 195 | 0.71 | most robust RE-free lead; FM-assumption flag |
@@ -844,6 +844,15 @@ Table 4 collects the leading candidates, and Figure 10 shows the screened cells 
 | Fe₇MnB₄ | (Fe,Mn)₂B boride | 1.11 | 1.14 | 650 | 16 | 404 | 0.01 | NdFeB-class ceiling, fragile |
 | Fe₁₅MnB₈ | (Fe,Mn)₂B boride | 1.08 | 1.18 | 610 | 8 | 423 | 0.008 | highest RE-free ceiling in the set |
 | Mn₂Ge | hexagonal | 1.13 | 1.12 | 504 | 51 | 393 | 0.01 | FM-assumption flag |
+| *established magnets — experimental intrinsics [2, 3]* | | | | | | | | |
+| Nd₂Fe₁₄B | 2:14:1 tetragonal | 1.54 | 1.28 | 588 | — | 516 | 0.21 | highest ceiling of any row; robustness rests on grain-boundary engineering |
+| SmCo₅ | CaCu₅ hexagonal | 4.40 | 0.84 | 1020 | — | 220 | 0.84 | the most processing-forgiving known magnet |
+| Sm₂Co₁₇ | Th₂Zn₁₇ rhombohedral | 1.90 | 0.96 | 1190 | — | 291 | 0.24 | highest Curie temperature in the table |
+| MnBi (LTP) | NiAs hexagonal | 1.95 | 0.58 | 630 | — | 106 | 0.00 | \(\mu_0 M_s\) = 0.73 T cannot reach the 0.8 T remanence bar |
+| MnAl-τ | L1₀ tetragonal | 1.94 | 0.60 | 650 | — | 113 | 0.00 | metastable τ phase; same remanence limit |
+| BaFe₁₂O₁₉ | M-type hexaferrite | 1.34 | 0.38 | 740 | — | 46 | 0.00 | commercial magnet, below this table's thresholds by design |
+
+The established-magnet rows validate the sweep externally and calibrate the robustness scale. In the ideal corner of processing space the sweep reproduces each compound's theoretical energy-product ceiling \((\mu_0 M_s)^2/4\mu_0\) — 516 kJ/m³ for Nd₂Fe₁₄B against the ≈400 that sintered magnets deliver, 220 for SmCo₅, and 46 kJ/m³ for the hexaferrite, matching its ≈40 commercial value. The robustness ordering reproduces sixty years of processing experience: SmCo₅, whose κ = 4.4 margin made it manufacturable almost immediately, scores 0.84, while Nd₂Fe₁₄B scores 0.21 — a higher ceiling bought with a narrower window, which is why its industrial history is a history of grain-boundary engineering. The zeros are informative rather than dismissive: MnBi, MnAl-τ, and the hexaferrite are real commercial or near-commercial magnets that simply sit below this table's NdFeB-class thresholds, the market segment the screen targets. Against these anchors, Mn₂SbTe's 0.71 places it between SmCo₅ and Nd₂Fe₁₄B in processing tolerance at half the ceiling, and the borides pair Nd₂Fe₁₄B-class ceilings with windows an order of magnitude narrower than Nd₂Fe₁₄B's own.
 
 <figure>
 <img src="/img/fig9-structures.png" alt="Ball-and-stick unit cells of Mn2SbTe, HfGaFe4, and (Fe,Mn)2B" style="width:100%;max-width:640px;display:block;margin:0 auto">
