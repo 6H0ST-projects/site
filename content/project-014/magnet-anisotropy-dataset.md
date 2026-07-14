@@ -833,7 +833,7 @@ The two element groups that dominate commercial hard magnets play opposite roles
 
 Table 4 collects the leading candidates, and Figure 10 shows the screened cells behind the three rare-earth-free families. A manufactured magnet, however, is a polycrystal, and the properties a user sees depend on grain size, grain alignment, and grain-boundary chemistry as much as on the cell itself (Figure 5). For every gate-passing compound the sweep stage therefore tests 2,000 sampled microstructures and records the *acceptable window*: the region of processing space in which the compound still clears the magnet thresholds (Figure 11).
 
-**Table 4.** Leading candidates from the screen alongside the established permanent magnets, all run through the same 2,000-point microstructure sweep. Candidate rows carry pipeline intrinsic properties (κ corrected as in Section 4); the established-magnet rows are seeded with experimental room-temperature intrinsic values from the standard tables [2, 3], since the pipeline's pseudopotential set excludes the lanthanides. Robustness is the share of sampled microstructures that clear all magnet thresholds (coercivity ≥ 600 kA/m, remanence ≥ 0.8 T, \((BH)_{max}\) ≥ 100 kJ/m³), weighted by their margin above them; the peak energy product is the sweep's best case. Sintered Nd–Fe–B delivers ≈400 kJ/m³ in production.
+**Table 4.** Leading candidates from the screen alongside the established permanent magnets, all run through the same 2,000-point microstructure sweep. Candidate rows carry pipeline intrinsic properties (κ corrected as in Section 4); the established-magnet rows are seeded with experimental room-temperature intrinsic values from the standard tables [2, 3], since the pipeline's pseudopotential set excludes the lanthanides. Robustness is the share of sampled microstructures that clear all magnet thresholds (coercivity ≥ 600 kA/m, remanence ≥ 0.8 T, \((BH)_{max}\) ≥ 100 kJ/m³), weighted by their margin above them; the peak energy product is the sweep's best case. Robustness therefore measures the width of the processing window against a fixed specification, not magnet quality: a compound whose intrinsic ceiling sits below the thresholds scores zero at every microstructure, and a high score requires intrinsic properties that exceed the specification with room to spare. Sintered Nd–Fe–B delivers ≈400 kJ/m³ in production.
 
 | compound | family | κ | \(M_s\) (MA/m) | \(T_c\) (K) | \(E_{hull}\) (meV) | peak \((BH)_{max}\) (kJ/m³) | robustness | note |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|---|
@@ -844,7 +844,11 @@ Table 4 collects the leading candidates, and Figure 10 shows the screened cells 
 | Fe₇MnB₄ | (Fe,Mn)₂B boride | 1.11 | 1.14 | 650 | 16 | 404 | 0.01 | NdFeB-class ceiling, fragile |
 | Fe₁₅MnB₈ | (Fe,Mn)₂B boride | 1.08 | 1.18 | 610 | 8 | 423 | 0.008 | highest RE-free ceiling in the set |
 | Mn₂Ge | hexagonal | 1.13 | 1.12 | 504 | 51 | 393 | 0.01 | FM-assumption flag |
-| *established magnets — experimental intrinsics [2, 3]* | | | | | | | | |
+
+**Established magnets** — experimental intrinsic inputs [2, 3], identical sweep:
+
+| compound | family | κ | \(M_s\) (MA/m) | \(T_c\) (K) | \(E_{hull}\) (meV) | peak \((BH)_{max}\) (kJ/m³) | robustness | note |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|---|
 | Nd₂Fe₁₄B | 2:14:1 tetragonal | 1.54 | 1.28 | 588 | — | 516 | 0.21 | highest ceiling of any row; robustness rests on grain-boundary engineering |
 | SmCo₅ | CaCu₅ hexagonal | 4.40 | 0.84 | 1020 | — | 220 | 0.84 | the most processing-forgiving known magnet |
 | Sm₂Co₁₇ | Th₂Zn₁₇ rhombohedral | 1.90 | 0.96 | 1190 | — | 291 | 0.24 | highest Curie temperature in the table |
