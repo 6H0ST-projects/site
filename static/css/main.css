@@ -81,7 +81,7 @@ main {
 }
 
 .project-card.about-us {
-  background-color: #FF680A;
+  background-color: #FF3336;
   color: #fff;
 }
 
@@ -394,7 +394,7 @@ body.project-014 {
 }
 
 body.about-us {
-  background-color: #FF680A !important;
+  background-color: #FF3336 !important;
   color: #fff !important;
 }
 
@@ -490,7 +490,7 @@ body.blog-page {
 }
 
 .page-link-preview.about-us {
-  background-color: #FF680A;
+  background-color: #FF3336;
   color: #fff;
 }
 

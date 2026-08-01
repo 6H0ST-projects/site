@@ -67,37 +67,37 @@ Element identity therefore shapes the magnitude of \(F\) at every Miller index, 
   <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
     <text x="100" y="17" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Re F(h)</text>
     <rect x="20" y="28" width="160" height="160" fill="none" stroke="#bbb" stroke-width="0.5"/>
-    <circle cx="100" cy="108" r="9" fill="#FF680A"/>
+    <circle cx="100" cy="108" r="9" fill="#FF3336"/>
     <circle cx="135" cy="108" r="4.5" fill="#1f2937" opacity="0.85"/>
     <circle cx="65" cy="108" r="4.5" fill="#1f2937" opacity="0.85"/>
-    <circle cx="100" cy="78" r="5.5" fill="#FF680A" opacity="0.9"/>
-    <circle cx="100" cy="138" r="5.5" fill="#FF680A" opacity="0.9"/>
+    <circle cx="100" cy="78" r="5.5" fill="#FF3336" opacity="0.9"/>
+    <circle cx="100" cy="138" r="5.5" fill="#FF3336" opacity="0.9"/>
     <circle cx="135" cy="78" r="3" fill="#1f2937" opacity="0.65"/>
     <circle cx="65" cy="138" r="3" fill="#1f2937" opacity="0.65"/>
-    <circle cx="135" cy="138" r="3.5" fill="#FF680A" opacity="0.7"/>
-    <circle cx="65" cy="78" r="3.5" fill="#FF680A" opacity="0.7"/>
+    <circle cx="135" cy="138" r="3.5" fill="#FF3336" opacity="0.7"/>
+    <circle cx="65" cy="78" r="3.5" fill="#FF3336" opacity="0.7"/>
     <circle cx="160" cy="108" r="2" fill="#1f2937" opacity="0.5"/>
     <circle cx="40" cy="108" r="2" fill="#1f2937" opacity="0.5"/>
-    <circle cx="100" cy="48" r="2.5" fill="#FF680A" opacity="0.55"/>
-    <circle cx="100" cy="168" r="2.5" fill="#FF680A" opacity="0.55"/>
+    <circle cx="100" cy="48" r="2.5" fill="#FF3336" opacity="0.55"/>
+    <circle cx="100" cy="168" r="2.5" fill="#FF3336" opacity="0.55"/>
     <text x="300" y="17" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Im F(h)</text>
     <rect x="220" y="28" width="160" height="160" fill="none" stroke="#bbb" stroke-width="0.5"/>
     <circle cx="300" cy="108" r="1.6" fill="#888" opacity="0.55"/>
-    <circle cx="335" cy="108" r="4" fill="#FF680A" opacity="0.8"/>
+    <circle cx="335" cy="108" r="4" fill="#FF3336" opacity="0.8"/>
     <circle cx="265" cy="108" r="4" fill="#1f2937" opacity="0.8"/>
-    <circle cx="300" cy="78" r="3.5" fill="#FF680A" opacity="0.7"/>
+    <circle cx="300" cy="78" r="3.5" fill="#FF3336" opacity="0.7"/>
     <circle cx="300" cy="138" r="3.5" fill="#1f2937" opacity="0.7"/>
-    <circle cx="335" cy="78" r="4.5" fill="#FF680A" opacity="0.85"/>
+    <circle cx="335" cy="78" r="4.5" fill="#FF3336" opacity="0.85"/>
     <circle cx="265" cy="138" r="4.5" fill="#1f2937" opacity="0.85"/>
     <circle cx="335" cy="138" r="3" fill="#1f2937" opacity="0.6"/>
-    <circle cx="265" cy="78" r="3" fill="#FF680A" opacity="0.6"/>
-    <circle cx="360" cy="108" r="2.5" fill="#FF680A" opacity="0.55"/>
+    <circle cx="265" cy="78" r="3" fill="#FF3336" opacity="0.6"/>
+    <circle cx="360" cy="108" r="2.5" fill="#FF3336" opacity="0.55"/>
     <circle cx="240" cy="108" r="2.5" fill="#1f2937" opacity="0.55"/>
     <text x="500" y="17" text-anchor="middle" font-size="12" font-style="italic" fill="#222">1/d²(h)</text>
     <rect x="420" y="28" width="160" height="160" fill="none" stroke="#bbb" stroke-width="0.5"/>
-    <circle cx="500" cy="108" r="68" fill="#FF680A" opacity="0.18"/>
-    <circle cx="500" cy="108" r="44" fill="#FF680A" opacity="0.32"/>
-    <circle cx="500" cy="108" r="20" fill="#FF680A" opacity="0.55"/>
+    <circle cx="500" cy="108" r="68" fill="#FF3336" opacity="0.18"/>
+    <circle cx="500" cy="108" r="44" fill="#FF3336" opacity="0.32"/>
+    <circle cx="500" cy="108" r="20" fill="#FF3336" opacity="0.55"/>
     <circle cx="500" cy="108" r="2.5" fill="#1f2937"/>
   </svg>
   <figcaption><strong>Figure 1.</strong> The model's three input channels are sampled at integer Miller indices. Re F(h) is even with a bright DC term and signed Bragg peaks falling off outward. Im F(h) is odd, vanishes at the origin, and flips sign through inversion. 1/d²(h) is a smooth quadratic, small near the origin, growing radially.</figcaption>
@@ -118,9 +118,9 @@ The matrix \(G^\ast = G^{-1}\) is the reciprocal metric tensor, the inverse of t
     <line x1="60" y1="108" x2="220" y2="108" stroke="#ccc" stroke-width="0.5" stroke-dasharray="2,3"/>
     <line x1="140" y1="28" x2="140" y2="188" stroke="#ccc" stroke-width="0.5" stroke-dasharray="2,3"/>
     <circle cx="140" cy="108" r="2" fill="#888"/>
-    <circle cx="95" cy="65" r="6" fill="#FF680A"/>
-    <circle cx="185" cy="151" r="6" fill="#FF680A"/>
-    <line x1="95" y1="65" x2="185" y2="151" stroke="#FF680A" stroke-width="0.7" opacity="0.45" stroke-dasharray="2,3"/>
+    <circle cx="95" cy="65" r="6" fill="#FF3336"/>
+    <circle cx="185" cy="151" r="6" fill="#FF3336"/>
+    <line x1="95" y1="65" x2="185" y2="151" stroke="#FF3336" stroke-width="0.7" opacity="0.45" stroke-dasharray="2,3"/>
     <circle cx="178" cy="82" r="5" fill="#1f2937"/>
     <circle cx="102" cy="134" r="5" fill="#1f2937"/>
     <line x1="178" y1="82" x2="102" y2="134" stroke="#1f2937" stroke-width="0.7" opacity="0.45" stroke-dasharray="2,3"/>
@@ -129,11 +129,11 @@ The matrix \(G^\ast = G^{-1}\) is the reciprocal metric tensor, the inverse of t
     <rect x="380" y="28" width="160" height="160" fill="#000" fill-opacity="0.025" stroke="#bbb" stroke-width="0.5"/>
     <line x1="380" y1="108" x2="540" y2="108" stroke="#ccc" stroke-width="0.5" stroke-dasharray="2,3"/>
     <line x1="460" y1="28" x2="460" y2="188" stroke="#ccc" stroke-width="0.5" stroke-dasharray="2,3"/>
-    <circle cx="412" cy="58" r="6" fill="#FF680A"/>
+    <circle cx="412" cy="58" r="6" fill="#FF3336"/>
     <circle cx="518" cy="96" r="5" fill="#1f2937"/>
-    <circle cx="448" cy="170" r="6" fill="#FF680A"/>
+    <circle cx="448" cy="170" r="6" fill="#FF3336"/>
     <circle cx="496" cy="148" r="4" fill="#1f2937"/>
-    <text x="460" y="208" text-anchor="middle" font-size="12" font-style="italic" fill="#FF680A">Im F(h) ≠ 0</text>
+    <text x="460" y="208" text-anchor="middle" font-size="12" font-style="italic" fill="#FF3336">Im F(h) ≠ 0</text>
   </svg>
   <figcaption><strong>Figure 2.</strong> In a centrosymmetric basis (left) every atom at r has a partner at −r through the inversion center (dashed pairings), and the sine terms in F(h) = Σ f<sub>j</sub> exp(2πi h·r<sub>j</sub>) cancel pairwise, so Im F vanishes. An asymmetric basis (right) has no such pairings, so Im F survives at every hkl.</figcaption>
 </figure>
@@ -143,24 +143,24 @@ The matrix \(G^\ast = G^{-1}\) is the reciprocal metric tensor, the inverse of t
     <text x="100" y="18" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Cubic</text>
     <text x="100" y="32" text-anchor="middle" font-size="10" fill="#888">a = b = c, all 90°</text>
     <rect x="20" y="42" width="160" height="160" fill="none" stroke="#bbb" stroke-width="0.5"/>
-    <circle cx="100" cy="122" r="68" fill="#FF680A" opacity="0.18"/>
-    <circle cx="100" cy="122" r="44" fill="#FF680A" opacity="0.32"/>
-    <circle cx="100" cy="122" r="20" fill="#FF680A" opacity="0.55"/>
+    <circle cx="100" cy="122" r="68" fill="#FF3336" opacity="0.18"/>
+    <circle cx="100" cy="122" r="44" fill="#FF3336" opacity="0.32"/>
+    <circle cx="100" cy="122" r="20" fill="#FF3336" opacity="0.55"/>
     <circle cx="100" cy="122" r="2.5" fill="#1f2937"/>
     <text x="300" y="18" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Tetragonal (L1₀)</text>
     <text x="300" y="32" text-anchor="middle" font-size="10" fill="#888">a = b ≠ c</text>
     <rect x="220" y="42" width="160" height="160" fill="none" stroke="#bbb" stroke-width="0.5"/>
-    <ellipse cx="300" cy="122" rx="68" ry="48" fill="#FF680A" opacity="0.18"/>
-    <ellipse cx="300" cy="122" rx="44" ry="31" fill="#FF680A" opacity="0.32"/>
-    <ellipse cx="300" cy="122" rx="20" ry="14" fill="#FF680A" opacity="0.55"/>
+    <ellipse cx="300" cy="122" rx="68" ry="48" fill="#FF3336" opacity="0.18"/>
+    <ellipse cx="300" cy="122" rx="44" ry="31" fill="#FF3336" opacity="0.32"/>
+    <ellipse cx="300" cy="122" rx="20" ry="14" fill="#FF3336" opacity="0.55"/>
     <circle cx="300" cy="122" r="2.5" fill="#1f2937"/>
     <text x="500" y="18" text-anchor="middle" font-size="12" font-style="italic" fill="#222">Monoclinic</text>
     <text x="500" y="32" text-anchor="middle" font-size="10" fill="#888">β ≠ 90°</text>
     <rect x="420" y="42" width="160" height="160" fill="none" stroke="#bbb" stroke-width="0.5"/>
     <g transform="rotate(-22 500 122)">
-      <ellipse cx="500" cy="122" rx="68" ry="44" fill="#FF680A" opacity="0.18"/>
-      <ellipse cx="500" cy="122" rx="44" ry="28" fill="#FF680A" opacity="0.32"/>
-      <ellipse cx="500" cy="122" rx="20" ry="13" fill="#FF680A" opacity="0.55"/>
+      <ellipse cx="500" cy="122" rx="68" ry="44" fill="#FF3336" opacity="0.18"/>
+      <ellipse cx="500" cy="122" rx="44" ry="28" fill="#FF3336" opacity="0.32"/>
+      <ellipse cx="500" cy="122" rx="20" ry="13" fill="#FF3336" opacity="0.55"/>
     </g>
     <circle cx="500" cy="122" r="2.5" fill="#1f2937"/>
   </svg>
@@ -187,9 +187,9 @@ At inference we integrate this velocity field as an ODE \(\dot{x} = v_\theta(x, 
     <circle cx="80" cy="110" r="36" fill="#000" opacity="0.07"/>
     <circle cx="80" cy="110" r="18" fill="#000" opacity="0.12"/>
     <text x="80" y="200" text-anchor="middle" font-size="13" fill="#555" font-style="italic">π₀ · noise</text>
-    <ellipse cx="510" cy="110" rx="50" ry="38" fill="#FF680A" opacity="0.18" transform="rotate(18 510 110)"/>
-    <ellipse cx="510" cy="110" rx="32" ry="24" fill="#FF680A" opacity="0.32" transform="rotate(18 510 110)"/>
-    <ellipse cx="510" cy="110" rx="15" ry="11" fill="#FF680A" opacity="0.55" transform="rotate(18 510 110)"/>
+    <ellipse cx="510" cy="110" rx="50" ry="38" fill="#FF3336" opacity="0.18" transform="rotate(18 510 110)"/>
+    <ellipse cx="510" cy="110" rx="32" ry="24" fill="#FF3336" opacity="0.32" transform="rotate(18 510 110)"/>
+    <ellipse cx="510" cy="110" rx="15" ry="11" fill="#FF3336" opacity="0.55" transform="rotate(18 510 110)"/>
     <text x="510" y="200" text-anchor="middle" font-size="13" fill="#555" font-style="italic">π₁ · data</text>
     <line x1="80" y1="110" x2="492" y2="110" stroke="#000" stroke-width="1.8"/>
     <polygon points="500,110 488,104 488,116" fill="#000"/>
@@ -263,7 +263,7 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <text x="162" y="56" text-anchor="middle" font-size="11" font-weight="500">MMDiT</text>
     <text x="162" y="70" text-anchor="middle" font-size="9" fill="#666">50 Euler steps · w = 6</text>
     <text x="162" y="110" text-anchor="middle" font-size="10" fill="#555" font-style="italic">rectified flow + CFG</text>
-    <text x="162" y="28" text-anchor="middle" font-size="9" fill="#FF680A" font-style="italic">+ c</text>
+    <text x="162" y="28" text-anchor="middle" font-size="9" fill="#FF3336" font-style="italic">+ c</text>
     <line x1="221" y1="60" x2="245" y2="60" stroke="#888" stroke-width="0.6"/>
     <polygon points="248,60 243,58 243,62" fill="#888"/>
     <rect x="248" y="45" width="58" height="30" fill="#000" fill-opacity="0.05" stroke="#888" stroke-width="0.5"/>
@@ -280,9 +280,9 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <text x="452" y="110" text-anchor="middle" font-size="10" fill="#555" font-style="italic">grid</text>
     <line x1="482" y1="60" x2="506" y2="60" stroke="#888" stroke-width="0.6"/>
     <polygon points="509,60 504,58 504,62" fill="#888"/>
-    <rect x="509" y="40" width="84" height="40" fill="#FF680A" fill-opacity="0.15" stroke="#FF680A" stroke-width="0.8"/>
+    <rect x="509" y="40" width="84" height="40" fill="#FF3336" fill-opacity="0.15" stroke="#FF3336" stroke-width="0.8"/>
     <text x="551" y="58" text-anchor="middle" font-size="10" font-weight="500">pymatgen</text>
-    <text x="551" y="71" text-anchor="middle" font-size="10" fill="#FF680A" font-style="italic">Structure</text>
+    <text x="551" y="71" text-anchor="middle" font-size="10" fill="#FF3336" font-style="italic">Structure</text>
   </svg>
   <figcaption><strong>Figure 5a.</strong> A Gaussian noise sample z₀ is integrated through 50 Euler steps of the conditional rectified-flow ODE with classifier-free guidance at w = 6, producing the data latent z₁. The VAE decoder maps that latent back to a 64³ × 3 reciprocal-space grid, and the closed-form decoder of Section 4.6 turns the grid into a pymatgen Structure. The conditioning input c enters the MMDiT directly; its internal routing through the network is detailed in Figure 5b. End-to-end inference takes approximately five seconds per candidate.</figcaption>
 </figure>
@@ -299,8 +299,8 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <text x="68" y="274" text-anchor="middle" font-size="8.5" fill="#333">energy above hull</text>
     <text x="68" y="286" text-anchor="middle" font-size="8.5" fill="#333">magnetic ordering</text>
     <text x="68" y="306" text-anchor="middle" font-size="8" fill="#888" font-style="italic">7 tokens · p_drop = 0.1</text>
-    <line x1="126" y1="282" x2="146" y2="282" stroke="#FF680A" stroke-width="0.7"/>
-    <polygon points="149,282 144,280 144,284" fill="#FF680A"/>
+    <line x1="126" y1="282" x2="146" y2="282" stroke="#FF3336" stroke-width="0.7"/>
+    <polygon points="149,282 144,280 144,284" fill="#FF3336"/>
     <text x="210" y="195" text-anchor="middle" font-size="10" font-weight="500" fill="#222">MMDiT · ~302M params</text>
     <text x="210" y="213" text-anchor="middle" font-size="9" fill="#666" font-style="italic">image latent (from z<tspan baseline-shift="sub" font-size="0.78em">t</tspan>)</text>
     <rect x="150" y="218" width="120" height="22" fill="none" stroke="#888" stroke-width="0.6"/>
@@ -336,8 +336,8 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <line x1="450" y1="318" x2="450" y2="332" stroke="#888" stroke-width="0.5"/>
     <polygon points="450,335 447,330 453,330" fill="#888"/>
     <text x="538" y="329" font-size="9" fill="#666" font-style="italic">1×1×1 conv</text>
-    <rect x="385" y="335" width="130" height="22" fill="#FF680A" fill-opacity="0.15" stroke="#FF680A" stroke-width="0.6"/>
-    <text x="450" y="349" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">64³ × 3 grid</text>
+    <rect x="385" y="335" width="130" height="22" fill="#FF3336" fill-opacity="0.15" stroke="#FF3336" stroke-width="0.6"/>
+    <text x="450" y="349" text-anchor="middle" font-size="10" font-style="italic" fill="#FF3336">64³ × 3 grid</text>
   </svg>
   <figcaption><strong>Figure 5b.</strong> The seven conditioning streams are each tokenized, individually dropped during training with p<sub>drop</sub> = 0.1, and fed as a separate token stream into the MMDiT's double-stream blocks, where they attend jointly with the latent image tokens. The MMDiT (≈302M params) processes the latent through a linear projection, N double-stream blocks (joint attention plus AdaLN-Zero), M single-stream blocks (merged self-attention plus AdaLN-Zero), and a linear output head producing the velocity field v<sub>θ</sub>. The VAE decoder (≈2.6M params) is a cascade of 3D transposed convolutions upsampling the 16³ × 128 latent to a 64³ × 3 grid, terminating in a 1×1×1 channel projection.</figcaption>
 </figure>
@@ -353,9 +353,9 @@ The default guidance scale is \(w = 6.0\), substantially higher than typical ima
     <polygon points="340,100 327,99 331,108" fill="#333"/>
     <text x="356" y="106" font-size="12" fill="#333" font-style="italic">v<tspan baseline-shift="sub" font-size="0.78em">c</tspan></text>
     <line x1="300" y1="180" x2="380" y2="20" stroke="#888" stroke-width="0.6" stroke-dasharray="3,3"/>
-    <line x1="100" y1="210" x2="372" y2="22" stroke="#FF680A" stroke-width="2.3"/>
-    <polygon points="380,20 367,21 370,30" fill="#FF680A"/>
-    <text x="396" y="26" font-size="12" fill="#FF680A" font-style="italic">ṽ  (w &gt; 1)</text>
+    <line x1="100" y1="210" x2="372" y2="22" stroke="#FF3336" stroke-width="2.3"/>
+    <polygon points="380,20 367,21 370,30" fill="#FF3336"/>
+    <text x="396" y="26" font-size="12" fill="#FF3336" font-style="italic">ṽ  (w &gt; 1)</text>
   </svg>
   <figcaption><strong>Figure 6.</strong> At a single inference step, v<sub>∅</sub> is the unconditional velocity and v<sub>c</sub> the conditional velocity. The guided velocity ṽ lies on the line through the two tips (dashed) and extrapolates past v<sub>c</sub> when w &gt; 1, magnifying the conditional direction.</figcaption>
 </figure>
@@ -415,9 +415,9 @@ Composition is assigned last: the deployed decoder assumes the requested formula
     <polygon points="540,102 532,98 532,106" fill="#888"/>
     <path d="M 502 165 L 528 165 L 528 122 L 537 122" stroke="#888" stroke-width="0.6" fill="none"/>
     <polygon points="540,122 532,118 532,126" fill="#888"/>
-    <rect x="540" y="98" width="58" height="28" fill="#FF680A" fill-opacity="0.15" stroke="#FF680A" stroke-width="0.8"/>
+    <rect x="540" y="98" width="58" height="28" fill="#FF3336" fill-opacity="0.15" stroke="#FF3336" stroke-width="0.8"/>
     <text x="569" y="110" text-anchor="middle" font-size="10" font-weight="500">pymatgen</text>
-    <text x="569" y="121" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">Structure</text>
+    <text x="569" y="121" text-anchor="middle" font-size="10" font-style="italic" fill="#FF3336">Structure</text>
   </svg>
   <figcaption><strong>Figure 7.</strong> The two structure-factor channels combine into a complex field, are inverse-FFT'd to a fractional electron density, and peak-found to recover atom positions. The reciprocal-metric channel is fit by linear least squares to recover G*, which is inverted to read off the six lattice parameters. The two streams merge into a pymatgen Structure. No learned post-processing.</figcaption>
 </figure>
@@ -431,11 +431,11 @@ Composition is assigned last: the deployed decoder assumes the requested formula
     <text x="103" y="53" text-anchor="end" font-size="9" fill="#888">100%</text>
     <text x="103" y="128" text-anchor="end" font-size="9" fill="#888">75%</text>
     <text x="103" y="203" text-anchor="end" font-size="9" fill="#888">50%</text>
-    <polyline points="170,50 340,50 510,50" fill="none" stroke="#FF680A" stroke-width="2"/>
-    <circle cx="170" cy="50" r="4" fill="#FF680A"/><circle cx="340" cy="50" r="4" fill="#FF680A"/><circle cx="510" cy="50" r="4" fill="#FF680A"/>
+    <polyline points="170,50 340,50 510,50" fill="none" stroke="#FF3336" stroke-width="2"/>
+    <circle cx="170" cy="50" r="4" fill="#FF3336"/><circle cx="340" cy="50" r="4" fill="#FF3336"/><circle cx="510" cy="50" r="4" fill="#FF3336"/>
     <polyline points="170,50 340,50 510,164" fill="none" stroke="#1f2937" stroke-width="1.8" stroke-dasharray="4,3"/>
     <circle cx="170" cy="50" r="3" fill="#1f2937"/><circle cx="340" cy="50" r="3" fill="#1f2937"/><circle cx="510" cy="164" r="4.5" fill="#1f2937"/>
-    <text x="300" y="42" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF680A">brightness heuristic, robust</text>
+    <text x="300" y="42" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF3336">brightness heuristic, robust</text>
     <text x="500" y="182" text-anchor="end" font-size="9.5" font-style="italic" fill="#1f2937">Cromer–Mann fit, degrades</text>
     <text x="170" y="225" text-anchor="middle" font-size="9" fill="#666">noise-free</text>
     <text x="340" y="225" text-anchor="middle" font-size="9" fill="#666">white noise</text>
@@ -519,14 +519,14 @@ This family-level failure is not permanent, however. Fine-tuning the trained mod
     <text x="83" y="67" text-anchor="end" font-size="9" fill="#888">1.8</text>
     <text x="83" y="146" text-anchor="end" font-size="9" fill="#888">1.2</text>
     <text x="83" y="200" text-anchor="end" font-size="9" fill="#888">0.8</text>
-    <polyline points="110,64 200,185 290,186 380,179 470,186" fill="none" stroke="#FF680A" stroke-width="2"/>
+    <polyline points="110,64 200,185 290,186 380,179 470,186" fill="none" stroke="#FF3336" stroke-width="2"/>
     <circle cx="110" cy="64" r="4.5" fill="#999"/>
-    <circle cx="200" cy="185" r="4.5" fill="#FF680A"/>
-    <circle cx="290" cy="186" r="4.5" fill="#FF680A"/>
-    <circle cx="380" cy="179" r="4.5" fill="#FF680A"/>
-    <circle cx="470" cy="186" r="4.5" fill="#FF680A"/>
+    <circle cx="200" cy="185" r="4.5" fill="#FF3336"/>
+    <circle cx="290" cy="186" r="4.5" fill="#FF3336"/>
+    <circle cx="380" cy="179" r="4.5" fill="#FF3336"/>
+    <circle cx="470" cy="186" r="4.5" fill="#FF3336"/>
     <text x="128" y="60" text-anchor="start" font-size="10" font-style="italic" fill="#999">tall default, no recovery</text>
-    <text x="340" y="158" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">squat, recovered with K ≥ 1</text>
+    <text x="340" y="158" text-anchor="middle" font-size="10" font-style="italic" fill="#FF3336">squat, recovered with K ≥ 1</text>
     <text x="110" y="224" text-anchor="middle" font-size="9" fill="#666">0</text>
     <text x="200" y="224" text-anchor="middle" font-size="9" fill="#666">1</text>
     <text x="290" y="224" text-anchor="middle" font-size="9" fill="#666">5</text>
@@ -554,23 +554,23 @@ Concrete monotonic trends confirm this ordering on the continuous-property chann
     <line x1="535" y1="25" x2="535" y2="215" stroke="#eee" stroke-width="0.5"/>
     <line x1="145" y1="215" x2="535" y2="215" stroke="#888" stroke-width="0.5"/>
     <text x="140" y="44" text-anchor="end" font-size="10" font-style="italic">formation energy</text>
-    <rect x="509" y="32" width="26" height="16" fill="#FF680A" fill-opacity="0.75"/>
-    <text x="545" y="44" font-size="10" font-style="italic" fill="#FF680A">0.84</text>
+    <rect x="509" y="32" width="26" height="16" fill="#FF3336" fill-opacity="0.75"/>
+    <text x="545" y="44" font-size="10" font-style="italic" fill="#FF3336">0.84</text>
     <text x="140" y="74" text-anchor="end" font-size="10" font-style="italic">magnetic ordering</text>
-    <rect x="496" y="62" width="39" height="16" fill="#FF680A" fill-opacity="0.6"/>
-    <text x="545" y="74" font-size="10" font-style="italic" fill="#FF680A">0.57</text>
+    <rect x="496" y="62" width="39" height="16" fill="#FF3336" fill-opacity="0.6"/>
+    <text x="545" y="74" font-size="10" font-style="italic" fill="#FF3336">0.57</text>
     <text x="140" y="104" text-anchor="end" font-size="10" font-style="italic">space group</text>
-    <rect x="236" y="92" width="299" height="16" fill="#FF680A" fill-opacity="0.58"/>
-    <text x="545" y="104" font-size="10" font-style="italic" fill="#FF680A">0.55</text>
+    <rect x="236" y="92" width="299" height="16" fill="#FF3336" fill-opacity="0.58"/>
+    <text x="545" y="104" font-size="10" font-style="italic" fill="#FF3336">0.55</text>
     <text x="140" y="134" text-anchor="end" font-size="10" font-style="italic">crystal system</text>
-    <rect x="288" y="122" width="247" height="16" fill="#FF680A" fill-opacity="0.52"/>
-    <text x="545" y="134" font-size="10" font-style="italic" fill="#FF680A">0.52</text>
+    <rect x="288" y="122" width="247" height="16" fill="#FF3336" fill-opacity="0.52"/>
+    <text x="545" y="134" font-size="10" font-style="italic" fill="#FF3336">0.52</text>
     <text x="140" y="164" text-anchor="end" font-size="10" font-style="italic">composition</text>
-    <rect x="340" y="152" width="195" height="16" fill="#FF680A" fill-opacity="0.48"/>
-    <text x="545" y="164" font-size="10" font-style="italic" fill="#FF680A">0.49</text>
+    <rect x="340" y="152" width="195" height="16" fill="#FF3336" fill-opacity="0.48"/>
+    <text x="545" y="164" font-size="10" font-style="italic" fill="#FF3336">0.49</text>
     <text x="140" y="194" text-anchor="end" font-size="10" font-style="italic">band gap</text>
-    <rect x="470" y="182" width="65" height="16" fill="#FF680A" fill-opacity="0.42"/>
-    <text x="545" y="194" font-size="10" font-style="italic" fill="#FF680A">0.43</text>
+    <rect x="470" y="182" width="65" height="16" fill="#FF3336" fill-opacity="0.42"/>
+    <text x="545" y="194" font-size="10" font-style="italic" fill="#FF3336">0.43</text>
     <text x="145" y="232" text-anchor="middle" font-size="9" fill="#666">0</text>
     <text x="236" y="232" text-anchor="middle" font-size="9" fill="#666">70k</text>
     <text x="288" y="232" text-anchor="middle" font-size="9" fill="#666">110k</text>
@@ -590,16 +590,16 @@ The emergence above concerns *property* response, for which a strong guidance sc
     <line x1="90" y1="200" x2="555" y2="200" stroke="#888" stroke-width="0.6"/>
     <text x="83" y="203" text-anchor="end" font-size="9" fill="#888">0.06</text>
     <text x="83" y="55" text-anchor="end" font-size="9" fill="#888">0.32</text>
-    <polyline points="90,147 122,180 154,196 219,199 283,162 411,99 540,56" fill="none" stroke="#FF680A" stroke-width="2"/>
-    <circle cx="90" cy="147" r="3" fill="#FF680A"/>
-    <circle cx="122" cy="180" r="3" fill="#FF680A"/>
-    <circle cx="154" cy="196" r="3" fill="#FF680A"/>
-    <circle cx="219" cy="199" r="5.5" fill="#FF680A"/>
-    <circle cx="283" cy="162" r="3" fill="#FF680A"/>
+    <polyline points="90,147 122,180 154,196 219,199 283,162 411,99 540,56" fill="none" stroke="#FF3336" stroke-width="2"/>
+    <circle cx="90" cy="147" r="3" fill="#FF3336"/>
+    <circle cx="122" cy="180" r="3" fill="#FF3336"/>
+    <circle cx="154" cy="196" r="3" fill="#FF3336"/>
+    <circle cx="219" cy="199" r="5.5" fill="#FF3336"/>
+    <circle cx="283" cy="162" r="3" fill="#FF3336"/>
     <circle cx="411" cy="99" r="4.5" fill="#1f2937"/>
-    <circle cx="540" cy="56" r="3" fill="#FF680A"/>
-    <line x1="219" y1="193" x2="219" y2="120" stroke="#FF680A" stroke-width="0.6" stroke-dasharray="2,2"/>
-    <text x="219" y="113" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">optimum w ≈ 3</text>
+    <circle cx="540" cy="56" r="3" fill="#FF3336"/>
+    <line x1="219" y1="193" x2="219" y2="120" stroke="#FF3336" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <text x="219" y="113" text-anchor="middle" font-size="10" font-style="italic" fill="#FF3336">optimum w ≈ 3</text>
     <text x="411" y="86" text-anchor="middle" font-size="9.5" font-style="italic" fill="#1f2937">w = 6 over-guides</text>
     <text x="90" y="214" text-anchor="middle" font-size="9" fill="#666">1</text>
     <text x="154" y="214" text-anchor="middle" font-size="9" fill="#666">2</text>
@@ -670,19 +670,19 @@ The reported checkpoint is the best of GPSK-300's training trajectory: per-sampl
     <text x="73" y="63" text-anchor="end" font-size="9" fill="#888">100%</text>
     <text x="73" y="138" text-anchor="end" font-size="9" fill="#888">50%</text>
     <text x="73" y="213" text-anchor="end" font-size="9" fill="#888">0%</text>
-    <rect x="120" y="123" width="90" height="87" fill="#FF680A" fill-opacity="0.85"/>
-    <text x="165" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#FF680A">58%</text>
+    <rect x="120" y="123" width="90" height="87" fill="#FF3336" fill-opacity="0.85"/>
+    <text x="165" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#FF3336">58%</text>
     <text x="165" y="226" text-anchor="middle" font-size="10" fill="#333">seen family</text>
     <text x="165" y="238" text-anchor="middle" font-size="8.5" fill="#888" font-style="italic">reference</text>
-    <rect x="255" y="138" width="90" height="72" fill="#FF680A" fill-opacity="0.55"/>
-    <text x="300" y="131" text-anchor="middle" font-size="13" font-weight="600" fill="#FF680A">48%</text>
+    <rect x="255" y="138" width="90" height="72" fill="#FF3336" fill-opacity="0.55"/>
+    <text x="300" y="131" text-anchor="middle" font-size="13" font-weight="600" fill="#FF3336">48%</text>
     <text x="300" y="226" text-anchor="middle" font-size="10" fill="#333">held-out composition</text>
     <text x="300" y="238" text-anchor="middle" font-size="8.5" fill="#888" font-style="italic">FePd, MnGa</text>
     <rect x="390" y="206" width="90" height="4" fill="#999"/>
     <text x="435" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#999">0%</text>
     <text x="435" y="226" text-anchor="middle" font-size="10" fill="#333">held-out family</text>
     <text x="435" y="238" text-anchor="middle" font-size="8.5" fill="#888" font-style="italic">hex RE-TM</text>
-    <text x="232" y="34" text-anchor="middle" font-size="10" font-style="italic" fill="#FF680A">interpolation within a learned motif ✓</text>
+    <text x="232" y="34" text-anchor="middle" font-size="10" font-style="italic" fill="#FF3336">interpolation within a learned motif ✓</text>
     <text x="435" y="184" text-anchor="middle" font-size="10" font-style="italic" fill="#999">extrapolation ✗</text>
   </svg>
   <figcaption><strong>Figure 14.</strong> Exact-structure recovery is compared across three levels: a seen family (reference), a held-out <em>composition</em> within a seen family, and an entirely held-out <em>family</em>. Held-out compositions recover at nearly the seen rate, whereas the held-out family does not: the model interpolates within a represented motif but does not extrapolate to a new one.</figcaption>
@@ -696,14 +696,14 @@ The reported checkpoint is the best of GPSK-300's training trajectory: per-sampl
     <text x="93" y="213" text-anchor="end" font-size="9" fill="#888">0</text>
     <text x="93" y="133" text-anchor="end" font-size="9" fill="#888">35%</text>
     <text x="93" y="54" text-anchor="end" font-size="9" fill="#888">70%</text>
-    <line x1="390" y1="62" x2="390" y2="210" stroke="#FF680A" stroke-width="0.6" stroke-dasharray="2,2"/>
-    <text x="390" y="42" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF680A">deployed · 400k</text>
-    <polyline points="130,164 260,148 390,57 520,119" fill="none" stroke="#FF680A" stroke-width="2"/>
-    <circle cx="130" cy="164" r="3.5" fill="#FF680A"/><circle cx="260" cy="148" r="3.5" fill="#FF680A"/><circle cx="390" cy="57" r="5" fill="#FF680A"/><circle cx="520" cy="119" r="3.5" fill="#FF680A"/>
-    <polyline points="130,187 260,119 390,107 520,153" fill="none" stroke="#FF680A" stroke-width="1.6" stroke-dasharray="4,3" opacity="0.6"/>
-    <circle cx="130" cy="187" r="3" fill="#FF680A" opacity="0.6"/><circle cx="260" cy="119" r="3" fill="#FF680A" opacity="0.6"/><circle cx="390" cy="107" r="3" fill="#FF680A" opacity="0.6"/><circle cx="520" cy="153" r="3" fill="#FF680A" opacity="0.6"/>
-    <line x1="425" y1="182" x2="450" y2="182" stroke="#FF680A" stroke-width="2"/><text x="455" y="185" font-size="9" fill="#555">seen family</text>
-    <line x1="425" y1="197" x2="450" y2="197" stroke="#FF680A" stroke-width="1.6" stroke-dasharray="4,3" opacity="0.6"/><text x="455" y="200" font-size="9" fill="#555">held-out composition</text>
+    <line x1="390" y1="62" x2="390" y2="210" stroke="#FF3336" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <text x="390" y="42" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF3336">deployed · 400k</text>
+    <polyline points="130,164 260,148 390,57 520,119" fill="none" stroke="#FF3336" stroke-width="2"/>
+    <circle cx="130" cy="164" r="3.5" fill="#FF3336"/><circle cx="260" cy="148" r="3.5" fill="#FF3336"/><circle cx="390" cy="57" r="5" fill="#FF3336"/><circle cx="520" cy="119" r="3.5" fill="#FF3336"/>
+    <polyline points="130,187 260,119 390,107 520,153" fill="none" stroke="#FF3336" stroke-width="1.6" stroke-dasharray="4,3" opacity="0.6"/>
+    <circle cx="130" cy="187" r="3" fill="#FF3336" opacity="0.6"/><circle cx="260" cy="119" r="3" fill="#FF3336" opacity="0.6"/><circle cx="390" cy="107" r="3" fill="#FF3336" opacity="0.6"/><circle cx="520" cy="153" r="3" fill="#FF3336" opacity="0.6"/>
+    <line x1="425" y1="182" x2="450" y2="182" stroke="#FF3336" stroke-width="2"/><text x="455" y="185" font-size="9" fill="#555">seen family</text>
+    <line x1="425" y1="197" x2="450" y2="197" stroke="#FF3336" stroke-width="1.6" stroke-dasharray="4,3" opacity="0.6"/><text x="455" y="200" font-size="9" fill="#555">held-out composition</text>
     <text x="130" y="224" text-anchor="middle" font-size="9" fill="#666">200k</text>
     <text x="260" y="224" text-anchor="middle" font-size="9" fill="#666">300k</text>
     <text x="390" y="224" text-anchor="middle" font-size="9" fill="#666">400k</text>
@@ -734,24 +734,24 @@ Ternary and quaternary prototypes matter more than the binary panel suggests: 60
     <line x1="335" y1="28" x2="335" y2="234" stroke="#eee" stroke-width="0.5"/>
     <line x1="520" y1="28" x2="520" y2="234" stroke="#eee" stroke-width="0.5"/>
     <text x="144" y="47" text-anchor="end" font-size="9.5" fill="#333">Fe · bcc metal</text>
-    <rect x="150" y="38" width="370" height="13" fill="#FF680A" fill-opacity="0.8"/>
-    <text x="527" y="49" font-size="9.5" fill="#FF680A">100%</text>
+    <rect x="150" y="38" width="370" height="13" fill="#FF3336" fill-opacity="0.8"/>
+    <text x="527" y="49" font-size="9.5" fill="#FF3336">100%</text>
     <text x="144" y="73" text-anchor="end" font-size="9.5" fill="#333">Cu · fcc metal</text>
-    <rect x="150" y="64" width="344" height="13" fill="#FF680A" fill-opacity="0.8"/>
-    <text x="501" y="75" font-size="9.5" fill="#FF680A">93%</text>
+    <rect x="150" y="64" width="344" height="13" fill="#FF3336" fill-opacity="0.8"/>
+    <text x="501" y="75" font-size="9.5" fill="#FF3336">93%</text>
     <text x="144" y="99" text-anchor="end" font-size="9.5" fill="#333">MgO · rock-salt oxide</text>
-    <rect x="150" y="90" width="370" height="13" fill="#FF680A" fill-opacity="0.8"/>
-    <text x="527" y="101" font-size="9.5" fill="#FF680A">100%</text>
+    <rect x="150" y="90" width="370" height="13" fill="#FF3336" fill-opacity="0.8"/>
+    <text x="527" y="101" font-size="9.5" fill="#FF3336">100%</text>
     <text x="144" y="125" text-anchor="end" font-size="9.5" fill="#333">NaCl · rock-salt halide</text>
-    <rect x="150" y="116" width="370" height="13" fill="#FF680A" fill-opacity="0.8"/>
-    <text x="527" y="127" font-size="9.5" fill="#FF680A">100%</text>
+    <rect x="150" y="116" width="370" height="13" fill="#FF3336" fill-opacity="0.8"/>
+    <text x="527" y="127" font-size="9.5" fill="#FF3336">100%</text>
     <text x="144" y="151" text-anchor="end" font-size="9.5" fill="#333">GaAs · zinc-blende</text>
-    <rect x="150" y="142" width="324" height="13" fill="#FF680A" fill-opacity="0.8"/>
-    <text x="481" y="153" font-size="9.5" fill="#FF680A">88%</text>
+    <rect x="150" y="142" width="324" height="13" fill="#FF3336" fill-opacity="0.8"/>
+    <text x="481" y="153" font-size="9.5" fill="#FF3336">88%</text>
     <text x="144" y="177" text-anchor="end" font-size="9.5" fill="#333">NiMnSb · half-Heusler</text>
-    <rect x="150" y="168" width="139" height="13" fill="#FF680A" fill-opacity="0.8"/>
-    <rect x="289" y="168" width="185" height="13" fill="#FF680A" fill-opacity="0.25"/>
-    <text x="481" y="179" font-size="9.5" fill="#FF680A">38% · 100% species-blind</text>
+    <rect x="150" y="168" width="139" height="13" fill="#FF3336" fill-opacity="0.8"/>
+    <rect x="289" y="168" width="185" height="13" fill="#FF3336" fill-opacity="0.25"/>
+    <text x="481" y="179" font-size="9.5" fill="#FF3336">38% · 100% species-blind</text>
     <text x="144" y="203" text-anchor="end" font-size="9.5" fill="#888">SrTiO₃ · perovskite</text>
     <rect x="150" y="194" width="3" height="13" fill="#bbb"/>
     <text x="160" y="205" font-size="9.5" fill="#999">0%</text>
@@ -778,19 +778,19 @@ A small targeted fine-tune does not recover the missing precision. Fine-tuning t
 
 <figure>
   <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <text x="120" y="38" text-anchor="start" font-size="9.5" font-style="italic" fill="#FF680A">positional precision decays</text>
-    <line x1="255" y1="34" x2="500" y2="34" stroke="#FF680A" stroke-width="0.8"/>
-    <polygon points="508,34 496,29 496,39" fill="#FF680A"/>
+    <text x="120" y="38" text-anchor="start" font-size="9.5" font-style="italic" fill="#FF3336">positional precision decays</text>
+    <line x1="255" y1="34" x2="500" y2="34" stroke="#FF3336" stroke-width="0.8"/>
+    <polygon points="508,34 496,29 496,39" fill="#FF3336"/>
     <line x1="90" y1="200" x2="545" y2="200" stroke="#888" stroke-width="0.6"/>
     <line x1="90" y1="42" x2="90" y2="200" stroke="#888" stroke-width="0.5"/>
-    <text x="84" y="79" text-anchor="end" font-size="9.5" fill="#FF680A">clean</text>
-    <circle cx="100" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
+    <text x="84" y="79" text-anchor="end" font-size="9.5" fill="#FF3336">clean</text>
+    <circle cx="100" cy="75" r="6" fill="#FF3336" fill-opacity="0.85"/>
     <text x="100" y="60" text-anchor="middle" font-size="8.5" fill="#555">FePt</text>
-    <circle cx="176" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
+    <circle cx="176" cy="75" r="6" fill="#FF3336" fill-opacity="0.85"/>
     <text x="160" y="95" text-anchor="middle" font-size="8.5" fill="#555">Mg₂Al₄O₈</text>
-    <circle cx="189" cy="75" r="6" fill="#FF680A" fill-opacity="0.85"/>
+    <circle cx="189" cy="75" r="6" fill="#FF3336" fill-opacity="0.85"/>
     <text x="205" y="60" text-anchor="middle" font-size="8.5" fill="#555">Co₂MnSi</text>
-    <circle cx="265" cy="110" r="6" fill="#FF680A" fill-opacity="0.55"/>
+    <circle cx="265" cy="110" r="6" fill="#FF3336" fill-opacity="0.55"/>
     <text x="265" y="95" text-anchor="middle" font-size="8.5" fill="#555">LiFePO₄</text>
     <text x="265" y="126" text-anchor="middle" font-size="8" font-style="italic" fill="#888">~1% contact pairs</text>
     <text x="84" y="159" text-anchor="end" font-size="9.5" fill="#999">noisy</text>
@@ -822,8 +822,8 @@ The central representational claim is that the reciprocal-metric channel makes l
     <text x="93" y="123" text-anchor="end" font-size="9" fill="#888">4%</text>
     <text x="93" y="55" text-anchor="end" font-size="9" fill="#888">8%</text>
     <line x1="100" y1="120" x2="500" y2="120" stroke="#eee" stroke-width="0.5"/>
-    <rect x="160" y="186" width="120" height="4" fill="#FF680A" fill-opacity="0.85"/>
-    <text x="220" y="180" text-anchor="middle" font-size="13" font-weight="600" fill="#FF680A">≈ 0%</text>
+    <rect x="160" y="186" width="120" height="4" fill="#FF3336" fill-opacity="0.85"/>
+    <text x="220" y="180" text-anchor="middle" font-size="13" font-weight="600" fill="#FF3336">≈ 0%</text>
     <text x="220" y="206" text-anchor="middle" font-size="10" fill="#333">1/d² closed-form</text>
     <text x="220" y="218" text-anchor="middle" font-size="8.5" font-style="italic" fill="#888">linear least-squares</text>
     <rect x="340" y="55" width="120" height="135" fill="#1f2937" fill-opacity="0.7"/>

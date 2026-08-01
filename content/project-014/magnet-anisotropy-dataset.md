@@ -59,7 +59,7 @@ When \(K_1 > 0\) the energy has two minima, along \(+c\) and \(-c\): an easy *ax
     <line x1="40" y1="190" x2="285" y2="190" stroke="#888" stroke-width="0.8"/>
     <line x1="40" y1="30" x2="40" y2="190" stroke="#888" stroke-width="0.8"/>
     <line x1="162" y1="60" x2="162" y2="190" stroke="#ccc" stroke-width="0.5" stroke-dasharray="2,3"/>
-    <path d="M40,180 C90,180 115,60 162,60 C210,60 235,180 285,180" fill="none" stroke="#FF680A" stroke-width="2.5"/>
+    <path d="M40,180 C90,180 115,60 162,60 C210,60 235,180 285,180" fill="none" stroke="#FF3336" stroke-width="2.5"/>
     <line x1="172" y1="64" x2="172" y2="176" stroke="#1f2937" stroke-width="0.8"/>
     <polygon points="172,60 169,68 175,68" fill="#1f2937"/>
     <polygon points="172,180 169,172 175,172" fill="#1f2937"/>
@@ -82,22 +82,22 @@ When \(K_1 > 0\) the energy has two minima, along \(+c\) and \(-c\): an easy *ax
     <circle cx="434" cy="160" r="4" fill="#1f2937" opacity="0.5"/>
     <circle cx="374" cy="92" r="4" fill="#1f2937" opacity="0.5"/>
     <circle cx="434" cy="92" r="4" fill="#1f2937" opacity="0.5"/>
-    <circle cx="404" cy="126" r="5" fill="#FF680A" opacity="0.6"/>
+    <circle cx="404" cy="126" r="5" fill="#FF3336" opacity="0.6"/>
     <circle cx="356" cy="172" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="416" cy="172" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="356" cy="104" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="416" cy="104" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="395" cy="166" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="395" cy="98" r="4" fill="#1f2937" opacity="0.85"/>
-    <circle cx="365" cy="132" r="5" fill="#FF680A" opacity="0.9"/>
-    <circle cx="425" cy="132" r="5" fill="#FF680A" opacity="0.9"/>
-    <circle cx="386" cy="138" r="5" fill="#FF680A" opacity="0.9"/>
+    <circle cx="365" cy="132" r="5" fill="#FF3336" opacity="0.9"/>
+    <circle cx="425" cy="132" r="5" fill="#FF3336" opacity="0.9"/>
+    <circle cx="386" cy="138" r="5" fill="#FF3336" opacity="0.9"/>
     <line x1="341" y1="172" x2="341" y2="98" stroke="#888" stroke-width="0.8"/>
     <polygon points="341,92 338,100 344,100" fill="#888"/>
     <text x="333" y="102" font-size="10.5" text-anchor="end" font-style="italic" fill="#888">c</text>
-    <line x1="452" y1="166" x2="452" y2="96" stroke="#FF680A" stroke-width="3"/>
-    <polygon points="452,88 446,100 458,100" fill="#FF680A"/>
-    <text x="460" y="124" font-size="11" font-style="italic" fill="#FF680A">M</text>
+    <line x1="452" y1="166" x2="452" y2="96" stroke="#FF3336" stroke-width="3"/>
+    <polygon points="452,88 446,100 458,100" fill="#FF3336"/>
+    <text x="460" y="124" font-size="11" font-style="italic" fill="#FF3336">M</text>
     <text x="395" y="198" font-size="10.5" text-anchor="middle" fill="#1f2937">M pinned along c</text>
     <text x="395" y="213" font-size="10.5" text-anchor="middle" fill="#1f2937">holds a pole</text>
     <text x="525" y="46" font-size="12" font-style="italic" text-anchor="middle" fill="#222">easy plane (K₁ &lt; 0)</text>
@@ -114,21 +114,21 @@ When \(K_1 > 0\) the energy has two minima, along \(+c\) and \(-c\): an easy *ax
     <circle cx="564" cy="160" r="4" fill="#1f2937" opacity="0.5"/>
     <circle cx="504" cy="92" r="4" fill="#1f2937" opacity="0.5"/>
     <circle cx="564" cy="92" r="4" fill="#1f2937" opacity="0.5"/>
-    <circle cx="534" cy="126" r="5" fill="#FF680A" opacity="0.6"/>
+    <circle cx="534" cy="126" r="5" fill="#FF3336" opacity="0.6"/>
     <circle cx="486" cy="172" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="546" cy="172" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="486" cy="104" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="546" cy="104" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="525" cy="166" r="4" fill="#1f2937" opacity="0.85"/>
     <circle cx="525" cy="98" r="4" fill="#1f2937" opacity="0.85"/>
-    <circle cx="495" cy="132" r="5" fill="#FF680A" opacity="0.9"/>
-    <circle cx="555" cy="132" r="5" fill="#FF680A" opacity="0.9"/>
-    <circle cx="516" cy="138" r="5" fill="#FF680A" opacity="0.9"/>
-    <ellipse cx="525" cy="132" rx="62" ry="14" fill="none" stroke="#FF680A" stroke-width="1" stroke-dasharray="3,3" opacity="0.65"/>
-    <line x1="499" y1="146" x2="551" y2="146" stroke="#FF680A" stroke-width="3"/>
-    <polygon points="559,146 547,140 547,152" fill="#FF680A"/>
-    <polygon points="491,146 503,140 503,152" fill="#FF680A"/>
-    <text x="576" y="163" font-size="11" font-style="italic" fill="#FF680A">M</text>
+    <circle cx="495" cy="132" r="5" fill="#FF3336" opacity="0.9"/>
+    <circle cx="555" cy="132" r="5" fill="#FF3336" opacity="0.9"/>
+    <circle cx="516" cy="138" r="5" fill="#FF3336" opacity="0.9"/>
+    <ellipse cx="525" cy="132" rx="62" ry="14" fill="none" stroke="#FF3336" stroke-width="1" stroke-dasharray="3,3" opacity="0.65"/>
+    <line x1="499" y1="146" x2="551" y2="146" stroke="#FF3336" stroke-width="3"/>
+    <polygon points="559,146 547,140 547,152" fill="#FF3336"/>
+    <polygon points="491,146 503,140 503,152" fill="#FF3336"/>
+    <text x="576" y="163" font-size="11" font-style="italic" fill="#FF3336">M</text>
     <text x="525" y="198" font-size="10.5" text-anchor="middle" fill="#1f2937">M rotates in the plane</text>
     <text x="525" y="213" font-size="10.5" text-anchor="middle" fill="#1f2937">no pole</text>
   </svg>
@@ -147,19 +147,19 @@ compares the two scales, and its practical meaning is geometric: when \(\kappa >
   <svg viewBox="0 0 620 230" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
     <rect x="40" y="26" width="14" height="14" fill="#1f2937" opacity="0.35"/>
     <text x="60" y="37" font-size="11" fill="#1f2937">µ₀Ms², the self-demagnetizing energy scale</text>
-    <rect x="40" y="48" width="14" height="14" fill="#FF680A" opacity="0.85"/>
+    <rect x="40" y="48" width="14" height="14" fill="#FF3336" opacity="0.85"/>
     <text x="60" y="59" font-size="11" fill="#1f2937">K₁, the anisotropy barrier resisting it</text>
     <line x1="60" y1="170" x2="580" y2="170" stroke="#888" stroke-width="0.8"/>
     <rect x="104" y="97" width="44" height="73" fill="#1f2937" opacity="0.35"/>
-    <rect x="152" y="168" width="44" height="2" fill="#FF680A" opacity="0.85"/>
+    <rect x="152" y="168" width="44" height="2" fill="#FF3336" opacity="0.85"/>
     <text x="150" y="88" font-size="11" font-weight="bold" text-anchor="middle" fill="#1f2937">κ ≈ 0.1</text>
     <text x="150" y="188" font-size="11" text-anchor="middle" fill="#1f2937">α-Fe: strong but soft</text>
     <rect x="284" y="129" width="44" height="41" fill="#1f2937" opacity="0.35"/>
-    <rect x="332" y="72" width="44" height="98" fill="#FF680A" opacity="0.85"/>
+    <rect x="332" y="72" width="44" height="98" fill="#FF3336" opacity="0.85"/>
     <text x="330" y="62" font-size="11" font-weight="bold" text-anchor="middle" fill="#1f2937">κ ≈ 1.5</text>
     <text x="330" y="188" font-size="11" text-anchor="middle" fill="#1f2937">Nd₂Fe₁₄B: the incumbent</text>
     <rect x="464" y="137" width="44" height="33" fill="#1f2937" opacity="0.35"/>
-    <rect x="512" y="38" width="44" height="132" fill="#FF680A" opacity="0.85"/>
+    <rect x="512" y="38" width="44" height="132" fill="#FF3336" opacity="0.85"/>
     <text x="510" y="28" font-size="11" font-weight="bold" text-anchor="middle" fill="#1f2937">κ ≈ 2.0</text>
     <text x="510" y="188" font-size="11" text-anchor="middle" fill="#1f2937">L1₀ FePt: very hard</text>
     <text x="310" y="212" font-size="10.5" text-anchor="middle" fill="#888">the two energy scales, MJ/m³ (literature values); hard means the orange bar wins</text>
@@ -182,11 +182,11 @@ The gap between the intrinsic ceilings and what a manufactured magnet delivers i
     <text x="305" y="30" font-size="11" font-style="italic" text-anchor="end" fill="#888">B</text>
     <path d="M550,45 L345,45 C270,45 240,70 225,125 C210,180 180,205 90,205" fill="none" stroke="#1f2937" stroke-width="2"/>
     <path d="M90,205 L285,205 C360,205 390,180 405,125 C420,70 450,45 550,45" fill="none" stroke="#1f2937" stroke-width="2"/>
-    <rect x="258" y="70" width="57" height="55" fill="#FF680A" opacity="0.3" stroke="#FF680A" stroke-width="0.8"/>
+    <rect x="258" y="70" width="57" height="55" fill="#FF3336" opacity="0.3" stroke="#FF3336" stroke-width="0.8"/>
     <text x="287" y="106" font-size="11" text-anchor="middle" fill="#1f2937">(BH)<tspan font-size="8" dy="2">max</tspan></text>
-    <circle cx="315" cy="45" r="3.5" fill="#FF680A"/>
+    <circle cx="315" cy="45" r="3.5" fill="#FF3336"/>
     <text x="327" y="38" font-size="11" fill="#1f2937">B<tspan font-size="8" dy="2">r</tspan></text>
-    <circle cx="225" cy="125" r="3.5" fill="#FF680A"/>
+    <circle cx="225" cy="125" r="3.5" fill="#FF3336"/>
     <text x="206" y="145" font-size="11" text-anchor="middle" fill="#1f2937">−H<tspan font-size="8" dy="2">c</tspan></text>
     <line x1="345" y1="45" x2="560" y2="45" stroke="#bbb" stroke-width="0.6" stroke-dasharray="3,3"/>
     <text x="560" y="36" font-size="10.5" text-anchor="end" fill="#888">B<tspan font-size="8" dy="2">r</tspan><tspan dy="-2">&#160;≤ µ₀Ms: magnetization sets this ceiling</tspan></text>
@@ -204,16 +204,16 @@ Every record passed through the same staged pipeline, ordered so the expensive a
 
 <figure>
   <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <rect x="20" y="26" width="560" height="26" fill="#FF680A" opacity="0.30"/>
+    <rect x="20" y="26" width="560" height="26" fill="#FF3336" opacity="0.30"/>
     <text x="28" y="43" font-size="12" fill="#1f2937">candidate structures screened</text>
     <text x="588" y="43" font-size="12" text-anchor="end" fill="#1f2937" font-weight="bold">3,573</text>
-    <rect x="20" y="68" width="351" height="26" fill="#FF680A" opacity="0.50"/>
+    <rect x="20" y="68" width="351" height="26" fill="#FF3336" opacity="0.50"/>
     <text x="28" y="85" font-size="12" fill="#1f2937">anisotropy-labeled (relaxed, uniaxial, magnetic)</text>
     <text x="379" y="85" font-size="12" text-anchor="start" fill="#1f2937" font-weight="bold">  2,242</text>
-    <rect x="20" y="110" width="320" height="26" fill="#FF680A" opacity="0.70"/>
+    <rect x="20" y="110" width="320" height="26" fill="#FF3336" opacity="0.70"/>
     <text x="28" y="127" font-size="12" fill="#1f2937">κ-reliable (Ms artifact filter, §6)</text>
     <text x="348" y="127" font-size="12" text-anchor="start" fill="#1f2937" font-weight="bold">  2,044</text>
-    <rect x="20" y="152" width="100" height="26" fill="#FF680A" opacity="0.95"/>
+    <rect x="20" y="152" width="100" height="26" fill="#FF3336" opacity="0.95"/>
     <text x="28" y="169" font-size="12" fill="#fff">pass</text>
     <text x="128" y="169" font-size="12" text-anchor="start" fill="#1f2937" font-weight="bold">641 clear every magnet gate</text>
   </svg>
@@ -233,52 +233,52 @@ The stages, with their exact settings:
   <svg viewBox="0 0 620 280" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
     <text x="167.0" y="26" font-size="12" font-style="italic" text-anchor="middle" fill="#222">The object the sweep models</text>
     <text x="167.0" y="41" font-size="9.5" text-anchor="middle" fill="#888">textured polycrystal: shade = grain alignment</text>
-    <polygon points="101,149 102,165 100,174 89,184 86,184 55,157 80,136" fill="#FF680A" fill-opacity="0.39" stroke="#fff" stroke-width="2"/>
-    <polygon points="185,93 210,79 211,62 167,62" fill="#FF680A" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
-    <polygon points="66,248 75,225 87,224 95,237 93,242" fill="#FF680A" fill-opacity="0.71" stroke="#fff" stroke-width="2"/>
-    <polygon points="80,81 63,76 42,81 42,84 56,94" fill="#FF680A" fill-opacity="0.45" stroke="#fff" stroke-width="2"/>
-    <polygon points="272,154 292,153 292,201 265,181" fill="#FF680A" fill-opacity="0.79" stroke="#fff" stroke-width="2"/>
-    <polygon points="152,172 120,164 148,143 156,147 159,168" fill="#FF680A" fill-opacity="0.70" stroke="#fff" stroke-width="2"/>
-    <polygon points="237,132 237,133 233,136 199,137 183,127 183,102 219,109" fill="#FF680A" fill-opacity="0.83" stroke="#fff" stroke-width="2"/>
-    <polygon points="88,223 91,190 89,184 86,184 56,199 63,217 75,225 87,224" fill="#FF680A" fill-opacity="0.92" stroke="#fff" stroke-width="2"/>
-    <polygon points="217,212 198,199 190,186 199,137 233,136 221,198" fill="#FF680A" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
-    <polygon points="244,132 268,152 221,198 233,136 237,133" fill="#FF680A" fill-opacity="0.70" stroke="#fff" stroke-width="2"/>
-    <polygon points="276,88 279,112 292,118 292,74 279,83" fill="#FF680A" fill-opacity="0.80" stroke="#fff" stroke-width="2"/>
-    <polygon points="183,127 199,137 190,186 159,168 156,147 170,134" fill="#FF680A" fill-opacity="0.83" stroke="#fff" stroke-width="2"/>
-    <polygon points="136,195 100,174 102,165 120,164 152,172" fill="#FF680A" fill-opacity="0.89" stroke="#fff" stroke-width="2"/>
-    <polygon points="115,215 91,190 88,223" fill="#FF680A" fill-opacity="0.85" stroke="#fff" stroke-width="2"/>
-    <polygon points="276,88 256,99 242,81 247,71 279,83" fill="#FF680A" fill-opacity="0.53" stroke="#fff" stroke-width="2"/>
-    <polygon points="159,100 183,100 183,102 183,127 170,134 144,106" fill="#FF680A" fill-opacity="0.77" stroke="#fff" stroke-width="2"/>
-    <polygon points="66,248 75,225 63,217 42,245 42,252 62,252" fill="#FF680A" fill-opacity="0.56" stroke="#fff" stroke-width="2"/>
-    <polygon points="159,100 146,70 121,93 135,107 144,106" fill="#FF680A" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
-    <polygon points="219,109 183,102 183,100 185,93 210,79 217,84" fill="#FF680A" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
-    <polygon points="276,88 279,112 250,124 256,99" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
-    <polygon points="56,94 42,84 42,122 65,117" fill="#FF680A" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
-    <polygon points="101,149 102,165 120,164 148,143 135,133 107,142" fill="#FF680A" fill-opacity="0.29" stroke="#fff" stroke-width="2"/>
-    <polygon points="292,252 292,201 265,181 219,215 229,252" fill="#FF680A" fill-opacity="0.90" stroke="#fff" stroke-width="2"/>
-    <polygon points="121,93 108,92 99,87 96,81 96,62 152,62 146,70" fill="#FF680A" fill-opacity="0.78" stroke="#fff" stroke-width="2"/>
-    <polygon points="62,252 95,252 93,242 66,248" fill="#FF680A" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
-    <polygon points="136,195 152,172 159,168 190,186 198,199 139,215" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
-    <polygon points="63,76 59,62 42,62 42,81" fill="#FF680A" fill-opacity="0.15" stroke="#fff" stroke-width="2"/>
-    <polygon points="268,152 221,198 217,212 219,215 265,181 272,154" fill="#FF680A" fill-opacity="0.67" stroke="#fff" stroke-width="2"/>
-    <polygon points="121,93 108,92 107,142 135,133 135,107" fill="#FF680A" fill-opacity="0.73" stroke="#fff" stroke-width="2"/>
-    <polygon points="80,81 56,94 65,117 72,118 99,87 96,81" fill="#FF680A" fill-opacity="0.74" stroke="#fff" stroke-width="2"/>
-    <polygon points="42,245 42,196 56,199 63,217" fill="#FF680A" fill-opacity="0.67" stroke="#fff" stroke-width="2"/>
-    <polygon points="159,100 183,100 185,93 167,62 152,62 146,70" fill="#FF680A" fill-opacity="0.84" stroke="#fff" stroke-width="2"/>
-    <polygon points="237,132 234,85 217,84 219,109" fill="#FF680A" fill-opacity="0.82" stroke="#fff" stroke-width="2"/>
-    <polygon points="56,199 86,184 55,157 42,157 42,196" fill="#FF680A" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
-    <polygon points="279,83 292,74 292,62 247,62 247,71" fill="#FF680A" fill-opacity="0.59" stroke="#fff" stroke-width="2"/>
-    <polygon points="256,99 250,124 244,132 237,133 237,132 234,85 242,81" fill="#FF680A" fill-opacity="0.91" stroke="#fff" stroke-width="2"/>
-    <polygon points="80,81 63,76 59,62 96,62 96,81" fill="#FF680A" fill-opacity="0.64" stroke="#fff" stroke-width="2"/>
-    <polygon points="115,215 91,190 89,184 100,174 136,195 139,215 134,225" fill="#FF680A" fill-opacity="0.79" stroke="#fff" stroke-width="2"/>
-    <polygon points="134,231 142,252 229,252 219,215 217,212 198,199 139,215 134,225" fill="#FF680A" fill-opacity="0.82" stroke="#fff" stroke-width="2"/>
-    <polygon points="99,87 108,92 107,142 101,149 80,136 72,118" fill="#FF680A" fill-opacity="0.28" stroke="#fff" stroke-width="2"/>
-    <polygon points="93,242 95,237 134,231 142,252 95,252" fill="#FF680A" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
-    <polygon points="244,132 268,152 272,154 292,153 292,118 279,112 250,124" fill="#FF680A" fill-opacity="0.68" stroke="#fff" stroke-width="2"/>
-    <polygon points="144,106 170,134 156,147 148,143 135,133 135,107" fill="#FF680A" fill-opacity="0.74" stroke="#fff" stroke-width="2"/>
-    <polygon points="242,81 234,85 217,84 210,79 211,62 247,62 247,71" fill="#FF680A" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
-    <polygon points="72,118 80,136 55,157 42,157 42,122 65,117" fill="#FF680A" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
-    <polygon points="134,231 134,225 115,215 88,223 87,224 95,237" fill="#FF680A" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <polygon points="101,149 102,165 100,174 89,184 86,184 55,157 80,136" fill="#FF3336" fill-opacity="0.39" stroke="#fff" stroke-width="2"/>
+    <polygon points="185,93 210,79 211,62 167,62" fill="#FF3336" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
+    <polygon points="66,248 75,225 87,224 95,237 93,242" fill="#FF3336" fill-opacity="0.71" stroke="#fff" stroke-width="2"/>
+    <polygon points="80,81 63,76 42,81 42,84 56,94" fill="#FF3336" fill-opacity="0.45" stroke="#fff" stroke-width="2"/>
+    <polygon points="272,154 292,153 292,201 265,181" fill="#FF3336" fill-opacity="0.79" stroke="#fff" stroke-width="2"/>
+    <polygon points="152,172 120,164 148,143 156,147 159,168" fill="#FF3336" fill-opacity="0.70" stroke="#fff" stroke-width="2"/>
+    <polygon points="237,132 237,133 233,136 199,137 183,127 183,102 219,109" fill="#FF3336" fill-opacity="0.83" stroke="#fff" stroke-width="2"/>
+    <polygon points="88,223 91,190 89,184 86,184 56,199 63,217 75,225 87,224" fill="#FF3336" fill-opacity="0.92" stroke="#fff" stroke-width="2"/>
+    <polygon points="217,212 198,199 190,186 199,137 233,136 221,198" fill="#FF3336" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
+    <polygon points="244,132 268,152 221,198 233,136 237,133" fill="#FF3336" fill-opacity="0.70" stroke="#fff" stroke-width="2"/>
+    <polygon points="276,88 279,112 292,118 292,74 279,83" fill="#FF3336" fill-opacity="0.80" stroke="#fff" stroke-width="2"/>
+    <polygon points="183,127 199,137 190,186 159,168 156,147 170,134" fill="#FF3336" fill-opacity="0.83" stroke="#fff" stroke-width="2"/>
+    <polygon points="136,195 100,174 102,165 120,164 152,172" fill="#FF3336" fill-opacity="0.89" stroke="#fff" stroke-width="2"/>
+    <polygon points="115,215 91,190 88,223" fill="#FF3336" fill-opacity="0.85" stroke="#fff" stroke-width="2"/>
+    <polygon points="276,88 256,99 242,81 247,71 279,83" fill="#FF3336" fill-opacity="0.53" stroke="#fff" stroke-width="2"/>
+    <polygon points="159,100 183,100 183,102 183,127 170,134 144,106" fill="#FF3336" fill-opacity="0.77" stroke="#fff" stroke-width="2"/>
+    <polygon points="66,248 75,225 63,217 42,245 42,252 62,252" fill="#FF3336" fill-opacity="0.56" stroke="#fff" stroke-width="2"/>
+    <polygon points="159,100 146,70 121,93 135,107 144,106" fill="#FF3336" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
+    <polygon points="219,109 183,102 183,100 185,93 210,79 217,84" fill="#FF3336" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
+    <polygon points="276,88 279,112 250,124 256,99" fill="#FF3336" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <polygon points="56,94 42,84 42,122 65,117" fill="#FF3336" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
+    <polygon points="101,149 102,165 120,164 148,143 135,133 107,142" fill="#FF3336" fill-opacity="0.29" stroke="#fff" stroke-width="2"/>
+    <polygon points="292,252 292,201 265,181 219,215 229,252" fill="#FF3336" fill-opacity="0.90" stroke="#fff" stroke-width="2"/>
+    <polygon points="121,93 108,92 99,87 96,81 96,62 152,62 146,70" fill="#FF3336" fill-opacity="0.78" stroke="#fff" stroke-width="2"/>
+    <polygon points="62,252 95,252 93,242 66,248" fill="#FF3336" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
+    <polygon points="136,195 152,172 159,168 190,186 198,199 139,215" fill="#FF3336" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
+    <polygon points="63,76 59,62 42,62 42,81" fill="#FF3336" fill-opacity="0.15" stroke="#fff" stroke-width="2"/>
+    <polygon points="268,152 221,198 217,212 219,215 265,181 272,154" fill="#FF3336" fill-opacity="0.67" stroke="#fff" stroke-width="2"/>
+    <polygon points="121,93 108,92 107,142 135,133 135,107" fill="#FF3336" fill-opacity="0.73" stroke="#fff" stroke-width="2"/>
+    <polygon points="80,81 56,94 65,117 72,118 99,87 96,81" fill="#FF3336" fill-opacity="0.74" stroke="#fff" stroke-width="2"/>
+    <polygon points="42,245 42,196 56,199 63,217" fill="#FF3336" fill-opacity="0.67" stroke="#fff" stroke-width="2"/>
+    <polygon points="159,100 183,100 185,93 167,62 152,62 146,70" fill="#FF3336" fill-opacity="0.84" stroke="#fff" stroke-width="2"/>
+    <polygon points="237,132 234,85 217,84 219,109" fill="#FF3336" fill-opacity="0.82" stroke="#fff" stroke-width="2"/>
+    <polygon points="56,199 86,184 55,157 42,157 42,196" fill="#FF3336" fill-opacity="0.86" stroke="#fff" stroke-width="2"/>
+    <polygon points="279,83 292,74 292,62 247,62 247,71" fill="#FF3336" fill-opacity="0.59" stroke="#fff" stroke-width="2"/>
+    <polygon points="256,99 250,124 244,132 237,133 237,132 234,85 242,81" fill="#FF3336" fill-opacity="0.91" stroke="#fff" stroke-width="2"/>
+    <polygon points="80,81 63,76 59,62 96,62 96,81" fill="#FF3336" fill-opacity="0.64" stroke="#fff" stroke-width="2"/>
+    <polygon points="115,215 91,190 89,184 100,174 136,195 139,215 134,225" fill="#FF3336" fill-opacity="0.79" stroke="#fff" stroke-width="2"/>
+    <polygon points="134,231 142,252 229,252 219,215 217,212 198,199 139,215 134,225" fill="#FF3336" fill-opacity="0.82" stroke="#fff" stroke-width="2"/>
+    <polygon points="99,87 108,92 107,142 101,149 80,136 72,118" fill="#FF3336" fill-opacity="0.28" stroke="#fff" stroke-width="2"/>
+    <polygon points="93,242 95,237 134,231 142,252 95,252" fill="#FF3336" fill-opacity="0.49" stroke="#fff" stroke-width="2"/>
+    <polygon points="244,132 268,152 272,154 292,153 292,118 279,112 250,124" fill="#FF3336" fill-opacity="0.68" stroke="#fff" stroke-width="2"/>
+    <polygon points="144,106 170,134 156,147 148,143 135,133 135,107" fill="#FF3336" fill-opacity="0.74" stroke="#fff" stroke-width="2"/>
+    <polygon points="242,81 234,85 217,84 210,79 211,62 247,62 247,71" fill="#FF3336" fill-opacity="0.75" stroke="#fff" stroke-width="2"/>
+    <polygon points="72,118 80,136 55,157 42,157 42,122 65,117" fill="#FF3336" fill-opacity="0.76" stroke="#fff" stroke-width="2"/>
+    <polygon points="134,231 134,225 115,215 88,223 87,224 95,237" fill="#FF3336" fill-opacity="0.52" stroke="#fff" stroke-width="2"/>
     <polygon points="100,173 111,164 102,156" fill="#3b4552" opacity="0.75" stroke="#3b4552" stroke-width="4" stroke-linejoin="round"/>
     <polygon points="156,146 141,148 142,138" fill="#3b4552" opacity="0.75" stroke="#3b4552" stroke-width="4" stroke-linejoin="round"/>
     <polygon points="210,207 219,204 221,219" fill="#3b4552" opacity="0.75" stroke="#3b4552" stroke-width="4" stroke-linejoin="round"/>
@@ -301,33 +301,33 @@ The stages, with their exact settings:
     <rect x="372" y="124" width="40" height="29" fill="#000" fill-opacity="0.04"/>
     <rect x="414" y="124" width="40" height="29" fill="#000" fill-opacity="0.04"/>
     <rect x="456" y="124" width="40" height="29" fill="#000" fill-opacity="0.04"/>
-    <rect x="498" y="124" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <rect x="498" y="124" width="40" height="29" fill="#FF3336" opacity="0.12"/>
     <text x="518.0" y="142.5" font-size="9" text-anchor="middle" fill="#1f2937">10%</text>
-    <rect x="540" y="124" width="40" height="29" fill="#FF680A" opacity="0.25"/>
+    <rect x="540" y="124" width="40" height="29" fill="#FF3336" opacity="0.25"/>
     <text x="560.0" y="142.5" font-size="9" text-anchor="middle" fill="#1f2937">25%</text>
     <rect x="372" y="155" width="40" height="29" fill="#000" fill-opacity="0.04"/>
     <rect x="414" y="155" width="40" height="29" fill="#000" fill-opacity="0.04"/>
-    <rect x="456" y="155" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <rect x="456" y="155" width="40" height="29" fill="#FF3336" opacity="0.12"/>
     <text x="476.0" y="173.5" font-size="9" text-anchor="middle" fill="#1f2937">4%</text>
-    <rect x="498" y="155" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <rect x="498" y="155" width="40" height="29" fill="#FF3336" opacity="0.12"/>
     <text x="518.0" y="173.5" font-size="9" text-anchor="middle" fill="#1f2937">11%</text>
-    <rect x="540" y="155" width="40" height="29" fill="#FF680A" opacity="0.42"/>
+    <rect x="540" y="155" width="40" height="29" fill="#FF3336" opacity="0.42"/>
     <text x="560.0" y="173.5" font-size="9" text-anchor="middle" fill="#1f2937">42%</text>
     <rect x="372" y="186" width="40" height="29" fill="#000" fill-opacity="0.04"/>
     <rect x="414" y="186" width="40" height="29" fill="#000" fill-opacity="0.04"/>
-    <rect x="456" y="186" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <rect x="456" y="186" width="40" height="29" fill="#FF3336" opacity="0.12"/>
     <text x="476.0" y="204.5" font-size="9" text-anchor="middle" fill="#1f2937">5%</text>
-    <rect x="498" y="186" width="40" height="29" fill="#FF680A" opacity="0.19"/>
+    <rect x="498" y="186" width="40" height="29" fill="#FF3336" opacity="0.19"/>
     <text x="518.0" y="204.5" font-size="9" text-anchor="middle" fill="#1f2937">19%</text>
-    <rect x="540" y="186" width="40" height="29" fill="#FF680A" opacity="0.38"/>
+    <rect x="540" y="186" width="40" height="29" fill="#FF3336" opacity="0.38"/>
     <text x="560.0" y="204.5" font-size="9" text-anchor="middle" fill="#1f2937">38%</text>
     <rect x="372" y="217" width="40" height="29" fill="#000" fill-opacity="0.04"/>
     <rect x="414" y="217" width="40" height="29" fill="#000" fill-opacity="0.04"/>
-    <rect x="456" y="217" width="40" height="29" fill="#FF680A" opacity="0.12"/>
+    <rect x="456" y="217" width="40" height="29" fill="#FF3336" opacity="0.12"/>
     <text x="476.0" y="235.5" font-size="9" text-anchor="middle" fill="#1f2937">3%</text>
-    <rect x="498" y="217" width="40" height="29" fill="#FF680A" opacity="0.19"/>
+    <rect x="498" y="217" width="40" height="29" fill="#FF3336" opacity="0.19"/>
     <text x="518.0" y="235.5" font-size="9" text-anchor="middle" fill="#1f2937">19%</text>
-    <rect x="540" y="217" width="40" height="29" fill="#FF680A" opacity="0.39"/>
+    <rect x="540" y="217" width="40" height="29" fill="#FF3336" opacity="0.39"/>
     <text x="560.0" y="235.5" font-size="9" text-anchor="middle" fill="#1f2937">39%</text>
     <text x="392.0" y="262" font-size="9" text-anchor="middle" fill="#888">0.6</text>
     <text x="434.0" y="262" font-size="9" text-anchor="middle" fill="#888">0.7</text>
@@ -427,10 +427,10 @@ The labeled set spans 60 elements and 72 space groups across the three uniaxial 
     <rect x="40" y="45" width="64" height="125" fill="#1f2937" opacity="0.35"/>
     <rect x="118" y="67" width="64" height="103" fill="#1f2937" opacity="0.35"/>
     <rect x="196" y="108" width="64" height="62" fill="#1f2937" opacity="0.35"/>
-    <rect x="274" y="58" width="64" height="112" fill="#FF680A" opacity="0.85"/>
-    <rect x="352" y="84" width="64" height="86" fill="#FF680A" opacity="0.85"/>
-    <rect x="430" y="43" width="64" height="127" fill="#FF680A" opacity="0.85"/>
-    <rect x="508" y="85" width="64" height="85" fill="#FF680A" opacity="0.85"/>
+    <rect x="274" y="58" width="64" height="112" fill="#FF3336" opacity="0.85"/>
+    <rect x="352" y="84" width="64" height="86" fill="#FF3336" opacity="0.85"/>
+    <rect x="430" y="43" width="64" height="127" fill="#FF3336" opacity="0.85"/>
+    <rect x="508" y="85" width="64" height="85" fill="#FF3336" opacity="0.85"/>
     <text x="72" y="38" font-size="11" text-anchor="middle" fill="#1f2937">18%</text>
     <text x="150" y="60" font-size="11" text-anchor="middle" fill="#1f2937">15%</text>
     <text x="228" y="101" font-size="11" text-anchor="middle" fill="#1f2937">9%</text>
@@ -454,205 +454,205 @@ The labeled set spans 60 elements and 72 space groups across the three uniaxial 
 
 <figure>
   <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <rect x="15" y="28" width="31" height="28" fill="#FF680A" opacity="0.29"/>
+    <rect x="15" y="28" width="31" height="28" fill="#FF3336" opacity="0.29"/>
     <text x="30.5" y="40" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">H</text>
     <text x="30.5" y="51" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">4</text>
     <rect x="576" y="28" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
     <text x="591.5" y="41" text-anchor="middle" font-size="8.5" fill="#ccc">He</text>
-    <rect x="15" y="58" width="31" height="28" fill="#FF680A" opacity="0.78"/>
+    <rect x="15" y="58" width="31" height="28" fill="#FF3336" opacity="0.78"/>
     <text x="30.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Li</text>
     <text x="30.5" y="81" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">353</text>
-    <rect x="48" y="58" width="31" height="28" fill="#FF680A" opacity="0.18"/>
+    <rect x="48" y="58" width="31" height="28" fill="#FF3336" opacity="0.18"/>
     <text x="63.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Be</text>
     <text x="63.5" y="81" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">1</text>
-    <rect x="411" y="58" width="31" height="28" fill="#FF680A" opacity="0.53"/>
+    <rect x="411" y="58" width="31" height="28" fill="#FF3336" opacity="0.53"/>
     <text x="426.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">B</text>
     <text x="426.5" y="81" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">40</text>
-    <rect x="444" y="58" width="31" height="28" fill="#FF680A" opacity="0.37"/>
+    <rect x="444" y="58" width="31" height="28" fill="#FF3336" opacity="0.37"/>
     <text x="459.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">C</text>
     <text x="459.5" y="81" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">9</text>
-    <rect x="477" y="58" width="31" height="28" fill="#FF680A" opacity="0.52"/>
+    <rect x="477" y="58" width="31" height="28" fill="#FF3336" opacity="0.52"/>
     <text x="492.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">N</text>
     <text x="492.5" y="81" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">37</text>
-    <rect x="510" y="58" width="31" height="28" fill="#FF680A" opacity="0.88"/>
+    <rect x="510" y="58" width="31" height="28" fill="#FF3336" opacity="0.88"/>
     <text x="525.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">O</text>
     <text x="525.5" y="81" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">825</text>
-    <rect x="543" y="58" width="31" height="28" fill="#FF680A" opacity="0.72"/>
+    <rect x="543" y="58" width="31" height="28" fill="#FF3336" opacity="0.72"/>
     <text x="558.5" y="70" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">F</text>
     <text x="558.5" y="81" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">203</text>
     <rect x="576" y="58" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
     <text x="591.5" y="71" text-anchor="middle" font-size="8.5" fill="#ccc">Ne</text>
-    <rect x="15" y="88" width="31" height="28" fill="#FF680A" opacity="0.58"/>
+    <rect x="15" y="88" width="31" height="28" fill="#FF3336" opacity="0.58"/>
     <text x="30.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Na</text>
     <text x="30.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">63</text>
-    <rect x="48" y="88" width="31" height="28" fill="#FF680A" opacity="0.75"/>
+    <rect x="48" y="88" width="31" height="28" fill="#FF3336" opacity="0.75"/>
     <text x="63.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Mg</text>
     <text x="63.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">258</text>
-    <rect x="411" y="88" width="31" height="28" fill="#FF680A" opacity="0.59"/>
+    <rect x="411" y="88" width="31" height="28" fill="#FF3336" opacity="0.59"/>
     <text x="426.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Al</text>
     <text x="426.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">67</text>
-    <rect x="444" y="88" width="31" height="28" fill="#FF680A" opacity="0.56"/>
+    <rect x="444" y="88" width="31" height="28" fill="#FF3336" opacity="0.56"/>
     <text x="459.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Si</text>
     <text x="459.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">50</text>
-    <rect x="477" y="88" width="31" height="28" fill="#FF680A" opacity="0.57"/>
+    <rect x="477" y="88" width="31" height="28" fill="#FF3336" opacity="0.57"/>
     <text x="492.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">P</text>
     <text x="492.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">55</text>
-    <rect x="510" y="88" width="31" height="28" fill="#FF680A" opacity="0.74"/>
+    <rect x="510" y="88" width="31" height="28" fill="#FF3336" opacity="0.74"/>
     <text x="525.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">S</text>
     <text x="525.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">252</text>
-    <rect x="543" y="88" width="31" height="28" fill="#FF680A" opacity="0.58"/>
+    <rect x="543" y="88" width="31" height="28" fill="#FF3336" opacity="0.58"/>
     <text x="558.5" y="100" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Cl</text>
     <text x="558.5" y="111" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">59</text>
     <rect x="576" y="88" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
     <text x="591.5" y="101" text-anchor="middle" font-size="8.5" fill="#ccc">Ar</text>
-    <rect x="15" y="118" width="31" height="28" fill="#FF680A" opacity="0.58"/>
+    <rect x="15" y="118" width="31" height="28" fill="#FF3336" opacity="0.58"/>
     <text x="30.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">K</text>
     <text x="30.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">59</text>
-    <rect x="48" y="118" width="31" height="28" fill="#FF680A" opacity="0.60"/>
+    <rect x="48" y="118" width="31" height="28" fill="#FF3336" opacity="0.60"/>
     <text x="63.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Ca</text>
     <text x="63.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">76</text>
     <rect x="81" y="118" width="31" height="28" fill="none" stroke="#ddd" stroke-width="0.6"/>
     <line x1="84" y1="143" x2="109" y2="121" stroke="#ddd" stroke-width="0.6"/>
     <text x="96.5" y="131" text-anchor="middle" font-size="8.5" fill="#bbb">Sc</text>
-    <rect x="114" y="118" width="31" height="28" fill="#FF680A" opacity="0.62"/>
+    <rect x="114" y="118" width="31" height="28" fill="#FF3336" opacity="0.62"/>
     <text x="129.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Ti</text>
     <text x="129.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">90</text>
-    <rect x="147" y="118" width="31" height="28" fill="#FF680A" opacity="0.73"/>
+    <rect x="147" y="118" width="31" height="28" fill="#FF3336" opacity="0.73"/>
     <text x="162.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">V</text>
     <text x="162.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">229</text>
-    <rect x="180" y="118" width="31" height="28" fill="#FF680A" opacity="0.80"/>
+    <rect x="180" y="118" width="31" height="28" fill="#FF3336" opacity="0.80"/>
     <text x="195.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Cr</text>
     <text x="195.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">414</text>
-    <rect x="213" y="118" width="31" height="28" fill="#FF680A" opacity="0.87"/>
+    <rect x="213" y="118" width="31" height="28" fill="#FF3336" opacity="0.87"/>
     <text x="228.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Mn</text>
     <text x="228.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">741</text>
-    <rect x="246" y="118" width="31" height="28" fill="#FF680A" opacity="0.86"/>
+    <rect x="246" y="118" width="31" height="28" fill="#FF3336" opacity="0.86"/>
     <text x="261.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Fe</text>
     <text x="261.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">672</text>
-    <rect x="279" y="118" width="31" height="28" fill="#FF680A" opacity="0.75"/>
+    <rect x="279" y="118" width="31" height="28" fill="#FF3336" opacity="0.75"/>
     <text x="294.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Co</text>
     <text x="294.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">272</text>
-    <rect x="312" y="118" width="31" height="28" fill="#FF680A" opacity="0.67"/>
+    <rect x="312" y="118" width="31" height="28" fill="#FF3336" opacity="0.67"/>
     <text x="327.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Ni</text>
     <text x="327.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">132</text>
-    <rect x="345" y="118" width="31" height="28" fill="#FF680A" opacity="0.68"/>
+    <rect x="345" y="118" width="31" height="28" fill="#FF3336" opacity="0.68"/>
     <text x="360.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Cu</text>
     <text x="360.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">149</text>
-    <rect x="378" y="118" width="31" height="28" fill="#FF680A" opacity="0.64"/>
+    <rect x="378" y="118" width="31" height="28" fill="#FF3336" opacity="0.64"/>
     <text x="393.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Zn</text>
     <text x="393.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">108</text>
-    <rect x="411" y="118" width="31" height="28" fill="#FF680A" opacity="0.61"/>
+    <rect x="411" y="118" width="31" height="28" fill="#FF3336" opacity="0.61"/>
     <text x="426.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Ga</text>
     <text x="426.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">81</text>
-    <rect x="444" y="118" width="31" height="28" fill="#FF680A" opacity="0.61"/>
+    <rect x="444" y="118" width="31" height="28" fill="#FF3336" opacity="0.61"/>
     <text x="459.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Ge</text>
     <text x="459.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">77</text>
-    <rect x="477" y="118" width="31" height="28" fill="#FF680A" opacity="0.58"/>
+    <rect x="477" y="118" width="31" height="28" fill="#FF3336" opacity="0.58"/>
     <text x="492.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">As</text>
     <text x="492.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">64</text>
-    <rect x="510" y="118" width="31" height="28" fill="#FF680A" opacity="0.67"/>
+    <rect x="510" y="118" width="31" height="28" fill="#FF3336" opacity="0.67"/>
     <text x="525.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Se</text>
     <text x="525.5" y="141" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">129</text>
-    <rect x="543" y="118" width="31" height="28" fill="#FF680A" opacity="0.51"/>
+    <rect x="543" y="118" width="31" height="28" fill="#FF3336" opacity="0.51"/>
     <text x="558.5" y="130" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Br</text>
     <text x="558.5" y="141" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">34</text>
     <rect x="576" y="118" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
     <text x="591.5" y="131" text-anchor="middle" font-size="8.5" fill="#ccc">Kr</text>
-    <rect x="15" y="148" width="31" height="28" fill="#FF680A" opacity="0.57"/>
+    <rect x="15" y="148" width="31" height="28" fill="#FF3336" opacity="0.57"/>
     <text x="30.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Rb</text>
     <text x="30.5" y="171" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">57</text>
-    <rect x="48" y="148" width="31" height="28" fill="#FF680A" opacity="0.65"/>
+    <rect x="48" y="148" width="31" height="28" fill="#FF3336" opacity="0.65"/>
     <text x="63.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Sr</text>
     <text x="63.5" y="171" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">117</text>
     <rect x="81" y="148" width="31" height="28" fill="none" stroke="#ddd" stroke-width="0.6"/>
     <line x1="84" y1="173" x2="109" y2="151" stroke="#ddd" stroke-width="0.6"/>
     <text x="96.5" y="161" text-anchor="middle" font-size="8.5" fill="#bbb">Y</text>
-    <rect x="114" y="148" width="31" height="28" fill="#FF680A" opacity="0.52"/>
+    <rect x="114" y="148" width="31" height="28" fill="#FF3336" opacity="0.52"/>
     <text x="129.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Zr</text>
     <text x="129.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">35</text>
-    <rect x="147" y="148" width="31" height="28" fill="#FF680A" opacity="0.53"/>
+    <rect x="147" y="148" width="31" height="28" fill="#FF3336" opacity="0.53"/>
     <text x="162.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Nb</text>
     <text x="162.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">41</text>
-    <rect x="180" y="148" width="31" height="28" fill="#FF680A" opacity="0.50"/>
+    <rect x="180" y="148" width="31" height="28" fill="#FF3336" opacity="0.50"/>
     <text x="195.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Mo</text>
     <text x="195.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">31</text>
     <rect x="213" y="148" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
     <text x="228.5" y="161" text-anchor="middle" font-size="8.5" fill="#ccc">Tc</text>
-    <rect x="246" y="148" width="31" height="28" fill="#FF680A" opacity="0.40"/>
+    <rect x="246" y="148" width="31" height="28" fill="#FF3336" opacity="0.40"/>
     <text x="261.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Ru</text>
     <text x="261.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">12</text>
-    <rect x="279" y="148" width="31" height="28" fill="#FF680A" opacity="0.49"/>
+    <rect x="279" y="148" width="31" height="28" fill="#FF3336" opacity="0.49"/>
     <text x="294.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Rh</text>
     <text x="294.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">27</text>
-    <rect x="312" y="148" width="31" height="28" fill="#FF680A" opacity="0.51"/>
+    <rect x="312" y="148" width="31" height="28" fill="#FF3336" opacity="0.51"/>
     <text x="327.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Pd</text>
     <text x="327.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">33</text>
-    <rect x="345" y="148" width="31" height="28" fill="#FF680A" opacity="0.48"/>
+    <rect x="345" y="148" width="31" height="28" fill="#FF3336" opacity="0.48"/>
     <text x="360.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Ag</text>
     <text x="360.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">26</text>
-    <rect x="378" y="148" width="31" height="28" fill="#FF680A" opacity="0.51"/>
+    <rect x="378" y="148" width="31" height="28" fill="#FF3336" opacity="0.51"/>
     <text x="393.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Cd</text>
     <text x="393.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">32</text>
-    <rect x="411" y="148" width="31" height="28" fill="#FF680A" opacity="0.57"/>
+    <rect x="411" y="148" width="31" height="28" fill="#FF3336" opacity="0.57"/>
     <text x="426.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">In</text>
     <text x="426.5" y="171" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">55</text>
-    <rect x="444" y="148" width="31" height="28" fill="#FF680A" opacity="0.63"/>
+    <rect x="444" y="148" width="31" height="28" fill="#FF3336" opacity="0.63"/>
     <text x="459.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Sn</text>
     <text x="459.5" y="171" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">92</text>
-    <rect x="477" y="148" width="31" height="28" fill="#FF680A" opacity="0.65"/>
+    <rect x="477" y="148" width="31" height="28" fill="#FF3336" opacity="0.65"/>
     <text x="492.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Sb</text>
     <text x="492.5" y="171" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">111</text>
-    <rect x="510" y="148" width="31" height="28" fill="#FF680A" opacity="0.64"/>
+    <rect x="510" y="148" width="31" height="28" fill="#FF3336" opacity="0.64"/>
     <text x="525.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Te</text>
     <text x="525.5" y="171" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">101</text>
-    <rect x="543" y="148" width="31" height="28" fill="#FF680A" opacity="0.36"/>
+    <rect x="543" y="148" width="31" height="28" fill="#FF3336" opacity="0.36"/>
     <text x="558.5" y="160" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">I</text>
     <text x="558.5" y="171" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">8</text>
     <rect x="576" y="148" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
     <text x="591.5" y="161" text-anchor="middle" font-size="8.5" fill="#ccc">Xe</text>
-    <rect x="15" y="178" width="31" height="28" fill="#FF680A" opacity="0.57"/>
+    <rect x="15" y="178" width="31" height="28" fill="#FF3336" opacity="0.57"/>
     <text x="30.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Cs</text>
     <text x="30.5" y="201" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">54</text>
-    <rect x="48" y="178" width="31" height="28" fill="#FF680A" opacity="0.62"/>
+    <rect x="48" y="178" width="31" height="28" fill="#FF3336" opacity="0.62"/>
     <text x="63.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#fff">Ba</text>
     <text x="63.5" y="201" text-anchor="middle" font-size="6.8" fill="#fff" opacity="0.85">88</text>
     <rect x="81" y="178" width="31" height="28" fill="none" stroke="#ddd" stroke-width="0.6"/>
     <line x1="84" y1="203" x2="109" y2="181" stroke="#ddd" stroke-width="0.6"/>
     <text x="96.5" y="191" text-anchor="middle" font-size="8.5" fill="#bbb">La</text>
-    <rect x="114" y="178" width="31" height="28" fill="#FF680A" opacity="0.45"/>
+    <rect x="114" y="178" width="31" height="28" fill="#FF3336" opacity="0.45"/>
     <text x="129.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Hf</text>
     <text x="129.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">20</text>
-    <rect x="147" y="178" width="31" height="28" fill="#FF680A" opacity="0.49"/>
+    <rect x="147" y="178" width="31" height="28" fill="#FF3336" opacity="0.49"/>
     <text x="162.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Ta</text>
     <text x="162.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">28</text>
-    <rect x="180" y="178" width="31" height="28" fill="#FF680A" opacity="0.53"/>
+    <rect x="180" y="178" width="31" height="28" fill="#FF3336" opacity="0.53"/>
     <text x="195.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">W</text>
     <text x="195.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">38</text>
-    <rect x="213" y="178" width="31" height="28" fill="#FF680A" opacity="0.31"/>
+    <rect x="213" y="178" width="31" height="28" fill="#FF3336" opacity="0.31"/>
     <text x="228.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Re</text>
     <text x="228.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">5</text>
-    <rect x="246" y="178" width="31" height="28" fill="#FF680A" opacity="0.18"/>
+    <rect x="246" y="178" width="31" height="28" fill="#FF3336" opacity="0.18"/>
     <text x="261.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Os</text>
     <text x="261.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">1</text>
-    <rect x="279" y="178" width="31" height="28" fill="#FF680A" opacity="0.40"/>
+    <rect x="279" y="178" width="31" height="28" fill="#FF3336" opacity="0.40"/>
     <text x="294.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Ir</text>
     <text x="294.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">12</text>
-    <rect x="312" y="178" width="31" height="28" fill="#FF680A" opacity="0.51"/>
+    <rect x="312" y="178" width="31" height="28" fill="#FF3336" opacity="0.51"/>
     <text x="327.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Pt</text>
     <text x="327.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">34</text>
-    <rect x="345" y="178" width="31" height="28" fill="#FF680A" opacity="0.42"/>
+    <rect x="345" y="178" width="31" height="28" fill="#FF3336" opacity="0.42"/>
     <text x="360.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Au</text>
     <text x="360.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">15</text>
-    <rect x="378" y="178" width="31" height="28" fill="#FF680A" opacity="0.38"/>
+    <rect x="378" y="178" width="31" height="28" fill="#FF3336" opacity="0.38"/>
     <text x="393.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Hg</text>
     <text x="393.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">10</text>
-    <rect x="411" y="178" width="31" height="28" fill="#FF680A" opacity="0.51"/>
+    <rect x="411" y="178" width="31" height="28" fill="#FF3336" opacity="0.51"/>
     <text x="426.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Tl</text>
     <text x="426.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">33</text>
-    <rect x="444" y="178" width="31" height="28" fill="#FF680A" opacity="0.44"/>
+    <rect x="444" y="178" width="31" height="28" fill="#FF3336" opacity="0.44"/>
     <text x="459.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Pb</text>
     <text x="459.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">17</text>
-    <rect x="477" y="178" width="31" height="28" fill="#FF680A" opacity="0.49"/>
+    <rect x="477" y="178" width="31" height="28" fill="#FF3336" opacity="0.49"/>
     <text x="492.5" y="190" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1f2937">Bi</text>
     <text x="492.5" y="201" text-anchor="middle" font-size="6.8" fill="#1f2937" opacity="0.85">27</text>
     <rect x="510" y="178" width="31" height="28" fill="#000" fill-opacity="0.03" stroke="#e5e5e5" stroke-width="0.5"/>
@@ -714,75 +714,75 @@ The labeled set spans 60 elements and 72 space groups across the three uniaxial 
   <svg viewBox="0 0 620 190" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
     <text x="95" y="26" text-anchor="middle" font-size="10.5" font-style="italic" fill="#222">Ms, MA/m</text>
     <line x1="30" y1="150" x2="160" y2="150" stroke="#888" stroke-width="0.6"/>
-    <rect x="30.0" y="141.3" width="7" height="8.7" fill="#FF680A" opacity="0.8"/>
-    <rect x="38.1" y="51.4" width="7" height="98.6" fill="#FF680A" opacity="0.8"/>
-    <rect x="46.2" y="42.0" width="7" height="108.0" fill="#FF680A" opacity="0.8"/>
-    <rect x="54.3" y="62.4" width="7" height="87.6" fill="#FF680A" opacity="0.8"/>
-    <rect x="62.4" y="98.2" width="7" height="51.8" fill="#FF680A" opacity="0.8"/>
-    <rect x="70.5" y="113.7" width="7" height="36.3" fill="#FF680A" opacity="0.8"/>
-    <rect x="78.6" y="124.2" width="7" height="25.8" fill="#FF680A" opacity="0.8"/>
-    <rect x="86.7" y="137.2" width="7" height="12.8" fill="#FF680A" opacity="0.8"/>
-    <rect x="94.8" y="138.6" width="7" height="11.4" fill="#FF680A" opacity="0.8"/>
-    <rect x="102.9" y="141.7" width="7" height="8.3" fill="#FF680A" opacity="0.8"/>
-    <rect x="111.0" y="145.5" width="7" height="4.5" fill="#FF680A" opacity="0.8"/>
-    <rect x="119.1" y="147.8" width="7" height="2.2" fill="#FF680A" opacity="0.8"/>
-    <rect x="127.2" y="149.1" width="7" height="0.9" fill="#FF680A" opacity="0.8"/>
-    <rect x="135.3" y="149.6" width="7" height="0.4" fill="#FF680A" opacity="0.8"/>
-    <rect x="143.4" y="149.3" width="7" height="0.7" fill="#FF680A" opacity="0.8"/>
-    <rect x="151.5" y="150.0" width="7" height="0.0" fill="#FF680A" opacity="0.8"/>
+    <rect x="30.0" y="141.3" width="7" height="8.7" fill="#FF3336" opacity="0.8"/>
+    <rect x="38.1" y="51.4" width="7" height="98.6" fill="#FF3336" opacity="0.8"/>
+    <rect x="46.2" y="42.0" width="7" height="108.0" fill="#FF3336" opacity="0.8"/>
+    <rect x="54.3" y="62.4" width="7" height="87.6" fill="#FF3336" opacity="0.8"/>
+    <rect x="62.4" y="98.2" width="7" height="51.8" fill="#FF3336" opacity="0.8"/>
+    <rect x="70.5" y="113.7" width="7" height="36.3" fill="#FF3336" opacity="0.8"/>
+    <rect x="78.6" y="124.2" width="7" height="25.8" fill="#FF3336" opacity="0.8"/>
+    <rect x="86.7" y="137.2" width="7" height="12.8" fill="#FF3336" opacity="0.8"/>
+    <rect x="94.8" y="138.6" width="7" height="11.4" fill="#FF3336" opacity="0.8"/>
+    <rect x="102.9" y="141.7" width="7" height="8.3" fill="#FF3336" opacity="0.8"/>
+    <rect x="111.0" y="145.5" width="7" height="4.5" fill="#FF3336" opacity="0.8"/>
+    <rect x="119.1" y="147.8" width="7" height="2.2" fill="#FF3336" opacity="0.8"/>
+    <rect x="127.2" y="149.1" width="7" height="0.9" fill="#FF3336" opacity="0.8"/>
+    <rect x="135.3" y="149.6" width="7" height="0.4" fill="#FF3336" opacity="0.8"/>
+    <rect x="143.4" y="149.3" width="7" height="0.7" fill="#FF3336" opacity="0.8"/>
+    <rect x="151.5" y="150.0" width="7" height="0.0" fill="#FF3336" opacity="0.8"/>
     <text x="30" y="164" text-anchor="middle" font-size="8.5" fill="#888">0</text>
     <text x="95" y="164" text-anchor="middle" font-size="8.5" fill="#888">1</text>
     <text x="160" y="164" text-anchor="middle" font-size="8.5" fill="#888">2</text>
     <text x="247" y="26" text-anchor="middle" font-size="10.5" font-style="italic" fill="#222">Tc, K</text>
     <line x1="182" y1="150" x2="312" y2="150" stroke="#888" stroke-width="0.6"/>
-    <rect x="182.0" y="123.6" width="7" height="26.4" fill="#FF680A" opacity="0.8"/>
-    <rect x="190.1" y="48.1" width="7" height="101.9" fill="#FF680A" opacity="0.8"/>
-    <rect x="198.2" y="42.0" width="7" height="108.0" fill="#FF680A" opacity="0.8"/>
-    <rect x="206.3" y="106.2" width="7" height="43.8" fill="#FF680A" opacity="0.8"/>
-    <rect x="214.4" y="132.1" width="7" height="17.9" fill="#FF680A" opacity="0.8"/>
-    <rect x="222.5" y="135.8" width="7" height="14.2" fill="#FF680A" opacity="0.8"/>
-    <rect x="230.6" y="139.9" width="7" height="10.1" fill="#FF680A" opacity="0.8"/>
-    <rect x="238.7" y="140.3" width="7" height="9.7" fill="#FF680A" opacity="0.8"/>
-    <rect x="246.8" y="145.3" width="7" height="4.7" fill="#FF680A" opacity="0.8"/>
-    <rect x="254.9" y="148.9" width="7" height="1.1" fill="#FF680A" opacity="0.8"/>
-    <rect x="263.0" y="148.7" width="7" height="1.3" fill="#FF680A" opacity="0.8"/>
-    <rect x="271.1" y="149.4" width="7" height="0.6" fill="#FF680A" opacity="0.8"/>
-    <rect x="279.2" y="149.3" width="7" height="0.7" fill="#FF680A" opacity="0.8"/>
-    <rect x="287.3" y="149.1" width="7" height="0.9" fill="#FF680A" opacity="0.8"/>
-    <rect x="295.4" y="149.8" width="7" height="0.2" fill="#FF680A" opacity="0.8"/>
-    <rect x="303.5" y="149.6" width="7" height="0.4" fill="#FF680A" opacity="0.8"/>
+    <rect x="182.0" y="123.6" width="7" height="26.4" fill="#FF3336" opacity="0.8"/>
+    <rect x="190.1" y="48.1" width="7" height="101.9" fill="#FF3336" opacity="0.8"/>
+    <rect x="198.2" y="42.0" width="7" height="108.0" fill="#FF3336" opacity="0.8"/>
+    <rect x="206.3" y="106.2" width="7" height="43.8" fill="#FF3336" opacity="0.8"/>
+    <rect x="214.4" y="132.1" width="7" height="17.9" fill="#FF3336" opacity="0.8"/>
+    <rect x="222.5" y="135.8" width="7" height="14.2" fill="#FF3336" opacity="0.8"/>
+    <rect x="230.6" y="139.9" width="7" height="10.1" fill="#FF3336" opacity="0.8"/>
+    <rect x="238.7" y="140.3" width="7" height="9.7" fill="#FF3336" opacity="0.8"/>
+    <rect x="246.8" y="145.3" width="7" height="4.7" fill="#FF3336" opacity="0.8"/>
+    <rect x="254.9" y="148.9" width="7" height="1.1" fill="#FF3336" opacity="0.8"/>
+    <rect x="263.0" y="148.7" width="7" height="1.3" fill="#FF3336" opacity="0.8"/>
+    <rect x="271.1" y="149.4" width="7" height="0.6" fill="#FF3336" opacity="0.8"/>
+    <rect x="279.2" y="149.3" width="7" height="0.7" fill="#FF3336" opacity="0.8"/>
+    <rect x="287.3" y="149.1" width="7" height="0.9" fill="#FF3336" opacity="0.8"/>
+    <rect x="295.4" y="149.8" width="7" height="0.2" fill="#FF3336" opacity="0.8"/>
+    <rect x="303.5" y="149.6" width="7" height="0.4" fill="#FF3336" opacity="0.8"/>
     <text x="182" y="164" text-anchor="middle" font-size="8.5" fill="#888">0</text>
     <text x="247" y="164" text-anchor="middle" font-size="8.5" fill="#888">600</text>
     <text x="312" y="164" text-anchor="middle" font-size="8.5" fill="#888">1200</text>
     <text x="399" y="26" text-anchor="middle" font-size="10.5" font-style="italic" fill="#222">E above hull, meV</text>
     <line x1="334" y1="150" x2="464" y2="150" stroke="#888" stroke-width="0.6"/>
-    <rect x="334.0" y="42.0" width="7" height="108.0" fill="#FF680A" opacity="0.8"/>
-    <rect x="342.1" y="103.5" width="7" height="46.5" fill="#FF680A" opacity="0.8"/>
-    <rect x="350.2" y="111.2" width="7" height="38.8" fill="#FF680A" opacity="0.8"/>
-    <rect x="358.3" y="121.8" width="7" height="28.2" fill="#FF680A" opacity="0.8"/>
-    <rect x="366.4" y="132.2" width="7" height="17.8" fill="#FF680A" opacity="0.8"/>
-    <rect x="374.5" y="136.1" width="7" height="13.9" fill="#FF680A" opacity="0.8"/>
-    <rect x="382.6" y="139.3" width="7" height="10.7" fill="#FF680A" opacity="0.8"/>
-    <rect x="390.7" y="141.5" width="7" height="8.5" fill="#FF680A" opacity="0.8"/>
-    <rect x="398.8" y="144.5" width="7" height="5.5" fill="#FF680A" opacity="0.8"/>
-    <rect x="406.9" y="144.4" width="7" height="5.6" fill="#FF680A" opacity="0.8"/>
-    <rect x="415.0" y="147.4" width="7" height="2.6" fill="#FF680A" opacity="0.8"/>
-    <rect x="423.1" y="146.5" width="7" height="3.5" fill="#FF680A" opacity="0.8"/>
-    <rect x="431.2" y="149.0" width="7" height="1.0" fill="#FF680A" opacity="0.8"/>
-    <rect x="439.3" y="148.1" width="7" height="1.9" fill="#FF680A" opacity="0.8"/>
-    <rect x="447.4" y="148.7" width="7" height="1.3" fill="#FF680A" opacity="0.8"/>
-    <rect x="455.5" y="149.3" width="7" height="0.7" fill="#FF680A" opacity="0.8"/>
+    <rect x="334.0" y="42.0" width="7" height="108.0" fill="#FF3336" opacity="0.8"/>
+    <rect x="342.1" y="103.5" width="7" height="46.5" fill="#FF3336" opacity="0.8"/>
+    <rect x="350.2" y="111.2" width="7" height="38.8" fill="#FF3336" opacity="0.8"/>
+    <rect x="358.3" y="121.8" width="7" height="28.2" fill="#FF3336" opacity="0.8"/>
+    <rect x="366.4" y="132.2" width="7" height="17.8" fill="#FF3336" opacity="0.8"/>
+    <rect x="374.5" y="136.1" width="7" height="13.9" fill="#FF3336" opacity="0.8"/>
+    <rect x="382.6" y="139.3" width="7" height="10.7" fill="#FF3336" opacity="0.8"/>
+    <rect x="390.7" y="141.5" width="7" height="8.5" fill="#FF3336" opacity="0.8"/>
+    <rect x="398.8" y="144.5" width="7" height="5.5" fill="#FF3336" opacity="0.8"/>
+    <rect x="406.9" y="144.4" width="7" height="5.6" fill="#FF3336" opacity="0.8"/>
+    <rect x="415.0" y="147.4" width="7" height="2.6" fill="#FF3336" opacity="0.8"/>
+    <rect x="423.1" y="146.5" width="7" height="3.5" fill="#FF3336" opacity="0.8"/>
+    <rect x="431.2" y="149.0" width="7" height="1.0" fill="#FF3336" opacity="0.8"/>
+    <rect x="439.3" y="148.1" width="7" height="1.9" fill="#FF3336" opacity="0.8"/>
+    <rect x="447.4" y="148.7" width="7" height="1.3" fill="#FF3336" opacity="0.8"/>
+    <rect x="455.5" y="149.3" width="7" height="0.7" fill="#FF3336" opacity="0.8"/>
     <text x="334" y="164" text-anchor="middle" font-size="8.5" fill="#888">0</text>
     <text x="399" y="164" text-anchor="middle" font-size="8.5" fill="#888">250</text>
     <text x="464" y="164" text-anchor="middle" font-size="8.5" fill="#888">500</text>
     <text x="551" y="26" text-anchor="middle" font-size="10.5" font-style="italic" fill="#222">crystal system</text>
-    <rect x="486" y="48" width="104" height="16" fill="#FF680A" opacity="0.8"/>
+    <rect x="486" y="48" width="104" height="16" fill="#FF3336" opacity="0.8"/>
     <text x="486" y="44" font-size="8.5" fill="#1f2937">trigonal</text>
     <text x="594" y="60" font-size="8.5" fill="#888">957</text>
-    <rect x="486" y="84" width="79" height="16" fill="#FF680A" opacity="0.8"/>
+    <rect x="486" y="84" width="79" height="16" fill="#FF3336" opacity="0.8"/>
     <text x="486" y="80" font-size="8.5" fill="#1f2937">tetragonal</text>
     <text x="569" y="96" font-size="8.5" fill="#888">724</text>
-    <rect x="486" y="120" width="35" height="16" fill="#FF680A" opacity="0.8"/>
+    <rect x="486" y="120" width="35" height="16" fill="#FF3336" opacity="0.8"/>
     <text x="486" y="116" font-size="8.5" fill="#1f2937">hexagonal</text>
     <text x="525" y="132" font-size="8.5" fill="#888">319</text>
     <text x="310" y="184" text-anchor="middle" font-size="10" fill="#444" font-style="italic">2,044 κ-reliable labels</text>
@@ -796,24 +796,24 @@ The two element groups that dominate commercial hard magnets play opposite roles
 
 <figure>
   <svg viewBox="0 0 620 230" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <rect x="48" y="26" width="14" height="14" fill="#FF680A" opacity="0.85"/>
+    <rect x="48" y="26" width="14" height="14" fill="#FF3336" opacity="0.85"/>
     <text x="68" y="37" font-size="11" fill="#1f2937">precious-free (n = 1,884)</text>
     <rect x="248" y="26" width="14" height="14" fill="#1f2937" opacity="0.35"/>
     <text x="268" y="37" font-size="11" fill="#1f2937">precious-metal-containing (n = 160)</text>
     <line x1="40" y1="175" x2="596" y2="175" stroke="#888" stroke-width="0.8"/>
-    <rect x="48" y="83" width="30" height="92" fill="#FF680A" opacity="0.85"/>
+    <rect x="48" y="83" width="30" height="92" fill="#FF3336" opacity="0.85"/>
     <rect x="82" y="125" width="30" height="50" fill="#1f2937" opacity="0.35"/>
-    <rect x="126" y="102" width="30" height="73" fill="#FF680A" opacity="0.85"/>
+    <rect x="126" y="102" width="30" height="73" fill="#FF3336" opacity="0.85"/>
     <rect x="160" y="131" width="30" height="44" fill="#1f2937" opacity="0.35"/>
-    <rect x="204" y="129" width="30" height="46" fill="#FF680A" opacity="0.85"/>
+    <rect x="204" y="129" width="30" height="46" fill="#FF3336" opacity="0.85"/>
     <rect x="238" y="140" width="30" height="35" fill="#1f2937" opacity="0.35"/>
-    <rect x="282" y="93" width="30" height="82" fill="#FF680A" opacity="0.85"/>
+    <rect x="282" y="93" width="30" height="82" fill="#FF3336" opacity="0.85"/>
     <rect x="316" y="106" width="30" height="69" fill="#1f2937" opacity="0.35"/>
-    <rect x="360" y="111" width="30" height="64" fill="#FF680A" opacity="0.85"/>
+    <rect x="360" y="111" width="30" height="64" fill="#FF3336" opacity="0.85"/>
     <rect x="394" y="84" width="30" height="91" fill="#1f2937" opacity="0.35"/>
-    <rect x="438" y="89" width="30" height="86" fill="#FF680A" opacity="0.85"/>
+    <rect x="438" y="89" width="30" height="86" fill="#FF3336" opacity="0.85"/>
     <rect x="472" y="65" width="30" height="110" fill="#1f2937" opacity="0.35"/>
-    <rect x="516" y="118" width="30" height="57" fill="#FF680A" opacity="0.85"/>
+    <rect x="516" y="118" width="30" height="57" fill="#FF3336" opacity="0.85"/>
     <rect x="550" y="72" width="30" height="103" fill="#1f2937" opacity="0.35"/>
     <line x1="276" y1="55" x2="276" y2="175" stroke="#1f2937" stroke-width="0.8" stroke-dasharray="4,3"/>
     <text x="281" y="55" font-size="11" fill="#1f2937">κ = 1</text>
@@ -874,35 +874,35 @@ The established-magnet rows validate the sweep externally and set the scale for 
     <text x="140" y="78" font-size="11" text-anchor="end" fill="#1f2937">FePt</text>
     <text x="140" y="91" font-size="9.5" text-anchor="end" fill="#888">peak 372 kJ/m³</text>
     <line x1="160" y1="80" x2="280" y2="80" stroke="#bbb" stroke-width="1"/>
-    <rect x="160" y="75" width="109" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="160" y="75" width="109" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="330" y1="80" x2="450" y2="80" stroke="#bbb" stroke-width="1"/>
-    <rect x="354" y="75" width="96" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="354" y="75" width="96" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="490" y1="80" x2="600" y2="80" stroke="#bbb" stroke-width="1"/>
-    <rect x="490" y="75" width="110" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="490" y="75" width="110" height="10" fill="#FF3336" opacity="0.85"/>
     <text x="140" y="124" font-size="11" text-anchor="end" fill="#1f2937">Mn₂SbTe</text>
     <text x="140" y="137" font-size="9.5" text-anchor="end" fill="#888">peak 195 kJ/m³</text>
     <line x1="160" y1="126" x2="280" y2="126" stroke="#bbb" stroke-width="1"/>
-    <rect x="160" y="121" width="85" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="160" y="121" width="85" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="330" y1="126" x2="450" y2="126" stroke="#bbb" stroke-width="1"/>
-    <rect x="354" y="121" width="96" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="354" y="121" width="96" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="490" y1="126" x2="600" y2="126" stroke="#bbb" stroke-width="1"/>
-    <rect x="490" y="121" width="110" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="490" y="121" width="110" height="10" fill="#FF3336" opacity="0.85"/>
     <text x="140" y="170" font-size="11" text-anchor="end" fill="#1f2937">HfGaFe₄</text>
     <text x="140" y="183" font-size="9.5" text-anchor="end" fill="#888">peak 198 kJ/m³</text>
     <line x1="160" y1="172" x2="280" y2="172" stroke="#bbb" stroke-width="1"/>
-    <rect x="160" y="167" width="12" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="160" y="167" width="12" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="330" y1="172" x2="450" y2="172" stroke="#bbb" stroke-width="1"/>
-    <rect x="402" y="167" width="48" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="402" y="167" width="48" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="490" y1="172" x2="600" y2="172" stroke="#bbb" stroke-width="1"/>
-    <rect x="490" y="167" width="90" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="490" y="167" width="90" height="10" fill="#FF3336" opacity="0.85"/>
     <text x="140" y="216" font-size="11" text-anchor="end" fill="#1f2937">Fe₁₅MnB₈</text>
     <text x="140" y="229" font-size="9.5" text-anchor="end" fill="#888">peak 423 kJ/m³</text>
     <line x1="160" y1="218" x2="280" y2="218" stroke="#bbb" stroke-width="1"/>
-    <rect x="160" y="213" width="2" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="160" y="213" width="2" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="330" y1="218" x2="450" y2="218" stroke="#bbb" stroke-width="1"/>
-    <rect x="447" y="213" width="3" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="447" y="213" width="3" height="10" fill="#FF3336" opacity="0.85"/>
     <line x1="490" y1="218" x2="600" y2="218" stroke="#bbb" stroke-width="1"/>
-    <rect x="534" y="213" width="3" height="10" fill="#FF680A" opacity="0.85"/>
+    <rect x="534" y="213" width="3" height="10" fill="#FF3336" opacity="0.85"/>
     <text x="286" y="84" font-size="9.5" fill="#888">0.91</text>
     <text x="286" y="130" font-size="9.5" fill="#888">0.71</text>
     <text x="286" y="176" font-size="9.5" fill="#888">0.10</text>
@@ -2849,7 +2849,7 @@ Figure 12 plots every reliable label on the hardness-magnetization plane, and th
     <circle cx="326" cy="194" r="1.5"/>
     </g>
     <path d="M461,190 L455,190 L455,175 L436,175 L436,169 L434,169 L434,153 L412,153 L412,132 L389,132 L389,117 L309,117 L309,83" fill="none" stroke="#1f2937" stroke-width="1.4" stroke-dasharray="5,3" opacity="0.8"/>
-    <path d="M461,197 L460,197 L460,194 L458,194 L458,192 L457,192 L457,186 L454,186 L454,182 L445,182 L445,177 L439,177 L439,173 L410,173 L410,143 L343,143 L343,143 L332,143 L332,141 L330,141 L330,140 L328,140 L328,139 L324,139 L324,136 L322,136 L322,136 L318,136 L318,127 L308,127 L308,125 L307,125 L307,115 L306,115 L306,113 L304,113 L304,110 L286,110 L286,107 L276,107 L276,98 L275,98 L275,86 L243,86 L243,76 L80,76 L80,53" fill="none" stroke="#FF680A" stroke-width="1.6" opacity="0.9"/>
+    <path d="M461,197 L460,197 L460,194 L458,194 L458,192 L457,192 L457,186 L454,186 L454,182 L445,182 L445,177 L439,177 L439,173 L410,173 L410,143 L343,143 L343,143 L332,143 L332,141 L330,141 L330,140 L328,140 L328,139 L324,139 L324,136 L322,136 L322,136 L318,136 L318,127 L308,127 L308,125 L307,125 L307,115 L306,115 L306,113 L304,113 L304,110 L286,110 L286,107 L276,107 L276,98 L275,98 L275,86 L243,86 L243,76 L80,76 L80,53" fill="none" stroke="#FF3336" stroke-width="1.6" opacity="0.9"/>
     <circle cx="461" cy="190" r="3" fill="#1f2937"/>
     <circle cx="455" cy="175" r="3" fill="#1f2937"/>
     <circle cx="436" cy="169" r="3" fill="#1f2937"/>
@@ -2857,31 +2857,31 @@ Figure 12 plots every reliable label on the hardness-magnetization plane, and th
     <circle cx="412" cy="132" r="3" fill="#1f2937"/>
     <circle cx="389" cy="117" r="3" fill="#1f2937"/>
     <circle cx="309" cy="83" r="3" fill="#1f2937"/>
-    <circle cx="461" cy="197" r="3" fill="#FF680A"/>
-    <circle cx="460" cy="194" r="3" fill="#FF680A"/>
-    <circle cx="458" cy="192" r="3" fill="#FF680A"/>
-    <circle cx="457" cy="186" r="3" fill="#FF680A"/>
-    <circle cx="454" cy="182" r="3" fill="#FF680A"/>
-    <circle cx="445" cy="177" r="3" fill="#FF680A"/>
-    <circle cx="439" cy="173" r="3" fill="#FF680A"/>
-    <circle cx="410" cy="143" r="3" fill="#FF680A"/>
-    <circle cx="343" cy="143" r="3" fill="#FF680A"/>
-    <circle cx="332" cy="141" r="3" fill="#FF680A"/>
-    <circle cx="330" cy="140" r="3" fill="#FF680A"/>
-    <circle cx="328" cy="139" r="3" fill="#FF680A"/>
-    <circle cx="324" cy="136" r="3" fill="#FF680A"/>
-    <circle cx="322" cy="136" r="3" fill="#FF680A"/>
-    <circle cx="318" cy="127" r="3" fill="#FF680A"/>
-    <circle cx="308" cy="125" r="3" fill="#FF680A"/>
-    <circle cx="307" cy="115" r="3" fill="#FF680A"/>
-    <circle cx="306" cy="113" r="3" fill="#FF680A"/>
-    <circle cx="304" cy="110" r="3" fill="#FF680A"/>
-    <circle cx="286" cy="107" r="3" fill="#FF680A"/>
-    <circle cx="276" cy="98" r="3" fill="#FF680A"/>
-    <circle cx="275" cy="86" r="3" fill="#FF680A"/>
-    <circle cx="243" cy="76" r="3" fill="#FF680A"/>
-    <circle cx="80" cy="53" r="3" fill="#FF680A"/>
-    <rect x="440" y="44" width="8" height="2.5" fill="#FF680A"/>
+    <circle cx="461" cy="197" r="3" fill="#FF3336"/>
+    <circle cx="460" cy="194" r="3" fill="#FF3336"/>
+    <circle cx="458" cy="192" r="3" fill="#FF3336"/>
+    <circle cx="457" cy="186" r="3" fill="#FF3336"/>
+    <circle cx="454" cy="182" r="3" fill="#FF3336"/>
+    <circle cx="445" cy="177" r="3" fill="#FF3336"/>
+    <circle cx="439" cy="173" r="3" fill="#FF3336"/>
+    <circle cx="410" cy="143" r="3" fill="#FF3336"/>
+    <circle cx="343" cy="143" r="3" fill="#FF3336"/>
+    <circle cx="332" cy="141" r="3" fill="#FF3336"/>
+    <circle cx="330" cy="140" r="3" fill="#FF3336"/>
+    <circle cx="328" cy="139" r="3" fill="#FF3336"/>
+    <circle cx="324" cy="136" r="3" fill="#FF3336"/>
+    <circle cx="322" cy="136" r="3" fill="#FF3336"/>
+    <circle cx="318" cy="127" r="3" fill="#FF3336"/>
+    <circle cx="308" cy="125" r="3" fill="#FF3336"/>
+    <circle cx="307" cy="115" r="3" fill="#FF3336"/>
+    <circle cx="306" cy="113" r="3" fill="#FF3336"/>
+    <circle cx="304" cy="110" r="3" fill="#FF3336"/>
+    <circle cx="286" cy="107" r="3" fill="#FF3336"/>
+    <circle cx="276" cy="98" r="3" fill="#FF3336"/>
+    <circle cx="275" cy="86" r="3" fill="#FF3336"/>
+    <circle cx="243" cy="76" r="3" fill="#FF3336"/>
+    <circle cx="80" cy="53" r="3" fill="#FF3336"/>
+    <rect x="440" y="44" width="8" height="2.5" fill="#FF3336"/>
     <text x="453" y="49" font-size="9" fill="#1f2937">precious-free frontier</text>
     <line x1="440" y1="60" x2="448" y2="60" stroke="#1f2937" stroke-width="1.4" stroke-dasharray="5,3"/>
     <text x="453" y="63" font-size="9" fill="#1f2937">precious-metal frontier</text>
@@ -2890,13 +2890,13 @@ Figure 12 plots every reliable label on the hardness-magnetization plane, and th
     <text x="389" y="110" font-size="9.5" font-style="italic" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="3">FePt</text>
     <text x="314" y="80" font-size="9.5" font-style="italic" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₃Pt</text>
     <text x="441" y="163" font-size="9.5" font-style="italic" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="3">CoIr</text>
-    <text x="80" y="51" font-size="9.5" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₃Co₃</text>
-    <text x="269" y="84" font-size="9.5" text-anchor="end" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₂Ni</text>
-    <text x="291" y="97" font-size="9.5" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₄B₂</text>
-    <text x="321" y="119" font-size="9.5" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₅MnB₈</text>
-    <text x="336" y="160" font-size="9.5" text-anchor="end" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">HfGaFe₄</text>
-    <text x="415" y="144" font-size="9.5" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">Mn₂SbTe</text>
-    <text x="459" y="184" font-size="9.5" font-style="italic" fill="#FF680A" paint-order="stroke" stroke="#fff" stroke-width="3">FeI₂</text>
+    <text x="80" y="51" font-size="9.5" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₃Co₃</text>
+    <text x="269" y="84" font-size="9.5" text-anchor="end" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₂Ni</text>
+    <text x="291" y="97" font-size="9.5" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₄B₂</text>
+    <text x="321" y="119" font-size="9.5" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₅MnB₈</text>
+    <text x="336" y="160" font-size="9.5" text-anchor="end" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">HfGaFe₄</text>
+    <text x="415" y="144" font-size="9.5" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">Mn₂SbTe</text>
+    <text x="459" y="184" font-size="9.5" font-style="italic" fill="#FF3336" paint-order="stroke" stroke="#fff" stroke-width="3">FeI₂</text>
     <text x="548" y="158" font-size="9" font-style="italic" fill="#888" opacity="0.8" text-anchor="middle">flagged outliers</text>
   </svg>
   <figcaption><strong>Figure 12.</strong> Every κ-reliable label on the hardness-magnetization plane (2,044 compounds, overlapping points merged). Iron-rich intermetallics crowd the strong-but-soft left edge; the hard right side is populated by dilute-moment oxides, chalcogenides, and halides, with the palest points in the flagged-outlier tail. The staircases trace Pareto frontiers over unflagged easy-axis compounds: the precious-metal frontier (dashed) dominates the precious-free frontier (orange) through the magnet-relevant range, and the free frontier crosses the NdFeB-ceiling line only at the κ ≈ 1 boride corner. The nearly empty upper right is the region a rare-earth-free NdFeB replacement must occupy.</figcaption>
@@ -4450,98 +4450,98 @@ A permanent magnet must satisfy three intrinsic requirements at once, and Figure
     <circle cx="205" cy="189" r="1.4"/>
     <circle cx="209" cy="190" r="1.4"/>
     </g>
-    <line x1="364" y1="259" x2="364" y2="231" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="364" cy="259" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="364" cy="231" r="3" fill="#FF680A"/>
-    <line x1="209" y1="274" x2="209" y2="190" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="209" cy="274" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="209" cy="190" r="3" fill="#FF680A"/>
-    <line x1="334" y1="268" x2="334" y2="213" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="334" cy="268" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="334" cy="213" r="3" fill="#FF680A"/>
-    <line x1="286" y1="268" x2="286" y2="218" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="286" cy="268" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="286" cy="218" r="3" fill="#FF680A"/>
-    <line x1="298" y1="255" x2="298" y2="187" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="298" cy="255" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="298" cy="187" r="3" fill="#FF680A"/>
-    <line x1="263" y1="257" x2="263" y2="195" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="263" cy="257" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="263" cy="195" r="3" fill="#FF680A"/>
-    <line x1="303" y1="253" x2="303" y2="182" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="303" cy="253" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="303" cy="182" r="3" fill="#FF680A"/>
-    <line x1="281" y1="243" x2="281" y2="174" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="281" cy="243" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="281" cy="174" r="3" fill="#FF680A"/>
-    <line x1="300" y1="259" x2="300" y2="203" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="300" cy="259" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="300" cy="203" r="3" fill="#FF680A"/>
-    <line x1="311" y1="251" x2="311" y2="187" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="311" cy="251" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="311" cy="187" r="3" fill="#FF680A"/>
-    <line x1="336" y1="260" x2="336" y2="195" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="336" cy="260" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="336" cy="195" r="3" fill="#FF680A"/>
-    <line x1="306" y1="253" x2="306" y2="163" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="306" cy="253" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="306" cy="163" r="3" fill="#FF680A"/>
-    <line x1="373" y1="254" x2="373" y2="214" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="373" cy="254" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="373" cy="214" r="3" fill="#FF680A"/>
-    <line x1="281" y1="268" x2="281" y2="209" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="281" cy="268" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="281" cy="209" r="3" fill="#FF680A"/>
-    <line x1="401" y1="248" x2="401" y2="236" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="401" cy="248" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="401" cy="236" r="3" fill="#FF680A"/>
-    <line x1="397" y1="249" x2="397" y2="232" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="397" cy="249" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="397" cy="232" r="3" fill="#FF680A"/>
-    <line x1="226" y1="262" x2="226" y2="169" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="226" cy="262" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="226" cy="169" r="3" fill="#FF680A"/>
-    <line x1="197" y1="242" x2="197" y2="132" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="197" cy="242" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="197" cy="132" r="3" fill="#FF680A"/>
-    <line x1="361" y1="258" x2="361" y2="244" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="361" cy="258" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="361" cy="244" r="3" fill="#FF680A"/>
-    <line x1="387" y1="253" x2="387" y2="228" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="387" cy="253" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="387" cy="228" r="3" fill="#FF680A"/>
-    <line x1="392" y1="246" x2="392" y2="221" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="392" cy="246" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="392" cy="221" r="3" fill="#FF680A"/>
-    <line x1="339" y1="276" x2="339" y2="264" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="339" cy="276" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="339" cy="264" r="3" fill="#FF680A"/>
-    <line x1="257" y1="267" x2="257" y2="216" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="257" cy="267" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="257" cy="216" r="3" fill="#FF680A"/>
-    <line x1="313" y1="231" x2="313" y2="136" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="313" cy="231" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="313" cy="136" r="3" fill="#FF680A"/>
-    <line x1="404" y1="247" x2="404" y2="237" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="404" cy="247" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="404" cy="237" r="3" fill="#FF680A"/>
-    <line x1="393" y1="252" x2="393" y2="243" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="393" cy="252" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="393" cy="243" r="3" fill="#FF680A"/>
-    <line x1="275" y1="268" x2="275" y2="215" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="275" cy="268" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="275" cy="215" r="3" fill="#FF680A"/>
-    <line x1="406" y1="246" x2="406" y2="231" stroke="#FF680A" stroke-width="0.7" opacity="0.45"/>
-    <circle cx="406" cy="246" r="1.3" fill="#FF680A" opacity="0.5"/>
-    <circle cx="406" cy="231" r="3" fill="#FF680A"/>
-    <text x="218" y="183" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">FeCo₃</text>
-    <text x="309" y="182" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₇MnB₄</text>
-    <text x="290" y="173" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₅MnB₈</text>
-    <text x="351" y="202" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">FePt</text>
-    <text x="315" y="154" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₃Pt</text>
-    <text x="268" y="218" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">Co₃Cu</text>
-    <text x="206" y="145" font-size="9.5" font-style="italic" fill="#FF680A" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₃Co₃</text>
-    <circle cx="468" cy="46" r="3" fill="#FF680A"/><text x="476" y="49" font-size="9" fill="#1f2937">Pareto set (n = 28)</text>
+    <line x1="364" y1="259" x2="364" y2="231" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="364" cy="259" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="364" cy="231" r="3" fill="#FF3336"/>
+    <line x1="209" y1="274" x2="209" y2="190" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="209" cy="274" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="209" cy="190" r="3" fill="#FF3336"/>
+    <line x1="334" y1="268" x2="334" y2="213" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="334" cy="268" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="334" cy="213" r="3" fill="#FF3336"/>
+    <line x1="286" y1="268" x2="286" y2="218" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="286" cy="268" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="286" cy="218" r="3" fill="#FF3336"/>
+    <line x1="298" y1="255" x2="298" y2="187" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="298" cy="255" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="298" cy="187" r="3" fill="#FF3336"/>
+    <line x1="263" y1="257" x2="263" y2="195" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="263" cy="257" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="263" cy="195" r="3" fill="#FF3336"/>
+    <line x1="303" y1="253" x2="303" y2="182" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="303" cy="253" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="303" cy="182" r="3" fill="#FF3336"/>
+    <line x1="281" y1="243" x2="281" y2="174" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="281" cy="243" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="281" cy="174" r="3" fill="#FF3336"/>
+    <line x1="300" y1="259" x2="300" y2="203" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="300" cy="259" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="300" cy="203" r="3" fill="#FF3336"/>
+    <line x1="311" y1="251" x2="311" y2="187" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="311" cy="251" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="311" cy="187" r="3" fill="#FF3336"/>
+    <line x1="336" y1="260" x2="336" y2="195" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="336" cy="260" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="336" cy="195" r="3" fill="#FF3336"/>
+    <line x1="306" y1="253" x2="306" y2="163" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="306" cy="253" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="306" cy="163" r="3" fill="#FF3336"/>
+    <line x1="373" y1="254" x2="373" y2="214" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="373" cy="254" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="373" cy="214" r="3" fill="#FF3336"/>
+    <line x1="281" y1="268" x2="281" y2="209" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="281" cy="268" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="281" cy="209" r="3" fill="#FF3336"/>
+    <line x1="401" y1="248" x2="401" y2="236" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="401" cy="248" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="401" cy="236" r="3" fill="#FF3336"/>
+    <line x1="397" y1="249" x2="397" y2="232" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="397" cy="249" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="397" cy="232" r="3" fill="#FF3336"/>
+    <line x1="226" y1="262" x2="226" y2="169" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="226" cy="262" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="226" cy="169" r="3" fill="#FF3336"/>
+    <line x1="197" y1="242" x2="197" y2="132" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="197" cy="242" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="197" cy="132" r="3" fill="#FF3336"/>
+    <line x1="361" y1="258" x2="361" y2="244" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="361" cy="258" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="361" cy="244" r="3" fill="#FF3336"/>
+    <line x1="387" y1="253" x2="387" y2="228" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="387" cy="253" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="387" cy="228" r="3" fill="#FF3336"/>
+    <line x1="392" y1="246" x2="392" y2="221" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="392" cy="246" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="392" cy="221" r="3" fill="#FF3336"/>
+    <line x1="339" y1="276" x2="339" y2="264" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="339" cy="276" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="339" cy="264" r="3" fill="#FF3336"/>
+    <line x1="257" y1="267" x2="257" y2="216" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="257" cy="267" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="257" cy="216" r="3" fill="#FF3336"/>
+    <line x1="313" y1="231" x2="313" y2="136" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="313" cy="231" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="313" cy="136" r="3" fill="#FF3336"/>
+    <line x1="404" y1="247" x2="404" y2="237" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="404" cy="247" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="404" cy="237" r="3" fill="#FF3336"/>
+    <line x1="393" y1="252" x2="393" y2="243" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="393" cy="252" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="393" cy="243" r="3" fill="#FF3336"/>
+    <line x1="275" y1="268" x2="275" y2="215" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="275" cy="268" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="275" cy="215" r="3" fill="#FF3336"/>
+    <line x1="406" y1="246" x2="406" y2="231" stroke="#FF3336" stroke-width="0.7" opacity="0.45"/>
+    <circle cx="406" cy="246" r="1.3" fill="#FF3336" opacity="0.5"/>
+    <circle cx="406" cy="231" r="3" fill="#FF3336"/>
+    <text x="218" y="183" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">FeCo₃</text>
+    <text x="309" y="182" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₇MnB₄</text>
+    <text x="290" y="173" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₅MnB₈</text>
+    <text x="351" y="202" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">FePt</text>
+    <text x="315" y="154" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₃Pt</text>
+    <text x="268" y="218" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">Co₃Cu</text>
+    <text x="206" y="145" font-size="9.5" font-style="italic" fill="#FF3336" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">Fe₁₃Co₃</text>
+    <circle cx="468" cy="46" r="3" fill="#FF3336"/><text x="476" y="49" font-size="9" fill="#1f2937">Pareto set (n = 28)</text>
     <circle cx="468" cy="60" r="1.4" fill="#1f2937" opacity="0.3"/><text x="476" y="63" font-size="9" fill="#1f2937">one compound</text>
     </svg>
   <figcaption><strong>Figure 13.</strong> The dataset in the three intrinsic dimensions a magnet must satisfy at once: hardness (log κ), magnetization, and Curie temperature. Orange stems mark the 28 compounds that are Pareto-optimal in all three, projected onto the κ-Tc floor for readability. The dashed floor line is κ = 1. The conjunction thins the candidate list further than either two-dimensional view: Mn₂SbTe falls off this frontier (Curie point too low), the (Fe,Mn)₂B borides stay on it, and the high-Curie end belongs to cobalt-rich soft compounds that lack a hardening mechanism.</figcaption>
@@ -5295,7 +5295,7 @@ Figure 14 splits the hardness-magnetization plane by anion class, and each class
     <line x1="30" y1="140" x2="198" y2="140" stroke="#888" stroke-width="0.5"/>
     <line x1="105" y1="40" x2="105" y2="140" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6"/>
     <use href="#kmscloud" x="30" y="40"/>
-    <g fill="#FF680A" opacity="0.65">
+    <g fill="#FF3336" opacity="0.65">
     <circle cx="97" cy="80" r="1.5"/>
     <circle cx="33" cy="77" r="1.5"/>
     <circle cx="101" cy="98" r="1.5"/>
@@ -5625,7 +5625,7 @@ Figure 14 splits the hardness-magnetization plane by anion class, and each class
     <line x1="230" y1="140" x2="398" y2="140" stroke="#888" stroke-width="0.5"/>
     <line x1="305" y1="40" x2="305" y2="140" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6"/>
     <use href="#kmscloud" x="230" y="40"/>
-    <g fill="#FF680A" opacity="0.65">
+    <g fill="#FF3336" opacity="0.65">
     <circle cx="261" cy="88" r="1.5"/>
     <circle cx="302" cy="79" r="1.5"/>
     <circle cx="300" cy="85" r="1.5"/>
@@ -5668,7 +5668,7 @@ Figure 14 splits the hardness-magnetization plane by anion class, and each class
     <line x1="430" y1="140" x2="598" y2="140" stroke="#888" stroke-width="0.5"/>
     <line x1="505" y1="40" x2="505" y2="140" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6"/>
     <use href="#kmscloud" x="430" y="40"/>
-    <g fill="#FF680A" opacity="0.65">
+    <g fill="#FF3336" opacity="0.65">
     <circle cx="491" cy="91" r="1.5"/>
     <circle cx="487" cy="102" r="1.5"/>
     <circle cx="476" cy="57" r="1.5"/>
@@ -5872,7 +5872,7 @@ Figure 14 splits the hardness-magnetization plane by anion class, and each class
     <line x1="30" y1="280" x2="198" y2="280" stroke="#888" stroke-width="0.5"/>
     <line x1="105" y1="180" x2="105" y2="280" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6"/>
     <use href="#kmscloud" x="30" y="180"/>
-    <g fill="#FF680A" opacity="0.65">
+    <g fill="#FF3336" opacity="0.65">
     <circle cx="141" cy="241" r="1.5"/>
     <circle cx="96" cy="260" r="1.5"/>
     <circle cx="97" cy="262" r="1.5"/>
@@ -6255,7 +6255,7 @@ Figure 14 splits the hardness-magnetization plane by anion class, and each class
     <line x1="230" y1="280" x2="398" y2="280" stroke="#888" stroke-width="0.5"/>
     <line x1="305" y1="180" x2="305" y2="280" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6"/>
     <use href="#kmscloud" x="230" y="180"/>
-    <g fill="#FF680A" opacity="0.65">
+    <g fill="#FF3336" opacity="0.65">
     <circle cx="308" cy="248" r="1.5"/>
     <circle cx="326" cy="268" r="1.5"/>
     <circle cx="343" cy="271" r="1.5"/>
@@ -6889,7 +6889,7 @@ Figure 14 splits the hardness-magnetization plane by anion class, and each class
     <line x1="430" y1="280" x2="598" y2="280" stroke="#888" stroke-width="0.5"/>
     <line x1="505" y1="180" x2="505" y2="280" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.6"/>
     <use href="#kmscloud" x="430" y="180"/>
-    <g fill="#FF680A" opacity="0.65">
+    <g fill="#FF3336" opacity="0.65">
     <circle cx="525" cy="258" r="1.5"/>
     <circle cx="516" cy="254" r="1.5"/>
     <circle cx="555" cy="264" r="1.5"/>
@@ -7241,7 +7241,7 @@ Figure 15 repeats the analysis with the engineering pair: the peak energy produc
     <circle cx="60" cy="187" r="2"/>
     <circle cx="75" cy="172" r="2"/>
     </g>
-    <g fill="#FF680A" opacity="0.5">
+    <g fill="#FF3336" opacity="0.5">
     <circle cx="60" cy="201" r="2"/>
     <circle cx="61" cy="175" r="2"/>
     <circle cx="77" cy="161" r="2"/>
@@ -7314,15 +7314,15 @@ Figure 15 repeats the analysis with the engineering pair: the peak energy produc
     <circle cx="60" cy="175" r="2"/>
     <circle cx="62" cy="170" r="2"/>
     </g>
-    <circle cx="234" cy="50" r="2.5" fill="#FF680A"/>
+    <circle cx="234" cy="50" r="2.5" fill="#FF3336"/>
     <text x="242" y="53" font-size="9" fill="#1f2937">precious-free</text>
     <circle cx="234" cy="64" r="2.5" fill="#1f2937"/>
     <text x="242" y="67" font-size="9" fill="#1f2937">precious-containing</text>
     <text x="94" y="48" font-size="9.5" font-style="italic" fill="#1f2937">Fe₃Pt</text>
     <text x="410" y="123" font-size="9.5" font-style="italic" fill="#1f2937">FePt</text>
     <text x="540" y="144" font-size="9.5" text-anchor="end" font-style="italic" fill="#1f2937">Co₃Ir</text>
-    <text x="334" y="162" font-size="9.5" font-style="italic" fill="#FF680A">Mn₂SbTe</text>
-    <text x="68" y="110" font-size="9.5" font-style="italic" fill="#FF680A">Fe₁₅MnB₈</text>
+    <text x="334" y="162" font-size="9.5" font-style="italic" fill="#FF3336">Mn₂SbTe</text>
+    <text x="68" y="110" font-size="9.5" font-style="italic" fill="#FF3336">Fe₁₅MnB₈</text>
     <text x="586" y="75" font-size="9.5" text-anchor="end" font-style="italic" fill="#888">open: ceiling and robustness together</text>
   </svg>
   <figcaption><strong>Figure 15.</strong> The engineering trade for the 641 gate-passing compounds: peak energy product against robustness. High ceilings occur at near-zero robustness (the borides, upper left) and usable robustness at moderate ceilings (Mn₂SbTe); only precious-metal compounds approach the open corner. Fe₃Pt's 706 kJ/m³ ceiling comes with Invar caveats (Section 5.1), which leaves FePt as the appropriate reference point.</figcaption>
@@ -7346,7 +7346,7 @@ Screening-scale settings trade accuracy for throughput, and the calibration tier
     <text x="62" y="67" text-anchor="end" font-size="9" fill="#888">10</text>
     <text x="320" y="248" text-anchor="middle" font-size="10" fill="#444" font-style="italic">κ at production settings (log)</text>
     <text x="30" y="122" text-anchor="middle" font-size="10" fill="#444" font-style="italic" transform="rotate(-90 30 122)">κ at high-accuracy settings</text>
-    <g fill="#FF680A" opacity="0.6">
+    <g fill="#FF3336" opacity="0.6">
     <circle cx="293" cy="110" r="2.2"/>
     <circle cx="302" cy="121" r="2.2"/>
     <circle cx="310" cy="126" r="2.2"/>
@@ -7637,7 +7637,7 @@ Screening-scale settings trade accuracy for throughput, and the calibration tier
     <circle cx="384" cy="101" r="2.2"/>
     <circle cx="468" cy="90" r="2.2"/>
     </g>
-    <circle cx="420" cy="188" r="2.5" fill="#FF680A" opacity="0.7"/>
+    <circle cx="420" cy="188" r="2.5" fill="#FF3336" opacity="0.7"/>
     <text x="428" y="191" font-size="9" fill="#1f2937">easy-axis class unchanged</text>
     <circle cx="420" cy="202" r="2.5" fill="#1f2937" opacity="0.8"/>
     <text x="428" y="205" font-size="9" fill="#1f2937">axis↔plane changed</text>
@@ -7668,39 +7668,39 @@ Screening-scale settings trade accuracy for throughput, and the calibration tier
     <text x="62" y="125" font-size="9" font-weight="500" text-anchor="end" fill="#1f2937">1.0</text>
     <text x="588" y="115" font-size="9" font-style="italic" text-anchor="end" fill="#1f2937">no change</text>
     <text x="28" y="112" font-size="10" font-style="italic" fill="#444" text-anchor="middle" transform="rotate(-90 28 112)">κ ratio, refined / production (log)</text>
-    <line x1="125" y1="41" x2="125" y2="156" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="118" y1="156" x2="132" y2="156" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="118" y1="41" x2="132" y2="41" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <rect x="102" y="108" width="46" height="16" fill="#FF680A" opacity="0.22" stroke="#FF680A" stroke-width="1"/>
-    <line x1="102" y1="122" x2="148" y2="122" stroke="#FF680A" stroke-width="3"/>
+    <line x1="125" y1="41" x2="125" y2="156" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="118" y1="156" x2="132" y2="156" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="118" y1="41" x2="132" y2="41" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <rect x="102" y="108" width="46" height="16" fill="#FF3336" opacity="0.22" stroke="#FF3336" stroke-width="1"/>
+    <line x1="102" y1="122" x2="148" y2="122" stroke="#FF3336" stroke-width="3"/>
     <text x="125" y="207" font-size="11" text-anchor="middle" fill="#1f2937">κ &lt; 0.8</text>
     <text x="125" y="220" font-size="8.5" text-anchor="middle" fill="#888">n = 88</text>
-    <line x1="225" y1="96" x2="225" y2="175" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="218" y1="175" x2="232" y2="175" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="218" y1="96" x2="232" y2="96" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <rect x="202" y="118" width="46" height="10" fill="#FF680A" opacity="0.22" stroke="#FF680A" stroke-width="1"/>
-    <line x1="202" y1="123" x2="248" y2="123" stroke="#FF680A" stroke-width="3"/>
+    <line x1="225" y1="96" x2="225" y2="175" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="218" y1="175" x2="232" y2="175" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="218" y1="96" x2="232" y2="96" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <rect x="202" y="118" width="46" height="10" fill="#FF3336" opacity="0.22" stroke="#FF3336" stroke-width="1"/>
+    <line x1="202" y1="123" x2="248" y2="123" stroke="#FF3336" stroke-width="3"/>
     <text x="225" y="207" font-size="11" text-anchor="middle" fill="#1f2937">0.8–1.2</text>
     <text x="225" y="220" font-size="8.5" text-anchor="middle" fill="#888">n = 51</text>
-    <line x1="325" y1="97" x2="325" y2="174" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="318" y1="174" x2="332" y2="174" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="318" y1="97" x2="332" y2="97" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <rect x="302" y="113" width="46" height="19" fill="#FF680A" opacity="0.22" stroke="#FF680A" stroke-width="1"/>
-    <line x1="302" y1="123" x2="348" y2="123" stroke="#FF680A" stroke-width="3"/>
+    <line x1="325" y1="97" x2="325" y2="174" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="318" y1="174" x2="332" y2="174" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="318" y1="97" x2="332" y2="97" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <rect x="302" y="113" width="46" height="19" fill="#FF3336" opacity="0.22" stroke="#FF3336" stroke-width="1"/>
+    <line x1="302" y1="123" x2="348" y2="123" stroke="#FF3336" stroke-width="3"/>
     <text x="325" y="207" font-size="11" text-anchor="middle" fill="#1f2937">1.2–2</text>
     <text x="325" y="220" font-size="8.5" text-anchor="middle" fill="#888">n = 50</text>
-    <line x1="425" y1="109" x2="425" y2="180" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="418" y1="180" x2="432" y2="180" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="418" y1="109" x2="432" y2="109" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <rect x="402" y="121" width="46" height="19" fill="#FF680A" opacity="0.22" stroke="#FF680A" stroke-width="1"/>
-    <line x1="402" y1="124" x2="448" y2="124" stroke="#FF680A" stroke-width="3"/>
+    <line x1="425" y1="109" x2="425" y2="180" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="418" y1="180" x2="432" y2="180" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="418" y1="109" x2="432" y2="109" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <rect x="402" y="121" width="46" height="19" fill="#FF3336" opacity="0.22" stroke="#FF3336" stroke-width="1"/>
+    <line x1="402" y1="124" x2="448" y2="124" stroke="#FF3336" stroke-width="3"/>
     <text x="425" y="207" font-size="11" text-anchor="middle" fill="#1f2937">2–4</text>
     <text x="425" y="220" font-size="8.5" text-anchor="middle" fill="#888">n = 48</text>
-    <line x1="525" y1="108" x2="525" y2="184" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="518" y1="184" x2="532" y2="184" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <line x1="518" y1="108" x2="532" y2="108" stroke="#FF680A" stroke-width="1" opacity="0.7"/>
-    <rect x="502" y="121" width="46" height="13" fill="#FF680A" opacity="0.22" stroke="#FF680A" stroke-width="1"/>
-    <line x1="502" y1="124" x2="548" y2="124" stroke="#FF680A" stroke-width="3"/>
+    <line x1="525" y1="108" x2="525" y2="184" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="518" y1="184" x2="532" y2="184" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <line x1="518" y1="108" x2="532" y2="108" stroke="#FF3336" stroke-width="1" opacity="0.7"/>
+    <rect x="502" y="121" width="46" height="13" fill="#FF3336" opacity="0.22" stroke="#FF3336" stroke-width="1"/>
+    <line x1="502" y1="124" x2="548" y2="124" stroke="#FF3336" stroke-width="3"/>
     <text x="525" y="207" font-size="11" text-anchor="middle" fill="#1f2937">&gt; 4</text>
     <text x="525" y="220" font-size="8.5" text-anchor="middle" fill="#888">n = 50</text>
     <text x="330" y="241" font-size="10.5" text-anchor="middle" fill="#888">per κ band: median line, IQR box, 5–95% whiskers, log scale</text>
