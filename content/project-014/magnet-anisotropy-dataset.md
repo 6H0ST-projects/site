@@ -14,57 +14,7 @@ sidebarText: "If I could give one piece of advice to new researchers, it would b
 
 Magnetocrystalline anisotropy is central to permanent magnet performance, yet this value is one of the scarcest labels in public materials science datasets. Computing the anisotropy constant \(K_1\) requires relativistic density functional theory that costs orders of magnitude more than a standard relaxation. We built a screening dataset of 3,573 uniaxial rare-earth-free crystals, 2,242 of them carrying a computed anisotropy label, each with a relaxed structure, stability, a Curie estimate, and a quantified per-label error model.
 
-<figure>
-  <svg id="gpsk-anim-pipeline" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <circle class="pl-dot" cx="10" cy="87" r="3" fill="#FF0860" opacity="0"/>
-    <g class="pl-node">
-      <rect x="8" y="58" width="96" height="58" fill="#000" fill-opacity="0.03" stroke="#888" stroke-width="0.8"/>
-      <text x="56.0" y="82" text-anchor="middle" font-size="11" font-weight="500" fill="#111">relax</text>
-      <text x="56.0" y="98" text-anchor="middle" font-size="8.5" fill="#777">Orb-v3 MLIP</text>
-    </g>
-    <g class="pl-arrow-g">
-      <line class="pl-arrow" x1="104" y1="87" x2="126" y2="87" stroke="#888" stroke-width="1"/>
-      <path class="pl-head" d="M 126 83.5 L 132 87 L 126 90.5 Z" fill="#888"/>
-    </g>
-    <g class="pl-node">
-      <rect x="134" y="58" width="108" height="58" fill="#000" fill-opacity="0.03" stroke="#888" stroke-width="0.8"/>
-      <text x="188.0" y="82" text-anchor="middle" font-size="11" font-weight="500" fill="#111">gates</text>
-      <text x="188.0" y="98" text-anchor="middle" font-size="8.5" fill="#777">uniaxial &#183; stable &#183; magnetic</text>
-    </g>
-    <g class="pl-arrow-g">
-      <line class="pl-arrow" x1="242" y1="87" x2="264" y2="87" stroke="#888" stroke-width="1"/>
-      <path class="pl-head" d="M 264 83.5 L 270 87 L 264 90.5 Z" fill="#888"/>
-    </g>
-    <g class="pl-node">
-      <rect x="272" y="58" width="100" height="58" fill="#000" fill-opacity="0.03" stroke="#888" stroke-width="0.8"/>
-      <text x="322.0" y="82" text-anchor="middle" font-size="11" font-weight="500" fill="#111">anisotropy DFT</text>
-      <text x="322.0" y="98" text-anchor="middle" font-size="8.5" fill="#777">ABACUS + TB2J</text>
-    </g>
-    <g class="pl-arrow-g">
-      <line class="pl-arrow" x1="372" y1="87" x2="394" y2="87" stroke="#888" stroke-width="1"/>
-      <path class="pl-head" d="M 394 83.5 L 400 87 L 394 90.5 Z" fill="#888"/>
-    </g>
-    <g class="pl-node">
-      <rect x="402" y="58" width="92" height="58" fill="#000" fill-opacity="0.03" stroke="#888" stroke-width="0.8"/>
-      <text x="448.0" y="82" text-anchor="middle" font-size="11" font-weight="500" fill="#111">microstructure</text>
-      <text x="448.0" y="98" text-anchor="middle" font-size="8.5" fill="#777">2,000-point sweep</text>
-    </g>
-    <g class="pl-arrow-g">
-      <line class="pl-arrow" x1="494" y1="87" x2="516" y2="87" stroke="#888" stroke-width="1"/>
-      <path class="pl-head" d="M 516 83.5 L 522 87 L 516 90.5 Z" fill="#888"/>
-    </g>
-    <g class="pl-node">
-      <rect x="524" y="60" width="64" height="54" fill="none" stroke="#888" stroke-width="0.8"/>
-      <line x1="556" y1="104" x2="556" y2="74" stroke="#FF0860" stroke-width="1.6"/>
-      <path d="M 552 78 L 556 70 L 560 78 Z" fill="#FF0860"/>
-      <text x="533" y="98" font-size="8" font-style="italic" fill="#555">easy</text>
-      <text x="533" y="107" font-size="8" font-style="italic" fill="#555">axis</text>
-      <text x="556" y="132" text-anchor="middle" font-size="8.5" fill="#777">K&#8321; &#183; M&#8347; &#183; &#954; &#183; axis</text>
-    </g>
-  </svg>
-</figure>
-
-### The labels
+### Labels
 
 Each labeled row carries \(K_1\), the saturation magnetization \(M_s\), the easy-axis direction, and the dimensionless hardness
 
@@ -72,7 +22,7 @@ $$\kappa \;=\; \sqrt{K_1 / \mu_0 M_s^2}$$
 
 \(\kappa > 1\) is the commonly accepted bar for a permanent magnet. The anisotropy stage runs TB2J magnetic-interaction extraction over ABACUS density-functional calculations with fully relativistic pseudopotentials, at a 0.16 Å⁻¹ k-spacing and 65 Ry cutoff. The pseudopotential set contains no lanthanides, so rare-earth compounds are absent by construction.
 
-### The error model
+### Error model
 
 Screening settings trade accuracy for throughput, and we measured exactly how much. A stratified 287-compound subset was recomputed at tightened settings (0.10 Å⁻¹ and 80 Ry, six to ten times the runtime per compound), and comparing the two values per compound separates the error into a bias and a scatter. The bias is small and shipped as a correction with per-band medians of 0 to 4%, applied in the `kappa_corrected` column. The scatter is not small with an interquartile range of roughly ±16% in the magnet-relevant bands, and only 48% of labels within ±10% of their high-accuracy value.
 
@@ -112,7 +62,7 @@ Screening settings trade accuracy for throughput, and we measured exactly how mu
 
 Models trained on this data should not be expected to regress \(\kappa\) better than roughly ±15 to 20%. Below that, a validation score measures label noise, not model skill.
 
-### The landscape
+### Landscape
 
 Every reliable label on the hardness-magnetization plane, filterable by anion class:
 
