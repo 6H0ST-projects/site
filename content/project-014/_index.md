@@ -13,7 +13,7 @@ Project 14 aims to create novel modeling methods for discovering the next genera
 
 GPSK-300 is our answer for the L1₀ tetragonal magnet family (FePt, CoPt, FeNi, FePd, MnAl, MnGa, MnAlC) and the hexagonal rare-earth–transition-metal magnets (SmCo₅, YCo₅, CeCo₅). A 304M-parameter multimodal diffusion transformer that generates crystals in reciprocal space, with a fully invertible 3-channel representation that decodes directly into a pymatgen `Structure`, with no auxiliary lattice regressor, element classifier, or MLIP volume scan.
 
-The full write-up (methods, math, evaluation, failure modes):
+The visual white paper (representation, closed-form decode, recovery results):
 
 → [**GPSK-300: A Reciprocal-Space Diffusion Model for L1₀ Magnet Structure Prediction**](/project-014/gpsk-300/)
 

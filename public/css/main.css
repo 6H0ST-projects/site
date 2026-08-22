@@ -81,7 +81,7 @@ main {
 }
 
 .project-card.about-us {
-  background-color: #FF680A;
+  background-color: #FF3336;
   color: #fff;
 }
 
@@ -394,7 +394,7 @@ body.project-014 {
 }
 
 body.about-us {
-  background-color: #FF680A !important;
+  background-color: #FF3336 !important;
   color: #fff !important;
 }
 
@@ -490,7 +490,7 @@ body.blog-page {
 }
 
 .page-link-preview.about-us {
-  background-color: #FF680A;
+  background-color: #FF3336;
   color: #fff;
 }
 
@@ -710,3 +710,131 @@ body.blog-page {
 /* gallery strips stack seamlessly into one centered figure (screen + print) */
 .project-description figure img.gal-part { max-width: 600px; margin: 0 auto; }
 
+
+/* ---------- GPSK-300 visual white paper ---------- */
+.gpsk-300 .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.4rem;
+  row-gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+.gpsk-300 .stat {
+  border-top: 1px solid rgba(0, 0, 0, 0.55);
+  padding-top: 0.55rem;
+}
+.gpsk-300 .stat-num {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.gpsk-300 .stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.4;
+  opacity: 0.68;
+  margin-top: 0.3rem;
+}
+@media (max-width: 640px) {
+  .gpsk-300 .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.gpsk-300 .wp-footnote {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.65;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  padding-top: 1rem;
+  margin-top: 3rem;
+}
+
+/* GPSK-300 interactive results explorer */
+.gpsk-300 .rx { margin: 2.25rem 0; }
+.gpsk-300 .rx-filters {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding-bottom: 0.75rem; margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+.gpsk-300 .rx-f {
+  font: inherit; font-size: 0.7rem; letter-spacing: 0.02em; font-weight: 400;
+  background: none; border: 1px solid rgba(0, 0, 0, 0.35); border-radius: 0;
+  padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
+}
+.gpsk-300 .rx-f.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
+.gpsk-300 .rx-chips { display: flex; flex-wrap: wrap; gap: 0.32rem; margin-bottom: 1rem; }
+.gpsk-300 .rx-chip {
+  font: inherit; font-size: 0.73rem; font-weight: 300; background: none;
+  border: 1px solid rgba(0, 0, 0, 0.22); padding: 0.2rem 0.5rem; cursor: pointer; color: inherit;
+}
+.gpsk-300 .rx-chip:hover { border-color: #000; }
+.gpsk-300 .rx-chip.is-active { border-color: #FF3336; color: #FF3336; }
+.gpsk-300 .rx-detail {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.22); padding: 1rem;
+}
+.gpsk-300 .rx-img { width: 100%; height: auto; display: block; }
+.gpsk-300 .rx-name { font-weight: 600; font-size: 1.02rem; margin: 0 0 0.05rem; }
+.gpsk-300 .rx-meta { font-size: 0.75rem; opacity: 0.62; margin: 0 0 0.65rem; }
+.gpsk-300 .rx-bar { height: 8px; background: rgba(0, 0, 0, 0.1); margin-bottom: 0.3rem; }
+.gpsk-300 .rx-fill { height: 100%; background: #FF3336; width: 0; }
+.gpsk-300 .rx-rate { font-size: 0.72rem; opacity: 0.72; margin: 0 0 0.6rem; font-variant-numeric: tabular-nums; }
+.gpsk-300 .rx-note { font-size: 0.79rem; font-weight: 300; line-height: 1.5; margin: 0; }
+.gpsk-300 .rx-hint { font-size: 0.71rem; font-style: italic; opacity: 0.55; margin: 0.5rem 0 0; }
+@media (max-width: 560px) { .gpsk-300 .rx-detail { grid-template-columns: 1fr; } }
+
+/* GPSK-300 conditioning sliders */
+.gpsk-300 .cond-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 0.7rem 0 0.3rem; }
+.gpsk-300 .cond-controls label { font-size: 0.73rem; font-weight: 300; display: block; text-align: center; }
+.gpsk-300 .cond-controls output { font-variant-numeric: tabular-nums; font-weight: 500; }
+.gpsk-300 .cond-controls input[type="range"] { width: 82%; display: block; margin: 0.45rem auto 0; }
+@media (max-width: 560px) { .gpsk-300 .cond-controls { grid-template-columns: 1fr; } }
+
+/* GPSK-300 conditioning interactives */
+.gpsk-300 .emerge-controls { margin: 0.7rem 0 0.3rem; }
+.gpsk-300 .emerge-controls label { font-size: 0.73rem; font-weight: 300; display: block; max-width: 24rem; margin: 0 auto; text-align: center; }
+.gpsk-300 .emerge-controls output { font-variant-numeric: tabular-nums; font-weight: 500; }
+.gpsk-300 .emerge-controls input[type="range"] { width: 100%; display: block; margin-top: 0.45rem; }
+
+/* squared slider handles on a thin track */
+.gpsk-300 input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+.gpsk-300 input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.gpsk-300 input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -5px;
+  background: #FF3336;
+  border: none;
+  border-radius: 0;
+}
+.gpsk-300 input[type="range"]::-moz-range-track {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.gpsk-300 input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #FF3336;
+  border: none;
+  border-radius: 0;
+}
+.gpsk-300 .sys-controls { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.gpsk-300 .sys-btn {
+  font: inherit; font-size: 0.7rem; letter-spacing: 0.02em; font-weight: 400;
+  background: none; border: 1px solid rgba(0, 0, 0, 0.35); border-radius: 0;
+  padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
+}
+.gpsk-300 .sys-btn.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
