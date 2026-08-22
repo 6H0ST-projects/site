@@ -15,7 +15,7 @@ GPSK-300 is a 3-channel, 302M-parameter diffusion transformer that learns the re
 
 <figure>
   <svg id="gpsk-anim-pipeline" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit;">
-    <circle class="pl-dot" cx="10" cy="87" r="3" fill="#FF3336" opacity="0"/>
+    <circle class="pl-dot" cx="10" cy="87" r="3" fill="#FF0860" opacity="0"/>
     <g class="pl-node">
       <rect x="8" y="58" width="96" height="58" fill="#000" fill-opacity="0.03" stroke="#888" stroke-width="0.8"/>
       <text x="56.0" y="82" text-anchor="middle" font-size="11" font-weight="500" fill="#111">prompt</text>
@@ -54,8 +54,8 @@ GPSK-300 is a 3-channel, 302M-parameter diffusion transformer that learns the re
     </g>
     <g class="pl-node">
       <rect x="524" y="60" width="64" height="54" fill="none" stroke="#888" stroke-width="0.8"/>
-      <circle cx="524" cy="60" r="5" fill="#FF3336"/><circle cx="588" cy="60" r="5" fill="#FF3336"/>
-      <circle cx="524" cy="114" r="5" fill="#FF3336"/><circle cx="588" cy="114" r="5" fill="#FF3336"/>
+      <circle cx="524" cy="60" r="5" fill="#FF0860"/><circle cx="588" cy="60" r="5" fill="#FF0860"/>
+      <circle cx="524" cy="114" r="5" fill="#FF0860"/><circle cx="588" cy="114" r="5" fill="#FF0860"/>
       <circle cx="556" cy="87" r="4.5" fill="#1f2937"/>
       <text x="556" y="132" text-anchor="middle" font-size="8.5" fill="#777">crystal</text>
     </g>
@@ -130,36 +130,36 @@ The first two channels are the complex structure factor. Atom species is determi
       <circle class="ch-peak" cx="160" cy="188" r="2.0" fill="#1f2937" opacity="0.38"/>
     </g>
     <g>
-      <circle class="ch-peak" cx="240" cy="68" r="2.5" fill="#FF3336" opacity="0.51"/>
-      <circle class="ch-peak" cx="240" cy="108" r="2.3" fill="#FF3336" opacity="0.51"/>
-      <circle class="ch-peak" cx="240" cy="168" r="2.0" fill="#FF3336" opacity="0.47"/>
-      <circle class="ch-peak" cx="260" cy="88" r="2.4" fill="#FF3336" opacity="0.53"/>
-      <circle class="ch-peak" cx="260" cy="108" r="2.5" fill="#FF3336" opacity="0.52"/>
-      <circle class="ch-peak" cx="260" cy="128" r="2.8" fill="#FF3336" opacity="0.64"/>
-      <circle class="ch-peak" cx="260" cy="148" r="3.0" fill="#FF3336" opacity="0.57"/>
-      <circle class="ch-peak" cx="260" cy="168" r="2.3" fill="#FF3336" opacity="0.54"/>
-      <circle class="ch-peak" cx="260" cy="188" r="2.1" fill="#FF3336" opacity="0.41"/>
-      <circle class="ch-peak" cx="280" cy="68" r="2.5" fill="#FF3336" opacity="0.52"/>
-      <circle class="ch-peak" cx="280" cy="88" r="2.8" fill="#FF3336" opacity="0.54"/>
-      <circle class="ch-peak" cx="280" cy="148" r="2.8" fill="#FF3336" opacity="0.65"/>
-      <circle class="ch-peak" cx="300" cy="88" r="3.0" fill="#FF3336" opacity="0.59"/>
-      <circle class="ch-peak" cx="300" cy="128" r="4.2" fill="#FF3336" opacity="0.90"/>
-      <circle class="ch-peak" cx="300" cy="188" r="2.4" fill="#FF3336" opacity="0.48"/>
-      <circle class="ch-peak" cx="320" cy="88" r="2.8" fill="#FF3336" opacity="0.64"/>
-      <circle class="ch-peak" cx="320" cy="128" r="3.7" fill="#FF3336" opacity="0.81"/>
-      <circle class="ch-peak" cx="320" cy="148" r="2.8" fill="#FF3336" opacity="0.78"/>
-      <circle class="ch-peak" cx="340" cy="88" r="2.6" fill="#FF3336" opacity="0.61"/>
-      <circle class="ch-peak" cx="340" cy="108" r="3.0" fill="#FF3336" opacity="0.59"/>
-      <circle class="ch-peak" cx="340" cy="128" r="2.9" fill="#FF3336" opacity="0.59"/>
-      <circle class="ch-peak" cx="340" cy="148" r="2.5" fill="#FF3336" opacity="0.54"/>
-      <circle class="ch-peak" cx="340" cy="188" r="2.0" fill="#FF3336" opacity="0.55"/>
-      <circle class="ch-peak" cx="360" cy="68" r="1.9" fill="#FF3336" opacity="0.38"/>
-      <circle class="ch-peak" cx="360" cy="88" r="2.0" fill="#FF3336" opacity="0.49"/>
-      <circle class="ch-peak" cx="360" cy="108" r="2.2" fill="#FF3336" opacity="0.49"/>
-      <circle class="ch-peak" cx="360" cy="128" r="2.4" fill="#FF3336" opacity="0.49"/>
-      <circle class="ch-peak" cx="360" cy="148" r="2.6" fill="#FF3336" opacity="0.57"/>
-      <circle class="ch-peak" cx="360" cy="168" r="2.2" fill="#FF3336" opacity="0.51"/>
-      <circle class="ch-peak" cx="360" cy="188" r="2.3" fill="#FF3336" opacity="0.41"/>
+      <circle class="ch-peak" cx="240" cy="68" r="2.5" fill="#FF0860" opacity="0.51"/>
+      <circle class="ch-peak" cx="240" cy="108" r="2.3" fill="#FF0860" opacity="0.51"/>
+      <circle class="ch-peak" cx="240" cy="168" r="2.0" fill="#FF0860" opacity="0.47"/>
+      <circle class="ch-peak" cx="260" cy="88" r="2.4" fill="#FF0860" opacity="0.53"/>
+      <circle class="ch-peak" cx="260" cy="108" r="2.5" fill="#FF0860" opacity="0.52"/>
+      <circle class="ch-peak" cx="260" cy="128" r="2.8" fill="#FF0860" opacity="0.64"/>
+      <circle class="ch-peak" cx="260" cy="148" r="3.0" fill="#FF0860" opacity="0.57"/>
+      <circle class="ch-peak" cx="260" cy="168" r="2.3" fill="#FF0860" opacity="0.54"/>
+      <circle class="ch-peak" cx="260" cy="188" r="2.1" fill="#FF0860" opacity="0.41"/>
+      <circle class="ch-peak" cx="280" cy="68" r="2.5" fill="#FF0860" opacity="0.52"/>
+      <circle class="ch-peak" cx="280" cy="88" r="2.8" fill="#FF0860" opacity="0.54"/>
+      <circle class="ch-peak" cx="280" cy="148" r="2.8" fill="#FF0860" opacity="0.65"/>
+      <circle class="ch-peak" cx="300" cy="88" r="3.0" fill="#FF0860" opacity="0.59"/>
+      <circle class="ch-peak" cx="300" cy="128" r="4.2" fill="#FF0860" opacity="0.90"/>
+      <circle class="ch-peak" cx="300" cy="188" r="2.4" fill="#FF0860" opacity="0.48"/>
+      <circle class="ch-peak" cx="320" cy="88" r="2.8" fill="#FF0860" opacity="0.64"/>
+      <circle class="ch-peak" cx="320" cy="128" r="3.7" fill="#FF0860" opacity="0.81"/>
+      <circle class="ch-peak" cx="320" cy="148" r="2.8" fill="#FF0860" opacity="0.78"/>
+      <circle class="ch-peak" cx="340" cy="88" r="2.6" fill="#FF0860" opacity="0.61"/>
+      <circle class="ch-peak" cx="340" cy="108" r="3.0" fill="#FF0860" opacity="0.59"/>
+      <circle class="ch-peak" cx="340" cy="128" r="2.9" fill="#FF0860" opacity="0.59"/>
+      <circle class="ch-peak" cx="340" cy="148" r="2.5" fill="#FF0860" opacity="0.54"/>
+      <circle class="ch-peak" cx="340" cy="188" r="2.0" fill="#FF0860" opacity="0.55"/>
+      <circle class="ch-peak" cx="360" cy="68" r="1.9" fill="#FF0860" opacity="0.38"/>
+      <circle class="ch-peak" cx="360" cy="88" r="2.0" fill="#FF0860" opacity="0.49"/>
+      <circle class="ch-peak" cx="360" cy="108" r="2.2" fill="#FF0860" opacity="0.49"/>
+      <circle class="ch-peak" cx="360" cy="128" r="2.4" fill="#FF0860" opacity="0.49"/>
+      <circle class="ch-peak" cx="360" cy="148" r="2.6" fill="#FF0860" opacity="0.57"/>
+      <circle class="ch-peak" cx="360" cy="168" r="2.2" fill="#FF0860" opacity="0.51"/>
+      <circle class="ch-peak" cx="360" cy="188" r="2.3" fill="#FF0860" opacity="0.41"/>
     </g>
     <g>
       <circle class="ch-ring" cx="500" cy="128" r="12" fill="none" stroke="#1f2937" stroke-width="1.6" opacity="0.78"/>
@@ -254,63 +254,63 @@ Our model learns a rectified-flow velocity field over a latent space created by 
     <circle class="dn-sig" cx="129" cy="144.0" r="2.8" fill="#1f2937" opacity="0.61"/>
     <text x="85" y="177" text-anchor="middle" font-size="9.5" font-style="italic" fill="#222">Im F(h)</text>
     <rect x="15" y="185" width="140" height="120" fill="#000" fill-opacity="0.025" stroke="#bbb" stroke-width="0.5"/>
-    <circle class="dn-noise" cx="121.4" cy="237.5" r="0.8" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="89.9" cy="212.6" r="1.6" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="56.4" cy="229.1" r="1.6" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="124.6" cy="294.4" r="1.4" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="23.9" cy="271.0" r="1.3" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="116.9" cy="279.4" r="0.8" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="113.6" cy="222.6" r="1.2" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="64.4" cy="249.0" r="1.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="84.3" cy="222.5" r="0.9" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="54.0" cy="263.8" r="1.2" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="47.8" cy="231.0" r="1.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="145.1" cy="274.9" r="1.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="59.4" cy="238.3" r="1.6" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="71.2" cy="247.4" r="2.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="42.1" cy="251.2" r="1.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="89.3" cy="226.0" r="2.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="132.2" cy="292.5" r="1.4" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="99.5" cy="210.5" r="1.9" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="119.5" cy="237.4" r="1.2" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="117.0" cy="271.0" r="2.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="58.8" cy="218.2" r="1.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="46.7" cy="193.7" r="0.9" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="84.1" cy="237.8" r="2.2" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="69.9" cy="210.7" r="2.3" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="32.0" cy="228.3" r="2.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="62.8" cy="293.3" r="2.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="61.2" cy="282.8" r="2.3" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="86.7" cy="207.9" r="0.9" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="124.4" cy="285.3" r="1.8" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="119.0" cy="275.5" r="1.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="49.4" cy="283.2" r="2.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="77.1" cy="221.1" r="0.8" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="73.1" cy="287.5" r="1.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="62.2" cy="196.7" r="1.7" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="30.5" cy="263.2" r="1.5" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="75.5" cy="220.0" r="1.2" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="133.7" cy="290.8" r="2.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="49.4" cy="214.6" r="1.3" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="131.6" cy="291.1" r="1.1" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="101.5" cy="232.5" r="1.5" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="47.5" cy="268.0" r="2.0" fill="#FF3336" opacity="0"/>
-    <circle class="dn-noise" cx="139.5" cy="243.4" r="1.5" fill="#FF3336" opacity="0"/>
-    <circle class="dn-sig" cx="41" cy="201.0" r="2.4" fill="#FF3336" opacity="0.61"/>
-    <circle class="dn-sig" cx="41" cy="223.0" r="2.7" fill="#FF3336" opacity="0.59"/>
-    <circle class="dn-sig" cx="41" cy="245.0" r="3.2" fill="#FF3336" opacity="0.66"/>
-    <circle class="dn-sig" cx="41" cy="289.0" r="3.0" fill="#FF3336" opacity="0.61"/>
-    <circle class="dn-sig" cx="63" cy="201.0" r="2.9" fill="#FF3336" opacity="0.59"/>
-    <circle class="dn-sig" cx="63" cy="223.0" r="3.3" fill="#FF3336" opacity="0.79"/>
-    <circle class="dn-sig" cx="63" cy="289.0" r="2.7" fill="#FF3336" opacity="0.57"/>
-    <circle class="dn-sig" cx="85" cy="267.0" r="3.4" fill="#FF3336" opacity="0.77"/>
-    <circle class="dn-sig" cx="85" cy="289.0" r="2.8" fill="#FF3336" opacity="0.61"/>
-    <circle class="dn-sig" cx="107" cy="245.0" r="3.8" fill="#FF3336" opacity="0.73"/>
-    <circle class="dn-sig" cx="107" cy="267.0" r="3.3" fill="#FF3336" opacity="0.78"/>
-    <circle class="dn-sig" cx="107" cy="289.0" r="2.7" fill="#FF3336" opacity="0.63"/>
-    <circle class="dn-sig" cx="129" cy="201.0" r="3.0" fill="#FF3336" opacity="0.60"/>
-    <circle class="dn-sig" cx="129" cy="267.0" r="2.8" fill="#FF3336" opacity="0.65"/>
-    <circle class="dn-sig" cx="129" cy="289.0" r="3.0" fill="#FF3336" opacity="0.48"/>
+    <circle class="dn-noise" cx="121.4" cy="237.5" r="0.8" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="89.9" cy="212.6" r="1.6" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="56.4" cy="229.1" r="1.6" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="124.6" cy="294.4" r="1.4" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="23.9" cy="271.0" r="1.3" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="116.9" cy="279.4" r="0.8" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="113.6" cy="222.6" r="1.2" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="64.4" cy="249.0" r="1.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="84.3" cy="222.5" r="0.9" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="54.0" cy="263.8" r="1.2" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="47.8" cy="231.0" r="1.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="145.1" cy="274.9" r="1.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="59.4" cy="238.3" r="1.6" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="71.2" cy="247.4" r="2.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="42.1" cy="251.2" r="1.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="89.3" cy="226.0" r="2.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="132.2" cy="292.5" r="1.4" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="99.5" cy="210.5" r="1.9" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="119.5" cy="237.4" r="1.2" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="117.0" cy="271.0" r="2.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="58.8" cy="218.2" r="1.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="46.7" cy="193.7" r="0.9" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="84.1" cy="237.8" r="2.2" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="69.9" cy="210.7" r="2.3" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="32.0" cy="228.3" r="2.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="62.8" cy="293.3" r="2.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="61.2" cy="282.8" r="2.3" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="86.7" cy="207.9" r="0.9" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="124.4" cy="285.3" r="1.8" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="119.0" cy="275.5" r="1.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="49.4" cy="283.2" r="2.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="77.1" cy="221.1" r="0.8" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="73.1" cy="287.5" r="1.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="62.2" cy="196.7" r="1.7" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="30.5" cy="263.2" r="1.5" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="75.5" cy="220.0" r="1.2" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="133.7" cy="290.8" r="2.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="49.4" cy="214.6" r="1.3" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="131.6" cy="291.1" r="1.1" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="101.5" cy="232.5" r="1.5" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="47.5" cy="268.0" r="2.0" fill="#FF0860" opacity="0"/>
+    <circle class="dn-noise" cx="139.5" cy="243.4" r="1.5" fill="#FF0860" opacity="0"/>
+    <circle class="dn-sig" cx="41" cy="201.0" r="2.4" fill="#FF0860" opacity="0.61"/>
+    <circle class="dn-sig" cx="41" cy="223.0" r="2.7" fill="#FF0860" opacity="0.59"/>
+    <circle class="dn-sig" cx="41" cy="245.0" r="3.2" fill="#FF0860" opacity="0.66"/>
+    <circle class="dn-sig" cx="41" cy="289.0" r="3.0" fill="#FF0860" opacity="0.61"/>
+    <circle class="dn-sig" cx="63" cy="201.0" r="2.9" fill="#FF0860" opacity="0.59"/>
+    <circle class="dn-sig" cx="63" cy="223.0" r="3.3" fill="#FF0860" opacity="0.79"/>
+    <circle class="dn-sig" cx="63" cy="289.0" r="2.7" fill="#FF0860" opacity="0.57"/>
+    <circle class="dn-sig" cx="85" cy="267.0" r="3.4" fill="#FF0860" opacity="0.77"/>
+    <circle class="dn-sig" cx="85" cy="289.0" r="2.8" fill="#FF0860" opacity="0.61"/>
+    <circle class="dn-sig" cx="107" cy="245.0" r="3.8" fill="#FF0860" opacity="0.73"/>
+    <circle class="dn-sig" cx="107" cy="267.0" r="3.3" fill="#FF0860" opacity="0.78"/>
+    <circle class="dn-sig" cx="107" cy="289.0" r="2.7" fill="#FF0860" opacity="0.63"/>
+    <circle class="dn-sig" cx="129" cy="201.0" r="3.0" fill="#FF0860" opacity="0.60"/>
+    <circle class="dn-sig" cx="129" cy="267.0" r="2.8" fill="#FF0860" opacity="0.65"/>
+    <circle class="dn-sig" cx="129" cy="289.0" r="3.0" fill="#FF0860" opacity="0.48"/>
     <text x="85" y="322" text-anchor="middle" font-size="9.5" font-style="italic" fill="#222">1/d²(h)</text>
     <rect x="15" y="330" width="140" height="120" fill="#000" fill-opacity="0.025" stroke="#bbb" stroke-width="0.5"/>
     <circle class="dn-noise" cx="123.2" cy="349.8" r="1.6" fill="#1f2937" opacity="0"/>
@@ -376,23 +376,23 @@ Our model learns a rectified-flow velocity field over a latent space created by 
       <text class="dn-lab-m" x="270" y="379" text-anchor="middle" font-size="8.5" fill="#555">least squares on 1/d&#178;</text>
       <text class="dn-lab-m" x="270" y="404" text-anchor="middle" font-size="8" font-style="italic" fill="#999">metric tensor G* &#8594; lattice</text>
     </g>
-    <rect class="dc-cell" x="400" y="120" width="165" height="220" fill="none" stroke="#FF3336" stroke-width="1.4"/>
-    <text class="dc-alab" x="482.5" y="356" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF3336">a</text>
-    <text class="dc-alab" x="391" y="233.0" text-anchor="end" font-size="9.5" font-style="italic" fill="#FF3336">c</text>
-    <circle class="dc-atom" cx="425" cy="148" r="10" fill="#FF3336" opacity="0.9"/>
-    <circle class="dc-atom" cx="482" cy="148" r="10" fill="#FF3336" opacity="0.9"/>
-    <circle class="dc-atom" cx="539" cy="148" r="10" fill="#FF3336" opacity="0.9"/>
+    <rect class="dc-cell" x="400" y="120" width="165" height="220" fill="none" stroke="#FF0860" stroke-width="1.4"/>
+    <text class="dc-alab" x="482.5" y="356" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF0860">a</text>
+    <text class="dc-alab" x="391" y="233.0" text-anchor="end" font-size="9.5" font-style="italic" fill="#FF0860">c</text>
+    <circle class="dc-atom" cx="425" cy="148" r="10" fill="#FF0860" opacity="0.9"/>
+    <circle class="dc-atom" cx="482" cy="148" r="10" fill="#FF0860" opacity="0.9"/>
+    <circle class="dc-atom" cx="539" cy="148" r="10" fill="#FF0860" opacity="0.9"/>
     <circle class="dc-atom" cx="425" cy="196" r="8" fill="#1f2937" opacity="0.9"/>
     <circle class="dc-atom" cx="482" cy="196" r="8" fill="#1f2937" opacity="0.9"/>
     <circle class="dc-atom" cx="539" cy="196" r="8" fill="#1f2937" opacity="0.9"/>
-    <circle class="dc-atom" cx="425" cy="244" r="10" fill="#FF3336" opacity="0.9"/>
-    <circle class="dc-atom" cx="482" cy="244" r="10" fill="#FF3336" opacity="0.9"/>
-    <circle class="dc-atom" cx="539" cy="244" r="10" fill="#FF3336" opacity="0.9"/>
+    <circle class="dc-atom" cx="425" cy="244" r="10" fill="#FF0860" opacity="0.9"/>
+    <circle class="dc-atom" cx="482" cy="244" r="10" fill="#FF0860" opacity="0.9"/>
+    <circle class="dc-atom" cx="539" cy="244" r="10" fill="#FF0860" opacity="0.9"/>
     <circle class="dc-atom" cx="425" cy="292" r="8" fill="#1f2937" opacity="0.9"/>
     <circle class="dc-atom" cx="482" cy="292" r="8" fill="#1f2937" opacity="0.9"/>
     <circle class="dc-atom" cx="539" cy="292" r="8" fill="#1f2937" opacity="0.9"/>
     <line x1="15" y1="470" x2="155" y2="470" stroke="#ccc" stroke-width="2"/>
-    <line class="dc-progress" x1="15" y1="470" x2="155" y2="470" stroke="#FF3336" stroke-width="2"/>
+    <line class="dc-progress" x1="15" y1="470" x2="155" y2="470" stroke="#FF0860" stroke-width="2"/>
     <text x="15" y="463" font-size="8" fill="#888">t = 0, noise</text>
     <text x="155" y="463" text-anchor="end" font-size="8" fill="#888">t = 1</text>
   </svg>
@@ -444,11 +444,11 @@ We purposefully held out L1₀ compositions like FePd and MnGa from training whi
     <text class="hb-val" data-val="58" x="384.8" y="58" font-size="10.5" fill="#222" font-variant-numeric="tabular-nums">58%</text>
     <text x="156" y="99" text-anchor="end" font-size="10.5" font-weight="500" fill="#222">held-out FePd</text>
     <text x="156" y="111" text-anchor="end" font-size="8" fill="#999">composition unseen, family seen</text>
-    <rect class="hb-bar" x="168" y="90" width="180.0" height="20" fill="#FF3336" opacity="0.9"/>
+    <rect class="hb-bar" x="168" y="90" width="180.0" height="20" fill="#FF0860" opacity="0.9"/>
     <text class="hb-val" data-val="50" x="356.0" y="104" font-size="10.5" fill="#222" font-variant-numeric="tabular-nums">50%</text>
     <text x="156" y="145" text-anchor="end" font-size="10.5" font-weight="500" fill="#222">held-out MnGa</text>
     <text x="156" y="157" text-anchor="end" font-size="8" fill="#999">composition unseen, family seen</text>
-    <rect class="hb-bar" x="168" y="136" width="165.6" height="20" fill="#FF3336" opacity="0.9"/>
+    <rect class="hb-bar" x="168" y="136" width="165.6" height="20" fill="#FF0860" opacity="0.9"/>
     <text class="hb-val" data-val="46" x="341.6" y="150" font-size="10.5" fill="#222" font-variant-numeric="tabular-nums">46%</text>
     <text x="156" y="191" text-anchor="end" font-size="10.5" font-weight="500" fill="#222">unseen family</text>
     <text x="156" y="203" text-anchor="end" font-size="8" fill="#999">SmCo&#8325; &#183; YCo&#8325; &#183; CeCo&#8325;</text>
@@ -470,14 +470,14 @@ We fine-tuned the final pre-training checkpoint on a small curated set of squat 
     <text x="74" y="61.3" text-anchor="end" font-size="8.5" fill="#888">1.8</text>
     <text x="74" y="141.3" text-anchor="end" font-size="8.5" fill="#888">1.2</text>
     <text x="74" y="194.7" text-anchor="end" font-size="8.5" fill="#888">0.8</text>
-    <polyline class="ft-line" points="110,58.3 200,181.0 290,182.3 380,175.7 470,181.0" fill="none" stroke="#FF3336" stroke-width="1.6"/>
+    <polyline class="ft-line" points="110,58.3 200,181.0 290,182.3 380,175.7 470,181.0" fill="none" stroke="#FF0860" stroke-width="1.6"/>
     <circle class="ft-pt" cx="110" cy="58.3" r="4.5" fill="#999"/>
-    <circle class="ft-pt" cx="200" cy="181.0" r="4.5" fill="#FF3336"/>
-    <circle class="ft-pt" cx="290" cy="182.3" r="4.5" fill="#FF3336"/>
-    <circle class="ft-pt" cx="380" cy="175.7" r="4.5" fill="#FF3336"/>
-    <circle class="ft-pt" cx="470" cy="181.0" r="4.5" fill="#FF3336"/>
+    <circle class="ft-pt" cx="200" cy="181.0" r="4.5" fill="#FF0860"/>
+    <circle class="ft-pt" cx="290" cy="182.3" r="4.5" fill="#FF0860"/>
+    <circle class="ft-pt" cx="380" cy="175.7" r="4.5" fill="#FF0860"/>
+    <circle class="ft-pt" cx="470" cy="181.0" r="4.5" fill="#FF0860"/>
     <text class="ft-note" x="128" y="56.3" text-anchor="start" font-size="9.5" font-style="italic" fill="#999">tall default, no recovery</text>
-    <text class="ft-note" x="335" y="159.7" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF3336">squat, recovered from K = 1</text>
+    <text class="ft-note" x="335" y="159.7" text-anchor="middle" font-size="9.5" font-style="italic" fill="#FF0860">squat, recovered from K = 1</text>
     <text x="110" y="219" text-anchor="middle" font-size="8.5" fill="#888">0</text><text x="200" y="219" text-anchor="middle" font-size="8.5" fill="#888">1</text><text x="290" y="219" text-anchor="middle" font-size="8.5" fill="#888">5</text><text x="380" y="219" text-anchor="middle" font-size="8.5" fill="#888">20</text><text x="470" y="219" text-anchor="middle" font-size="8.5" fill="#888">100</text>
     <text x="300" y="238" text-anchor="middle" font-size="9" font-style="italic" fill="#666">curated fine-tune examples K (squat CaCu&#8325;)</text>
     <text x="20" y="122" text-anchor="middle" font-size="9" font-style="italic" fill="#666" transform="rotate(-90 20 122)">median c/a of generated hex</text>
@@ -496,11 +496,11 @@ The seven conditioning streams emerged at different points throughout the traini
     <text x="261" y="16" font-size="8.5" fill="#444">crystal system</text>
     <line x1="418" y1="13" x2="434" y2="13" stroke="#999" stroke-width="1.5" opacity="1.0"/>
     <text x="439" y="16" font-size="8.5" fill="#444">composition</text>
-    <line x1="62" y1="29" x2="78" y2="29" stroke="#FF3336" stroke-width="1.5" opacity="1.0" stroke-dasharray="5,4"/>
+    <line x1="62" y1="29" x2="78" y2="29" stroke="#FF0860" stroke-width="1.5" opacity="1.0" stroke-dasharray="5,4"/>
     <text x="83" y="32" font-size="8.5" fill="#444">band gap</text>
-    <line x1="240" y1="29" x2="256" y2="29" stroke="#FF3336" stroke-width="1.5" opacity="0.45"/>
+    <line x1="240" y1="29" x2="256" y2="29" stroke="#FF0860" stroke-width="1.5" opacity="0.45"/>
     <text x="261" y="32" font-size="8.5" fill="#444">magnetic ordering</text>
-    <line x1="418" y1="29" x2="434" y2="29" stroke="#FF3336" stroke-width="1.5" opacity="1.0"/>
+    <line x1="418" y1="29" x2="434" y2="29" stroke="#FF0860" stroke-width="1.5" opacity="1.0"/>
     <text x="439" y="32" font-size="8.5" fill="#444">formation energy</text>
     <line x1="60" y1="46" x2="60" y2="232" stroke="#888" stroke-width="0.6"/>
     <line x1="60" y1="232" x2="570" y2="232" stroke="#888" stroke-width="0.6"/>
@@ -519,17 +519,17 @@ The seven conditioning streams emerged at different points throughout the traini
       <polyline class="em2-curve" points="60.0,225.5 70.2,222.5 80.4,218.5 90.6,212.9 100.8,205.7 111.0,196.8 121.2,186.4 131.4,175.2 141.6,163.9 151.8,153.6 162.0,144.6 172.2,137.4 182.4,131.9 192.6,127.8 202.8,124.8 213.0,122.8 223.2,121.4 233.4,120.4 243.6,119.7 253.8,119.3 264.0,119.0 274.2,118.8 284.4,118.6 294.6,118.5 304.8,118.5 315.0,118.4 325.2,118.4 335.4,118.4 345.6,118.4 355.8,118.4 366.0,118.3 376.2,118.3 386.4,118.3 396.6,118.3 406.8,118.3 417.0,118.3 427.2,118.3 437.4,118.3 447.6,118.3 457.8,118.3 468.0,118.3 478.2,118.3 488.4,118.3 498.6,118.3 508.8,118.3 519.0,118.3 529.2,118.3 539.4,118.3 549.6,118.3 559.8,118.3 570.0,118.3" fill="none" stroke="#1f2937" stroke-width="1.5" opacity="1.0"/>
     <polyline class="em2-curve" points="60.0,230.7 70.2,230.1 80.4,229.1 90.6,227.8 100.8,225.8 111.0,223.1 121.2,219.2 131.4,213.9 141.6,207.1 151.8,198.7 162.0,188.9 172.2,178.3 182.4,167.7 192.6,157.9 202.8,149.4 213.0,142.6 223.2,137.3 233.4,133.5 243.6,130.7 253.8,128.7 264.0,127.4 274.2,126.5 284.4,125.8 294.6,125.4 304.8,125.1 315.0,124.9 325.2,124.8 335.4,124.7 345.6,124.7 355.8,124.6 366.0,124.6 376.2,124.6 386.4,124.6 396.6,124.5 406.8,124.5 417.0,124.5 427.2,124.5 437.4,124.5 447.6,124.5 457.8,124.5 468.0,124.5 478.2,124.5 488.4,124.5 498.6,124.5 508.8,124.5 519.0,124.5 529.2,124.5 539.4,124.5 549.6,124.5 559.8,124.5 570.0,124.5" fill="none" stroke="#1f2937" stroke-width="1.5" opacity="1.0" stroke-dasharray="5,4"/>
     <polyline class="em2-curve" points="60.0,231.7 70.2,231.6 80.4,231.4 90.6,231.2 100.8,230.8 111.0,230.2 121.2,229.3 131.4,228.0 141.6,226.2 151.8,223.6 162.0,219.9 172.2,215.0 182.4,208.6 192.6,200.6 202.8,191.4 213.0,181.4 223.2,171.4 233.4,162.1 243.6,154.2 253.8,147.7 264.0,142.8 274.2,139.2 284.4,136.5 294.6,134.7 304.8,133.4 315.0,132.6 325.2,132.0 335.4,131.6 345.6,131.3 355.8,131.1 366.0,131.0 376.2,130.9 386.4,130.8 396.6,130.8 406.8,130.8 417.0,130.8 427.2,130.8 437.4,130.7 447.6,130.7 457.8,130.7 468.0,130.7 478.2,130.7 488.4,130.7 498.6,130.7 508.8,130.7 519.0,130.7 529.2,130.7 539.4,130.7 549.6,130.7 559.8,130.7 570.0,130.7" fill="none" stroke="#999" stroke-width="1.5" opacity="1.0"/>
-    <polyline class="em2-curve" points="60.0,232.0 70.2,232.0 80.4,232.0 90.6,232.0 100.8,232.0 111.0,232.0 121.2,232.0 131.4,231.9 141.6,231.9 151.8,231.9 162.0,231.8 172.2,231.7 182.4,231.5 192.6,231.3 202.8,230.9 213.0,230.4 223.2,229.6 233.4,228.5 243.6,226.9 253.8,224.6 264.0,221.4 274.2,217.1 284.4,211.4 294.6,204.4 304.8,196.3 315.0,187.6 325.2,178.8 335.4,170.7 345.6,163.7 355.8,158.1 366.0,153.7 376.2,150.5 386.4,148.2 396.6,146.6 406.8,145.5 417.0,144.7 427.2,144.2 437.4,143.9 447.6,143.6 457.8,143.5 468.0,143.4 478.2,143.3 488.4,143.2 498.6,143.2 508.8,143.2 519.0,143.2 529.2,143.2 539.4,143.1 549.6,143.1 559.8,143.1 570.0,143.1" fill="none" stroke="#FF3336" stroke-width="1.5" opacity="1.0" stroke-dasharray="5,4"/>
-    <polyline class="em2-curve" points="60.0,232.0 70.2,232.0 80.4,232.0 90.6,232.0 100.8,232.0 111.0,232.0 121.2,232.0 131.4,232.0 141.6,232.0 151.8,232.0 162.0,232.0 172.2,232.0 182.4,232.0 192.6,232.0 202.8,232.0 213.0,232.0 223.2,232.0 233.4,232.0 243.6,232.0 253.8,231.9 264.0,231.9 274.2,231.9 284.4,231.8 294.6,231.7 304.8,231.6 315.0,231.4 325.2,231.0 335.4,230.6 345.6,229.9 355.8,228.9 366.0,227.4 376.2,225.2 386.4,222.2 396.6,218.0 406.8,212.2 417.0,204.7 427.2,195.5 437.4,184.7 447.6,173.1 457.8,161.5 468.0,150.7 478.2,141.5 488.4,134.0 498.6,128.2 508.8,124.0 519.0,121.0 529.2,118.8 539.4,117.3 549.6,116.3 559.8,115.6 570.0,115.2" fill="none" stroke="#FF3336" stroke-width="1.5" opacity="0.45"/>
-    <polyline class="em2-curve" points="60.0,232.0 70.2,232.0 80.4,232.0 90.6,232.0 100.8,232.0 111.0,232.0 121.2,232.0 131.4,232.0 141.6,232.0 151.8,232.0 162.0,232.0 172.2,232.0 182.4,232.0 192.6,232.0 202.8,232.0 213.0,232.0 223.2,232.0 233.4,232.0 243.6,232.0 253.8,232.0 264.0,232.0 274.2,232.0 284.4,231.9 294.6,231.9 304.8,231.9 315.0,231.8 325.2,231.7 335.4,231.6 345.6,231.4 355.8,231.0 366.0,230.6 376.2,229.9 386.4,228.9 396.6,227.4 406.8,225.2 417.0,222.0 427.2,217.6 437.4,211.3 447.6,202.8 457.8,191.8 468.0,178.2 478.2,162.3 488.4,145.2 498.6,128.1 508.8,112.2 519.0,98.6 529.2,87.6 539.4,79.1 549.6,72.8 559.8,68.4 570.0,65.2" fill="none" stroke="#FF3336" stroke-width="1.5" opacity="1.0"/>
+    <polyline class="em2-curve" points="60.0,232.0 70.2,232.0 80.4,232.0 90.6,232.0 100.8,232.0 111.0,232.0 121.2,232.0 131.4,231.9 141.6,231.9 151.8,231.9 162.0,231.8 172.2,231.7 182.4,231.5 192.6,231.3 202.8,230.9 213.0,230.4 223.2,229.6 233.4,228.5 243.6,226.9 253.8,224.6 264.0,221.4 274.2,217.1 284.4,211.4 294.6,204.4 304.8,196.3 315.0,187.6 325.2,178.8 335.4,170.7 345.6,163.7 355.8,158.1 366.0,153.7 376.2,150.5 386.4,148.2 396.6,146.6 406.8,145.5 417.0,144.7 427.2,144.2 437.4,143.9 447.6,143.6 457.8,143.5 468.0,143.4 478.2,143.3 488.4,143.2 498.6,143.2 508.8,143.2 519.0,143.2 529.2,143.2 539.4,143.1 549.6,143.1 559.8,143.1 570.0,143.1" fill="none" stroke="#FF0860" stroke-width="1.5" opacity="1.0" stroke-dasharray="5,4"/>
+    <polyline class="em2-curve" points="60.0,232.0 70.2,232.0 80.4,232.0 90.6,232.0 100.8,232.0 111.0,232.0 121.2,232.0 131.4,232.0 141.6,232.0 151.8,232.0 162.0,232.0 172.2,232.0 182.4,232.0 192.6,232.0 202.8,232.0 213.0,232.0 223.2,232.0 233.4,232.0 243.6,232.0 253.8,231.9 264.0,231.9 274.2,231.9 284.4,231.8 294.6,231.7 304.8,231.6 315.0,231.4 325.2,231.0 335.4,230.6 345.6,229.9 355.8,228.9 366.0,227.4 376.2,225.2 386.4,222.2 396.6,218.0 406.8,212.2 417.0,204.7 427.2,195.5 437.4,184.7 447.6,173.1 457.8,161.5 468.0,150.7 478.2,141.5 488.4,134.0 498.6,128.2 508.8,124.0 519.0,121.0 529.2,118.8 539.4,117.3 549.6,116.3 559.8,115.6 570.0,115.2" fill="none" stroke="#FF0860" stroke-width="1.5" opacity="0.45"/>
+    <polyline class="em2-curve" points="60.0,232.0 70.2,232.0 80.4,232.0 90.6,232.0 100.8,232.0 111.0,232.0 121.2,232.0 131.4,232.0 141.6,232.0 151.8,232.0 162.0,232.0 172.2,232.0 182.4,232.0 192.6,232.0 202.8,232.0 213.0,232.0 223.2,232.0 233.4,232.0 243.6,232.0 253.8,232.0 264.0,232.0 274.2,232.0 284.4,231.9 294.6,231.9 304.8,231.9 315.0,231.8 325.2,231.7 335.4,231.6 345.6,231.4 355.8,231.0 366.0,230.6 376.2,229.9 386.4,228.9 396.6,227.4 406.8,225.2 417.0,222.0 427.2,217.6 437.4,211.3 447.6,202.8 457.8,191.8 468.0,178.2 478.2,162.3 488.4,145.2 498.6,128.1 508.8,112.2 519.0,98.6 529.2,87.6 539.4,79.1 549.6,72.8 559.8,68.4 570.0,65.2" fill="none" stroke="#FF0860" stroke-width="1.5" opacity="1.0"/>
     </g>
-    <line class="em2-play" x1="570.0" y1="46" x2="570.0" y2="232" stroke="#FF3336" stroke-width="1" opacity="0.55"/>
+    <line class="em2-play" x1="570.0" y1="46" x2="570.0" y2="232" stroke="#FF0860" stroke-width="1" opacity="0.55"/>
     <circle class="em2-dot" data-v="0.55" data-e="70" cx="570.0" cy="118.3" r="3.4" fill="#1f2937" opacity="1.0"/>
     <circle class="em2-dot" data-v="0.52" data-e="110" cx="570.0" cy="124.5" r="3.4" fill="#1f2937" opacity="1.0"/>
     <circle class="em2-dot" data-v="0.49" data-e="150" cx="570.0" cy="130.7" r="3.4" fill="#999" opacity="1.0"/>
-    <circle class="em2-dot" data-v="0.43" data-e="250" cx="570.0" cy="143.1" r="3.4" fill="#FF3336" opacity="1.0"/>
-    <circle class="em2-dot" data-v="0.57" data-e="380" cx="570.0" cy="115.2" r="3.4" fill="#FF3336" opacity="0.85"/>
-    <circle class="em2-dot" data-v="0.84" data-e="420" cx="570.0" cy="65.2" r="3.4" fill="#FF3336" opacity="1.0"/>
+    <circle class="em2-dot" data-v="0.43" data-e="250" cx="570.0" cy="143.1" r="3.4" fill="#FF0860" opacity="1.0"/>
+    <circle class="em2-dot" data-v="0.57" data-e="380" cx="570.0" cy="115.2" r="3.4" fill="#FF0860" opacity="0.85"/>
+    <circle class="em2-dot" data-v="0.84" data-e="420" cx="570.0" cy="65.2" r="3.4" fill="#FF0860" opacity="1.0"/>
   </svg>
   <div class="emerge-controls">
     <label>training step&nbsp; <output id="emerge-val">500k / 500k</output>
@@ -580,7 +580,7 @@ The seven conditioning streams emerged at different points throughout the traini
     <circle class="sys-dot" cx="109.6" cy="143.1" r="3.2" fill="#1f2937" opacity="0.55"/>
     <circle class="sys-dot" cx="111.4" cy="89.8" r="3.2" fill="#1f2937" opacity="0.55"/>
     <text x="465" y="34" text-anchor="middle" font-size="10" font-style="italic" fill="#222">generated cell (median)</text>
-    <polygon class="sys-cellpoly" points="441.0,152.9 489.0,152.9 489.0,87.1 441.0,87.1" fill="#FF3336" fill-opacity="0.12" stroke="#FF3336" stroke-width="1.3"/>
+    <polygon class="sys-cellpoly" points="441.0,152.9 489.0,152.9 489.0,87.1 441.0,87.1" fill="#FF0860" fill-opacity="0.12" stroke="#FF0860" stroke-width="1.3"/>
     <text class="sys-read" x="465" y="196" text-anchor="middle" font-size="9.5" fill="#222" font-variant-numeric="tabular-nums">median &#947; = 90&#176; &#183; c/a = 1.37</text>
   </svg>
 </figure>

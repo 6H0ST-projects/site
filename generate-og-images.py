@@ -21,7 +21,7 @@ pages = [
     },
     {
         "name": "about-us",
-        "bg_color": "#FF680A", 
+        "bg_color": "#FF0860", 
         "text_color": "#ffffff",
         "text": "about-us"
     },

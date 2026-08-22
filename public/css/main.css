@@ -81,7 +81,7 @@ main {
 }
 
 .project-card.about-us {
-  background-color: #FF3336;
+  background-color: #FF0860;
   color: #fff;
 }
 
@@ -394,7 +394,7 @@ body.project-014 {
 }
 
 body.about-us {
-  background-color: #FF3336 !important;
+  background-color: #FF0860 !important;
   color: #fff !important;
 }
 
@@ -490,7 +490,7 @@ body.blog-page {
 }
 
 .page-link-preview.about-us {
-  background-color: #FF3336;
+  background-color: #FF0860;
   color: #fff;
 }
 
@@ -742,7 +742,7 @@ body.blog-page {
 @media (max-width: 640px) {
   .gpsk-300 .stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
-.gpsk-300 .wp-footnote {
+.project-page .wp-footnote {
   font-size: 0.8rem;
   font-style: italic;
   opacity: 0.65;
@@ -770,7 +770,7 @@ body.blog-page {
   border: 1px solid rgba(0, 0, 0, 0.22); padding: 0.2rem 0.5rem; cursor: pointer; color: inherit;
 }
 .gpsk-300 .rx-chip:hover { border-color: #000; }
-.gpsk-300 .rx-chip.is-active { border-color: #FF3336; color: #FF3336; }
+.gpsk-300 .rx-chip.is-active { border-color: #FF0860; color: #FF0860; }
 .gpsk-300 .rx-detail {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.22); padding: 1rem;
@@ -779,7 +779,7 @@ body.blog-page {
 .gpsk-300 .rx-name { font-weight: 600; font-size: 1.02rem; margin: 0 0 0.05rem; }
 .gpsk-300 .rx-meta { font-size: 0.75rem; opacity: 0.62; margin: 0 0 0.65rem; }
 .gpsk-300 .rx-bar { height: 8px; background: rgba(0, 0, 0, 0.1); margin-bottom: 0.3rem; }
-.gpsk-300 .rx-fill { height: 100%; background: #FF3336; width: 0; }
+.gpsk-300 .rx-fill { height: 100%; background: #FF0860; width: 0; }
 .gpsk-300 .rx-rate { font-size: 0.72rem; opacity: 0.72; margin: 0 0 0.6rem; font-variant-numeric: tabular-nums; }
 .gpsk-300 .rx-note { font-size: 0.79rem; font-weight: 300; line-height: 1.5; margin: 0; }
 .gpsk-300 .rx-hint { font-size: 0.71rem; font-style: italic; opacity: 0.55; margin: 0.5rem 0 0; }
@@ -799,35 +799,35 @@ body.blog-page {
 .gpsk-300 .emerge-controls input[type="range"] { width: 100%; display: block; margin-top: 0.45rem; }
 
 /* squared slider handles on a thin track */
-.gpsk-300 input[type="range"] {
+.project-page input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 14px;
   background: transparent;
   cursor: pointer;
 }
-.gpsk-300 input[type="range"]::-webkit-slider-runnable-track {
+.project-page input[type="range"]::-webkit-slider-runnable-track {
   height: 2px;
   background: rgba(0, 0, 0, 0.25);
 }
-.gpsk-300 input[type="range"]::-webkit-slider-thumb {
+.project-page input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 12px;
   height: 12px;
   margin-top: -5px;
-  background: #FF3336;
+  background: #FF0860;
   border: none;
   border-radius: 0;
 }
-.gpsk-300 input[type="range"]::-moz-range-track {
+.project-page input[type="range"]::-moz-range-track {
   height: 2px;
   background: rgba(0, 0, 0, 0.25);
 }
-.gpsk-300 input[type="range"]::-moz-range-thumb {
+.project-page input[type="range"]::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: #FF3336;
+  background: #FF0860;
   border: none;
   border-radius: 0;
 }
@@ -838,3 +838,22 @@ body.blog-page {
   padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
 }
 .gpsk-300 .sys-btn.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
+
+/* anisotropy dataset: landscape filter */
+.magnet-anisotropy-dataset .lp-wrap { margin: 2.25rem 0; }
+.magnet-anisotropy-dataset .lp-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-bottom: 0.75rem; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+.magnet-anisotropy-dataset .lp-f {
+  font: inherit; font-size: 0.7rem; letter-spacing: 0.02em; font-weight: 400;
+  background: none; border: 1px solid rgba(0, 0, 0, 0.35); border-radius: 0;
+  padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
+}
+.magnet-anisotropy-dataset .lp-f.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
+#aniso-landscape .lp { fill: #1f2937; opacity: 0.16; transition: opacity 0.35s ease, fill 0.35s ease; }
+#aniso-landscape[data-sel] .lp { opacity: 0.05; }
+#aniso-landscape[data-sel="i"] .lp[data-c="i"],
+#aniso-landscape[data-sel="b"] .lp[data-c="b"],
+#aniso-landscape[data-sel="p"] .lp[data-c="p"],
+#aniso-landscape[data-sel="c"] .lp[data-c="c"],
+#aniso-landscape[data-sel="o"] .lp[data-c="o"],
+#aniso-landscape[data-sel="h"] .lp[data-c="h"] { fill: #FF0860; opacity: 0.8; }
+.magnet-anisotropy-dataset .lp-read { font-size: 0.74rem; font-variant-numeric: tabular-nums; opacity: 0.7; margin-top: 0.5rem; }

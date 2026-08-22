@@ -283,6 +283,7 @@
       });
     };
     animBars('gpsk-anim-holdout', '.hb-bar', '.hb-val', function (n) { return Math.round(n) + '%'; });
+    animBars('aniso-anim-robust', '.hb-bar', '.hb-val', function (n) { return n < 1 ? '<0.01' : (n / 100).toFixed(2); });
 
     /* ---------- post-training recovery chart ---------- */
     var ft = document.getElementById('gpsk-anim-finetune');
@@ -554,6 +555,57 @@
     };
     sysBtns.forEach(function (b) {
       b.addEventListener('click', function () { setSys(b.dataset.sys); });
+    });
+  }
+
+  /* ==================== anisotropy dataset: calibration animation ==================== */
+  var cal = document.getElementById('aniso-anim-cal');
+  if (cal && animate) {
+    var iqrs = cal.querySelectorAll('.cal-iqr');
+    var meds = cal.querySelectorAll('.cal-med');
+    var flips = cal.querySelectorAll('.cal-flip');
+    iqrs.forEach(function (r, i) {
+      var lo = +r.getAttribute('data-lo'), hi = +r.getAttribute('data-hi');
+      var mid = (+meds[i].getAttribute('y1'));
+      r.setAttribute('y', mid);
+      r.setAttribute('height', 0);
+      r.dataset.top = lo; r.dataset.h = hi - lo;
+    });
+    anime.set(meds, { opacity: 0 });
+    anime.set(flips, { opacity: 0 });
+    once(cal, function () {
+      meds.forEach(function (m, i) {
+        anime({ targets: m, opacity: 1, duration: 250, delay: i * 140, easing: 'linear' });
+        anime({
+          targets: iqrs[i], y: +iqrs[i].dataset.top, height: +iqrs[i].dataset.h,
+          duration: 650, delay: 200 + i * 140, easing: 'easeOutCubic'
+        });
+        anime({ targets: flips[i], opacity: 1, duration: 300, delay: 700 + i * 140, easing: 'linear' });
+      });
+    });
+  }
+
+  /* ==================== anisotropy dataset: landscape class filter ==================== */
+  var lp = document.getElementById('aniso-landscape');
+  if (lp) {
+    var lpBtns = document.querySelectorAll('.lp-f');
+    var lpRead = document.querySelector('.lp-read');
+    var LPSTATS = {
+      all: [2044, '1.22', 59], i: [337, '1.08', 54], b: [37, '0.86', 32],
+      p: [204, '1.35', 62], c: [422, '1.59', 67], o: [740, '1.13', 56], h: [304, '1.43', 63]
+    };
+    var LPNAMES = {
+      all: 'reliable labels', i: 'intermetallics', b: 'borides',
+      p: 'pnictides', c: 'chalcogenides', o: 'oxides', h: 'halides'
+    };
+    lpBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var cl = b.dataset.cl;
+        lpBtns.forEach(function (x) { x.classList.toggle('is-active', x === b); });
+        if (cl === 'all') { lp.removeAttribute('data-sel'); } else { lp.setAttribute('data-sel', cl); }
+        var s = LPSTATS[cl];
+        lpRead.textContent = s[0].toLocaleString() + ' ' + LPNAMES[cl] + ' \u00b7 median \u03ba = ' + s[1] + ' \u00b7 ' + s[2] + '% at \u03ba > 1';
+      });
     });
   }
 })();
