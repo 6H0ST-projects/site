@@ -1,0 +1,22 @@
+<div class="page-wrapper">
+    <div class="content-container">
+        {{ if .IsHome }}
+        <a href="{{ .Site.Params.ghostProjectsURL }}" class="back-link">← Ghost Projects</a>
+        {{ else }}
+        <a href="/" class="back-link">← Back to Project 14</a>
+        {{ end }}
+
+        <div class="two-column-layout">
+            <div class="sidebar">
+                <h1>{{ .Site.Title }}</h1>
+                <p class="sidebar-text">{{ .Params.sidebarText }}</p>
+            </div>
+            <div class="main-content">
+                <h2>{{ .Params.projectTitle | default .Title }}</h2>
+                <div class="project-description">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

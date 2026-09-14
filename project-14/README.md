@@ -1,0 +1,60 @@
+# Project 14
+
+Standalone Hugo site for **https://project-14.us/**.
+
+## Content and development
+
+- `content/_index.md`: Project 14 homepage.
+- `content/gpsk-300.md`: `/gpsk-300/`.
+- `content/magnet-anisotropy-dataset.md`: `/magnet-anisotropy-dataset/`.
+- `content/gpac.md`: `/gpac/`.
+- `layouts/`: independent Project 14 templates.
+- `assets/css/main.css`: stylesheet, fingerprinted when built to prevent stale browser caches.
+- `static/`: local fonts, scripts, figures, and social images.
+
+From this folder, run `hugo server --port 1314` to preview or `hugo --gc --minify --cleanDestinationDir` to build. Use Hugo 0.148.2. No Node dependencies or shared parent-directory files are required. Edit Project 14's copies of styles and assets when changing this site.
+
+Canonical links, social metadata, and the sitemap use `https://project-14.us/`. Paper bylines retain their original Ghost Projects attribution. Paper navigation returns to Project 14; the homepage links back to Ghost Projects.
+
+## Create the Vercel project
+
+Import the same Git repository as a **new** Vercel project, with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | `project-14` |
+| Framework Preset | Hugo |
+| Build Command | `hugo --gc --minify --cleanDestinationDir` |
+| Output Directory | `public` |
+| Hugo version | `0.148.2` (`HUGO_VERSION`, also pinned in `vercel.json`) |
+
+The local `vercel.json` supplies the framework, build command, output directory, and version. Leave dependency installation at the default; there are no packages to install. Leave “Include source files outside of the Root Directory in the Build Step” off. Keep the existing Ghost Projects project's Root Directory at the repository root.
+
+Vercel documents [Root Directory and build settings](https://vercel.com/docs/builds/configure-a-build) and [multiple projects from one repository](https://vercel.com/docs/monorepos).
+
+## Attach the domains
+
+In the **Project 14** Vercel project's **Settings → Domains**, add these domains to the Production environment:
+
+| Domain | Behavior configured in this folder's `vercel.json` |
+| --- | --- |
+| `project-14.us` | Serves the site |
+| `project-14.ai` | Permanent redirect to `https://project-14.us`, preserving the path |
+| `www.project-14.us` | Permanent redirect to `https://project-14.us`, preserving the path |
+| `www.project-14.ai` | Permanent redirect to `https://project-14.us`, preserving the path |
+
+Add each as a domain connected to this project; the code handles redirects. Keep `project-14.us` as the destination if Vercel offers to configure a `www` redirect. Do not configure `project-14.us` to redirect back to a `www` or `.ai` domain.
+
+At the authoritative DNS provider for each domain, enter the **exact records Vercel displays for that domain**. The apex (`@`) and `www` hostnames have separate records. Domain-specific values can differ, so use the dashboard values rather than a copied generic IP address. Keep unrelated records such as email MX/TXT records. Wait until Vercel reports valid configuration and HTTPS works for all added domains.
+
+Adding redirect rules to the repository does not attach the domains or change DNS. Those steps must be completed in Vercel and your DNS provider. See Vercel's [custom-domain setup instructions](https://vercel.com/docs/domains/working-with-domains/add-a-domain) and [configuration redirects](https://vercel.com/docs/routing/redirects/configuration-redirects).
+
+## Initial rollout order
+
+1. Make this code available on a Git branch and deploy that branch to the new Project 14 Vercel project. If necessary, temporarily select that branch as the new project's Production Branch. Keep the existing Ghost Projects production deployment live during setup.
+2. Attach and verify the domains above. Check the homepage and all three paper pages at `https://project-14.us/`.
+3. Check that `https://project-14.ai/gpac/` lands on `https://project-14.us/gpac/` and that both `www` variants redirect correctly.
+4. Deploy the updated repository root to the existing Ghost Projects project. Pushing directly to its Production Branch may deploy it automatically, so finish the new domain setup first.
+5. Check the 014 card and the old `/project-014/`, `/project-014/gpsk-300/`, `/project-014/gpac/`, and `/project-014/magnet-anisotropy-dataset/` links on Ghost Projects. They should reach the matching new URLs. Both sites accept legacy `/project-014/...` paths via permanent redirects.
+
+Hugo's local server serves pages and assets; Vercel applies the HTTP redirect rules. Verify redirects on a Vercel deployment, including a deep link with a query string and fragment such as `/gpac/?source=check#llms-struggle-with-cifs`.

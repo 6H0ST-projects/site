@@ -1,0 +1,861 @@
+/* Main CSS - Loaded asynchronously for non-critical styles */
+
+/* Simple Grid Navigation */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  min-height: 400px;
+}
+
+@media (min-width: 768px) {
+  main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 200px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 !important;
+  border: none;
+}
+
+.project-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  opacity: 0.8;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+/* Project-specific colors */
+.project-card.project-014 {
+  background-color: #E7EAEE;
+  color: #000;
+}
+
+.project-card.about-us {
+  background-color: #FF0860;
+  color: #fff;
+}
+
+.project-card.blog {
+  background-color: #5C5C5C;
+  color: #fff;
+}
+
+.project-card.special-projects {
+  background-color: #006FFF;
+  color: #fff;
+}
+
+/* Project page styles */
+body.project-page {
+  overflow-y: auto !important;
+  height: auto !important;
+  position: static !important;
+  width: 100%;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  background: transparent;
+  min-height: 100vh;
+}
+
+.back-link {
+  display: inline-block;
+  text-transform: lowercase;
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+  opacity: 0.8;
+}
+
+.back-link:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover:after {
+  transform: scaleX(1);
+}
+
+/* Two-column layout */
+.two-column-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* match the home page header (critical-css h1 + header p) exactly */
+.sidebar h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+
+.sidebar-text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  opacity: 0.8;
+  max-width: 60ch;
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+
+.main-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.project-intro {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 60ch;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Research-paper style: shared column width for text, figures, and math.
+   Text + figures live inside the same column so widths line up. */
+.project-description {
+  max-width: 38rem;
+}
+
+.project-description p {
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Figures: image/video flush-left within the column, caption directly under */
+.project-description figure {
+  margin: 2.25rem 0;
+}
+.project-description figure img,
+.project-description figure video,
+.project-description figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.project-description figcaption {
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.5;
+  opacity: 0.78;
+  margin-top: 0.55rem;
+  max-width: 100%;
+}
+.project-description figcaption strong {
+  font-style: normal;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* KaTeX: keep inline math the same x-height as surrounding text,
+   give block math its own breathing room and horizontal scroll if too wide */
+.project-description .katex { font-size: 1em; }
+.project-description .katex-display {
+  margin: 1.6rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+.project-description .katex-display > .katex { white-space: nowrap; }
+
+/* Tables — booktabs research-paper style: top/bottom rules, no verticals,
+   tabular numerals, modest font, right-aligned numeric columns via markdown
+   `---:` alignment syntax (Hugo emits style="text-align: right" on those). */
+.project-description table {
+  width: 100%;
+  margin: 1.75rem 0 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+}
+.project-description table thead {
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+.project-description table tbody {
+  border-bottom: 1px solid currentColor;
+}
+.project-description table th {
+  font-weight: 500;
+  text-align: left;
+  padding: 0.45rem 0.7rem 0.45rem 0;
+  letter-spacing: 0.01em;
+}
+.project-description table td {
+  padding: 0.35rem 0.7rem 0.35rem 0;
+  vertical-align: top;
+}
+.project-description table th:last-child,
+.project-description table td:last-child { padding-right: 0; }
+.project-description table th:first-child,
+.project-description table td:first-child { padding-left: 0; }
+
+/* Caption / label sentence sitting above a table (the "Table N." paragraph) —
+   read it as small caps muted text */
+.project-description p:has(+ table) strong { font-weight: 600; }
+
+/* Media queries for responsive layout */
+@media (min-width: 768px) {
+  .content-container {
+    padding: 3rem;
+  }
+  
+  .two-column-layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .main-content h2 {
+    font-size: 2.25rem;
+  }
+
+  .project-intro {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Keep the sidebar above the paper until there is room beside it. */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .two-column-layout {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sidebar {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 18rem;
+    max-width: 18rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    margin-bottom: 0;
+    z-index: 10;
+  }
+
+  .sidebar h1 {
+    white-space: nowrap;
+  }
+
+  .sidebar-text {
+    max-width: 18rem;
+  }
+
+  .main-content {
+    padding-left: 0;
+  }
+
+}
+
+/* Desktop-only telemetry */
+.desktop-only {
+  display: none !important;
+}
+
+.telemetry {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block !important;
+  }
+  
+  .telemetry {
+    display: flex !important;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: 'PP Fraktion Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+    font-size: 0.875rem;
+    font-weight: 300;
+    opacity: 0.8;
+    line-height: 1.5;
+    z-index: 10;
+  }
+
+  .metric {
+    display: flex;
+    gap: 0.5rem;
+    text-align: right;
+  }
+
+  .metric-label {
+    color: inherit;
+    opacity: 1;
+  }
+
+  .metric-value {
+    font-weight: 300;
+    min-width: 3rem;
+    text-align: right;
+  }
+}
+
+/* Page-specific background colors */
+body.project-014 {
+  background-color: #E7EAEE !important;
+  color: #000 !important;
+}
+
+body.about-us {
+  background-color: #FF0860 !important;
+  color: #fff !important;
+}
+
+body.blog {
+  background-color: #5C5C5C !important;
+  color: #fff !important;
+}
+
+body.special-projects {
+  background-color: #006FFF !important;
+  color: #fff !important;
+}
+
+/* Responsive SVG styling (bare img/video not wrapped in a figure) */
+.project-description > img,
+.project-description > video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+}
+
+
+/* Mobile-specific adjustments for images and SVGs */
+@media (max-width: 768px) {
+  .project-description {
+    max-width: 100%;
+  }
+  .project-description > img,
+  .project-description > video,
+  .project-description figure img,
+  .project-description figure video {
+    margin: 1.5rem 0;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  
+  .content-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Blog page styles */
+body.blog-page {
+  background-color: #5C5C5C !important;
+  color: #fff !important;
+}
+
+.blog-content {
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Page Link Preview Styles */
+.page-link-preview {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin: 2rem 0;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 0;
+  border: none;
+}
+
+.page-link-preview:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-link-preview-text {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-family: 'PP Fraktion Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  font-size: 0.875rem;
+  font-weight: 300;
+  z-index: 2;
+}
+
+/* Page-specific colors for link previews */
+.page-link-preview.project-014 {
+  background-color: #E7EAEE;
+  color: #000;
+}
+
+.page-link-preview.about-us {
+  background-color: #FF0860;
+  color: #fff;
+}
+
+.page-link-preview.blog {
+  background-color: #5C5C5C;
+  color: #fff;
+}
+
+.page-link-preview.special-projects {
+  background-color: #006FFF;
+  color: #fff;
+}
+
+.page-link-preview.ghost-projects {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ASCII Link Preview Styles */
+.link-preview {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 2rem 0;
+  font-family: 'PP Fraktion Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-preview-content {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.link-preview-text {
+  flex: 1;
+}
+
+.link-preview-svg {
+  flex: 0 0 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.link-preview-svg svg {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.link-preview:hover .link-preview-svg svg {
+  opacity: 1;
+}
+
+.link-preview-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.link-preview-title:hover {
+  text-decoration: underline;
+}
+
+.link-preview-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.link-preview-url {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.link-preview-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.link-preview-domain {
+  font-weight: 500;
+}
+
+.link-preview-date {
+  opacity: 0.7;
+}
+
+/* ASCII Art Decoration */
+.ascii-decoration {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 1rem 0;
+  text-align: center;
+  white-space: pre;
+}
+
+/* Responsive adjustments for link previews */
+@media (max-width: 768px) {
+  .link-preview {
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  
+  .link-preview-content {
+    padding: 0;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .link-preview-svg {
+    flex: 0 0 60px;
+    height: 60px;
+    align-self: flex-start;
+  }
+}
+
+/* ---- Print / PDF: classic academic paper styling (screen view is unchanged) ---- */
+@media print {
+  @page { size: letter; margin: 0.85in 0.9in; }
+
+  /* strip web chrome */
+  .back-link,
+  .sidebar { display: none !important; }
+
+  /* single full-width column */
+  .page-wrapper { overflow: visible; min-height: 0; }
+  .content-container { max-width: none; margin: 0; padding: 0; min-height: 0; }
+  .two-column-layout { display: block; gap: 0; }
+  .main-content { width: 100%; }
+  .project-description { max-width: none; }
+
+  /* serif body */
+  body { font-family: Georgia, 'Times New Roman', serif; color: #000; background: #fff; }
+  .project-description,
+  .project-description p,
+  .project-description li,
+  .project-description td,
+  .project-description th {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: #000;
+  }
+  .project-description p {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 0.6rem;
+  }
+  .project-description li { font-size: 10.5pt; line-height: 1.45; }
+
+  /* title block */
+  .main-content h2 {
+    text-align: center;
+    font-size: 24pt;
+    margin: 0 0 0.3rem 0;
+  }
+  /* byline = first paragraph of the content */
+  .project-description > p:first-of-type {
+    text-align: center;
+    font-size: 11pt;
+    margin-bottom: 1.6rem;
+    hyphens: none;
+  }
+
+  /* section + subsection headings: bold serif */
+  .project-description h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 13.5pt;
+    font-weight: 700;
+    margin: 1.4rem 0 0.5rem;
+    break-after: avoid;
+  }
+  .project-description h4 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    margin: 1.1rem 0 0.4rem;
+    break-after: avoid;
+  }
+
+  /* keep tables and small figures intact across page breaks */
+  .project-description table { break-inside: avoid; page-break-inside: avoid; font-size: 9.5pt; }
+  .project-description figure { break-inside: avoid; page-break-inside: avoid; }
+  .project-description figcaption { break-before: avoid; page-break-before: avoid; font-size: 9pt; }
+
+  /* oversized galleries are sliced into per-group strips that each fit a page;
+     keep each strip whole so page breaks fall between groups, not mid-row */
+  .gal-part { break-inside: avoid; page-break-inside: avoid; }
+}
+
+/* gallery strips stack seamlessly into one centered figure (screen + print) */
+.project-description figure img.gal-part { max-width: 600px; margin: 0 auto; }
+
+
+/* ---------- GPSK-300 visual white paper ---------- */
+.gpsk-300 .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.4rem;
+  row-gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+.gpsk-300 .stat {
+  border-top: 1px solid rgba(0, 0, 0, 0.55);
+  padding-top: 0.55rem;
+}
+.gpsk-300 .stat-num {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.gpsk-300 .stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.4;
+  opacity: 0.68;
+  margin-top: 0.3rem;
+}
+@media (max-width: 640px) {
+  .gpsk-300 .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.project-page .wp-footnote {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.65;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  padding-top: 1rem;
+  margin-top: 3rem;
+}
+
+/* GPSK-300 interactive results explorer */
+.gpsk-300 .rx { margin: 2.25rem 0; }
+.gpsk-300 .rx-filters {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding-bottom: 0.75rem; margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+.gpsk-300 .rx-f {
+  font: inherit; font-size: 0.7rem; letter-spacing: 0.02em; font-weight: 400;
+  background: none; border: 1px solid rgba(0, 0, 0, 0.35); border-radius: 0;
+  padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
+}
+.gpsk-300 .rx-f.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
+.gpsk-300 .rx-chips { display: flex; flex-wrap: wrap; gap: 0.32rem; margin-bottom: 1rem; }
+.gpsk-300 .rx-chip {
+  font: inherit; font-size: 0.73rem; font-weight: 300; background: none;
+  border: 1px solid rgba(0, 0, 0, 0.22); padding: 0.2rem 0.5rem; cursor: pointer; color: inherit;
+}
+.gpsk-300 .rx-chip:hover { border-color: #000; }
+.gpsk-300 .rx-chip.is-active { border-color: #FF0860; color: #FF0860; }
+.gpsk-300 .rx-detail {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.22); padding: 1rem;
+}
+.gpsk-300 .rx-img { width: 100%; height: auto; display: block; }
+.gpsk-300 .rx-name { font-weight: 600; font-size: 1.02rem; margin: 0 0 0.05rem; }
+.gpsk-300 .rx-meta { font-size: 0.75rem; opacity: 0.62; margin: 0 0 0.65rem; }
+.gpsk-300 .rx-bar { height: 8px; background: rgba(0, 0, 0, 0.1); margin-bottom: 0.3rem; }
+.gpsk-300 .rx-fill { height: 100%; background: #FF0860; width: 0; }
+.gpsk-300 .rx-rate { font-size: 0.72rem; opacity: 0.72; margin: 0 0 0.6rem; font-variant-numeric: tabular-nums; }
+.gpsk-300 .rx-note { font-size: 0.79rem; font-weight: 300; line-height: 1.5; margin: 0; }
+.gpsk-300 .rx-hint { font-size: 0.71rem; font-style: italic; opacity: 0.55; margin: 0.5rem 0 0; }
+@media (max-width: 560px) { .gpsk-300 .rx-detail { grid-template-columns: 1fr; } }
+
+/* GPSK-300 conditioning sliders */
+.gpsk-300 .cond-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 0.7rem 0 0.3rem; }
+.gpsk-300 .cond-controls label { font-size: 0.73rem; font-weight: 300; display: block; text-align: center; }
+.gpsk-300 .cond-controls output { font-variant-numeric: tabular-nums; font-weight: 500; }
+.gpsk-300 .cond-controls input[type="range"] { width: 82%; display: block; margin: 0.45rem auto 0; }
+@media (max-width: 560px) { .gpsk-300 .cond-controls { grid-template-columns: 1fr; } }
+
+/* GPSK-300 conditioning interactives */
+.gpsk-300 .emerge-controls { margin: 0.7rem 0 0.3rem; }
+.gpsk-300 .emerge-controls label { font-size: 0.73rem; font-weight: 300; display: block; max-width: 24rem; margin: 0 auto; text-align: center; }
+.gpsk-300 .emerge-controls output { font-variant-numeric: tabular-nums; font-weight: 500; }
+.gpsk-300 .emerge-controls input[type="range"] { width: 100%; display: block; margin-top: 0.45rem; }
+
+/* squared slider handles on a thin track */
+.project-page input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+.project-page input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.project-page input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -5px;
+  background: #FF0860;
+  border: none;
+  border-radius: 0;
+}
+.project-page input[type="range"]::-moz-range-track {
+  height: 2px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.project-page input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #FF0860;
+  border: none;
+  border-radius: 0;
+}
+.gpsk-300 .sys-controls { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.gpsk-300 .sys-btn {
+  font: inherit; font-size: 0.7rem; letter-spacing: 0.02em; font-weight: 400;
+  background: none; border: 1px solid rgba(0, 0, 0, 0.35); border-radius: 0;
+  padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
+}
+.gpsk-300 .sys-btn.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
+
+/* anisotropy dataset: landscape filter */
+.magnet-anisotropy-dataset .lp-wrap { margin: 2.25rem 0; }
+.magnet-anisotropy-dataset .lp-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-bottom: 0.75rem; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+.magnet-anisotropy-dataset .lp-f {
+  font: inherit; font-size: 0.7rem; letter-spacing: 0.02em; font-weight: 400;
+  background: none; border: 1px solid rgba(0, 0, 0, 0.35); border-radius: 0;
+  padding: 0.26rem 0.68rem; cursor: pointer; color: inherit; opacity: 0.75;
+}
+.magnet-anisotropy-dataset .lp-f.is-active { background: #000; color: #E7EAEE; border-color: #000; opacity: 1; }
+#aniso-landscape .lp { fill: #1f2937; opacity: 0.16; transition: opacity 0.35s ease, fill 0.35s ease; }
+#aniso-landscape[data-sel] .lp { opacity: 0.05; }
+#aniso-landscape[data-sel="i"] .lp[data-c="i"],
+#aniso-landscape[data-sel="b"] .lp[data-c="b"],
+#aniso-landscape[data-sel="p"] .lp[data-c="p"],
+#aniso-landscape[data-sel="c"] .lp[data-c="c"],
+#aniso-landscape[data-sel="o"] .lp[data-c="o"],
+#aniso-landscape[data-sel="h"] .lp[data-c="h"] { fill: #FF0860; opacity: 0.8; }
+.magnet-anisotropy-dataset .lp-read { font-size: 0.74rem; font-variant-numeric: tabular-nums; opacity: 0.7; margin-top: 0.5rem; }

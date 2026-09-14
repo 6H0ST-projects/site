@@ -1,8 +1,23 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "hugo",
+  "buildCommand": "hugo --gc --minify --cleanDestinationDir",
+  "outputDirectory": "public",
   "build": {
     "env": {
       "HUGO_VERSION": "0.148.2"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/project-014",
+      "destination": "https://project-14.us/",
+      "permanent": true
+    },
+    {
+      "source": "/project-014/:path*",
+      "destination": "https://project-14.us/:path*",
+      "permanent": true
+    }
+  ]
 }

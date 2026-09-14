@@ -1,0 +1,32 @@
+baseURL = 'https://project-14.us/'
+languageCode = 'en-us'
+title = 'Project 14'
+
+# Disable unnecessary features for speed
+disableKinds = ['taxonomy', 'term', 'RSS']
+disableHugoGeneratorInject = true
+
+# Optimization settings
+minify = true
+buildFuture = true
+buildExpired = true
+
+# Markup settings for clean HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+# Params for site configuration
+[params]
+  description = "Creating novel methods for discovering the next generation of magnetic materials."
+  author = "Project 14"
+  ghostProjectsURL = "https://www.ghost-projects.tech/"
