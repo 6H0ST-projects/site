@@ -14,7 +14,7 @@ textColor: "#000"
 
 Our **SOC-SCF Trajectories Dataset** holds 310 self-consistent-field (SCF) histories from spin–orbit-coupled density functional theory calculations performed on select magnetic materials. For each SCF evaluation we store three full three-dimensional fields: the input charge and spin density, the produced effective potential, and the resulting density.
 
-**A special thank you to the [SF Compute](https://sfcompute.com/) team.** SF Compute provided the H100 GPU infrastructure that made this dataset possible. Their nodes supported multiple parallel spin–orbit-coupled Quantum ESPRESSO runs, preserving the charge, spin and potential fields throughout each SCF history. That sustained compute time let us collect both converged solutions and their full trajectory history.
+**A special thank you to the [SF Compute](https://sfcompute.com/) team.** SF Compute provided the H100 GPU infrastructure that made this dataset possible. Their nodes supported multiple parallel spin–orbit-coupled Quantum ESPRESSO runs, preserving the charge, spin and potential fields throughout each SCF history. That sustained compute time let us collect both converged solutions and their full trajectory history. To our knowledge, this is the first publicly released dataset of SCF field trajectories for periodic, spin–orbit-coupled DFT.
 
 <figure class="soc-figure">
   <div class="soc-scroll" tabindex="0" role="group" aria-label="Input spin density of FeAl2 in two crystal layers at SCF evaluations 1, 3, 5, 9 and 96.">
@@ -94,7 +94,7 @@ Because \(\xi\) follows the slope of the potential, it is largest close to the n
   <div class="soc-scroll" tabindex="0" role="group" aria-label="Schematic of the origin of spin–orbit coupling.">
 {{< soc-svg "soc-frames" >}}
   </div>
-  <figcaption><strong>Figure 4</strong> Schematic. From the electron's point of view the nucleus circles it, and the resulting magnetic field lines up with the orbital angular momentum. The spin's energy in that field is proportional to \(\mathbf L\cdot\mathbf S\).</figcaption>
+  <figcaption><strong>Figure 4</strong> Schematic (this is a gross over-simplification). From the electron's point of view the nucleus circles it, and the resulting magnetic field lines up with the orbital angular momentum. The spin's energy in that field is proportional to \(\mathbf L\cdot\mathbf S\).</figcaption>
 </figure>
 
 <figure class="soc-figure">
