@@ -1,0 +1,22 @@
+<svg class="soc-diagram" viewBox="0 24 680 306" role="img" aria-labelledby="ksl-title ksl-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="ksl-title">The self-consistent-field loop, and what the dataset stores</title>
+<desc id="ksl-desc">Schematic. An input charge and spin density builds an effective potential; solving the Kohn–Sham spinor equations gives orbitals, from which the output density is summed; the residual between output and input decides whether to stop or mix a new input. The dataset stores the input density, the local potential and the output density at every evaluation, plus scalar diagnostics. Orbitals and the mixer's internal history are not stored.</desc>
+<defs><marker id="ksl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#939ba6"/></marker></defs>
+<rect width="680" height="330" fill="#fff"/>
+<g class="ksl-nodes">
+  <g class="ksl-stored"><rect x="20" y="40" width="170" height="86"/><text x="105" y="70" class="d-h" text-anchor="middle">Input density</text><text x="105" y="94" class="d-m" text-anchor="middle">n, m<tspan baseline-shift="sub" font-size="72%">x</tspan>, m<tspan baseline-shift="sub" font-size="72%">y</tspan>, m<tspan baseline-shift="sub" font-size="72%">z</tspan></text><text x="105" y="114" class="d-badge" text-anchor="middle">STORED</text></g>
+  <g class="ksl-stored"><rect x="255" y="40" width="170" height="86"/><text x="340" y="70" class="d-h" text-anchor="middle">Effective potential</text><text x="340" y="94" class="d-m" text-anchor="middle">V<tspan baseline-shift="sub" font-size="72%">0</tspan>, B<tspan baseline-shift="sub" font-size="72%">x</tspan>, B<tspan baseline-shift="sub" font-size="72%">y</tspan>, B<tspan baseline-shift="sub" font-size="72%">z</tspan>&#160;(local part)</text><text x="340" y="114" class="d-badge" text-anchor="middle">STORED</text></g>
+  <g class="ksl-plain"><rect x="490" y="40" width="170" height="86"/><text x="575" y="70" class="d-h" text-anchor="middle">Solve for orbitals</text><text x="575" y="94" class="d-m" text-anchor="middle">two-component spinors ψ</text><text x="575" y="114" class="d-badge d-badge-off" text-anchor="middle">NOT STORED</text></g>
+  <g class="ksl-stored"><rect x="490" y="200" width="170" height="86"/><text x="575" y="230" class="d-h" text-anchor="middle">Output density</text><text x="575" y="254" class="d-m" text-anchor="middle">n, m<tspan baseline-shift="sub" font-size="72%">x</tspan>, m<tspan baseline-shift="sub" font-size="72%">y</tspan>, m<tspan baseline-shift="sub" font-size="72%">z</tspan></text><text x="575" y="274" class="d-badge" text-anchor="middle">STORED</text></g>
+  <g class="ksl-plain"><rect x="255" y="200" width="170" height="86"/><text x="340" y="230" class="d-h" text-anchor="middle">Compare</text><text x="340" y="254" class="d-m" text-anchor="middle">residual = out − in</text><text x="340" y="274" class="d-badge" text-anchor="middle">SCALARS STORED</text></g>
+  <g class="ksl-plain"><rect x="20" y="200" width="170" height="86"/><text x="105" y="230" class="d-h" text-anchor="middle">Mix</text><text x="105" y="254" class="d-m" text-anchor="middle">next input from out + in</text><text x="105" y="274" class="d-badge d-badge-off" text-anchor="middle">MIXER STATE NOT STORED</text></g>
+</g>
+<g stroke="#939ba6" stroke-width="1.5" fill="none">
+  <path d="M190 83 H251" marker-end="url(#ksl-arrow)"/><path d="M425 83 H486" marker-end="url(#ksl-arrow)"/>
+  <path d="M575 126 V196" marker-end="url(#ksl-arrow)"/><path d="M490 243 H429" marker-end="url(#ksl-arrow)"/>
+  <path d="M255 243 H194" marker-end="url(#ksl-arrow)"/><path d="M105 200 V130" marker-end="url(#ksl-arrow)"/>
+  <path d="M340 286 V316 H640" stroke-dasharray="0" marker-end="url(#ksl-arrow)"/>
+</g>
+<text x="130" y="168" class="d-s">not yet consistent: repeat</text>
+<text x="360" y="310" class="d-s">consistent within tolerance: stop</text>
+</svg>

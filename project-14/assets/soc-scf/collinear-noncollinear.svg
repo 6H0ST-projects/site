@@ -1,0 +1,34 @@
+<svg class="soc-diagram" viewBox="0 0 680 336" role="img" aria-labelledby="cnc-title cnc-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="cnc-title">Collinear and noncollinear descriptions of spin</title>
+<desc id="cnc-desc">Schematic. In a collinear calculation every local magnetization is parallel or antiparallel to one shared axis and each point carries two numbers. In a noncollinear calculation the magnetization can point in any direction; each point carries four numbers, the charge density and three spin components, equivalent to a two-by-two spin-density matrix.</desc>
+<defs><marker id="cnc-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ff0860"/></marker><marker id="cnc-head-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4b515b"/></marker></defs>
+<rect width="680" height="336" fill="#fff"/>
+<text x="20" y="28" class="d-h">Collinear</text>
+<g transform="translate(40 96)">
+  <g fill="#dfe3e8"><circle cx="0" cy="0" r="3"/><circle cx="60" cy="0" r="3"/><circle cx="120" cy="0" r="3"/><circle cx="180" cy="0" r="3"/><circle cx="240" cy="0" r="3"/><circle cx="0" cy="70" r="3"/><circle cx="60" cy="70" r="3"/><circle cx="120" cy="70" r="3"/><circle cx="180" cy="70" r="3"/><circle cx="240" cy="70" r="3"/><circle cx="0" cy="140" r="3"/><circle cx="60" cy="140" r="3"/><circle cx="120" cy="140" r="3"/><circle cx="180" cy="140" r="3"/><circle cx="240" cy="140" r="3"/></g>
+  <g stroke="#ff0860" stroke-width="2.2" marker-end="url(#cnc-head)">
+    <line x1="0" y1="16" x2="0" y2="-20"/><line x1="60" y1="10" x2="60" y2="-12"/><line x1="120" y1="18" x2="120" y2="-22"/><line x1="240" y1="14" x2="240" y2="-18"/>
+    <line x1="0" y1="80" x2="0" y2="58"/><line x1="120" y1="84" x2="120" y2="52"/><line x1="240" y1="78" x2="240" y2="62"/>
+    <line x1="60" y1="152" x2="60" y2="124"/><line x1="180" y1="154" x2="180" y2="122"/>
+  </g>
+  <g stroke="#4b515b" stroke-width="2.2" marker-end="url(#cnc-head-b)">
+    <line x1="180" y1="-8" x2="180" y2="8"/><line x1="60" y1="62" x2="60" y2="80"/><line x1="180" y1="60" x2="180" y2="82"/><line x1="0" y1="132" x2="0" y2="148"/><line x1="120" y1="132" x2="120" y2="150"/><line x1="240" y1="134" x2="240" y2="146"/>
+  </g>
+</g>
+<text x="20" y="286" class="d-t">Two numbers per point:</text>
+<text x="20" y="310" class="d-m">n↑, n↓   ⇔   n = n↑ + n↓,  m = n↑ − n↓</text>
+<line x1="340" y1="16" x2="340" y2="318" stroke="#e6e9ee"/>
+<g transform="translate(360 0)">
+<text x="0" y="28" class="d-h">Noncollinear</text>
+<g transform="translate(20 96)">
+  <g fill="#dfe3e8"><circle cx="0" cy="0" r="3"/><circle cx="60" cy="0" r="3"/><circle cx="120" cy="0" r="3"/><circle cx="180" cy="0" r="3"/><circle cx="240" cy="0" r="3"/><circle cx="0" cy="70" r="3"/><circle cx="60" cy="70" r="3"/><circle cx="120" cy="70" r="3"/><circle cx="180" cy="70" r="3"/><circle cx="240" cy="70" r="3"/><circle cx="0" cy="140" r="3"/><circle cx="60" cy="140" r="3"/><circle cx="120" cy="140" r="3"/><circle cx="180" cy="140" r="3"/><circle cx="240" cy="140" r="3"/></g>
+  <g stroke="#ff0860" stroke-width="2.2" marker-end="url(#cnc-head)">
+    <line x1="-4" y1="16" x2="4" y2="-18"/><line x1="52" y1="12" x2="68" y2="-12"/><line x1="108" y1="8" x2="132" y2="-8"/><line x1="165" y1="0" x2="196" y2="0"/><line x1="232" y1="-8" x2="248" y2="10"/>
+    <line x1="10" y1="82" x2="-10" y2="58"/><line x1="60" y1="86" x2="60" y2="54"/><line x1="104" y1="76" x2="136" y2="64"/><line x1="170" y1="58" x2="190" y2="82"/><line x1="236" y1="54" x2="244" y2="86"/>
+    <line x1="14" y1="150" x2="-14" y2="130"/><line x1="72" y1="152" x2="48" y2="128"/><line x1="120" y1="158" x2="120" y2="122"/><line x1="192" y1="152" x2="168" y2="128"/><line x1="254" y1="142" x2="226" y2="138"/>
+  </g>
+</g>
+<text x="0" y="286" class="d-t">Four numbers per point, a 2 × 2 spin-density matrix:</text>
+<text x="0" y="310" class="d-m">½ [ n + m<tspan baseline-shift="sub" font-size="72%">z</tspan>&#160;,  m<tspan baseline-shift="sub" font-size="72%">x</tspan>&#160;− i m<tspan baseline-shift="sub" font-size="72%">y</tspan>&#160;;  m<tspan baseline-shift="sub" font-size="72%">x</tspan>&#160;+ i m<tspan baseline-shift="sub" font-size="72%">y</tspan>&#160;,  n − m<tspan baseline-shift="sub" font-size="72%">z</tspan>&#160;]</text>
+</g>
+</svg>

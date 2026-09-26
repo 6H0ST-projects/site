@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 325" role="img" aria-labelledby="t d">
+<title id="t">A scalar and a vector at each grid point</title><desc id="d">Illustrative grid slices, not material data. Charge shading and spin arrows occupy matching locations. Three components describe a vector even though this drawing is two-dimensional.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#da0751"/></marker></defs>
+<rect width="640" height="325" fill="white"/>
+<g font-family="Helvetica Neue,Arial,sans-serif" fill="#252830">
+<text x="16" y="27" font-size="18">Where the charge is. How the spin is oriented.</text>
+<text x="16" y="52" font-size="11" fill="#6b7380">ILLUSTRATIVE GRID SLICE · NOT MATERIAL DATA</text>
+<text x="35" y="86" font-size="14">Charge density n</text><text x="347" y="86" font-size="14">Spin density m = (mₓ, mᵧ, m_z)</text>
+<g stroke="#e1e5eb" fill="none"><path d="M35 104H270V269H35Z M35 159H270 M35 214H270 M113 104V269 M191 104V269"/><path d="M347 104H582V269H347Z M347 159H582 M347 214H582 M425 104V269 M503 104V269"/></g>
+<g fill="#252830"><circle cx="74" cy="132" r="11" opacity=".22"/><circle cx="152" cy="132" r="11" opacity=".55"/><circle cx="230" cy="132" r="11" opacity=".22"/><circle cx="74" cy="187" r="11" opacity=".45"/><circle cx="152" cy="187" r="11" opacity=".9"/><circle cx="230" cy="187" r="11" opacity=".45"/><circle cx="74" cy="242" r="11" opacity=".22"/><circle cx="152" cy="242" r="11" opacity=".55"/><circle cx="230" cy="242" r="11" opacity=".22"/></g>
+<g stroke="#da0751" stroke-width="2" marker-end="url(#a)"><path d="M376 136L393 126"/><path d="M453 138L470 123"/><path d="M535 142L541 121"/><path d="M373 192L395 177"/><path d="M451 197L475 173"/><path d="M545 198L536 176"/><path d="M378 239L393 247"/><path d="M470 246L455 235"/><path d="M548 245L531 236"/></g>
+<text x="35" y="300" font-size="12" fill="#6b7380">One value per location</text><text x="347" y="300" font-size="12" fill="#6b7380">Three components per location</text>
+</g></svg>

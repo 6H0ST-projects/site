@@ -1,0 +1,32 @@
+<svg class="soc-diagram" viewBox="0 0 680 270" role="img" aria-labelledby="dvw-title dvw-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="dvw-title">Why density functional theory works with the density</title>
+<desc id="dvw-desc">Schematic. The many-electron wavefunction for the 44 valence electrons of the FeAl2 cell depends on 132 coordinates; the electron density depends on three. On the dataset's 72 by 72 by 72 grid, one density channel is 373,248 numbers.</desc>
+<rect width="680" height="270" fill="#fff"/>
+<g class="dvw-left">
+  <text x="20" y="30" class="d-h">Many-electron wavefunction</text>
+  <text x="20" y="52" class="d-m">Ψ(r₁, r₂, …, r₄₄)</text>
+  <g stroke="#dfe3e8" stroke-width="1">
+    <line x1="60" y1="100" x2="130" y2="85"/><line x1="60" y1="100" x2="95" y2="160"/><line x1="60" y1="100" x2="175" y2="140"/><line x1="130" y1="85" x2="175" y2="140"/><line x1="130" y1="85" x2="95" y2="160"/><line x1="95" y1="160" x2="175" y2="140"/><line x1="175" y1="140" x2="230" y2="100"/><line x1="130" y1="85" x2="230" y2="100"/><line x1="230" y1="100" x2="250" y2="170"/><line x1="175" y1="140" x2="250" y2="170"/><line x1="95" y1="160" x2="160" y2="195"/><line x1="160" y1="195" x2="250" y2="170"/><line x1="160" y1="195" x2="175" y2="140"/><line x1="60" y1="100" x2="160" y2="195"/><line x1="230" y1="100" x2="95" y2="160"/>
+  </g>
+  <g fill="#252830"><circle cx="60" cy="100" r="5"/><circle cx="130" cy="85" r="5"/><circle cx="95" cy="160" r="5"/><circle cx="175" cy="140" r="5"/><circle cx="230" cy="100" r="5"/><circle cx="250" cy="170" r="5"/><circle cx="160" cy="195" r="5"/></g>
+  <text x="20" y="232" class="d-t">Every electron's position matters jointly:</text>
+  <text x="20" y="252" class="d-t"><tspan class="d-strong">3 × 44 = 132 coordinates</tspan>&#160;for one FeAl₂ cell.</text>
+</g>
+<g transform="translate(300 0)">
+  <path d="M8 125 H64" stroke="#939ba6" stroke-width="1.5" fill="none" marker-end="url(#dvw-arrow)"/>
+  <text x="36" y="112" class="d-s" text-anchor="middle">Hohenberg–Kohn</text>
+</g>
+<defs><marker id="dvw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#939ba6"/></marker></defs>
+<g transform="translate(390 0)">
+  <text x="0" y="30" class="d-h">Electron density</text>
+  <text x="0" y="52" class="d-m">n(r)</text>
+  <g transform="translate(40 70)" stroke="#c9ced6" fill="none">
+    <path d="M0 40 L110 40 L110 150 L0 150 Z" fill="#f7f8fa"/>
+    <path d="M0 40 L40 0 L150 0 L110 40"/><path d="M110 150 L150 110 L150 0"/>
+    <g stroke="#e4e7ec"><path d="M27.5 40V150M55 40V150M82.5 40V150M0 67.5H110M0 95H110M0 122.5H110"/></g>
+    <circle cx="55" cy="95" r="22" fill="#262830" fill-opacity=".12" stroke="none"/><circle cx="55" cy="95" r="10" fill="#262830" fill-opacity=".35" stroke="none"/>
+  </g>
+  <text x="0" y="232" class="d-t">One number per point in space:</text>
+  <text x="0" y="252" class="d-t"><tspan class="d-strong">72 × 72 × 72 = 373,248 values</tspan>&#160;per channel.</text>
+</g>
+</svg>

@@ -1,0 +1,198 @@
+{
+  "snapshot": "2026-09-22",
+  "families": [
+    {
+      "family": "a15",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 16,
+      "endpoints": 3
+    },
+    {
+      "family": "a7-peierls",
+      "split": "train",
+      "roots": 1,
+      "trajectories": 6,
+      "endpoints": 0
+    },
+    {
+      "family": "alb2",
+      "split": "validation",
+      "roots": 2,
+      "trajectories": 10,
+      "endpoints": 0
+    },
+    {
+      "family": "b20-rocksalt",
+      "split": "train",
+      "roots": 1,
+      "trajectories": 14,
+      "endpoints": 4
+    },
+    {
+      "family": "b27-pnma-ab",
+      "split": "test",
+      "roots": 3,
+      "trajectories": 30,
+      "endpoints": 2
+    },
+    {
+      "family": "b35-cosn",
+      "split": "train",
+      "roots": 3,
+      "trajectories": 20,
+      "endpoints": 0
+    },
+    {
+      "family": "bain-and-interstitial",
+      "split": "train",
+      "roots": 13,
+      "trajectories": 45,
+      "endpoints": 11
+    },
+    {
+      "family": "c16-al2cu",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 22,
+      "endpoints": 7
+    },
+    {
+      "family": "c38-cu2sb",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 17,
+      "endpoints": 0
+    },
+    {
+      "family": "cementite",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 17,
+      "endpoints": 3
+    },
+    {
+      "family": "cr5b3-borosilicide",
+      "split": "test",
+      "roots": 2,
+      "trajectories": 8,
+      "endpoints": 0
+    },
+    {
+      "family": "crb4",
+      "split": "validation",
+      "roots": 1,
+      "trajectories": 5,
+      "endpoints": 0
+    },
+    {
+      "family": "d019",
+      "split": "validation",
+      "roots": 2,
+      "trajectories": 17,
+      "endpoints": 1
+    },
+    {
+      "family": "fe2p-phosphide",
+      "split": "validation",
+      "roots": 2,
+      "trajectories": 11,
+      "endpoints": 1
+    },
+    {
+      "family": "fe7b4",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 4,
+      "endpoints": 0
+    },
+    {
+      "family": "laves",
+      "split": "train",
+      "roots": 4,
+      "trajectories": 18,
+      "endpoints": 0
+    },
+    {
+      "family": "m2mb2-boride",
+      "split": "test",
+      "roots": 2,
+      "trajectories": 7,
+      "endpoints": 0
+    },
+    {
+      "family": "mu-fe7w6",
+      "split": "train",
+      "roots": 1,
+      "trajectories": 1,
+      "endpoints": 0
+    },
+    {
+      "family": "nias",
+      "split": "test",
+      "roots": 2,
+      "trajectories": 24,
+      "endpoints": 0
+    },
+    {
+      "family": "schreibersite",
+      "split": "train",
+      "roots": 1,
+      "trajectories": 6,
+      "endpoints": 0
+    },
+    {
+      "family": "skutterudite",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 10,
+      "endpoints": 0
+    },
+    {
+      "family": "thcr2si2",
+      "split": "train",
+      "roots": 1,
+      "trajectories": 3,
+      "endpoints": 0
+    },
+    {
+      "family": "thmn12",
+      "split": "train",
+      "roots": 2,
+      "trajectories": 3,
+      "endpoints": 0
+    }
+  ],
+  "outcomes": {
+    "qualified": 32,
+    "backend_converged_unqualified": 62,
+    "censored": 220
+  },
+  "mae": [
+    {
+      "mesh": "4x4x12",
+      "smearing_Ry": 0.01,
+      "delta_meV_cell": 1.501356
+    },
+    {
+      "mesh": "6x6x12",
+      "smearing_Ry": 0.01,
+      "delta_meV_cell": 1.192877
+    },
+    {
+      "mesh": "4x4x12",
+      "smearing_Ry": 0.005,
+      "delta_meV_cell": 2.180858
+    }
+  ],
+  "sources": [
+    {
+      "report": "campaign-closeout001/REPORT.md",
+      "sha256": "cc0fbc300347b6c17e3951927a9e1e9ebf8a95b5522751ee7d551cede8ca3ca3"
+    },
+    {
+      "report": "mae-sensitivity134/REPORT.md",
+      "sha256": "5f75878ca32650bd5c0e79c2eb8de7a49d3c6d9a1eb91fa0b79e01eed34759de"
+    }
+  ]
+}

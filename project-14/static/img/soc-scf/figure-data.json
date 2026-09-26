@@ -1,0 +1,99 @@
+{
+ "release_summary": {
+  "trajectories": 310,
+  "source_occurrences": 49007,
+  "canonical_maps": 47198,
+  "roots": 53,
+  "geometries": 163,
+  "families": 22,
+  "outcomes": {
+   "censored_without_conventional_convergence": 216,
+   "backend_converged_without_qualified_endpoint": 62,
+   "qualified_endpoint": 32
+  },
+  "splits": {
+   "train": 198,
+   "test": 69,
+   "validation": 43
+  },
+  "unique_field_objects": 141800,
+  "raw_bytes": 1457549308992,
+  "planned_shards": 1368,
+  "upstream_catalog_sha256": "4f6e2186a1e114fb63700a8c529e0d8939ee5b8e17f0e16ee7f56ff6f8f0e47f",
+  "release_scope": "SOC field trajectories only; excludes composition-discovery/email studies and all Fe12W2B8-related roots."
+ },
+ "facts": {
+  "electrons": 43.99999999999997,
+  "net_moment_e": [
+   -8.601470078521277e-07,
+   -6.790972302718642e-07,
+   4.042323338893976
+  ],
+  "abs_moment_integral_e": 4.807882952307329,
+  "negative_mz_integral_e": -0.38240862954471816,
+  "max_transverse_over_max_mz": 0.009907031759180175,
+  "b_collinear_fraction_where_m_gt_1pct": 1.0,
+  "b_antiparallel_fraction_where_m_gt_1pct": 0.9908252983901796,
+  "grid_points": 373248,
+  "valence_electrons": 44.0,
+  "total_energy_final_ry": -519.9238133,
+  "feal2_energy_below_print_precision_from": 18,
+  "feal2_energy_below_fe_mae_from": 15,
+  "robust_moment_histories": 204,
+  "robust_moment_final_within_2deg": 197,
+  "late_turning": {
+   "histories": 145,
+   "turning_in_second_half": 14,
+   "turning_and_qualified": 0,
+   "median_final_spin_residual_turning": 0.0023851059597941033,
+   "median_final_spin_residual_still": 0.00026379908786230825
+  },
+  "feb2_stall": {
+   "spin_at_60": 0.00012400525743005316,
+   "charge_at_60": 8.8092835763373e-06,
+   "spin_at_240": 0.0018062675758713813,
+   "turn_at_240": 0.8173503589498199,
+   "spin_range_after_120": [
+    3.4975742830894414e-05,
+    0.02982901805724029
+   ],
+   "turn_at_480": 20.068538674020523,
+   "turn_at_720": 28.61188122073038,
+   "max_spin_after_240": 0.02982901805724029,
+   "spin_over_charge_median_after_240": 28.283692063790387
+  },
+  "final_spin_gt_charge": 308,
+  "histories_with_rebound": 282,
+  "kpoints": {
+   "8": 306,
+   "512": 1,
+   "64": 2,
+   "27": 1
+  },
+  "families_without_endpoint": 14,
+  "direction_classes": {
+   "one_active_species": 177,
+   "parallel": 48,
+   "collinear_opposed": 62,
+   "nonparallel": 23
+  },
+  "qualified_by_direction_class": {
+   "parallel": 1,
+   "one_active_species": 31
+  },
+  "mixing_beta": {
+   "0.3": 265,
+   "0.15": 36,
+   "0.1": 9
+  },
+  "nat_range": [
+   1,
+   18
+  ],
+  "history_length_range": [
+   4,
+   720
+  ]
+ },
+ "source": "huggingface.co/datasets/project-14/soc-scf-trajectories"
+}

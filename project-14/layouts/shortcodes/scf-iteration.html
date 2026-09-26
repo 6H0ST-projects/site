@@ -1,0 +1,60 @@
+<section class="scfx" aria-labelledby="scfx-title">
+  <p class="scfx-eyebrow">Background · interactive explanation · illustrative model</p>
+  <h4 id="scfx-title">Explore the equations. Watch the trajectory.</h4>
+  <p class="scfx-intro">The equations below describe conventional SOC-enabled SCF. The animation uses a small, explicitly defined response model to make mixing and residuals visible. It does not calculate electronic orbitals or simulate a material.</p>
+  <div class="scfx-controls">
+    <button type="button" id="scfx-play" aria-pressed="false">Play trajectory</button>
+    <button type="button" id="scfx-step">Next iteration →</button>
+    <button type="button" id="scfx-reset">Reset</button>
+    <label>Mixing α <select id="scfx-mixing"><option value="0.2">0.20 · cautious</option><option value="0.5" selected>0.50 · moderate</option><option value="0.8">0.80 · stronger</option></select></label>
+  </div>
+  <label class="scfx-scrubber" for="scfx-iteration">Iteration <output id="scfx-iteration-value">0 / 60</output><input id="scfx-iteration" type="range" min="0" max="60" value="0" step="1"></label>
+  <p class="scfx-note">Choose an equation below. It stays selected while the fields and trajectory play.</p>
+  <div class="scfx-stages" role="group" aria-label="Stages of an SCF iteration">
+    <button type="button" data-scfx-stage="0" aria-pressed="true">1 · Build</button>
+    <button type="button" data-scfx-stage="1" aria-pressed="false">2 · Solve</button>
+    <button type="button" data-scfx-stage="2" aria-pressed="false">3 · Reconstruct</button>
+    <button type="button" data-scfx-stage="3" aria-pressed="false">4 · Mix</button>
+  </div>
+  <div class="scfx-stage" data-scfx-panel="0">
+    <h5>1. The input density defines the electronic problem</h5>
+    <div class="scfx-equation">\[D_k=(n_k,\mathbf m_k)\quad\longrightarrow\quad\hat H[D_k]\]</div>
+    <p>The charge and spin densities, together with the fixed crystal and chosen approximations, determine the effective Hamiltonian. It includes kinetic energy, local potentials and nonlocal pseudopotential terms carrying SOC. Four local potential fields alone do not specify it.</p>
+  </div>
+  <div class="scfx-stage" data-scfx-panel="1" hidden>
+    <h5>2. Solve for electronic states in that potential</h5>
+    <div class="scfx-equation">\[\hat H[D_k]\psi_{j\mathbf q}=\epsilon_{j\mathbf q}\psi_{j\mathbf q},\qquad \psi=\begin{pmatrix}\psi_\uparrow\\\psi_\downarrow\end{pmatrix}\]</div>
+    <p>For the norm-conserving formulation used here, the inner eigenvalue problem yields energies and two-component spinors at reciprocal-space points q. Each spinor has two coupled complex amplitudes; these are not two independent collinear calculations. This inner solve has its own accuracy requirements.</p>
+  </div>
+  <div class="scfx-stage" data-scfx-panel="2" hidden>
+    <h5>3. Reconstruct the charge and spin density</h5>
+    <div class="scfx-equation">\[n_{\rm out}(\mathbf r)=\sum_{j\mathbf q}w_{\mathbf q}f_{j\mathbf q}\,\psi^\dagger\psi\]</div>
+    <div class="scfx-equation">\[\mathbf m_{\rm out}(\mathbf r)=\sum_{j\mathbf q}w_{\mathbf q}f_{j\mathbf q}\,\psi^\dagger\boldsymbol\sigma\psi\]</div>
+    <p>Sum occupied-state contributions using occupations f and reciprocal-space weights w. The Pauli matrices σ extract the three spin components. Here m is spin density in electron-density units; conversion to a magnetic moment uses the recorded convention.</p>
+  </div>
+  <div class="scfx-stage" data-scfx-panel="3" hidden>
+    <h5>4. Measure the mismatch and construct the next input</h5>
+    <div class="scfx-equation">\[R_k=D_{\mathrm{out},k}-D_k\]</div>
+    <div class="scfx-equation">\[D_{k+1}=D_k+\alpha R_k\]</div>
+    <p>The second equation is simple linear mixing. A smaller α takes a smaller step toward the output. Real QE calculations can use preconditioning and history-based mixing; this example uses linear mixing so every update can be followed directly. A smaller step is not automatically a more accurate final solution.</p>
+  </div>
+  <div class="scfx-fields">
+    <figure><canvas width="144" height="144" data-scfx-field="input-n" aria-label="Illustrative input charge density"></canvas><figcaption>Input n</figcaption></figure>
+    <figure><canvas width="144" height="144" data-scfx-field="output-n" aria-label="Illustrative output charge density"></canvas><figcaption>Output n</figcaption></figure>
+    <figure><canvas width="144" height="144" data-scfx-field="input-mz" aria-label="Illustrative input z spin density"></canvas><figcaption>Input m_z</figcaption></figure>
+    <figure><canvas width="144" height="144" data-scfx-field="output-mz" aria-label="Illustrative output z spin density"></canvas><figcaption>Output m_z</figcaption></figure>
+  </div>
+  <p class="scfx-key">Periodic 2D fields, arbitrary units. <span class="scfx-charge-key"></span> n: 0.4 → 1.6. <span class="scfx-spin-key"></span> m_z: −0.4 → +0.4 (gray → pink). Color scales stay fixed; the input panels show the next mixed state as the iteration advances.</p>
+  <div class="scfx-values" aria-live="off"><span>Charge RMS <strong id="scfx-charge">—</strong></span><span>Spin RMS <strong id="scfx-spin">—</strong></span><span>Joint RMS <strong id="scfx-norm">—</strong></span></div>
+  <svg id="scfx-history" viewBox="0 0 600 240" role="img" aria-labelledby="scfx-chart-title scfx-chart-desc"><title id="scfx-chart-title">Illustrative input-output residual by numerical iteration</title><desc id="scfx-chart-desc">Charge and spin RMS mismatch, with fixed logarithmic vertical scale and display floor 1e-8. Curves are generated by the stated model, not measured DFT.</desc></svg>
+  <p class="scfx-note" id="scfx-explanation">Choose a stage to inspect its equation, or play the iteration.</p>
+  <details class="scfx-model-details"><summary>The exact model behind this animation</summary>
+    <p>Two coefficients control spatial variations in charge (c) and z-spin density (s). Their target is (0.25, 0.60), and their initial values are (0.75, −0.80). The response is deliberately simple:</p>
+    <div class="scfx-equation">\[c_{\rm out}=0.25-1.4(c-0.25),\qquad s_{\rm out}=0.60+0.65(s-0.60)\]</div>
+    <p>Each coefficient is mixed using the selected α. The resulting errors multiply by 1−2.4α for charge and 1−0.35α for spin on each step. Negative factors reverse the sign of the error; factors near ±1 decay slowly. All three offered settings converge in this model.</p>
+    <div class="scfx-equation">\[n(x,y)=1+0.20c[\cos(2\pi x)+\cos(2\pi y)]\]</div>
+    <div class="scfx-equation">\[m_z(x,y)=0.15+0.24s\cos(2\pi x)\sin(2\pi y)\]</div>
+    <p>The cell-mean charge stays one. These fields keep n positive and |m_z|≤n throughout the offered runs; m_x=m_y=0 in this simplified illustration. The chart clips values below 1e−8 at its lower edge; the numeric readouts continue below that floor. Residuals are field RMS differences in arbitrary units, not QE’s energy-error estimate or our dataset’s L1 qualification metric. This is a fixed-point analogy, not a reduced SOC solver.</p>
+  </details>
+  <noscript><style>.scfx-stage[hidden]{display:block}.scfx-controls,.scfx-stages,.scfx-scrubber,.scfx-fields,.scfx-values,#scfx-history,.scfx-key,#scfx-explanation{display:none}</style><p>Enable JavaScript to play the illustrative iteration. The equations and model definition remain available here.</p></noscript>
+</section>

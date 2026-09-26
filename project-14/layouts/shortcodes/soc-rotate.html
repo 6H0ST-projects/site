@@ -1,0 +1,16 @@
+<section class="socw" id="soc-rotate" aria-label="Interactive schematic anisotropy model">
+  <p class="socw-eyebrow">Interactive · schematic energy model</p>
+  <div class="socw-controls">
+    <div class="socw-buttons" role="group" aria-label="Spin–orbit coupling">
+      <button type="button" data-soc="on" aria-pressed="true">SOC on</button>
+      <button type="button" data-soc="off" aria-pressed="false">SOC off</button>
+    </div>
+    <label class="socw-slider" for="soc-rotate-angle">Magnetization angle from c <output id="soc-rotate-angle-value">35°</output><input id="soc-rotate-angle" type="range" min="0" max="180" step="1" value="35"></label>
+  </div>
+  <div class="socw-pair">
+    <svg id="soc-rotate-crystal" viewBox="0 0 300 300" role="img" aria-label="A tetragonal crystal with all magnetic moments rotated to the chosen angle"></svg>
+    <svg id="soc-rotate-energy" class="socw-interactive" viewBox="0 0 360 300" role="img" tabindex="0" aria-label="Anisotropy energy versus magnetization angle"></svg>
+  </div>
+  <p class="socw-readout" id="soc-rotate-readout" aria-live="polite"></p>
+  <p class="socw-note">Model: E(θ) − E(0) = K sin²θ with K &gt; 0 when SOC is on and K = 0 when it is off, in units of K. Real anisotropy energies are microelectronvolts to about a millielectronvolt per atom and are computed, not assumed. Shape (dipolar) anisotropy and higher-order terms are omitted.</p>
+</section>

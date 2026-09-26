@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="590.4pt" height="291.6pt" viewBox="0 0 590.4 291.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>Fe12W2B8 numerical sensitivity</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Fe12W2B8 numerical sensitivity</dc:title>
+    <dc:description>Positive values favor c over a. Baseline 1.501356, denser mesh 1.192877, lower smearing 2.180858 meV/cell. Both changes exceed 0.05 meV/cell; the physical MAE is not qualified.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 291.6 
+L 590.4 291.6 
+L 590.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 183.024 230.364 
+L 543.168 230.364 
+L 543.168 81.648 
+L 183.024 81.648 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 384.061367 230.364 
+L 397.91306 230.364 
+L 397.91306 81.648 
+L 384.061367 81.648 
+z
+" clip-path="url(#p424adf418b)" style="fill: #ff0860; opacity: 0.1"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <!-- 0.0 -->
+      <g style="fill: #555b65" transform="translate(175.412516 246.284) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-30" d="M 1856 -64 
+C 2714 -64 3232 384 3232 1485 
+L 3232 2886 
+C 3232 3987 2714 4429 1856 4429 
+L 1830 4429 
+C 986 4429 454 3994 454 2886 
+L 454 1485 
+C 454 371 986 -64 1830 -64 
+L 1856 -64 
+z
+M 1830 301 
+C 1158 301 851 608 851 1485 
+L 851 2886 
+C 851 3763 1158 4064 1830 4064 
+L 1856 4064 
+C 2534 4064 2842 3763 2842 2886 
+L 2842 1485 
+C 2842 608 2534 301 1856 301 
+L 1830 301 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-2e" d="M 1037 0 
+L 1037 589 
+L 448 589 
+L 448 0 
+L 1037 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-30"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(80.799988 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <!-- 0.5 -->
+      <g style="fill: #555b65" transform="translate(244.670977 246.284) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-35" d="M 2016 2810 
+C 1568 2810 1178 2586 1030 2291 
+L 979 2291 
+L 1069 3987 
+L 3130 3994 
+L 3130 4365 
+L 698 4365 
+L 595 1984 
+L 883 1920 
+C 1165 2291 1478 2445 1958 2445 
+L 1997 2445 
+C 2560 2445 2893 2112 2893 1402 
+L 2893 1357 
+C 2893 691 2643 301 1862 301 
+L 1837 301 
+C 1126 301 858 608 858 1267 
+L 467 1267 
+C 467 416 941 -64 1837 -64 
+L 1869 -64 
+C 2867 -64 3283 506 3283 1370 
+L 3283 1421 
+C 3283 2349 2810 2810 2061 2810 
+L 2016 2810 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-30"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-35" transform="translate(80.799988 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <!-- 1.0 -->
+      <g style="fill: #555b65" transform="translate(313.929439 246.284) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-31" d="M 2042 4365 
+L 1651 4365 
+L 1651 3578 
+C 1651 3411 1587 3334 1427 3334 
+L 659 3334 
+L 659 2963 
+L 1190 2963 
+C 1427 2963 1542 3059 1600 3187 
+L 1651 3187 
+L 1651 365 
+L 563 365 
+L 563 0 
+L 3123 0 
+L 3123 365 
+L 2042 365 
+L 2042 4365 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-31"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(80.799988 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <!-- 1.5 -->
+      <g style="fill: #555b65" transform="translate(383.1879 246.284) scale(0.11 -0.11)">
+       <use xlink:href="#PPFraktionSans-Light-31"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-35" transform="translate(80.799988 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <!-- 2.0 -->
+      <g style="fill: #555b65" transform="translate(452.446362 246.284) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-32" d="M 3194 0 
+L 3194 365 
+L 890 365 
+L 890 538 
+C 1107 1088 1638 1376 2080 1677 
+C 2618 2029 3213 2426 3213 3162 
+C 3213 3968 2726 4429 1907 4429 
+L 1882 4429 
+C 998 4429 486 3987 486 3008 
+L 877 3008 
+C 877 3763 1178 4064 1882 4064 
+L 1907 4064 
+C 2560 4064 2816 3731 2816 3162 
+C 2816 2586 2394 2310 1856 1952 
+C 1376 1626 800 1286 493 595 
+L 493 0 
+L 3194 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-32"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(80.799988 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <!-- 2.5 -->
+      <g style="fill: #555b65" transform="translate(521.704823 246.284) scale(0.11 -0.11)">
+       <use xlink:href="#PPFraktionSans-Light-32"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-35" transform="translate(80.799988 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_7">
+     <!-- a − c band energy (meV / cell) -->
+     <g style="fill: #555b65" transform="translate(292.274047 265.899) scale(0.11 -0.11)">
+      <defs>
+       <path id="PPFraktionSans-Light-61" d="M 2867 1939 
+C 2867 2694 2528 3162 1747 3162 
+L 1734 3162 
+C 998 3162 570 2739 531 2106 
+L 947 2106 
+C 973 2541 1203 2803 1722 2803 
+L 1747 2803 
+C 2266 2803 2483 2483 2483 1965 
+L 2483 1766 
+L 1555 1638 
+C 845 1549 403 1325 403 781 
+L 403 742 
+C 403 141 960 -64 1363 -64 
+L 1389 -64 
+C 1914 -64 2259 160 2413 499 
+L 2483 499 
+L 2515 0 
+L 3347 0 
+L 3347 358 
+L 2867 358 
+L 2867 1939 
+z
+M 1408 294 
+C 1024 294 794 467 794 749 
+L 794 787 
+C 794 1088 1050 1229 1613 1312 
+L 2483 1427 
+L 2483 1408 
+C 2483 506 1971 294 1434 294 
+L 1408 294 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-20" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-2212" d="M 3194 1894 
+L 3194 2253 
+L 499 2253 
+L 499 1894 
+L 3194 1894 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-63" d="M 1658 -64 
+C 2368 -64 2771 326 2810 1043 
+L 2419 1043 
+C 2387 557 2138 294 1658 294 
+L 1645 294 
+C 1094 294 813 621 813 1408 
+L 813 1690 
+C 813 2483 1094 2803 1645 2803 
+L 1658 2803 
+C 2138 2803 2387 2534 2419 2061 
+L 2810 2061 
+C 2778 2765 2374 3162 1658 3162 
+L 1645 3162 
+C 877 3162 422 2720 422 1690 
+L 422 1408 
+C 422 390 864 -64 1645 -64 
+L 1658 -64 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-62" d="M 1958 -64 
+C 2522 -64 2995 378 2995 1402 
+L 2995 1702 
+C 2995 2733 2528 3162 1952 3162 
+L 1926 3162 
+C 1504 3162 1165 2938 1005 2586 
+L 947 2586 
+L 947 4608 
+L 550 4608 
+L 550 0 
+L 941 0 
+L 941 518 
+L 1005 518 
+C 1158 166 1498 -64 1926 -64 
+L 1958 -64 
+z
+M 1818 301 
+C 1382 301 947 570 947 1382 
+L 947 1715 
+C 947 2528 1382 2797 1818 2797 
+L 1843 2797 
+C 2285 2797 2598 2528 2598 1722 
+L 2598 1382 
+C 2598 576 2285 301 1843 301 
+L 1818 301 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-6e" d="M 947 0 
+L 947 1830 
+C 947 2554 1402 2797 1837 2797 
+L 1862 2797 
+C 2291 2797 2490 2534 2490 1901 
+L 2490 0 
+L 2880 0 
+L 2880 1914 
+C 2880 2714 2592 3162 1914 3162 
+L 1888 3162 
+C 1491 3162 1152 2931 998 2592 
+L 947 2592 
+L 947 3098 
+L 550 3098 
+L 550 0 
+L 947 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-64" d="M 1491 -64 
+C 1920 -64 2259 166 2419 518 
+L 2477 518 
+L 2477 0 
+L 2867 0 
+L 2867 4608 
+L 2470 4608 
+L 2470 2586 
+L 2413 2586 
+C 2253 2938 1914 3162 1491 3162 
+L 1466 3162 
+C 890 3162 422 2733 422 1702 
+L 422 1402 
+C 422 378 896 -64 1466 -64 
+L 1491 -64 
+z
+M 1581 301 
+C 1133 301 819 576 819 1382 
+L 819 1722 
+C 819 2528 1133 2797 1581 2797 
+L 1606 2797 
+C 2035 2797 2470 2528 2470 1715 
+L 2470 1382 
+C 2470 570 2035 301 1606 301 
+L 1581 301 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-65" d="M 2893 1690 
+C 2893 2707 2458 3162 1670 3162 
+L 1645 3162 
+C 870 3162 422 2720 422 1690 
+L 422 1408 
+C 422 390 864 -64 1645 -64 
+L 1683 -64 
+C 2317 -64 2720 237 2861 870 
+L 2464 870 
+C 2381 499 2131 294 1696 294 
+L 1645 294 
+C 1069 294 813 602 813 1408 
+L 813 1453 
+L 2893 1453 
+L 2893 1690 
+z
+M 1670 2803 
+C 2227 2803 2490 2522 2509 1779 
+L 813 1779 
+C 832 2522 1088 2803 1645 2803 
+L 1670 2803 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-72" d="M 947 0 
+L 947 2470 
+C 947 2656 1024 2739 1184 2739 
+L 1997 2739 
+L 1997 3098 
+L 1510 3098 
+C 1267 3098 1094 2995 998 2829 
+L 947 2829 
+L 947 3098 
+L 550 3098 
+L 550 0 
+L 947 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-67" d="M 2189 -1248 
+C 2643 -1248 2867 -960 2867 -518 
+L 2867 3098 
+L 2470 3098 
+L 2470 2586 
+L 2413 2586 
+C 2253 2938 1907 3162 1491 3162 
+L 1466 3162 
+C 902 3162 422 2733 422 1702 
+L 422 1402 
+C 422 378 902 -64 1466 -64 
+L 1491 -64 
+C 1914 -64 2259 166 2419 518 
+L 2477 518 
+L 2477 -717 
+C 2477 -832 2419 -890 2323 -890 
+L 723 -890 
+L 723 -1248 
+L 2189 -1248 
+z
+M 1581 301 
+C 1146 301 819 576 819 1382 
+L 819 1722 
+C 819 2528 1146 2797 1581 2797 
+L 1606 2797 
+C 2029 2797 2470 2528 2470 1715 
+L 2470 1382 
+C 2470 570 2029 301 1606 301 
+L 1581 301 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-79" d="M 1581 378 
+L 1523 378 
+L 672 3098 
+L 275 3098 
+L 1306 0 
+L 1440 0 
+L 1210 -666 
+C 1158 -800 1088 -870 928 -870 
+L 307 -870 
+L 307 -1248 
+L 742 -1248 
+C 1248 -1248 1504 -954 1645 -518 
+L 2835 3098 
+L 2432 3098 
+L 1581 378 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-28" d="M 1421 -653 
+C 1024 96 794 947 794 1914 
+C 794 2880 1024 3725 1421 4474 
+L 1082 4627 
+C 659 3866 403 2931 403 1914 
+C 403 896 659 -38 1075 -806 
+L 1421 -653 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-6d" d="M 960 0 
+L 960 1830 
+C 960 2554 1357 2797 1747 2797 
+L 1773 2797 
+C 2195 2797 2349 2534 2349 2035 
+L 2349 0 
+L 2746 0 
+L 2746 1830 
+C 2746 2554 3078 2797 3526 2797 
+L 3552 2797 
+C 3968 2797 4134 2534 4134 1901 
+L 4134 0 
+L 4525 0 
+L 4525 1914 
+C 4525 2714 4269 3162 3597 3162 
+L 3571 3162 
+C 3187 3162 2874 2944 2726 2598 
+L 2669 2598 
+C 2547 2950 2291 3162 1830 3162 
+L 1805 3162 
+C 1434 3162 1158 2950 1024 2605 
+L 960 2605 
+L 960 3098 
+L 550 3098 
+L 570 0 
+L 960 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-56" d="M 2163 0 
+L 3405 4365 
+L 2982 4365 
+L 1882 378 
+L 1837 378 
+L 730 4365 
+L 301 4365 
+L 1555 0 
+L 2163 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-2f" d="M 691 -902 
+L 2278 4934 
+L 1894 4934 
+L 314 -902 
+L 691 -902 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-6c" d="M 947 0 
+L 947 4608 
+L 550 4608 
+L 550 0 
+L 947 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="PPFraktionSans-Light-29" d="M 557 -806 
+C 973 -38 1229 896 1229 1914 
+C 1229 2931 973 3866 550 4627 
+L 211 4474 
+C 608 3725 838 2880 838 1914 
+C 838 947 608 96 211 -653 
+L 557 -806 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#PPFraktionSans-Light-61"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(55.199997 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-2212" transform="translate(81.599991 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(139.199982 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-63" transform="translate(165.599976 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(216.199966 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-62" transform="translate(242.59996 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-61" transform="translate(295.999954 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(351.199951 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-64" transform="translate(404.899948 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(458.299942 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-65" transform="translate(484.699936 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(536.499924 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-65" transform="translate(590.199921 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-72" transform="translate(641.999908 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-67" transform="translate(676.799896 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-79" transform="translate(730.19989 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(778.699875 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-28" transform="translate(805.099869 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-6d" transform="translate(830.599854 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-65" transform="translate(909.999847 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-56" transform="translate(961.799835 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1019.699829 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-2f" transform="translate(1046.099823 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1086.499817 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-63" transform="translate(1112.899811 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1163.499802 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(1215.299789 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(1238.699783 0)"/>
+      <use xlink:href="#PPFraktionSans-Light-29" transform="translate(1262.099777 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_8">
+      <!-- Baseline -->
+      <g style="fill: #252830" transform="translate(134.53025 106.970909) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-42" d="M 2656 2278 
+C 3059 2419 3258 2733 3258 3194 
+L 3258 3270 
+C 3258 3949 2842 4365 2029 4365 
+L 666 4365 
+L 666 0 
+L 2195 0 
+C 2989 0 3418 429 3418 1178 
+L 3418 1229 
+C 3418 1786 3162 2106 2656 2221 
+L 2656 2278 
+z
+M 2867 3187 
+C 2867 2656 2618 2400 2029 2400 
+L 1056 2400 
+L 1056 4000 
+L 2029 4000 
+C 2618 4000 2867 3744 2867 3245 
+L 2867 3187 
+z
+M 3027 1197 
+C 3027 621 2765 365 2189 365 
+L 1056 365 
+L 1056 2035 
+L 2189 2035 
+C 2765 2035 3027 1779 3027 1242 
+L 3027 1197 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-73" d="M 1619 -64 
+C 2272 -64 2733 262 2733 806 
+C 2733 1453 2240 1594 1613 1766 
+C 1222 1875 864 1965 864 2330 
+C 864 2611 1088 2810 1517 2810 
+L 1555 2810 
+C 2035 2810 2266 2534 2266 2157 
+L 2650 2157 
+C 2650 2778 2189 3162 1555 3162 
+L 1517 3162 
+C 896 3162 486 2822 486 2330 
+C 486 1728 966 1574 1574 1402 
+C 1971 1293 2355 1203 2355 813 
+C 2355 512 2157 288 1619 288 
+L 1581 288 
+C 1024 288 787 576 787 973 
+L 397 973 
+C 397 339 845 -64 1581 -64 
+L 1619 -64 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-69" d="M 1011 4000 
+L 1011 4512 
+L 486 4512 
+L 486 4000 
+L 1011 4000 
+z
+M 947 0 
+L 947 3098 
+L 550 3098 
+L 550 0 
+L 947 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-42"/>
+       <use xlink:href="#PPFraktionSans-Light-61" transform="translate(59.899994 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-73" transform="translate(115.099991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(163.999985 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(215.799973 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-69" transform="translate(239.199966 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(262.59996 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(316.299957 0)"/>
+      </g>
+      <!-- 4×4×12 · 0.010 Ry -->
+      <g style="fill: #252830" transform="translate(86.126812 118.609597) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-34" d="M 2675 1280 
+L 2675 4365 
+L 2010 4365 
+L 346 1606 
+L 346 915 
+L 2285 915 
+L 2285 0 
+L 2675 0 
+L 2675 915 
+L 3386 915 
+L 3386 1280 
+L 2675 1280 
+z
+M 2285 4000 
+L 2285 1280 
+L 736 1280 
+L 736 1555 
+L 2221 4000 
+L 2285 4000 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-d7" d="M 1843 1856 
+L 2784 915 
+L 3008 1139 
+L 2067 2080 
+L 3008 3014 
+L 2778 3238 
+L 1843 2304 
+L 909 3238 
+L 685 3014 
+L 1619 2080 
+L 678 1139 
+L 902 915 
+L 1843 1856 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-b7" d="M 1037 1894 
+L 1037 2477 
+L 448 2477 
+L 448 1894 
+L 1037 1894 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-52" d="M 3379 3072 
+C 3379 4000 2880 4365 2112 4365 
+L 666 4365 
+L 666 0 
+L 1062 0 
+L 1062 1766 
+L 1779 1766 
+L 2874 0 
+L 3322 0 
+L 2246 1734 
+L 2246 1773 
+C 2938 1811 3379 2189 3379 3059 
+L 3379 3072 
+z
+M 2989 3059 
+C 2989 2342 2701 2138 2112 2138 
+L 1062 2138 
+L 1062 4000 
+L 2112 4000 
+C 2701 4000 2989 3789 2989 3072 
+L 2989 3059 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-34"/>
+       <use xlink:href="#PPFraktionSans-Light-d7" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-34" transform="translate(115.199982 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-d7" transform="translate(172.799973 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-31" transform="translate(230.399963 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-32" transform="translate(287.999954 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(345.599945 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-b7" transform="translate(371.999939 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(395.199936 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(421.59993 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(479.199921 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(502.399918 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-31" transform="translate(559.999908 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(617.599899 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(675.19989 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-52" transform="translate(701.599884 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-79" transform="translate(759.699875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_9">
+      <!-- Denser mesh -->
+      <g style="fill: #252830" transform="translate(113.092281 154.943813) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-44" d="M 666 4365 
+L 666 0 
+L 2042 0 
+C 2880 0 3456 448 3456 1549 
+L 3456 2822 
+C 3456 3923 2880 4365 2042 4365 
+L 666 4365 
+z
+M 3066 1549 
+C 3066 685 2701 365 2042 365 
+L 1062 365 
+L 1062 4000 
+L 2042 4000 
+C 2701 4000 3066 3686 3066 2822 
+L 3066 1549 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-68" d="M 947 0 
+L 947 1830 
+C 947 2554 1402 2797 1837 2797 
+L 1862 2797 
+C 2291 2797 2490 2534 2490 1901 
+L 2490 0 
+L 2880 0 
+L 2880 1914 
+C 2880 2714 2592 3162 1914 3162 
+L 1888 3162 
+C 1491 3162 1152 2931 998 2592 
+L 947 2592 
+L 947 4608 
+L 550 4608 
+L 550 0 
+L 947 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-44"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(61.799988 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(113.599976 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-73" transform="translate(167.299973 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(216.199966 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-72" transform="translate(267.999954 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(302.799942 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-6d" transform="translate(329.199936 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(408.59993 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-73" transform="translate(460.399918 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-68" transform="translate(509.299911 0)"/>
+      </g>
+      <!-- 6×6×12 · 0.010 Ry -->
+      <g style="fill: #252830" transform="translate(86.126812 166.5825) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-36" d="M 1818 -64 
+C 2682 -64 3226 378 3226 1312 
+C 3226 2246 2669 2656 1965 2656 
+C 1408 2656 1037 2387 909 1984 
+L 858 1984 
+L 858 2886 
+C 858 3770 1165 4070 1837 4070 
+C 2470 4070 2752 3795 2752 3040 
+L 3142 3040 
+C 3142 4019 2656 4429 1837 4429 
+C 992 4429 467 4000 467 2886 
+L 467 1459 
+C 467 403 973 -64 1818 -64 
+z
+M 1818 301 
+C 1146 301 858 672 858 1357 
+C 858 1939 1248 2285 1914 2285 
+C 2470 2285 2835 1984 2835 1299 
+C 2835 602 2496 301 1818 301 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-36"/>
+       <use xlink:href="#PPFraktionSans-Light-d7" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-36" transform="translate(115.199982 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-d7" transform="translate(172.799973 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-31" transform="translate(230.399963 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-32" transform="translate(287.999954 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(345.599945 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-b7" transform="translate(371.999939 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(395.199936 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(421.59993 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(479.199921 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(502.399918 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-31" transform="translate(559.999908 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(617.599899 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(675.19989 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-52" transform="translate(701.599884 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-79" transform="translate(759.699875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9"/>
+     <g id="text_10">
+      <!-- Lower smearing -->
+      <g style="fill: #252830" transform="translate(99.132594 202.906403) scale(0.11 -0.11)">
+       <defs>
+        <path id="PPFraktionSans-Light-4c" d="M 1056 4365 
+L 666 4365 
+L 666 0 
+L 2976 0 
+L 2976 365 
+L 1056 365 
+L 1056 4365 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-6f" d="M 1670 -64 
+C 2445 -64 2893 378 2893 1408 
+L 2893 1690 
+C 2893 2707 2458 3162 1670 3162 
+L 1645 3162 
+C 870 3162 422 2720 422 1690 
+L 422 1408 
+C 422 390 864 -64 1645 -64 
+L 1670 -64 
+z
+M 1645 294 
+C 1088 294 813 614 813 1408 
+L 813 1690 
+C 813 2490 1088 2803 1645 2803 
+L 1670 2803 
+C 2227 2803 2502 2490 2502 1690 
+L 2502 1408 
+C 2502 614 2227 294 1670 294 
+L 1645 294 
+z
+" transform="scale(0.015625)"/>
+        <path id="PPFraktionSans-Light-77" d="M 1677 0 
+L 2349 2509 
+L 2400 2509 
+L 3072 0 
+L 3680 0 
+L 4486 3098 
+L 4122 3098 
+L 3405 365 
+L 3354 365 
+L 2598 3098 
+L 2163 3098 
+L 1402 365 
+L 1357 365 
+L 659 3098 
+L 275 3098 
+L 1101 0 
+L 1677 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#PPFraktionSans-Light-4c"/>
+       <use xlink:href="#PPFraktionSans-Light-6f" transform="translate(50.099991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-77" transform="translate(101.899979 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(176.299973 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-72" transform="translate(228.09996 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(262.899948 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-73" transform="translate(289.299942 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-6d" transform="translate(338.199936 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-65" transform="translate(417.59993 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-61" transform="translate(469.399918 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-72" transform="translate(524.599915 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-69" transform="translate(559.399902 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(582.799896 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-67" transform="translate(636.499893 0)"/>
+      </g>
+      <!-- 4×4×12 · 0.005 Ry -->
+      <g style="fill: #252830" transform="translate(86.126812 214.555403) scale(0.11 -0.11)">
+       <use xlink:href="#PPFraktionSans-Light-34"/>
+       <use xlink:href="#PPFraktionSans-Light-d7" transform="translate(57.599991 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-34" transform="translate(115.199982 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-d7" transform="translate(172.799973 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-31" transform="translate(230.399963 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-32" transform="translate(287.999954 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(345.599945 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-b7" transform="translate(371.999939 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(395.199936 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(421.59993 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(479.199921 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(502.399918 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-30" transform="translate(559.999908 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-35" transform="translate(617.599899 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-20" transform="translate(675.19989 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-52" transform="translate(701.599884 0)"/>
+       <use xlink:href="#PPFraktionSans-Light-79" transform="translate(759.699875 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <path d="M 390.987214 230.364 
+L 390.987214 81.648 
+" clip-path="url(#p424adf418b)" style="fill: none; stroke-dasharray: 3,3; stroke-dashoffset: 0; stroke: #ff0860"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 183.024 108.033097 
+L 390.987214 108.033097 
+" clip-path="url(#p424adf418b)" style="fill: none; stroke: #d0d5dd; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <defs>
+     <path id="mb8b70143d8" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #252830"/>
+    </defs>
+    <g clip-path="url(#p424adf418b)">
+     <use xlink:href="#mb8b70143d8" x="390.987214" y="108.033097" style="fill: #252830; stroke: #252830"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 183.024 156.006 
+L 348.257652 156.006 
+" clip-path="url(#p424adf418b)" style="fill: none; stroke: #d0d5dd; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <defs>
+     <path id="m062163a796" d="M 0 4 
+C 1.060812 4 2.078319 3.578535 2.828427 2.828427 
+C 3.578535 2.078319 4 1.060812 4 0 
+C 4 -1.060812 3.578535 -2.078319 2.828427 -2.828427 
+C 2.078319 -3.578535 1.060812 -4 0 -4 
+C -1.060812 -4 -2.078319 -3.578535 -2.828427 -2.828427 
+C -3.578535 -2.078319 -4 -1.060812 -4 0 
+C -4 1.060812 -3.578535 2.078319 -2.828427 2.828427 
+C -2.078319 3.578535 -1.060812 4 0 4 
+z
+" style="stroke: #ff0860"/>
+    </defs>
+    <g clip-path="url(#p424adf418b)">
+     <use xlink:href="#m062163a796" x="348.257652" y="156.006" style="fill: #ff0860; stroke: #ff0860"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 183.024 203.978903 
+L 485.10974 203.978903 
+" clip-path="url(#p424adf418b)" style="fill: none; stroke: #d0d5dd; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p424adf418b)">
+     <use xlink:href="#m062163a796" x="485.10974" y="203.978903" style="fill: #ff0860; stroke: #ff0860"/>
+    </g>
+   </g>
+   <g id="patch_4">
+    <path d="M 183.024 230.364 
+L 543.168 230.364 
+" style="fill: none; stroke: #d7dce2; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <!-- 1.501 -->
+    <g style="fill: #252830" transform="translate(399.298229 111.188722) scale(0.12 -0.12)">
+     <use xlink:href="#PPFraktionSans-Light-31"/>
+     <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-35" transform="translate(80.799988 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-30" transform="translate(138.399979 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-31" transform="translate(195.999969 0)"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <!-- 1.193 -->
+    <g style="fill: #252830" transform="translate(356.568667 159.161625) scale(0.12 -0.12)">
+     <defs>
+      <path id="PPFraktionSans-Light-39" d="M 1869 4429 
+C 1011 4429 467 3994 467 3053 
+C 467 2118 1018 1709 1722 1709 
+C 2278 1709 2656 1978 2778 2381 
+L 2829 2381 
+L 2829 1485 
+C 2829 595 2528 301 1850 301 
+C 1216 301 941 576 941 1325 
+L 544 1325 
+C 544 346 1030 -64 1850 -64 
+C 2694 -64 3219 371 3219 1485 
+L 3219 2906 
+C 3219 3968 2720 4429 1869 4429 
+z
+M 1869 4070 
+C 2541 4070 2829 3693 2829 3008 
+C 2829 2426 2445 2080 1773 2080 
+C 1222 2080 858 2381 858 3072 
+C 858 3763 1190 4070 1869 4070 
+z
+" transform="scale(0.015625)"/>
+      <path id="PPFraktionSans-Light-33" d="M 1850 -64 
+C 2893 -64 3290 480 3290 1190 
+C 3290 1786 3027 2106 2528 2214 
+L 2528 2272 
+C 2938 2419 3142 2726 3142 3219 
+C 3142 3885 2714 4429 1862 4429 
+C 1024 4429 512 3955 512 3098 
+L 902 3098 
+C 902 3763 1210 4070 1862 4070 
+C 2490 4070 2752 3699 2752 3213 
+C 2752 2656 2483 2400 1894 2400 
+L 1440 2400 
+L 1440 2035 
+L 2054 2035 
+C 2630 2035 2893 1786 2893 1171 
+C 2893 666 2662 301 1843 301 
+C 1082 301 800 608 800 1344 
+L 403 1344 
+C 403 416 902 -64 1850 -64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#PPFraktionSans-Light-31"/>
+     <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-31" transform="translate(80.799988 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-39" transform="translate(138.399979 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-33" transform="translate(195.999969 0)"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <!-- 2.181 -->
+    <g style="fill: #252830" transform="translate(493.420755 207.134528) scale(0.12 -0.12)">
+     <defs>
+      <path id="PPFraktionSans-Light-38" d="M 1843 -64 
+C 2726 -64 3302 314 3302 1152 
+C 3302 1651 3014 2080 2438 2221 
+L 2438 2278 
+C 2918 2432 3168 2784 3168 3264 
+C 3168 4019 2643 4429 1843 4429 
+C 1043 4429 525 4019 525 3264 
+C 525 2784 774 2432 1254 2278 
+L 1254 2221 
+C 672 2086 390 1658 390 1152 
+C 390 314 966 -64 1843 -64 
+z
+M 1850 2374 
+C 1197 2458 915 2752 915 3251 
+C 915 3840 1274 4070 1843 4070 
+C 2419 4070 2778 3840 2778 3251 
+C 2778 2752 2490 2458 1850 2374 
+z
+M 1843 294 
+C 1203 294 781 499 781 1133 
+C 781 1600 1043 2010 1850 2080 
+C 2643 2010 2906 1600 2906 1133 
+C 2906 499 2490 294 1843 294 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#PPFraktionSans-Light-32"/>
+     <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(57.599991 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-31" transform="translate(80.799988 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-38" transform="translate(138.399979 0)"/>
+     <use xlink:href="#PPFraktionSans-Light-31" transform="translate(195.999969 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="text_14">
+   <!-- Same directional preference. Different magnitude. -->
+   <g style="fill: #252830" transform="translate(32.472 17.496) scale(0.15 -0.15)">
+    <defs>
+     <path id="PPFraktionSans-Light-53" d="M 1882 -64 
+C 2726 -64 3296 358 3296 1101 
+C 3296 2042 2438 2240 1926 2413 
+C 1446 2579 851 2707 851 3322 
+C 851 3795 1139 4070 1754 4070 
+L 1786 4070 
+C 2400 4070 2803 3814 2803 3027 
+L 3194 3027 
+C 3194 4038 2586 4429 1786 4429 
+L 1754 4429 
+C 966 4429 461 4019 454 3322 
+C 454 2458 1248 2246 1747 2074 
+C 2272 1894 2906 1779 2906 1101 
+C 2906 570 2547 301 1882 301 
+L 1843 301 
+C 1133 301 749 550 749 1338 
+L 352 1338 
+C 352 339 960 -64 1843 -64 
+L 1882 -64 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-74" d="M 1389 358 
+C 1299 358 1242 416 1242 525 
+L 1242 2739 
+L 2086 2739 
+L 2086 3098 
+L 1242 3098 
+L 1242 3898 
+L 851 3866 
+L 851 3098 
+L 211 3098 
+L 211 2739 
+L 851 2739 
+L 851 723 
+C 851 294 1075 0 1530 0 
+L 2144 0 
+L 2144 358 
+L 1389 358 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-70" d="M 941 -1242 
+L 941 518 
+L 1005 518 
+C 1158 166 1498 -64 1926 -64 
+L 1958 -64 
+C 2522 -64 2995 378 2995 1402 
+L 2995 1702 
+C 2995 2733 2528 3162 1952 3162 
+L 1926 3162 
+C 1504 3162 1165 2938 1005 2586 
+L 947 2586 
+L 947 3098 
+L 550 3098 
+L 550 -1242 
+L 941 -1242 
+z
+M 1818 301 
+C 1382 301 947 570 947 1382 
+L 947 1715 
+C 947 2528 1382 2797 1818 2797 
+L 1843 2797 
+C 2285 2797 2598 2528 2598 1722 
+L 2598 1382 
+C 2598 576 2285 301 1843 301 
+L 1818 301 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-66" d="M 2144 4250 
+L 2144 4608 
+L 1510 4608 
+C 1062 4608 851 4333 851 3898 
+L 851 3098 
+L 211 3098 
+L 211 2739 
+L 851 2739 
+L 851 0 
+L 1242 0 
+L 1242 2739 
+L 2074 2739 
+L 2074 3098 
+L 1242 3098 
+L 1242 4090 
+C 1242 4192 1306 4250 1389 4250 
+L 2144 4250 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-75" d="M 2490 3098 
+L 2490 1274 
+C 2490 544 2035 301 1600 301 
+L 1574 301 
+C 1146 301 947 563 947 1197 
+L 947 3098 
+L 557 3098 
+L 557 1184 
+C 557 384 845 -64 1523 -64 
+L 1549 -64 
+C 1946 -64 2285 166 2445 506 
+L 2490 506 
+L 2490 0 
+L 2886 0 
+L 2886 3098 
+L 2490 3098 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#PPFraktionSans-Light-53"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(57.099991 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6d" transform="translate(112.299988 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(191.699982 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(243.499969 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-64" transform="translate(269.899963 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(323.299957 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(346.699951 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(381.499939 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-63" transform="translate(433.299927 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(483.899918 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(521.799911 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6f" transform="translate(545.199905 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(596.999893 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(650.69989 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(705.899887 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(729.299881 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-70" transform="translate(755.699875 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(809.099869 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(843.899857 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-66" transform="translate(895.699844 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(931.699829 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(983.499817 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1018.299805 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(1070.099792 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-63" transform="translate(1123.799789 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1174.39978 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(1226.199768 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1249.399765 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-44" transform="translate(1275.799759 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(1337.599747 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-66" transform="translate(1360.999741 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-66" transform="translate(1396.999725 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1432.99971 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(1484.799698 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1519.599686 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(1571.399673 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(1625.09967 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1662.999664 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6d" transform="translate(1689.399658 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(1768.799652 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-67" transform="translate(1823.999649 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(1877.399643 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(1931.09964 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(1954.499634 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-75" transform="translate(1992.399628 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-64" transform="translate(2046.099625 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(2099.499619 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(2151.299606 0)"/>
+   </g>
+  </g>
+  <g id="text_15">
+   <!-- Fixed-potential band energies · Fe₁₂W₂B₈ -->
+   <g style="fill: #626a75" transform="translate(32.472 37.908) scale(0.11 -0.11)">
+    <defs>
+     <path id="PPFraktionSans-Light-46" d="M 3213 4365 
+L 666 4365 
+L 666 0 
+L 1062 0 
+L 1062 2010 
+L 2675 2010 
+L 2675 2374 
+L 1062 2374 
+L 1062 4000 
+L 3213 4000 
+L 3213 4365 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-78" d="M 621 0 
+L 1440 1325 
+L 1498 1325 
+L 2323 0 
+L 2765 0 
+L 1709 1632 
+L 2675 3098 
+L 2227 3098 
+L 1498 1939 
+L 1440 1939 
+L 717 3098 
+L 269 3098 
+L 1222 1632 
+L 179 0 
+L 621 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-2d" d="M 1920 1664 
+L 1920 2035 
+L 448 2035 
+L 448 1664 
+L 1920 1664 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-2081" d="M 1318 2061 
+L 966 2061 
+L 966 1645 
+C 966 1517 915 1485 819 1485 
+L 371 1485 
+L 371 1165 
+L 634 1165 
+C 800 1165 890 1235 934 1338 
+L 966 1338 
+L 966 -109 
+L 339 -109 
+L 339 -429 
+L 1939 -429 
+L 1939 -109 
+L 1318 -109 
+L 1318 2061 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-2082" d="M 1971 -429 
+L 1971 -109 
+L 659 -109 
+L 659 -64 
+C 742 154 979 301 1299 474 
+C 1619 653 1984 845 1984 1312 
+C 1984 1798 1690 2099 1190 2099 
+L 1171 2099 
+C 621 2099 314 1805 314 1210 
+L 653 1210 
+C 653 1658 838 1786 1165 1786 
+L 1184 1786 
+C 1510 1786 1645 1619 1645 1312 
+C 1645 992 1434 896 1107 717 
+C 845 576 486 390 307 -26 
+L 307 -429 
+L 1971 -429 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-57" d="M 1824 0 
+L 2560 3827 
+L 2611 3827 
+L 3347 0 
+L 3981 0 
+L 4864 4365 
+L 4474 4365 
+L 3699 365 
+L 3654 365 
+L 2886 4365 
+L 2285 4365 
+L 1517 365 
+L 1466 365 
+L 698 4365 
+L 301 4365 
+L 1184 0 
+L 1824 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-2088" d="M 1139 -467 
+C 1709 -467 2048 -205 2048 243 
+C 2048 531 1862 768 1530 838 
+L 1530 883 
+C 1805 966 1965 1165 1965 1434 
+C 1965 1824 1664 2099 1139 2099 
+C 614 2099 314 1830 314 1427 
+C 314 1171 474 966 755 883 
+L 755 838 
+C 416 768 230 544 230 237 
+C 230 -205 576 -467 1139 -467 
+z
+M 1139 979 
+C 826 1024 653 1171 653 1421 
+C 653 1658 806 1798 1139 1798 
+C 1472 1798 1632 1658 1632 1414 
+C 1632 1184 1485 1030 1139 979 
+z
+M 1139 -166 
+C 774 -166 576 -38 576 243 
+C 576 454 698 666 1139 717 
+C 1606 666 1709 429 1709 243 
+C 1709 -58 1485 -166 1139 -166 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#PPFraktionSans-Light-46"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(53.799988 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-78" transform="translate(77.199982 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(123.199966 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-64" transform="translate(174.999954 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2d" transform="translate(228.399948 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-70" transform="translate(265.499939 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6f" transform="translate(318.899933 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(370.699921 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(408.599915 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(460.399902 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(514.099899 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(551.999893 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(575.399887 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(630.599884 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(653.999878 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-62" transform="translate(680.399872 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(733.799866 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(788.999863 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-64" transform="translate(842.69986 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(896.099854 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(922.499847 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(974.299835 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1027.999832 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(1079.79982 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-67" transform="translate(1114.599808 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(1167.999802 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1191.399796 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-73" transform="translate(1243.199783 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1292.099777 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-b7" transform="translate(1318.499771 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1341.699768 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-46" transform="translate(1368.099762 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1421.89975 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2081" transform="translate(1473.699738 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2082" transform="translate(1509.299728 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-57" transform="translate(1544.899719 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2082" transform="translate(1625.699707 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-42" transform="translate(1661.299698 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2088" transform="translate(1721.199692 0)"/>
+   </g>
+  </g>
+  <g id="text_16">
+   <!-- Pink band: baseline ± 0.05 meV/cell stability target; not an uncertainty interval. -->
+   <g style="fill: #626a75" transform="translate(32.472 278.478) scale(0.1 -0.1)">
+    <defs>
+     <path id="PPFraktionSans-Light-50" d="M 666 4365 
+L 666 0 
+L 1062 0 
+L 1062 1766 
+L 2150 1766 
+C 2918 1766 3418 2131 3418 3059 
+L 3418 3072 
+C 3418 4000 2918 4365 2150 4365 
+L 666 4365 
+z
+M 3027 3059 
+C 3027 2342 2739 2138 2150 2138 
+L 1062 2138 
+L 1062 4000 
+L 2150 4000 
+C 2739 4000 3027 3789 3027 3072 
+L 3027 3059 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-6b" d="M 2938 0 
+L 1741 1907 
+L 2854 3098 
+L 2336 3098 
+L 998 1626 
+L 947 1626 
+L 947 4608 
+L 550 4608 
+L 550 0 
+L 947 0 
+L 947 1062 
+L 1478 1632 
+L 2483 0 
+L 2938 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-3a" d="M 1037 2381 
+L 1037 2970 
+L 448 2970 
+L 448 2381 
+L 1037 2381 
+z
+M 1037 0 
+L 1037 589 
+L 448 589 
+L 448 0 
+L 1037 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-b1" d="M 2022 3840 
+L 1664 3840 
+L 1664 2861 
+L 499 2861 
+L 499 2502 
+L 1664 2502 
+L 1664 1530 
+L 2022 1530 
+L 2022 2502 
+L 3194 2502 
+L 3194 2861 
+L 2022 2861 
+L 2022 3840 
+z
+M 3194 800 
+L 3194 1152 
+L 499 1152 
+L 499 800 
+L 3194 800 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-3b" d="M 1037 2381 
+L 1037 2970 
+L 448 2970 
+L 448 2381 
+L 1037 2381 
+z
+M 698 -922 
+L 1043 0 
+L 1043 589 
+L 454 589 
+L 454 0 
+L 698 0 
+L 698 -141 
+L 448 -922 
+L 698 -922 
+z
+" transform="scale(0.015625)"/>
+     <path id="PPFraktionSans-Light-76" d="M 1824 0 
+L 2835 3098 
+L 2432 3098 
+L 1581 371 
+L 1530 371 
+L 685 3098 
+L 275 3098 
+L 1286 0 
+L 1824 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#PPFraktionSans-Light-50"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(57.499985 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(80.899979 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6b" transform="translate(134.599976 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(183.299973 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-62" transform="translate(209.699966 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(263.09996 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(318.299957 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-64" transform="translate(371.999954 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-3a" transform="translate(425.399948 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(448.599945 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-62" transform="translate(474.999939 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(528.399933 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-73" transform="translate(583.59993 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(632.499924 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(684.299911 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(707.699905 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(731.099899 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(784.799896 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(836.599884 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-b1" transform="translate(862.999878 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(920.599869 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-30" transform="translate(946.999863 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(1004.599854 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-30" transform="translate(1027.79985 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-35" transform="translate(1085.399841 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1142.999832 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6d" transform="translate(1169.399826 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1248.79982 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-56" transform="translate(1300.599808 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2f" transform="translate(1358.499802 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-63" transform="translate(1398.899796 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(1449.499786 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(1501.299774 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(1524.699768 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1548.099762 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-73" transform="translate(1574.499756 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(1623.39975 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(1661.299744 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-62" transform="translate(1716.499741 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(1769.899734 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(1793.299728 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(1816.699722 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(1840.099716 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-79" transform="translate(1877.99971 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(1926.499695 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(1952.899689 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(1990.799683 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(2045.99968 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-67" transform="translate(2080.799667 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(2134.199661 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(2185.999649 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-3b" transform="translate(2223.899643 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(2247.199631 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(2273.599625 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6f" transform="translate(2327.299622 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(2379.099609 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(2416.999603 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(2443.399597 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(2498.599594 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(2552.299591 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-75" transform="translate(2578.699585 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(2632.399582 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-63" transform="translate(2686.099579 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(2736.69957 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(2788.499557 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(2823.299545 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(2861.199539 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(2916.399536 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(2939.79953 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(2993.499527 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-79" transform="translate(3031.399521 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-20" transform="translate(3079.899506 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-69" transform="translate(3106.2995 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6e" transform="translate(3129.699493 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-74" transform="translate(3183.39949 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-65" transform="translate(3221.299484 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-72" transform="translate(3273.099472 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-76" transform="translate(3307.89946 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-61" transform="translate(3356.499451 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-6c" transform="translate(3411.699448 0)"/>
+    <use xlink:href="#PPFraktionSans-Light-2e" transform="translate(3435.099442 0)"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p424adf418b">
+   <rect x="183.024" y="81.648" width="360.144" height="148.716"/>
+  </clipPath>
+ </defs>
+</svg>

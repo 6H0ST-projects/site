@@ -1,0 +1,24 @@
+<svg class="soc-diagram" viewBox="0 0 680 224" role="img" aria-labelledby="socf-title socf-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="socf-title">Where spin–orbit coupling comes from</title>
+<desc id="socf-desc">Schematic. Left: in the nucleus frame an electron orbits and carries orbital angular momentum L. Right: in the electron's own frame the charged nucleus circles it, producing a magnetic field along L that acts on the electron's spin S. The resulting energy is proportional to L dot S and is largest near heavy nuclei.</desc>
+<defs><marker id="socf-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#252830"/></marker><marker id="socf-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ff0860"/></marker><marker id="socf-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4b515b"/></marker></defs>
+<rect width="680" height="224" fill="#fff"/>
+<text x="20" y="28" class="d-h">Seen from the nucleus</text>
+<g transform="translate(165 150)">
+  <ellipse cx="0" cy="0" rx="110" ry="38" fill="none" stroke="#c9ced6" stroke-width="1.4"/>
+  <circle cx="0" cy="0" r="15" fill="#252830"/><text x="0" y="5" text-anchor="middle" fill="#fff" font-size="13">+Ze</text>
+  <circle cx="92" cy="21" r="7" fill="#4b515b"/>
+  <line x1="92" y1="21" x2="48" y2="36" stroke="#252830" stroke-width="1.6" marker-end="url(#socf-a)"/><text x="52" y="58" class="d-s">v</text>
+  <line x1="0" y1="-20" x2="0" y2="-88" stroke="#252830" stroke-width="2" marker-end="url(#socf-a)"/><text x="10" y="-80" class="d-m">L (orbit)</text>
+</g>
+<line x1="340" y1="16" x2="340" y2="208" stroke="#e6e9ee"/>
+<text x="360" y="28" class="d-h">Seen from the electron</text>
+<g transform="translate(505 150)">
+  <ellipse cx="0" cy="0" rx="110" ry="38" fill="none" stroke="#c9ced6" stroke-width="1.4"/>
+  <circle cx="0" cy="0" r="9" fill="#4b515b"/>
+  <circle cx="-92" cy="-21" r="12" fill="#252830"/><text x="-92" y="-17" text-anchor="middle" fill="#fff" font-size="10">+Ze</text>
+  <line x1="-92" y1="-21" x2="-48" y2="-36" stroke="#252830" stroke-width="1.6" marker-end="url(#socf-a)"/>
+  <line x1="-14" y1="-14" x2="-14" y2="-90" stroke="#4b515b" stroke-width="2" marker-end="url(#socf-b)"/><text x="-26" y="-80" text-anchor="end" class="d-m">B<tspan baseline-shift="sub" font-size="72%">eff</tspan>&#160;along L</text>
+  <line x1="16" y1="10" x2="48" y2="-62" stroke="#ff0860" stroke-width="2.4" marker-end="url(#socf-p)"/><text x="54" y="-58" class="d-m">S (spin)</text>
+</g>
+</svg>

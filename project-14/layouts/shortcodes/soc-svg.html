@@ -1,0 +1,2 @@
+{{- /* Inline a diagram from assets/soc-scf so it inherits the page typography. */ -}}
+{{- with resources.Get (printf "soc-scf/%s.svg" (.Get 0)) -}}{{- .Content | safeHTML -}}{{- else -}}{{- errorf "soc-svg: missing assets/soc-scf/%s.svg" (.Get 0) -}}{{- end -}}

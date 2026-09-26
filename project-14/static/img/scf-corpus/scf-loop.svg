@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" role="img" aria-labelledby="title desc">
+<title id="title">The SCF loop and what we retain</title>
+<desc id="desc">Conceptual diagram, not measured fields. An input electronic state produces an effective potential, a conventional SOC orbital solve produces output charge and magnetization, and a convergence check either accepts an endpoint or mixes the state and repeats. Potential and output fields are captured with their context.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#939ba6"/></marker></defs>
+<rect width="680" height="360" fill="white"/>
+<g font-family="Helvetica Neue,Arial,sans-serif" fill="#252830">
+<text x="16" y="28" font-size="18">The calculation becomes the dataset</text>
+<text x="16" y="51" font-size="12" fill="#717984">CONCEPTUAL SCHEMATIC · NO SIMULATED FIELDS</text>
+<g stroke="#d9dee5" fill="#f7f8fa"><rect x="16" y="86" width="142" height="88"/><rect x="184" y="86" width="142" height="88"/><rect x="352" y="86" width="142" height="88"/><rect x="520" y="86" width="144" height="88"/></g>
+<g text-anchor="middle" font-size="14">
+<text x="87" y="113">Input state</text><text x="87" y="141" font-size="12" fill="#67717e">charge + spin</text>
+<text x="255" y="113">Build potential</text><text x="255" y="141" font-size="12" fill="#67717e">V₀, Bₓ, Bᵧ, B<tspan baseline-shift="sub" font-size="9">z</tspan></text>
+<text x="423" y="113">SOC orbital solve</text><text x="423" y="141" font-size="12" fill="#67717e">conventional QE</text>
+<text x="592" y="113">Output fields</text><text x="592" y="141" font-size="12" fill="#67717e">n, mₓ, mᵧ, m<tspan baseline-shift="sub" font-size="9">z</tspan></text>
+</g>
+<g fill="none" stroke="#939ba6" stroke-width="1.3" marker-end="url(#arrow)"><path d="M158 130H180"/><path d="M326 130H348"/><path d="M494 130H516"/><path d="M592 174V216H87V178"/></g>
+<rect x="153" y="204" width="379" height="25" fill="white"/>
+<text x="340" y="221" font-size="12" text-anchor="middle">Check convergence → mix and repeat if needed</text>
+<g stroke="#ff0860" stroke-width="1.2" fill="none"><path d="M255 174V196 M255 239V264H592V239"/><path d="M592 174V196"/></g>
+<rect x="184" y="280" width="480" height="60" fill="#fff3f7"/>
+<path d="M423 264V280" stroke="#ff0860" stroke-width="1.2"/>
+<text x="200" y="302" font-size="13" fill="#c80048">CAPTURE: potential → output response</text>
+<text x="200" y="323" font-size="12" fill="#67717e">+ structure, solver context, units, ordering and qualification</text>
+</g></svg>

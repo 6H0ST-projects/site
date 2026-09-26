@@ -1,0 +1,8 @@
+{{- $refs := site.Data.soc_refs -}}
+<ol class="soc-refs">
+{{- range .Page.Store.Get "socCiteOrder" -}}
+{{- $r := index $refs . -}}
+{{- $a := $r.authors -}}{{- $t := $r.title }}
+<li id="ref-{{ . }}">{{ $a }}{{ if not (strings.HasSuffix $a ".") }}.{{ end }} {{ $t }}{{ if not (findRE `[.?!]$` $t) }}.{{ end }} <em>{{ $r.venue }}</em> ({{ $r.year }}). {{ with $r.doi }}<a href="https://doi.org/{{ . }}">doi:{{ . }}</a>{{ else }}<a href="{{ $r.url }}">{{ $r.url | strings.TrimPrefix "https://" }}</a>{{ end }}</li>
+{{- end }}
+</ol>

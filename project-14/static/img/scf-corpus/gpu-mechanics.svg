@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 385" role="img" aria-labelledby="t d">
+<title id="t">GPU work inside and across calculations</title><desc id="d">CPU coordination surrounds GPU-enabled FFTs, array operations and linear algebra. Multiple independent workers process structures or controls. This schematic is not a timing or utilization plot.</desc>
+<rect width="640" height="385" fill="white"/>
+<g font-family="Helvetica Neue,Arial,sans-serif" fill="#252830">
+<text x="16" y="28" font-size="18">Accelerate the operations. Repeat the physics.</text>
+<text x="16" y="53" font-size="11" fill="#68717e">ARCHITECTURAL SCHEMATIC · NOT A TIMING BREAKDOWN</text>
+<rect x="16" y="77" width="608" height="154" fill="#f7f8fa" stroke="#dce1e7"/>
+<text x="32" y="100" font-size="13">One conventional electronic calculation</text>
+<text x="32" y="125" font-size="12" fill="#68717e">CPU coordination · memory transfers · convergence checks · I/O</text>
+<g fill="white" stroke="#e09bb3"><rect x="32" y="146" width="176" height="63"/><rect x="232" y="146" width="176" height="63"/><rect x="432" y="146" width="176" height="63"/></g>
+<g font-size="13" text-anchor="middle"><text x="120" y="170">FFTs</text><text x="320" y="170">Array kernels</text><text x="520" y="170">Linear algebra</text></g>
+<g font-size="11" text-anchor="middle" fill="#68717e"><text x="120" y="192">real ↔ reciprocal space</text><text x="320" y="192">bands + grid operations</text><text x="520" y="192">overlaps + eigensolves</text></g>
+<text x="16" y="265" font-size="13">Across the node: independent structures and controls</text>
+<g fill="#fff0f5" stroke="#e9b5c8"><rect x="16" y="287" width="64" height="42"/><rect x="94" y="287" width="64" height="42"/><rect x="172" y="287" width="64" height="42"/><rect x="250" y="287" width="64" height="42"/><rect x="328" y="287" width="64" height="42"/><rect x="406" y="287" width="64" height="42"/><rect x="484" y="287" width="64" height="42"/><rect x="562" y="287" width="62" height="42"/></g>
+<g text-anchor="middle" font-size="12" fill="#b90643"><text x="48" y="313">GPU 0</text><text x="126" y="313">GPU 1</text><text x="204" y="313">GPU 2</text><text x="282" y="313">GPU 3</text><text x="360" y="313">GPU 4</text><text x="438" y="313">GPU 5</text><text x="516" y="313">GPU 6</text><text x="594" y="313">GPU 7</text></g>
+<text x="16" y="361" font-size="12" fill="#68717e">Shared constraints: host memory, GPU memory, storage and archival throughput</text>
+</g></svg>

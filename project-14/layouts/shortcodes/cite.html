@@ -1,0 +1,11 @@
+{{- /* Numbered citation, e.g. {{< cite "kohn1965 pbe1996" >}}. Numbers follow first appearance on the page. */ -}}
+{{- $refs := site.Data.soc_refs -}}
+{{- $keys := split (.Get 0) " " -}}
+{{- $order := .Page.Store.Get "socCiteOrder" | default slice -}}
+{{- range $keys -}}
+  {{- if not (index $refs .) -}}{{- errorf "cite: unknown reference %q in %s" . $.Page.File.Path -}}{{- end -}}
+  {{- if not (in $order .) -}}{{- $order = $order | append . -}}{{- end -}}
+{{- end -}}
+{{- .Page.Store.Set "socCiteOrder" $order -}}
+<span class="soc-cite">[{{- range $i, $k := $keys -}}{{- if $i -}}, {{ end -}}{{- range $j, $o := $order -}}{{- if eq $o $k -}}<a href="#ref-{{ $k }}" aria-label="Reference {{ add $j 1 }}">{{ add $j 1 }}</a>{{- end -}}{{- end -}}{{- end -}}]</span>
+{{- /* trim */ -}}

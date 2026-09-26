@@ -1,0 +1,7 @@
+{{- /* Static figure with a content-hash query string, so regenerated figures are never served stale from a cache. */ -}}
+{{- $src := .Get "src" -}}
+{{- $file := printf "static%s" $src -}}
+{{- if not (fileExists $file) -}}{{- errorf "soc-img: missing %s" $file -}}{{- end -}}
+{{- $v := substr (readFile $file | md5) 0 10 -}}
+<img src="{{ $src }}?v={{ $v }}" width="{{ .Get "width" }}" height="{{ .Get "height" }}"{{ with .Get "loading" }} loading="{{ . }}"{{ end }} alt="{{ .Get "alt" }}" />
+{{- /* trim */ -}}

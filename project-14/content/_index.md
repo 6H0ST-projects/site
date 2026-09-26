@@ -15,3 +15,5 @@ Project 14 is creating novel methods for discovering the next generation of magn
 → [**A Calibrated Screening Dataset of Magnetocrystalline Anisotropy for Rare-Earth-Free Magnet Discovery**](/magnet-anisotropy-dataset/)
 
 → [**GPAC: An Exact, Executable Language for Crystal Structures**](/gpac/)
+
+→ [**SOC-Enabled SCF Trajectories Dataset**](/soc-scf-trajectories/)

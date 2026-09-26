@@ -1,0 +1,19 @@
+<section class="socw" id="soc-explorer" aria-label="Interactive FeAl₂ SCF field history" data-src="/img/soc-scf/feal2/" data-version="{{ substr (readFile "static/img/soc-scf/feal2/manifest.json" | md5) 0 10 }}">
+  <p class="socw-eyebrow">Interactive · measured fields from the dataset</p>
+  <p class="socw-intro">FeAl₂, trajectory <code>proto014-feal2-reference130-002</code>. Images are two slices through the same record: a layer containing Fe atoms and a layer containing Al atoms.</p>
+  <div class="socw-controls">
+    <div class="socw-buttons socw-channels" role="group" aria-label="Field channel"></div>
+  </div>
+  <div class="socw-controls">
+    <div class="socw-buttons socw-steps" role="group" aria-label="SCF evaluation"></div>
+  </div>
+  <div class="socw-maps">
+    <figure><div class="socw-map"><img alt="" data-layer="fe" width="320" height="320"><svg viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" data-atoms="fe"></svg></div><figcaption data-caption="fe"></figcaption></figure>
+    <figure><div class="socw-map"><img alt="" data-layer="al" width="320" height="320"><svg viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" data-atoms="al"></svg></div><figcaption data-caption="al"></figcaption></figure>
+  </div>
+  <div class="socw-colorbar" aria-hidden="true"><div class="socw-gradient"></div><div class="socw-ticks"></div><p class="socw-scale"></p></div>
+  <p class="socw-readout" id="soc-explorer-readout" aria-live="polite"></p>
+  <svg id="soc-explorer-history" class="socw-interactive" viewBox="0 0 600 230" role="img" tabindex="0" aria-label="Charge and spin residual for all 96 evaluations of this history"></svg>
+  <p class="socw-note">Each image is one conventional-cell slice (6.04 Å square), resampled from the record's 72 × 72 × 72 grid. Open circles mark atoms in the slice. The residual chart covers all 96 evaluations; images are provided for evaluations 1–9 and the final evaluation, 96. Color scales are fixed across evaluations so magnitudes can be compared.</p>
+  <noscript><p class="socw-note">Enable JavaScript to step through the fields. The static figures above show the same data.</p></noscript>
+</section>
