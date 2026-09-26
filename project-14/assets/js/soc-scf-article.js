@@ -278,6 +278,18 @@
     render(); preload();
   }
 
+  /* Shrink display equations that are wider than the column (phones), instead of scrolling them. */
+  function fitEquations() {
+    document.querySelectorAll('.project-description .katex-display').forEach(d => {
+      d.style.fontSize = '';
+      const have = d.clientWidth, need = d.scrollWidth;
+      if (have > 0 && need > have + 1) d.style.fontSize = `${Math.max(0.6, (have / need) * 0.98).toFixed(3)}em`;
+    });
+  }
+  let fitTimer = null;
+  window.addEventListener('load', () => { fitEquations(); if (document.fonts) document.fonts.ready.then(fitEquations); });
+  window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitEquations, 150); });
+
   const rotate = document.getElementById('soc-rotate');
   if (rotate) initRotate(rotate);
   const explorer = document.getElementById('soc-explorer');

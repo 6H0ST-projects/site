@@ -2,8 +2,6 @@
 .soc-scf-trajectories .scf-figure { border-top: 1px solid #e0e4e9; padding-top: 1.3rem; }
 .soc-scf-trajectories .scf-figure-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
 .soc-scf-trajectories .scf-figure-scroll:focus-visible { outline: 2px solid #ff0860; outline-offset: 4px; }
-.soc-scf-trajectories .scf-figure img { min-width: 480px; }
-.soc-scf-trajectories .scf-figure-wide img { min-width: 560px; }
 .soc-scf-trajectories details { border-top: 1px solid #dce1e7; margin: 1.5rem 0; padding: 1rem 0; }
 .soc-scf-trajectories summary { cursor: pointer; line-height: 1.5; font-weight: 700; }
 .scfx { border-top: 2px solid #252830; border-bottom: 1px solid #cfd5de; padding: 1.25rem 0; margin: 2.3rem 0; }
@@ -45,7 +43,7 @@
 .soc-figure { margin: 2.4rem 0; border-top: 1px solid #e0e4e9; padding-top: 1.1rem; }
 .soc-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
 .soc-scroll:focus-visible { outline: 2px solid #ff0860; outline-offset: 4px; }
-.soc-scroll > img, .soc-scroll > svg { min-width: 540px; }
+.soc-scroll > img, .soc-scroll > svg { display: block; width: 100%; max-width: 100%; height: auto; }
 .project-description .soc-figure img { background: #fff; }
 .soc-diagram { display: block; width: 100%; height: auto; background: #fff; font-family: inherit; }
 .soc-diagram .d-h { font-size: 15px; fill: #252830; }
@@ -111,3 +109,5 @@
 /* Pink is the only accent on this page: links take the text colour with a pink underline. */
 .soc-scf-trajectories .project-description a { color: inherit; text-decoration-color: #ff0860; text-decoration-thickness: 1px; text-underline-offset: 2px; }
 .soc-scf-trajectories .project-description a:hover { color: #c40648; }
+/* Phones: wrap long code lines rather than scrolling them. */
+@media (max-width: 560px) { .soc-scf-trajectories .project-description pre { white-space: pre-wrap; overflow-wrap: anywhere; } .soc-scf-trajectories .project-description pre span { white-space: pre-wrap; } }
