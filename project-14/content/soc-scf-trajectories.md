@@ -14,7 +14,7 @@ textColor: "#000"
 
 Our **SOC-SCF Trajectories Dataset** holds 310 self-consistent-field (SCF) histories from spin–orbit-coupled density functional theory calculations performed on select magnetic materials. For each SCF evaluation we store three full three-dimensional fields: the input charge and spin density, the produced effective potential, and the resulting density.
 
-**A special thank you to the [SF Compute](https://sfcompute.com/) team.** SF Compute provided the H100 GPU infrastructure that made this collection possible. Their nodes supported multiple parallel spin–orbit-coupled Quantum ESPRESSO runs, preserving the charge, spin and potential fields throughout each SCF history. That sustained compute time let us collect both converged solutions and their full trajectory history.
+**A special thank you to the [SF Compute](https://sfcompute.com/) team.** SF Compute provided the H100 GPU infrastructure that made this dataset possible. Their nodes supported multiple parallel spin–orbit-coupled Quantum ESPRESSO runs, preserving the charge, spin and potential fields throughout each SCF history. That sustained compute time let us collect both converged solutions and their full trajectory history. To our knowledge, this is the first publicly released dataset of SCF field trajectories for periodic, spin–orbit-coupled DFT.
 
 <figure class="soc-figure">
   <div class="soc-scroll" tabindex="0" role="group" aria-label="Input spin density of FeAl2 in two crystal layers at SCF evaluations 1, 3, 5, 9 and 96.">
@@ -94,7 +94,7 @@ Because \(\xi\) follows the slope of the potential, it is largest close to the n
   <div class="soc-scroll" tabindex="0" role="group" aria-label="Schematic of the origin of spin–orbit coupling.">
 {{< soc-svg "soc-frames" >}}
   </div>
-  <figcaption><strong>Figure 4</strong> Schematic. From the electron's point of view the nucleus circles it, and the resulting magnetic field lines up with the orbital angular momentum. The spin's energy in that field is proportional to \(\mathbf L\cdot\mathbf S\).</figcaption>
+  <figcaption><strong>Figure 4</strong> Schematic (this is a gross over-simplification). From the electron's point of view the nucleus circles it, and the resulting magnetic field lines up with the orbital angular momentum. The spin's energy in that field is proportional to \(\mathbf L\cdot\mathbf S\).</figcaption>
 </figure>
 
 <figure class="soc-figure">
@@ -328,7 +328,7 @@ Some practical guidance:
 
 ### Collection {#collection}
 
-Every history was computed with Quantum ESPRESSO's plane-wave code {{< cite "giannozzi2009 giannozzi2017" >}}, running on GPUs {{< cite "giannozzi2020" >}} and instrumented to write the three fields at each evaluation. Common settings: PBE exchange and correlation; fully relativistic norm-conserving pseudopotentials; 120 Ry wavefunction and 480 Ry density cutoffs; Marzari–Vanderbilt smearing (0.01 Ry in 291 histories); and symmetry disabled, so magnetization was free to take any direction. Density mixing used Quantum ESPRESSO's Broyden scheme in 304 histories and its local Thomas–Fermi variant in 6, with a mixing factor of 0.3 in 265 histories. Starting magnetizations, geometries, mixing and smearing were varied on purpose, so read each history's input rather than assuming a default. GPU time came from SF Compute.
+Every history was computed with Quantum ESPRESSO's plane-wave code {{< cite "giannozzi2009 giannozzi2017" >}}, running on Nvidia H100 GPUs {{< cite "giannozzi2020" >}} and instrumented to write the three fields at each evaluation. Common settings: PBE exchange and correlation; fully relativistic norm-conserving pseudopotentials; 120 Ry wavefunction and 480 Ry density cutoffs; Marzari–Vanderbilt smearing (0.01 Ry in 291 histories); and symmetry disabled, so magnetization was free to take any direction. Density mixing used Quantum ESPRESSO's Broyden scheme in 304 histories and its local Thomas–Fermi variant in 6, with a mixing factor of 0.3 in 265 histories. Starting magnetizations, geometries, mixing and smearing were varied on purpose, so read each history's input rather than assuming a default. GPU time came from SF Compute.
 
 <p class="wp-footnote">Field images and dataset charts on this page are generated from the public release by <code>docs/editorial/generate_soc_scf_figures.py</code> in this site's repository. Every residual it recomputes from the raw fields matches the published scalar history.</p>
 

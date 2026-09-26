@@ -36,6 +36,16 @@
       "has": [{ "type": "host", "value": "www.project-14.us" }],
       "destination": "https://project-14.us/:path*",
       "permanent": true
+    },
+    {
+      "source": "/learning-how-magnetic-dft-converges",
+      "destination": "/soc-scf-trajectories/",
+      "permanent": true
+    },
+    {
+      "source": "/learning-how-magnetic-dft-converges/:path*",
+      "destination": "/soc-scf-trajectories/",
+      "permanent": true
     }
   ]
 }
