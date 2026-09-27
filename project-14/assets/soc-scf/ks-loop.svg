@@ -12,11 +12,11 @@
   <g class="ksl-plain"><rect x="20" y="200" width="170" height="86"/><text x="105" y="230" class="d-h" text-anchor="middle">Mix</text><text x="105" y="254" class="d-m" text-anchor="middle">next input from out + in</text><text x="105" y="274" class="d-badge d-badge-off" text-anchor="middle">MIXER STATE NOT STORED</text></g>
 </g>
 <g stroke="#939ba6" stroke-width="1.5" fill="none">
-  <path d="M190 83 H251" marker-end="url(#ksl-arrow)"/><path d="M425 83 H486" marker-end="url(#ksl-arrow)"/>
-  <path d="M575 126 V196" marker-end="url(#ksl-arrow)"/><path d="M490 243 H429" marker-end="url(#ksl-arrow)"/>
-  <path d="M255 243 H194" marker-end="url(#ksl-arrow)"/><path d="M105 200 V130" marker-end="url(#ksl-arrow)"/>
-  <path d="M340 286 V316 H640" stroke-dasharray="0" marker-end="url(#ksl-arrow)"/>
+  <path class="ksl-arrow" d="M190 83 H251" marker-end="url(#ksl-arrow)"/><path class="ksl-arrow" d="M425 83 H486" marker-end="url(#ksl-arrow)"/>
+  <path class="ksl-arrow" d="M575 126 V196" marker-end="url(#ksl-arrow)"/><path class="ksl-arrow" d="M490 243 H429" marker-end="url(#ksl-arrow)"/>
+  <path class="ksl-arrow" d="M255 243 H194" marker-end="url(#ksl-arrow)"/><path class="ksl-arrow" d="M105 200 V130" marker-end="url(#ksl-arrow)"/>
+  <path class="ksl-exit" d="M340 286 V316 H640" stroke-dasharray="0" marker-end="url(#ksl-arrow)"/>
 </g>
-<text x="130" y="168" class="d-s">not yet consistent: repeat</text>
-<text x="360" y="310" class="d-s">consistent within tolerance: stop</text>
+<text x="130" y="168" class="d-s ksl-note">not yet consistent: repeat</text>
+<text x="360" y="310" class="d-s ksl-note">consistent within tolerance: stop</text>
 </svg>

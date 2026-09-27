@@ -99,7 +99,7 @@ Because \(\xi\) follows the slope of the potential, it is largest close to the n
 
 <figure class="soc-figure">
   <div class="soc-scroll" tabindex="0" role="group" aria-label="Bar chart of spin–orbit constants for Fe, Co, Cu, Pd, Pt and Au.">
-    {{< soc-img src="/img/soc-scf/soc-strength.svg" width="590" height="209" loading="lazy" alt="Valence spin–orbit constants: Fe 60, Co 74, Cu 110, Pd 191, Pt 537 and Au 615 meV." >}}
+{{< soc-svg "soc-strength-bars" >}}
   </div>
   <figcaption><strong>Figure 5</strong> Valence spin–orbit constants used in one first-principles study of Fe-based alloys {{< cite "blancorey2019" >}}. These are values from literature and not part of our dataset. Exact values depend on the atom's environment and the method.</figcaption>
 </figure>
@@ -198,7 +198,7 @@ Histories have one of three outcomes. A **qualified endpoint** converged and its
 
 <figure class="soc-figure">
   <div class="soc-scroll" tabindex="0" role="group" aria-label="310 histories: 32 qualified endpoints, 62 solver-converged, 216 censored.">
-    {{< soc-img src="/img/soc-scf/outcomes.svg" width="590" height="144" loading="lazy" alt="A single bar split into 32 qualified endpoints, 62 solver-converged histories and 216 censored histories." >}}
+{{< soc-svg "outcomes-bars" >}}
   </div>
   <figcaption><strong>Figure 10</strong> Unfinished histories are intentionally preserved and labeled as such.</figcaption>
 </figure>

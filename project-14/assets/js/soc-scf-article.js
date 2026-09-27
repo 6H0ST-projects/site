@@ -289,11 +289,14 @@
   let fitTimer = null;
   window.addEventListener('load', () => { fitEquations(); if (document.fonts) document.fonts.ready.then(fitEquations); });
   window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitEquations, 150); });
+  document.addEventListener('soc:section-open', fitEquations);  // sections can open after load
 
   const rotate = document.getElementById('soc-rotate');
   if (rotate) initRotate(rotate);
   const explorer = document.getElementById('soc-explorer');
-  if (explorer) {
+  const inlineData = document.getElementById('soc-explorer-data');  // lets a standalone copy work from file://
+  if (explorer && inlineData) initExplorer(explorer, JSON.parse(inlineData.textContent));
+  else if (explorer) {
     fetch(`${explorer.dataset.src}manifest.json?v=${explorer.dataset.version || ''}`)
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(data => initExplorer(explorer, data))

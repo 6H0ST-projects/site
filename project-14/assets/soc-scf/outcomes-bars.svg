@@ -1,0 +1,12 @@
+<svg class="soc-diagram soc-chart" viewBox="0 0 680 146" role="img" aria-labelledby="out-title out-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="out-title">SCF history outcomes</title>
+<desc id="out-desc">32 qualified endpoints, 62 solver-converged histories without qualification, and 216 censored histories, out of 310.</desc>
+<rect width="680" height="146" fill="#fff"/>
+<text class="d-h" x="20" y="28">310 SCF histories, three outcomes</text>
+<rect class="soc-hbar" x="20.0" y="70" width="64.1" height="22" fill="#ff0860" data-w="64.1"/><text class="d-num soc-count" x="20.0" y="60" data-val="32">32</text>
+<rect class="soc-hbar" x="86.1" y="70" width="126.0" height="22" fill="#4b515b" data-w="126.0"/><text class="d-num soc-count" x="86.1" y="60" data-val="62">62</text>
+<rect class="soc-hbar" x="214.1" y="70" width="445.9" height="22" fill="#c9ced6" data-w="445.9"/><text class="d-num soc-count" x="214.1" y="60" data-val="216">216</text>
+<rect x="20" y="116" width="12" height="12" fill="#ff0860"/><text class="d-s" x="38" y="126">Qualified endpoint</text>
+<rect x="201.6" y="116" width="12" height="12" fill="#4b515b"/><text class="d-s" x="219.6" y="126">Solver converged, not qualified</text>
+<rect x="476.80000000000007" y="116" width="12" height="12" fill="#c9ced6"/><text class="d-s" x="494.80000000000007" y="126">Censored</text>
+</svg>

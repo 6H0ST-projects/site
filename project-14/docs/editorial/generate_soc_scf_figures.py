@@ -423,25 +423,65 @@ outcome_label = {'qualified_endpoint': 'Qualified endpoint',
                  'backend_converged_without_qualified_endpoint': 'Solver converged, not qualified',
                  'censored_without_conventional_convergence': 'Censored'}
 
-# Outcomes as one part-to-whole bar; the legend row carries names and counts.
 from matplotlib.patches import Rectangle
-order_keys = ['qualified_endpoint', 'backend_converged_without_qualified_endpoint', 'censored_without_conventional_convergence']
-fig, ax = plt.subplots(figsize=(8.2, 1.45))
-fig.subplots_adjust(left=0.02, right=0.98, top=0.88, bottom=0.42)
-x = 0
-for key in order_keys:
-    n = outcomes[key]
-    ax.barh(0, n - 1.5, left=x, height=0.6, color=outcome_color[key])
-    ax.text(x, 0.42, f'{n}', fontsize=15, va='bottom')
-    x += n
-ax.set_xlim(0, 310); ax.set_ylim(-0.4, 1.0); ax.axis('off')
-lx = 0.02
-for key in order_keys:
-    fig.patches.append(Rectangle((lx, 0.135), 0.014, 0.07, transform=fig.transFigure, color=outcome_color[key]))
-    fig.text(lx + 0.022, 0.14, outcome_label[key], fontsize=11, color=muted)
-    lx += 0.022 + len(outcome_label[key]) * 0.0105 + 0.04
-save_svg(fig, 'outcomes', 'Trajectory outcomes',
-         '32 qualified electronic endpoints, 62 solver-converged histories without qualification, 216 censored histories.')
+
+
+# ----------------------------------------------------------------------------
+# Inline SVG charts: written to assets/soc-scf/ and inlined by the soc-svg shortcode, so the
+# page can grow their bars and count up their values (static final state without JavaScript).
+# ----------------------------------------------------------------------------
+ASSETS = Path(__file__).resolve().parents[2] / 'assets' / 'soc-scf'
+
+
+def write_outcome_bar():
+    order = [('qualified_endpoint', 'Qualified endpoint', pink),
+             ('backend_converged_without_qualified_endpoint', 'Solver converged, not qualified', slate),
+             ('censored_without_conventional_convergence', 'Censored', gray)]
+    total = sum(outcomes.values())
+    x, W, parts, legend = 20.0, 640.0, [], []
+    for i, (key, label, color) in enumerate(order):
+        n = outcomes[key]
+        w = W * n / total - (2 if i < len(order) - 1 else 0)
+        parts.append(f'<rect class="soc-hbar" x="{x:.1f}" y="70" width="{w:.1f}" height="22" fill="{color}" data-w="{w:.1f}"/>'
+                     f'<text class="d-num soc-count" x="{x:.1f}" y="60" data-val="{n}">{n}</text>')
+        x += W * n / total
+    lx = 20
+    for key, label, color in order:
+        legend.append(f'<rect x="{lx}" y="116" width="12" height="12" fill="{color}"/><text class="d-s" x="{lx + 18}" y="126">{label}</text>')
+        lx += 18 + 7.2 * len(label) + 34
+    svg = ('<svg class="soc-diagram soc-chart" viewBox="0 0 680 146" role="img" aria-labelledby="out-title out-desc" xmlns="http://www.w3.org/2000/svg">\n'
+           '<title id="out-title">SCF history outcomes</title>\n'
+           f'<desc id="out-desc">{outcomes["qualified_endpoint"]} qualified endpoints, {outcomes["backend_converged_without_qualified_endpoint"]} solver-converged histories without qualification, and {outcomes["censored_without_conventional_convergence"]} censored histories, out of {total}.</desc>\n'
+           '<rect width="680" height="146" fill="#fff"/>\n'
+           f'<text class="d-h" x="20" y="28">{total} SCF histories, three outcomes</text>\n'
+           + '\n'.join(parts) + '\n' + '\n'.join(legend) + '\n</svg>\n')
+    (ASSETS / 'outcomes-bars.svg').write_text(svg)
+
+
+def write_inline_bars(values):
+    left, right, base, top, ymax = 64, 660, 214, 74, 700
+    band = (right - left) / len(values)
+    y = lambda v: base - (base - top) * v / ymax
+    grid = ''.join(f'<line x1="{left}" x2="{right}" y1="{y(v):.1f}" y2="{y(v):.1f}" stroke="#eef0f3"/>'
+                   f'<text class="d-s" x="{left - 10}" y="{y(v) + 4:.1f}" text-anchor="end">{v}</text>' for v in (0, 200, 400, 600))
+    bars = []
+    for i, (el, z, v) in enumerate(values):
+        cx = left + band * (i + 0.5)
+        bars.append(f'<rect class="soc-vbar" x="{cx - 22:.1f}" y="{y(v):.1f}" width="44" height="{base - y(v):.1f}" fill="{slate}" data-y="{y(v):.1f}" data-h="{base - y(v):.1f}"/>'
+                    f'<text class="d-m soc-count" x="{cx:.1f}" y="{y(v) - 8:.1f}" text-anchor="middle" data-val="{v:.0f}">{v:.0f}</text>'
+                    f'<text class="d-m" x="{cx:.1f}" y="{base + 20}" text-anchor="middle">{el}</text>'
+                    f'<text class="d-s" x="{cx:.1f}" y="{base + 36}" text-anchor="middle">Z = {z}</text>')
+    svg = ('<svg class="soc-diagram soc-chart" viewBox="0 0 680 262" role="img" aria-labelledby="xi-title xi-desc" xmlns="http://www.w3.org/2000/svg">\n'
+           '<title id="xi-title">Spin–orbit constants by element</title>\n'
+           '<desc id="xi-desc">' + ', '.join(f'{el} {v:.2f} meV' for el, _, v in values) + ' (Blanco-Rey, Cerdá and Arnau 2019, Table 3).</desc>\n'
+           '<rect width="680" height="262" fill="#fff"/>\n'
+           '<text class="d-h" x="20" y="28">Spin–orbit strength grows with atomic number</text>\n'
+           '<text class="d-s" x="20" y="48">Valence spin–orbit constant ξ (meV) used in one first-principles study; 3d → 4d → 5d</text>\n'
+           + grid + '\n' + '\n'.join(bars) + f'\n<line x1="{left}" x2="{right}" y1="{base}" y2="{base}" stroke="#cfd5dd"/>\n</svg>\n')
+    (ASSETS / 'soc-strength-bars.svg').write_text(svg)
+
+
+write_outcome_bar()
 
 # Family coverage grouped by frozen split.
 fam = collections.defaultdict(lambda: {'n': 0, 'q': 0, 'roots': set()})
@@ -642,20 +682,7 @@ save_svg(fig, 'composition', 'Dataset composition',
 
 # Literature context: spin-orbit constants used by Blanco-Rey, Cerda & Arnau, New J. Phys. 21, 073054 (2019), Table 3.
 xi = [('Fe', 26, 59.65), ('Co', 27, 74.12), ('Cu', 29, 110.44), ('Pd', 46, 191.36), ('Pt', 78, 537.18), ('Au', 79, 615.05)]
-fig, ax = plt.subplots(figsize=(8.2, 2.9))
-fig.subplots_adjust(left=0.09, right=0.97, top=0.70, bottom=0.2)
-fig.text(0.09, 0.9, 'Spin–orbit strength grows with atomic number', fontsize=15)
-fig.text(0.09, 0.80, r'Valence spin–orbit constant $\xi$ (meV) used in one first-principles study; 3d → 4d → 5d', fontsize=11, color=muted)
-names = [f'{el}\nZ = {z}' for el, z, _ in xi]
-ax.bar(range(len(xi)), [v for *_, v in xi], width=0.5, color=slate)
-for i, (*_, v) in enumerate(xi):
-    ax.text(i, v + 12, f'{v:.0f}', ha='center', fontsize=11.5)
-ax.set_xticks(range(len(xi)), names, fontsize=11)
-ax.set_ylim(0, 700); ax.set_yticks([0, 200, 400, 600])
-ax.set_ylabel(r'$\xi$ · meV')
-clean(ax)
-save_svg(fig, 'soc-strength', 'Spin-orbit constants by element',
-         'Fe 59.65, Co 74.12, Cu 110.44, Pd 191.36, Pt 537.18, Au 615.05 meV (Blanco-Rey et al. 2019, Table 3).')
+write_inline_bars(xi)
 
 facts['final_spin_gt_charge'] = sum(h[-1]['component_residuals_e_per_atom']['magnetization_vector_l1'] >
                                     h[-1]['component_residuals_e_per_atom']['charge_l1'] for h in histories.values())
