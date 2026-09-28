@@ -12,9 +12,9 @@ textColor: "#000"
 
 **Project 14 & SF Compute · September 2026**
 
-Our **SOC-SCF Trajectories Dataset** holds 310 self-consistent-field (SCF) histories from spin–orbit-coupled density functional theory calculations performed on select magnetic materials. For each SCF evaluation we store three full three-dimensional fields: the input charge and spin density, the produced effective potential, and the resulting density.
+Our **SOC-SCF Trajectories Dataset** holds 310 self-consistent-field (SCF) histories from spin–orbit-coupled density functional theory calculations performed on select magnetic materials. For each SCF evaluation we store the input charge and spin density, the produced effective potential, and the resulting density.
 
-**A special thank you to the [SF Compute](https://sfcompute.com/) team.** SF Compute provided the H100 GPU infrastructure that made this dataset possible. Their nodes supported multiple parallel spin–orbit-coupled Quantum ESPRESSO runs, preserving the charge, spin and potential fields throughout each SCF history. That sustained compute time let us collect both converged solutions and their full trajectory history. To our knowledge, this is the first publicly released dataset of SCF field trajectories for periodic, spin–orbit-coupled DFT.
+**A special thank you to the [SF Compute](https://sfcompute.com/) team.** SF Compute provided the compute infrastructure that made this dataset possible. Their nodes supported multiple parallel spin–orbit-coupled Quantum ESPRESSO runs, preserving the charge, spin and potential fields throughout each SCF history. That sustained compute time let us collect both converged solutions and their full trajectory history. To our knowledge, this is the first publicly released dataset of SCF field trajectories for periodic, spin–orbit-coupled DFT.
 
 <figure class="soc-figure">
   <div class="soc-scroll" tabindex="0" role="group" aria-label="Input spin density of FeAl2 in two crystal layers at SCF evaluations 1, 3, 5, 9 and 96.">
