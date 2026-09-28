@@ -9,13 +9,13 @@ anime: true
 sidebarText: "If I could give one piece of advice to new researchers, it would be to never stop looking for new avenues of research. On top of what you have been given, ask yourself, what might be necessary ten years from now? What will society need? Find your own research theme, and every day, little by little, you have to keep working on it."
 ---
 
-project-14  ·  August 2026
+Project 14  ·  August 2026
 
 GPAC is an exact, executable representation for periodic crystal structures. We built it so that language models can propose crystal structures and check them without the precision problems of writing out coordinates by hand. A GPAC program is a short ASCII text that names a space group, gives the lattice metric as exact rationals, and places atoms on Wyckoff orbits. Running a program is deterministic and produces a well-formed structure. A separate canonicalizer takes a structure given with rational coordinates, which we call an observation, and returns its algorithm-canonical program, typically in seconds to minutes. Within the scope we have tested, two structures are the same exactly when their canonical programs are byte-equal.
 
 ### Why CIF files are a poor identity format {#llms-struggle-with-cifs}
 
-CIF is a good archival format but a poor identity format. The same crystal can be written as many different CIF files, depending on the choice of origin, basis setting, coordinate frame and floating-point precision, so comparing files says little about whether two structures are the same. CIFs are also hard for language models to write correctly. Symmetry operations are easy to get wrong, and the usual alternative, placing every atom by hand, needs a coordinate precision that models rarely reach.
+The same crystal can be written as many different CIF files, depending on the choice of origin, basis setting, coordinate frame and floating-point precision, so comparing files says little about whether two structures are the same. CIFs are also hard for language models to write correctly. Symmetry operations are easy to get wrong, and the usual alternative, placing every atom by hand, needs a coordinate precision that models rarely reach.
 
 Symmetry detection on floating-point coordinates, for example with `spglib`, depends on a tolerance the user has to choose, and the answer can change with it. At tight tolerances, small coordinate noise stops the symmetry from being recovered at all. At loose tolerances, distinct structures get merged.
 
