@@ -10,7 +10,7 @@ bgColor: "#E7EAEE"
 textColor: "#000"
 ---
 
-**Project 14 & SF Compute · September 2026**
+project-14 & SF Compute  ·  September 2026
 
 Our **SOC-SCF Trajectories Dataset** holds 310 self-consistent-field (SCF) histories from spin–orbit-coupled density functional theory calculations performed on select magnetic materials. For each SCF evaluation we store the input charge and spin density, the produced effective potential, and the resulting density.
 

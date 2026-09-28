@@ -9,7 +9,7 @@ anime: true
 sidebarText: "If I could give one piece of advice to new researchers, it would be to never stop looking for new avenues of research. On top of what you have been given, ask yourself, what might be necessary ten years from now? What will society need? Find your own research theme, and every day, little by little, you have to keep working on it."
 ---
 
-**Will Bryan**  ·  ghost-projects  ·  May 2026
+project-14  ·  May 2026
 
 GPSK-300 is a 3-channel, 302M-parameter diffusion transformer that learns the reciprocal space representations of inorganic crystal structures, and an exact quadratic form for the lattice. Structures are deterministically recovered via a joint IFFT of the reciprocal space channels and single linear least-squares fit of the generated lattice metric tensor.
 

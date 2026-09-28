@@ -10,7 +10,7 @@ sidebarText: "If I could give one piece of advice to new researchers, it would b
 ---
 
 
-**Will Bryan, Matt Moderwell**  ·  ghost-projects  ·  July 2026
+project-14  ·  July 2026
 
 Magnetocrystalline anisotropy is central to permanent magnet performance, yet this value is one of the scarcest labels in public materials science datasets. Computing the anisotropy constant \(K_1\) requires relativistic density functional theory that costs orders of magnitude more than a standard relaxation. We built a screening dataset of 3,573 uniaxial rare-earth-free crystals, 2,242 of them carrying a computed anisotropy label, each with a relaxed structure, stability, a Curie estimate, and a quantified per-label error model.
 
