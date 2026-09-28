@@ -16,7 +16,7 @@ Progress in materials science is incremental. Experimentation in this space, be 
 
 3. We believe carefully scoped, targeted real-world experimentation can be just as powerful as mass autonomous experimental data collection. There is a wealth of borderline wizard-like experimental talent in academia. These folks have accumulated their arcane expertise over decades of working in some of the most advanced labs in the world. Whether through collaborations with these institutions or by bringing that talent in-house, we believe focused experimentation with these folks is the most effective way to improve our simulations at this stage.
 
-Above all else, we embrace the incrementality that has defined progress in this field. There is no “great man,” and overnight successes were always decades in the making. We feel that it’s our responsibility to openly contribute at every step of our journey.
+Above all else, we embrace the incrementality that has defined progress in this field. There is no “great man.” Overnight successes have always been decades in the making, and we feel that it’s our responsibility to openly contribute at every step of our journey.
 
 Project 14 is dedicated to fully open science.
 
