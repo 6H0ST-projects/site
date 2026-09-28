@@ -113,7 +113,8 @@
 @media (max-width: 560px) { .soc-scf-trajectories .project-description pre { white-space: pre-wrap; overflow-wrap: anywhere; } .soc-scf-trajectories .project-description pre span { white-space: pre-wrap; } }
 
 /* Collapsible sections (added by soc-scf-nav.js; without it every section is simply open). */
-.soc-scf-trajectories .project-description h3.soc-collapsible { border-top: 1px solid #dfe3e8; padding-top: 1rem; margin-top: 2.2rem; }
+/* Section rules are pure CSS so headings do not shift when soc-scf-nav.js adds the toggles. */
+.soc-scf-trajectories .project-description > h3 { border-top: 1px solid #dfe3e8; padding-top: 1rem; margin-top: 2.2rem; }
 .soc-section-toggle { all: unset; box-sizing: border-box; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: .8rem; cursor: pointer; font: inherit; color: inherit; }
 @media (hover: hover) { .soc-section-toggle:hover { color: #c40648; } }
 .soc-section-toggle:focus-visible { outline: 2px solid #ff0860; outline-offset: 4px; }

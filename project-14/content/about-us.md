@@ -2,7 +2,8 @@
 title: "About Us"
 projectTitle: "About Us"
 description: "How Project 14 approaches materials discovery: computational methods, a sole focus on permanent magnets, targeted experimentation, and fully open science."
-ogImage: "og-image-project-014.png"
+ogImage: "og-image-about-us.png"
+preloadArticleFonts: false
 bgColor: "#E7EAEE"
 textColor: "#000"
 ---

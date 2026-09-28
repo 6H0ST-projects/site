@@ -6,6 +6,12 @@
 {{ $scfJS := slice (resources.Get "js/scf-explainer-model.js") (resources.Get "js/scf-explainer.js") (resources.Get "js/magnetism-model.js") (resources.Get "js/soc-scf-article.js") (resources.Get "js/soc-scf-nav.js") (resources.Get "js/soc-scf-motion.js") | resources.Concat "js/soc-scf-article.js" | minify | fingerprint }}
 <script defer src="{{ $scfJS.RelPermalink }}" integrity="{{ $scfJS.Data.Integrity }}"></script>
 {{ end }}
+{{- /* Pages with maths: fetch KaTeX's two main fonts early. KaTeX hides text until its fonts load,
+       so without this, equations near the top of a page appear a moment after the rest. */ -}}
+{{ if or (strings.Contains .RawContent "\\(") (strings.Contains .RawContent "$$") }}
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin>
+{{ end }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>

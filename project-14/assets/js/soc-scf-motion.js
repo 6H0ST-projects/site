@@ -21,6 +21,9 @@
     new IntersectionObserver(entries => entries.forEach(e => (e.isIntersecting ? start() : stop())), { threshold: 0.05 }).observe(el);
   }
   const diagram = id => root.querySelector(`svg[aria-labelledby^="${id}"]`);
+  // Only rewind what the reader has not seen yet. Anything on screen at load has already been
+  // painted in its final state, and hiding it to animate it would flash.
+  const unseen = el => { const r = el.getBoundingClientRect(); return r.height === 0 || r.top >= window.innerHeight || r.bottom <= 0; };
   const attrs = (el, names) => Object.fromEntries(names.map(n => [n, +el.getAttribute(n)]));
 
   // Draw a path in; its arrowhead is held back until the line arrives.
@@ -54,7 +57,7 @@
 
   /* ---------- Stat strip: stagger in and count up ---------- */
   const stats = root.querySelector('.soc-stats');
-  if (stats) {
+  if (stats && unseen(stats)) {
     const items = [...stats.children];
     const values = [...stats.querySelectorAll('dd')].map(dd => ({ dd, text: dd.textContent }));
     anime.set(items, { opacity: 0, translateY: 10 });
@@ -79,14 +82,14 @@
 
   /* ---------- Figures and the claim: fade up into place ---------- */
   // The SCF-loop diagram (Figure 2) stays static.
-  [...root.querySelectorAll('.soc-figure, .soc-claim')].filter(el => !el.querySelector('svg[aria-labelledby^="ksl-title"]')).forEach(el => {
+  [...root.querySelectorAll('.soc-figure, .soc-claim')].filter(el => unseen(el) && !el.querySelector('svg[aria-labelledby^="ksl-title"]')).forEach(el => {
     anime.set(el, { opacity: 0, translateY: 14 });
     once(el, () => anime({ targets: el, opacity: 1, translateY: 0, duration: 700, easing: 'easeOutCubic' }), 0.12);
   });
 
   /* ---------- Collinear vs noncollinear: locked arrows grow; free arrows swing out ---------- */
   const spin = diagram('cnc-title');
-  if (spin) {
+  if (spin && unseen(spin)) {
     const locked = [...spin.querySelectorAll('.cnc-col line')];
     const free = [...spin.querySelectorAll('.cnc-free line')];
     const finals = new Map([...locked, ...free].map(l => [l, attrs(l, ['x1', 'y1', 'x2', 'y2'])]));
@@ -137,7 +140,7 @@
 
   /* ---------- Response split: input → potential → output, one arrow at a time ---------- */
   const split = diagram('rsp-title');
-  if (split) {
+  if (split && unseen(split)) {
     const boxes = [...split.querySelectorAll(':scope > g.ksl-stored')];
     const edges = [...split.querySelectorAll('.rsp-edge')].map(prepareDraw);
     const labels = [...split.querySelectorAll('.rsp-label')];
@@ -161,7 +164,7 @@
   }
 
   /* ---------- Bar charts: grow the bars and count up the values ---------- */
-  root.querySelectorAll('svg.soc-chart').forEach(chart => {
+  [...root.querySelectorAll('svg.soc-chart')].filter(unseen).forEach(chart => {
     const hbars = [...chart.querySelectorAll('.soc-hbar')];
     const vbars = [...chart.querySelectorAll('.soc-vbar')];
     const counts = [...chart.querySelectorAll('.soc-count')];
@@ -178,7 +181,7 @@
   /* ---------- Rotate widget: one sweep to show what the slider does ---------- */
   const rotate = root.querySelector('#soc-rotate');
   const slider = rotate && rotate.querySelector('#soc-rotate-angle');
-  if (slider) {
+  if (slider && unseen(rotate)) {
     let intro = null, touched = false;
     const stop = () => { touched = true; if (intro) intro.pause(); };
     rotate.addEventListener('pointerdown', stop, true);
