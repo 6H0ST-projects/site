@@ -1,8 +1,6 @@
 <div class="page-wrapper">
     <div class="content-container">
-        {{ if .IsHome }}
-        <a href="{{ .Site.Params.ghostProjectsURL }}" class="back-link">← Ghost Projects</a>
-        {{ else }}
+        {{ if not .IsHome }}
         <a href="/" class="back-link">← Back to Project 14</a>
         {{ end }}
 

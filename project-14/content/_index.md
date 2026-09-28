@@ -10,6 +10,8 @@ sidebarText: "If I could give one piece of advice to new researchers, it would b
 Project 14 is creating novel methods for discovering the next generation of magnetic materials. In collaboration with [Ouro](https://ouro.foundation), and [REDACTED], we have discovered multiple novel [AFLOW](https://aflow.org/p/xtal-finder.html) prototypes, DFT screened thousands of potential stoichiometries to fit them, and we're now in the process of experimentally validating the results.
 
 
+→ [**About Us**](/about-us/)
+
 → [**GPSK-300: A Reciprocal-Space Diffusion Model for L1₀ Magnet Structure Prediction**](/gpsk-300/)
 
 → [**A Calibrated Screening Dataset of Magnetocrystalline Anisotropy for Rare-Earth-Free Magnet Discovery**](/magnet-anisotropy-dataset/)
