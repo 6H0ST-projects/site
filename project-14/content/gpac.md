@@ -11,7 +11,7 @@ sidebarText: "If I could give one piece of advice to new researchers, it would b
 
 Project 14  ·  August 2026
 
-GPAC is an exact, executable representation for periodic crystal structures. We built it so that language models can propose crystal structures and check them without the precision problems of writing out coordinates by hand. A GPAC program is a short ASCII text that names a space group, gives the lattice metric as exact rationals, and places atoms on Wyckoff orbits. Running a program is deterministic and produces a well-formed structure. A separate canonicalizer takes a structure given with rational coordinates, which we call an observation, and returns its algorithm-canonical program, typically in seconds to minutes. Within the scope we have tested, two structures are the same exactly when their canonical programs are byte-equal.
+GPAC is an exact, executable representation for periodic crystal structures. We built it so that language models can propose crystal structures and check them without the precision problems of writing out coordinates by hand. A GPAC program is a short ASCII text that names a space group, gives the lattice metric as exact rationals, and places atoms on Wyckoff orbits. Running a program is deterministic and produces a well-formed structure. A separate canonicalizer takes a structure given with rational coordinates, which we call an observation, and returns its algorithm-canonical program, typically in seconds to minutes. Within the scope we have tested, two structures are the same exactly when their canonical programs are byte-equal (LLMs love their byte matches of course).
 
 ### Why CIF files are a poor identity format {#llms-struggle-with-cifs}
 
@@ -289,9 +289,9 @@ Ordering on three sublattices follows the same pattern:
   </g>
 </svg>
 
-Three `ORB` lines place Al on 4a, Mn on 4b and Cu on 8c. The Cu orbit has twice the multiplicity of the other two and fills the tetrahedral holes of the L2₁ structure.
+Here three `ORB` lines place Al on 4a, Mn on 4b and Cu on 8c. The Cu orbit has twice the multiplicity of the other two and fills the tetrahedral holes of the L2₁ structure.
 
-Programs are easy to edit. Turning diamond carbon into diamond silicon is a three-token edit:
+GPAC programs are intentionally easy to edit. Turning diamond carbon into diamond silicon is a three-token edit:
 
 ```
 % Diamond C (Hall 525, Fd-3m)  →  Diamond Si
@@ -307,13 +307,13 @@ The atomic number changes from 6 to 14 and the metric is rescaled for silicon, w
 
 GPAC has a fast path for writing programs and a slower path for establishing identity.
 
-**Execute** (under 10 ms) turns a program into a structure. It runs six checks: the pinned hashes match the source tables; the metric is positive definite, tested with an exact rational LDL factorization; every declared symmetry operation preserves the metric (<em>R</em><sup>⊤</sup><em>GR</em>&thinsp;=&thinsp;<em>G</em>); atomic numbers are in range; the inventory matches the expanded orbit multiplicities; and no two sites collide. A program that passes all six produces a well-formed, decorated periodic structure. Execute does not check canonicality. It is the tool an author uses while writing.
+**Execute** (under 10 ms) turns a program into a structure. It checks that the pinned hashes match the source tables, the metric is positive definite (tested with an exact rational LDL factorization), every declared symmetry operation preserves the metric (<em>R</em><sup>⊤</sup><em>GR</em>&thinsp;=&thinsp;<em>G</em>), atomic numbers are in range, the inventory matches the expanded orbit multiplicities, and no two sites collide. A program that passes all six produces a well-formed, decorated periodic structure.
 
 **Recognize** (seconds to minutes) goes the other way, from an observation to its canonical program. It performs an exact symmetry analysis. It reduces the structure to its primitive cell through an integer Hermite normal form factorization, brings the metric to a normal form by minimizing a six-component key over a finite set of candidates, runs a two-sided gauge-section cascade over all 530 Hall groups, assigns Wyckoff orbits, and selects the least program under a well-founded typed ordering.
 
 **VerifyCanonical** (under a second to about 70 s) certifies that a program is algorithm-canonical within the searched family, by re-running recognition restricted to that family.
 
-Identity rests on two directions. If two programs are byte-equal, they denote the same structure; that follows directly from deterministic execution. The canonicalizer supplies the converse: equivalent rational observations map to the same canonical program. Together they make byte-equality necessary and sufficient for identity, within the scope we have tested.
+Identity rests on two directions here. If two programs are byte-equal, they denote the same structure. The canonicalizer supplies the converse where equivalent rational observations map to the same canonical program. Together they make byte-equality necessary and sufficient for identity, within the scope we have tested.
 
 Some edits leave a program runnable but no longer canonical. An atom that lands on a special position collides with its own images, and Execute rejects the program. Orbit merging, an increase in metric symmetry, and decoration that reveals a larger group are detected only by Recognize or VerifyCanonical. An edited program therefore runs immediately but has to be re-certified before it is used in an identity claim.
 
@@ -321,7 +321,7 @@ Some edits leave a program runnable but no longer canonical. An atom that lands 
 
 **Re-presentation identity.** We compiled 75 presentations of 19 equivalence classes. They cover standard re-presentations, six nontrivial unimodular transforms, and seven fixture structures spanning five crystal systems. Of the 75 compilations, 73 completed, and all 73 produced byte-identical canonical programs within their class. Compile times ranged from 3 to 192 s. Speed is the main thing we are working to improve.
 
-The two failures were origin-shifted observations, and both exposed implementation defects. One comes from presentation-dependent enumeration of the candidate manifest (3,375 candidates for one presentation and 27 for another). The other comes from a non-deterministic choice of orbit representative. Both are completeness failures within a known scope: the compiler rejected the inputs instead of returning a wrong program. We are fixing both.
+The two failures were origin-shifted observations, and both exposed implementation defects. One comes from presentation-dependent enumeration of the candidate manifest (3,375 candidates for one presentation and 27 for another). The other comes from a non-deterministic choice of orbit representative. Both are completeness failures within a known scope where the compiler rejected the inputs instead of returning a wrong program. Both are a WIP.
 
 **Deduplication.** We pooled the 73 completed presentations and deduplicated them three ways. Hashing the canonical program (SHA-256) gave exactly 19 clusters, matching the 19 true classes. A simple key built from `spglib` output (the space-group number plus the sorted multiset of Wyckoff letters) gave 30 clusters at both `symprec=1e-5` and `1e-1`. It over-splits because Wyckoff letters depend on the basis setting. A standardized key following common practice (primitive reduction, Niggli cell and rounded coordinates) gave 40 clusters, because rounding produced different keys across presentations for 16 of the 19 structures.
 
@@ -348,4 +348,4 @@ We see GPAC as the first layer of a verifier stack for reinforcement learning an
 
 Next, we want Recognize to emit a compact certificate alongside each canonical program, so that a small trusted kernel can replay it. Two open problems stand in the way: a sound certificate that no conjugator exists within the search, and a witness that the typed-key minimum really is the least. Above the crystal layer, a full reward stack also needs chemical sanity checks, continuous measures of near-duplicates, and property rewards from DFT or surrogate models.
 
-GPAC is under active development. We plan a beta open-source release at the end of September 2026.
+GPAC is under active development. We plan a beta open-source release at the end of October 2026.
