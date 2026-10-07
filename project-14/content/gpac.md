@@ -344,7 +344,7 @@ Four supporting lemmas are machine-checked in Lean 4 (v4.33.1, with Mathlib v4.3
 
 ### Next steps {#whats-next}
 
-We see GPAC as the first layer of a verifier stack for reinforcement learning and agentic crystal design. Execute is a deterministic check that fails closed and is cheap enough, under 10 ms, for a model to call on every proposal. Comparing canonical programs gives exact deduplication. Neither tells you anything about chemistry: a well-formed structure need not be chemically plausible, and exact rational distinctions can be physically meaningless.
+We see GPAC as the first layer of a verifier stack for reinforcement learning and agentic crystal design. Execute is a deterministic check that fails closed and is cheap enough, under 10 ms, for a model to call on every proposal. Comparing canonical programs gives exact deduplication. Neither tells you anything about chemistry... A well-formed structure need not be chemically plausible, and exact rational distinctions can be physically meaningless.
 
 Next, we want Recognize to emit a compact certificate alongside each canonical program, so that a small trusted kernel can replay it. Two open problems stand in the way: a sound certificate that no conjugator exists within the search, and a witness that the typed-key minimum really is the least. Above the crystal layer, a full reward stack also needs chemical sanity checks, continuous measures of near-duplicates, and property rewards from DFT or surrogate models.
 
