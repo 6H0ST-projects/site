@@ -1,0 +1,17 @@
+{{- $data := readFile "static/data/remag/benchmark-data.json" | transform.Unmarshal -}}
+{{- $labels := dict "Fe54 collinear" "Fe54 · collinear" "Fe16 noncollinear" "Fe16 · noncollinear" "Fe3C collinear" "Fe₃C · collinear" "Fe2B full-SOC x/z" "Fe₂B · full-SOC x/z" -}}
+<details class="remag-history">
+  <summary>Earlier measurements · separate runs and baseline settings</summary>
+  <p>9 October 2026 · selected native ELPA GPU baselines · median of three repetitions</p>
+  <table>
+    <thead><tr><th scope="col">Workflow</th><th scope="col">GPU → REMAG</th><th scope="col">Speedup</th></tr></thead>
+    <tbody>
+      {{ range $w := $data.previous_suite.workflows }}
+      <tr><th scope="row">{{ index $labels $w.name }}</th><td>{{ printf "%.2f" $w.medians.upstream }} → {{ printf "%.2f" $w.medians.candidate }} s</td><td>{{ printf "%.2f" $w.speedup_over_upstream_gpu }}×</td></tr>
+      {{ end }}
+    </tbody>
+  </table>
+  <p>The four-workflow geometric mean is 40.00×. Fe₂B counts once as an x/z pair. Failed ELSI screens were excluded; this average is specific to the native baselines in that earlier batch.</p>
+  <div class="remag-history-soc"><strong>FePt16 · full-SOC x/z</strong><span>573.311 → 9.838 s <strong>58.27×</strong></span></div>
+  <p>Standalone comparison with an earlier REMAG build and its recorded native ELPA GPU setting; three repetitions. Excluded from the four-workflow average and the current campaign.</p>
+</details>

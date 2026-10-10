@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 290" role="img" aria-labelledby="solver-pool-before-title solver-pool-before-desc" style="font-family:inherit">
+<title id="solver-pool-before-title">Sequential REMAG solver workspaces</title>
+<desc id="solver-pool-before-desc">Four jobs reuse one workspace on one GPU, solving in sequence before common occupations.</desc>
+<defs><marker id="solver-pool-before-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#68717B" stroke-width="1.4"/></marker></defs>
+<text x="140" y="20" text-anchor="middle" font-size="12" fill="#68717B" font-weight="700">One GPU · one workspace</text>
+<rect x="72" y="45" width="136" height="28" rx="4" fill="white" stroke="#68717B" data-motion-node="job-0" data-motion-meter=""/>
+<text x="140" y="62" text-anchor="middle" font-size="12" fill="#252830" font-weight="300">A  ·  Solve</text>
+<path d="M140 75 V83" fill="none" stroke="#68717B" stroke-width="1.2" stroke-linejoin="round" data-motion-edge="job-0" marker-end="url(#solver-pool-before-arrow)"/>
+<rect x="72" y="85" width="136" height="28" rx="4" fill="white" stroke="#68717B" data-motion-node="job-1" data-motion-meter=""/>
+<text x="140" y="102" text-anchor="middle" font-size="12" fill="#252830" font-weight="300">B  ·  Solve</text>
+<path d="M140 115 V123" fill="none" stroke="#68717B" stroke-width="1.2" stroke-linejoin="round" data-motion-edge="job-1" marker-end="url(#solver-pool-before-arrow)"/>
+<rect x="72" y="125" width="136" height="28" rx="4" fill="white" stroke="#68717B" data-motion-node="job-2" data-motion-meter=""/>
+<text x="140" y="142" text-anchor="middle" font-size="12" fill="#252830" font-weight="300">C  ·  Solve</text>
+<path d="M140 155 V163" fill="none" stroke="#68717B" stroke-width="1.2" stroke-linejoin="round" data-motion-edge="job-2" marker-end="url(#solver-pool-before-arrow)"/>
+<rect x="72" y="165" width="136" height="28" rx="4" fill="white" stroke="#68717B" data-motion-node="job-3" data-motion-meter=""/>
+<text x="140" y="182" text-anchor="middle" font-size="12" fill="#252830" font-weight="300">D  ·  Solve</text>
+<path d="M140 195 V210" fill="none" stroke="#68717B" stroke-width="1.2" stroke-linejoin="round" data-motion-edge="job-3"/>
+<path d="M140 210 V234" fill="none" stroke="#68717B" stroke-width="1.2" stroke-linejoin="round" data-motion-edge="join" marker-end="url(#solver-pool-before-arrow)"/>
+<rect x="38" y="237" width="204" height="34" rx="4" fill="white" stroke="#68717B" data-motion-node="occupations" data-motion-meter=""/>
+<text x="140" y="258" text-anchor="middle" font-size="12" fill="#252830" font-weight="300">Common occupations</text>
+</svg>

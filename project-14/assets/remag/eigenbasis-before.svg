@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 250" role="img" aria-labelledby="eigenbasis-before-title eigenbasis-before-desc" style="font-family:inherit">
+<title id="eigenbasis-before-title">eigenbasis: before</title>
+<desc id="eigenbasis-before-desc">Each current Hamiltonian is solved from a fresh starting basis, discarding the previous eigenbasis.</desc>
+<defs><marker id="eigenbasis-before-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#68717B" stroke-width="1.4"/></marker></defs>
+<rect x="40" y="10" width="200" height="34" rx="3" fill="white" stroke="#CAD0D6"/>
+<text x="140.0" y="31.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Previous eigenbasis</text>
+<path d="M140 46 V62" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#eigenbasis-before-arrow)" stroke-dasharray="3 3"/>
+<text x="140" y="78" font-size="12" fill="#68717B" text-anchor="middle" font-weight="300">Discard</text>
+<rect x="40" y="99" width="200" height="34" rx="3" fill="white" stroke="#CAD0D6"/>
+<text x="140.0" y="120.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Start from a fresh basis</text>
+<path d="M140 135 V147" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#eigenbasis-before-arrow)"/>
+<rect x="40" y="150" width="200" height="34" rx="3" fill="white" stroke="#CAD0D6"/>
+<text x="140.0" y="171.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Solve / refine</text>
+<path d="M140 186 V224" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#eigenbasis-before-arrow)"/>
+<text x="140" y="242" font-size="12" fill="#68717B" text-anchor="middle" font-weight="300">Same numerical stopping criterion</text>
+</svg>

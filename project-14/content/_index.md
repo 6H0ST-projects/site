@@ -19,3 +19,5 @@ Project 14 is creating novel methods for discovering the next generation of magn
 → [**GPAC: An Exact, Executable Language for Crystal Structures**](/gpac/)
 
 → [**SOC-Enabled SCF Trajectories Dataset**](/soc-scf-trajectories/)
+
+→ [**REMAG: GPU-first SIESTA for magnetic materials**](/remag/)

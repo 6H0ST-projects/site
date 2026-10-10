@@ -1,0 +1,150 @@
+/* REMAG's diagrams inherit the article typography and stack on narrow screens. */
+.remag-overview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 2.5rem 0; }
+.remag-overview a { display: flex; flex-direction: column; color: #252830; text-decoration: none; border-top: 1px solid #cad0d6; padding-top: .5rem; }
+.remag-overview a:hover, .remag-overview a:focus-visible { border-color: #ff0860; }
+.remag-overview a:focus-visible { outline: 2px solid #ff0860; outline-offset: 5px; }
+.remag-overview-number { color: #ff0860; font-size: .75rem; }
+.remag-overview svg { display: block; width: 100%; height: auto; margin: .6rem 0; }
+.remag-overview svg text { font-family: inherit; font-size: 11px; fill: #68717b; }
+.remag-overview strong { font-size: .92rem; line-height: 1.4; margin-bottom: .4rem; }
+.remag-overview a > span:last-child { font-size: .8rem; line-height: 1.5; color: #68717b; }
+.remag-lifetimes { margin: 1.5rem 0 2.5rem; font-size: .8rem; }
+.remag-lifetime-heading { font-weight: 700; margin-bottom: .65rem; }
+.remag-lifetime-row { display: grid; grid-template-columns: 11rem 1fr; align-items: baseline; gap: .5rem; margin-top: .4rem; }
+.remag-lifetime-row > span:last-child { padding: .45rem .65rem; line-height: 1.4; }
+.remag-lifetime-static { background: #f3f5f7; color: #68717b; }
+.remag-lifetime-update { background: #fff1f6; color: #b60040; }
+.remag-experiment { border-top: 1px solid #e5e8ed; margin-top: .8rem; padding-top: .75rem; }
+.remag-experiment-scope { font-size: .75rem; color: #68717b; margin-bottom: .6rem; }
+.remag-experiment-values { display: grid; grid-template-columns: 1fr auto 1fr 1fr; column-gap: .7rem; align-items: end; }
+.remag-experiment-values small { display: block; font-size: .7rem; color: #68717b; font-weight: 300; margin-bottom: .25rem; }
+.remag-experiment-values strong { font-size: 1.3rem; font-weight: 700; white-space: nowrap; }
+.remag-experiment-values em { font-size: .85rem; font-style: normal; font-weight: 300; }
+.remag-experiment-arrow { color: #68717b; font-size: 1.4rem; }
+.remag-experiment-after, .remag-experiment-gain { color: #ff0860; }
+.remag-experiment-gain { text-align: right; }
+.remag-experiment-note { color: #68717b; font-size: .7rem; line-height: 1.5; margin-top: .55rem; }
+.project-description .remag-compare,
+.project-description .remag-runtime { margin: 2.5rem 0; }
+.remag-figure-title { font-size: 1rem; font-weight: 700; line-height: 1.35; margin-bottom: 1rem; }
+.remag-comparison-scope { font-size: .75rem; line-height: 1.5; color: #68717b; margin: -.45rem 0 1rem; }
+.remag-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.remag-panel { min-width: 0; border-top: 2px solid #cad0d6; padding-top: .65rem; }
+.remag-panel.remag-after { border-color: #ff0860; }
+.remag-side-label { color: #68717b; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .5rem; }
+.remag-after .remag-side-label { color: #ff0860; }
+.project-description .remag-compare figcaption { margin-top: .85rem; }
+.remag-motion-controls { margin: -.15rem 0 1rem; }
+.remag-motion-controls [hidden], .remag-motion-controls[hidden] { display: none; }
+.remag-motion-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 1rem; }
+.remag-motion-buttons { display: flex; gap: .35rem; }
+.remag-motion-buttons button { appearance: none; font-family: inherit; font-size: .75rem; line-height: 1.4; color: #252830; background: white; border: 1px solid #cad0d6; border-radius: 3px; min-height: 32px; padding: .3rem .65rem; cursor: pointer; }
+.remag-motion-buttons button:first-child { min-width: 65px; border-color: #ff0860; color: #b60040; }
+.remag-motion-buttons button:hover { background: #fff1f6; }
+.remag-motion-buttons button:focus-visible { outline: 2px solid #ff0860; outline-offset: 3px; }
+.remag-motion-note, .remag-motion-preference { font-size: .7rem; color: #68717b; }
+.remag-motion-status { display: flex; align-items: baseline; gap: .7rem; font-size: .78rem; line-height: 1.5; min-height: 2.35rem; margin-top: .6rem; }
+.remag-motion-count { flex: 0 0 3.5rem; font-variant-numeric: tabular-nums; color: #68717b; font-size: .7rem; }
+.remag-motion-preference { display: block; margin-top: .4rem; }
+.remag-before { --motion-ink: #68717b; --motion-tint: #e4e8ed; }
+.remag-after { --motion-ink: #ff0860; --motion-tint: #ffe1ec; }
+.remag-panel [data-motion-state="active"] { stroke: var(--motion-ink); stroke-width: 2; fill: var(--motion-tint); }
+.remag-panel [data-motion-state="done"] { stroke: var(--motion-ink); fill: var(--motion-tint); }
+.remag-panel text[data-motion-state="active"] { stroke: none; fill: var(--motion-ink); font-weight: 700; }
+.remag-panel text[data-motion-state="done"] { stroke: none; fill: var(--motion-ink); }
+.remag-motion-flow { stroke-width: 2; }
+.remag-motion-meter { fill: var(--motion-ink); stroke: none; transform-box: fill-box; transform-origin: left center; opacity: 0; pointer-events: none; }
+.remag-chart-subtitle { font-size: .82rem; color: #68717b; margin-top: -.55rem; margin-bottom: 1.3rem; }
+.remag-axis-label { font-size: .75rem; color: #68717b; margin-bottom: .5rem; }
+.remag-axis { position: relative; height: 1.4rem; font-size: .72rem; color: #68717b; border-bottom: 1px solid #cad0d6; }
+.remag-axis span { position: absolute; transform: translateX(-50%); }
+.remag-axis span:first-child { left: 0; transform: none; }
+.remag-axis span:nth-child(2) { left: 25%; }
+.remag-axis span:nth-child(3) { left: 50%; }
+.remag-axis span:nth-child(4) { left: 75%; }
+.remag-axis span:last-child { right: 0; transform: none; }
+.remag-workflow { padding: 1.25rem 0 1.15rem; border-bottom: 1px solid #e5e8ed; }
+.remag-workflow-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .25rem 1rem; font-size: .9rem; font-weight: 700; line-height: 1.5; margin-bottom: .65rem; }
+.remag-speedup { color: #ff0860; font-size: 1.35rem; white-space: nowrap; }
+.remag-speedup small { font-size: .75rem; font-weight: 300; }
+.remag-runtime-row { color: #68717b; margin-top: .5rem; }
+.remag-runtime-row.remag-candidate { color: #ff0860; }
+.remag-runtime-label { display: flex; justify-content: space-between; gap: 1rem; font-size: .76rem; line-height: 1.5; margin-bottom: .25rem; }
+.remag-runtime-label span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.remag-runtime-track { position: relative; height: 9px; background: repeating-linear-gradient(to right, #e5e8ed 0, #e5e8ed 1px, transparent 1px, transparent 25%); }
+.remag-runtime-bar { position: absolute; height: 9px; top: 0; left: 0; background: currentColor; opacity: .55; }
+.remag-repetition { position: absolute; top: 1px; width: 7px; height: 7px; border: 1px solid white; border-radius: 50%; background: currentColor; transform: translateX(-50%); }
+.remag-chart-key { display: flex; align-items: center; gap: .4rem; margin-top: .8rem; font-size: .74rem; color: #68717b; }
+.remag-key-bar { width: 18px; height: 6px; background: #abb1b8; }
+.remag-key-dot { width: 6px; height: 6px; border-radius: 50%; background: #68717b; margin-left: 1rem; }
+@media (max-width: 560px) {
+  .remag-overview { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .remag-overview a { display: grid; grid-template-columns: 100px 1fr; column-gap: 1rem; align-items: center; }
+  .remag-overview-number { grid-column: 2; }
+  .remag-overview svg { grid-column: 1; grid-row: 1 / 4; margin: 0; }
+  .remag-overview strong, .remag-overview a > span:last-child { grid-column: 2; }
+  .remag-lifetime-row { grid-template-columns: minmax(0, 1fr); gap: .2rem; margin-top: .7rem; }
+  .remag-experiment-values { column-gap: .4rem; }
+  .remag-experiment-values strong { font-size: 1.08rem; }
+  .remag-panels { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .project-description .remag-panel svg { max-width: 360px; margin: 0 auto; }
+  .remag-speedup { font-size: 1.2rem; }
+  .remag-motion-buttons button { min-height: 40px; padding: .4rem .8rem; }
+  .remag-motion-status { min-height: 3.6rem; }
+}
+@media print {
+  .remag-motion-controls, .remag-motion-meter { display: none; }
+  .remag-panel [data-motion-state] { stroke-width: 1; }
+  .remag-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .remag-runtime-track, .remag-runtime-bar, .remag-repetition { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+/* Current campaign groups solver families under the same physical workflow. */
+.remag-campaign-scope { font-size: .75rem; color: #252830; border-left: 2px solid #ff0860; padding: .55rem .8rem; background: #fff5f8; margin: 0 0 1.4rem; line-height: 1.6; }
+.remag-workflow-scope { font-size: .72rem; line-height: 1.5; color: #68717b; margin: -.3rem 0 .8rem; }
+.remag-family-ratio { white-space: nowrap; color: #68717b; }
+.remag-coverage { margin: 1.5rem 0 2rem; padding: 1.1rem 1.2rem; background: #f7f8fa; border-top: 1px solid #cad0d6; font-size: .78rem; }
+.remag-coverage-title { font-weight: 700; line-height: 1.5; margin-bottom: .8rem; }
+.remag-coverage dl { margin: 0; }
+.remag-coverage dl > div { display: grid; grid-template-columns: 9rem 1fr; gap: .4rem .6rem; padding: .45rem 0; border-bottom: 1px solid #e5e8ed; line-height: 1.5; }
+.remag-coverage dt { font-weight: 700; }
+.remag-coverage dd { margin: 0; }
+.remag-status-dot { display: inline-block; width: 6px; height: 6px; border: 1px solid #9ca5af; border-radius: 50%; margin-right: .4rem; vertical-align: .1em; }
+.remag-status-complete { background: #ff0860; border-color: #ff0860; }
+.remag-status-partial { background: linear-gradient(90deg,#ff0860 50%,transparent 50%); border-color: #ff0860; }
+.project-description .remag-coverage p { font-size: .72rem; line-height: 1.6; margin: .8rem 0 0; color: #68717b; }
+.remag-history { margin: 1.5rem 0; padding: 1rem 0; border-top: 1px solid #cad0d6; border-bottom: 1px solid #cad0d6; }
+.remag-history summary { cursor: pointer; font-size: .83rem; line-height: 1.6; font-weight: 700; }
+.remag-history summary:focus-visible { outline: 2px solid #ff0860; outline-offset: 5px; }
+.project-description .remag-history p { font-size: .74rem; line-height: 1.65; margin: 1rem 0; color: #68717b; }
+.remag-history table { width: 100%; border-collapse: collapse; font-size: .76rem; line-height: 1.6; }
+.remag-history th, .remag-history td { text-align: left; padding: .65rem .4rem; border-bottom: 1px solid #e5e8ed; }
+.remag-history th:first-child { padding-left: 0; }
+.remag-history td:last-child, .remag-history th:last-child { text-align: right; padding-right: 0; }
+.remag-history-soc { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; font-size: .8rem; border-top: 1px solid #e5e8ed; padding-top: .8rem; line-height: 1.6; }
+.remag-history-soc span > strong { color: #ff0860; margin-left: .5rem; }
+@media (max-width: 560px) {
+  .remag-coverage { padding: .9rem; }
+  .remag-coverage dl > div { grid-template-columns: 1fr; gap: .2rem; }
+  .remag-history table { font-size: .68rem; }
+  .remag-runtime-label { gap: .4rem; }
+}
+
+/* Strict benchmark criteria and explicitly estimated default-threshold context. */
+.remag-convergence { margin: 2rem 0; padding: 1rem 0; border-top: 2px solid #ff0860; border-bottom: 1px solid #cad0d6; }
+.project-description .remag-convergence p { font-size: .78rem; line-height: 1.65; margin: .6rem 0 1rem; }
+.project-description .remag-convergence table { margin: 1rem 0; font-size: .78rem; }
+.remag-convergence th:first-child { width: 48%; }
+.remag-convergence thead span, .remag-convergence small { font-weight: 300; font-size: .7rem; color: #68717b; }
+.remag-convergence small { display: block; margin-top: .2rem; }
+.project-description .remag-convergence td { white-space: nowrap; }
+.remag-convergence td:last-child { color: #b60040; }
+.project-description .remag-convergence .remag-convergence-note { color: #68717b; font-size: .72rem; }
+.remag-convergence summary { cursor: pointer; font-size: .74rem; font-weight: 500; }
+.remag-convergence summary:focus-visible { outline: 2px solid #ff0860; outline-offset: 4px; }
+.project-description .remag-convergence details p { font-size: .72rem; }
+@media (max-width: 560px) {
+  .project-description .remag-convergence table { font-size: .71rem; }
+  .remag-convergence th:first-child { width: 42%; }
+  .remag-convergence thead span, .remag-convergence small { font-size: .65rem; }
+}

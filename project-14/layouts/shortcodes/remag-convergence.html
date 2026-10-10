@@ -1,0 +1,23 @@
+{{- $data := readFile "static/data/remag/convergence-context.json" | transform.Unmarshal -}}
+<aside class="remag-convergence" id="convergence-context" aria-labelledby="convergence-context-title">
+  <div class="remag-figure-title" id="convergence-context-title">How much is the strict convergence tail costing?</div>
+  <p class="remag-convergence-intro">At SIESTA’s default thresholds — DM 10<sup>−4</sup> and H 10<sup>−3</sup> eV — the saved residuals cross the stopping limits much earlier. The times below are <strong>rough estimates of total runtime</strong>; per-iteration elapsed times were not recorded.</p>
+  <table>
+    <thead><tr><th scope="col">Calculation</th><th scope="col">Upstream GPU<br><span>Estimated time</span></th><th scope="col">REMAG<br><span>Estimated time</span></th></tr></thead>
+    <tbody>
+      {{ range $w := $data.workflows }}
+      <tr>
+        <th scope="row">{{ $w.title }}<small>{{ $w.baseline }}</small></th>
+        <td>≈ {{ $w.routes.upstream.display_estimated_seconds }} s<small>Step {{ $w.routes.upstream.display_iterations }}</small></td>
+        <td>≈ {{ $w.routes.remag.display_estimated_seconds }} s<small>Step {{ $w.routes.remag.display_iterations }}</small></td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+  <p class="remag-convergence-note">Steps come from the recorded residuals. Times retain measured work outside the electronic cycle and scale cycle time by the earlier iteration count, then take the median of three estimates. This assumes uniform cycle cost; warmup and work inside the cycle can change the actual times. These intermediate states have not passed the final science/export checks. Defaults are a reference point, not proof of production or anisotropy accuracy.</p>
+  <details>
+    <summary>Estimation method and source data</summary>
+    <p>For each run: estimated total = measured total − measured cycle time + measured cycle time × (threshold step / final step). The cycle timers are upstream’s <code>IterSCF</code> and REMAG’s <code>remag_device_cycle</code>. Fixed work inside those timers is not separately resolved. The residuals were printed to six decimal places. No new default-threshold speedup is claimed.</p>
+    <p><a href="/data/remag/convergence-context.json">Download all 18 derivations and source hashes</a> · <a href="https://docs.siesta-project.org/projects/siesta/en/5.4/reference/siesta.html#convergence-criteria">SIESTA’s default criteria</a></p>
+  </details>
+</aside>

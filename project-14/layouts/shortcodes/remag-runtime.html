@@ -1,0 +1,48 @@
+{{- $data := readFile "static/data/remag/benchmark-data.json" | transform.Unmarshal -}}
+{{- $labels := dict "Fe54 collinear" "Fe · 54 atoms · collinear" "Fe3C collinear" "Fe₃C · 16 atoms · collinear" "Fe3C noncollinear" "Fe₃C · 16 atoms · noncollinear" -}}
+<figure class="remag-runtime" id="figure-runtime-comparison">
+  <div class="remag-figure-title">Time to convergence at strict regression thresholds</div>
+  <div class="remag-chart-subtitle">Latest campaign · one A100-SXM4-80GB · three repetitions per contender</div>
+  <div class="remag-campaign-scope">3 measured workflows · 4 GPU comparisons · no full-suite average</div>
+  <div class="remag-axis-label">End-to-end seconds · common linear scale</div>
+  <div class="remag-axis" aria-hidden="true"><span>0</span><span>100</span><span>200</span><span>300</span><span>400 s</span></div>
+  {{ range $w := $data.current_suite.chart_workflows }}
+  {{ $finalists := sort (where $w.finalists "performance_qualified" true) "medians.upstream" }}
+  {{ $best := index $finalists 0 }}
+  <div class="remag-workflow">
+    <div class="remag-workflow-heading">
+      <span>{{ index $labels $w.name }}</span>
+      <span class="remag-speedup">{{ printf "%.2f" $best.speedup_over_upstream_gpu }}× <small>faster</small></span>
+    </div>
+    <div class="remag-workflow-scope">{{ if eq $w.name "Fe54 collinear" }}Both native and ELSI qualified · headline uses faster ELSI{{ else if not $w.performance_qualified }}Native only · ELSI output check failed{{ else }}Native GPU comparison{{ end }}</div>
+    {{ range $f := $finalists }}
+    <div class="remag-runtime-row remag-upstream">
+      <div class="remag-runtime-label"><span>{{ if eq $f.family "elsi" }}Upstream ELSI GPU{{ else }}Upstream native ELPA GPU{{ end }}{{ if gt (len $finalists) 1 }} <span class="remag-family-ratio">· {{ printf "%.2f" $f.speedup_over_upstream_gpu }}×</span>{{ end }}</span><span>{{ printf "%.2f" $f.medians.upstream }} s</span></div>
+      <div class="remag-runtime-track" aria-hidden="true">
+        <span class="remag-runtime-bar" style="{{ printf "width: %.6f%%" (mul (div $f.medians.upstream 400.0) 100.0) | safeCSS }}"></span>
+        {{ range $pair := $f.pairs }}<span class="remag-repetition" style="{{ printf "left: %.6f%%" (mul (div $pair.seconds.upstream 400.0) 100.0) | safeCSS }}"></span>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+    <div class="remag-runtime-row remag-candidate">
+      <div class="remag-runtime-label"><span>REMAG</span><span>{{ printf "%.2f" $best.medians.candidate }} s</span></div>
+      <div class="remag-runtime-track" aria-hidden="true">
+        <span class="remag-runtime-bar" style="{{ printf "width: %.6f%%" (mul (div $best.medians.candidate 400.0) 100.0) | safeCSS }}"></span>
+        {{ range $pair := $best.pairs }}<span class="remag-repetition" style="{{ printf "left: %.6f%%" (mul (div $pair.seconds.candidate 400.0) 100.0) | safeCSS }}"></span>{{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  <div class="remag-chart-key"><span class="remag-key-bar"></span> Median <span class="remag-key-dot"></span> Individual run</div>
+  <figcaption><strong>Figure 9.</strong> Bars share a zero-based 0–400 second scale; shorter is faster. Dots show all three repetitions (some overlap). Fe54’s two baselines share the same three REMAG runs. Both paths use DM 10<sup>−9</sup> and H 10<sup>−8</sup> eV. Times include initialization, SCF, final observables and requested exports. See the <a href="#convergence-context">estimated default-threshold context</a> below. Ratios use the selected passing GPU configurations; iteration counts differ. <a href="/data/remag/benchmark-data.json">Download measurements and settings</a> or the <a href="/img/remag/runtime-comparison.png">shareable chart</a>.</figcaption>
+</figure>
+<aside class="remag-coverage" aria-label="Coverage of the seven declared workflows">
+  <div class="remag-coverage-title">Where the seven-workflow campaign stopped</div>
+  <dl>
+    <div><dt><span class="remag-status-dot remag-status-complete"></span>Complete · 2</dt><dd>Fe54 collinear; Fe₃C noncollinear</dd></div>
+    <div><dt><span class="remag-status-dot remag-status-partial"></span>Native only · 1</dt><dd>Fe₃C collinear — ELSI lacks required eigenvalue output</dd></div>
+    <div><dt><span class="remag-status-dot"></span>Screened · 1</dt><dd>Fe₂B full-SOC x/z — no timed repetitions</dd></div>
+    <div><dt><span class="remag-status-dot"></span>Unstarted · 3</dt><dd>FePt16 full-SOC x/z; Fe16 noncollinear; Fe₅PB₂ full-SOC x/z</dd></div>
+  </dl>
+  <p>The time budget ended before every declared workflow and solver family completed. No full-suite average is reported.</p>
+</aside>

@@ -1,0 +1,615 @@
+{
+  "run": "easy-magnetic-campaign-v181-20261010T060613Z",
+  "kind": "retrospective_estimate_not_a_measured_default_threshold_benchmark",
+  "strict_criteria": {
+    "dm": 1e-09,
+    "h_ev": 1e-08
+  },
+  "default_criteria": {
+    "dm": 0.0001,
+    "h_ev": 0.001
+  },
+  "default_criteria_source": "https://docs.siesta-project.org/projects/siesta/en/5.4/reference/siesta.html#convergence-criteria",
+  "method": "For each run: estimated total = measured total - measured electronic-cycle time + measured electronic-cycle time * first default-threshold iteration / final iteration. Report median of three estimates.",
+  "limitations": [
+    "Per-iteration elapsed timestamps were not recorded; measured time to the default threshold is unknown.",
+    "Assumes constant mean electronic-cycle cost; eigensolver warmup and iteration-dependent work can make the estimate inaccurate.",
+    "Retains all measured time outside the cycle, including startup, final observables and external exports. Fixed work inside the cycle is not separately resolved and is scaled with it.",
+    "Crossings use residuals printed to six decimal places, not full-precision histories.",
+    "The default-threshold intermediate states were not checked against the final scientific/export gates; defaults do not establish production accuracy or MAE convergence.",
+    "No new speedup claim or new GPU run is derived from these estimates."
+  ],
+  "workflows": [
+    {
+      "case": "fe54_collinear",
+      "title": "Fe · 54 atoms · collinear",
+      "baseline": "ELSI GPU",
+      "routes": {
+        "upstream": {
+          "family": "elsi",
+          "repetitions": [
+            {
+              "repetition": 1,
+              "final_iterations": 79,
+              "first_default_threshold_iteration": 30,
+              "printed_dm_residual_at_crossing": 2e-06,
+              "printed_h_residual_ev_at_crossing": 3.7e-05,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 104.23722245900012,
+              "measured_cycle_seconds": 97.986,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 6.251222459000118,
+              "estimated_default_threshold_total_seconds": 43.461095876721636,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-1/stdout.log",
+                  "sha256": "4ac585dc9d381dfdf98cae64fb0ec92d942ae0d5a8e2c969b5e44f1a9f8b7e70"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-1/time.json",
+                  "sha256": "4cf7c94bd3e22a882e02989efb5c313281cb569c7d07fd975904b3d7d5e6ac01"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-1/result.json",
+                  "sha256": "5d85d5d295d9408860b714efcc8ba34ebf24006532dd995d76578368b52a3122"
+                }
+              ]
+            },
+            {
+              "repetition": 2,
+              "final_iterations": 79,
+              "first_default_threshold_iteration": 30,
+              "printed_dm_residual_at_crossing": 2e-06,
+              "printed_h_residual_ev_at_crossing": 3.7e-05,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 104.26391460900004,
+              "measured_cycle_seconds": 98.007,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 6.2569146090000345,
+              "estimated_default_threshold_total_seconds": 43.47476271026586,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-2/stdout.log",
+                  "sha256": "5da1e448695ddc99d33632afc235e39c6bcc9e95bac09fae612493b736690607"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-2/time.json",
+                  "sha256": "9f688b463e6c99fcdf2d241d2d08e761ef451f792f1a50d5f4015e671a4f0e48"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-2/result.json",
+                  "sha256": "27395621a20d7417ecda87da4b93f82e5a13495b047321246fb983ea1801c82b"
+                }
+              ]
+            },
+            {
+              "repetition": 3,
+              "final_iterations": 79,
+              "first_default_threshold_iteration": 30,
+              "printed_dm_residual_at_crossing": 2e-06,
+              "printed_h_residual_ev_at_crossing": 3.7e-05,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 103.34408651400008,
+              "measured_cycle_seconds": 97.096,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 6.248086514000079,
+              "estimated_default_threshold_total_seconds": 43.119985248177294,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-3/stdout.log",
+                  "sha256": "1b31a47c1fc63bee8d712b1cc4817249cab8ae5dcf88df9d3ed26125cdcd3a4d"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-3/time.json",
+                  "sha256": "b7384d59f6a39d68bc1e0c986f3ef9026dca093fed52a0ea7c77d78feafa4855"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/elsi-repeat-3/result.json",
+                  "sha256": "206fae801ea0cbbf831b7098323fcf8e2c62f776b2772628db148cab480376ed"
+                }
+              ]
+            }
+          ],
+          "median_estimated_total_seconds": 43.461095876721636,
+          "display_estimated_seconds": "43",
+          "display_iterations": "30"
+        },
+        "remag": {
+          "family": "candidate",
+          "repetitions": [
+            {
+              "repetition": 1,
+              "final_iterations": 107,
+              "first_default_threshold_iteration": 46,
+              "printed_dm_residual_at_crossing": 1.6e-05,
+              "printed_h_residual_ev_at_crossing": 0.000594,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 7.425738153000111,
+              "measured_cycle_seconds": 3.985,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 3.4407381530001113,
+              "estimated_default_threshold_total_seconds": 5.1539157230935695,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-1/stdout.log",
+                  "sha256": "b84568391dd2ffdd524e5132f1a0584272a516cc1a8dd7b36614fefbd73002a3"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-1/time.json",
+                  "sha256": "23c2355dc32ddabc7bed9436576b592d57335542dede8cc961aede6792bfd24b"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-1/result.json",
+                  "sha256": "a7edbec604639dfa9f587b5815ae87cc14549318552a72b73209c51a0f3fbc64"
+                }
+              ]
+            },
+            {
+              "repetition": 2,
+              "final_iterations": 127,
+              "first_default_threshold_iteration": 51,
+              "printed_dm_residual_at_crossing": 6.9e-05,
+              "printed_h_residual_ev_at_crossing": 0.000498,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 7.843675305000033,
+              "measured_cycle_seconds": 4.625,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 3.2186753050000334,
+              "estimated_default_threshold_total_seconds": 5.075958769566963,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-2/stdout.log",
+                  "sha256": "b4377d0952dbb0babd3ec1907e218df394fb1b9c59acd25dd5c3c688550bbedc"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-2/time.json",
+                  "sha256": "d39d47bd12c96094e8cdc888b1c259d27c22f05e842b30e926c2cd98ab9826ed"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-2/result.json",
+                  "sha256": "a673689075e1b0cf5d2275643cdd77303514bfe4c9b1aa882f8f3a3362f2412f"
+                }
+              ]
+            },
+            {
+              "repetition": 3,
+              "final_iterations": 114,
+              "first_default_threshold_iteration": 57,
+              "printed_dm_residual_at_crossing": 3.5e-05,
+              "printed_h_residual_ev_at_crossing": 0.000767,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 7.414528536000034,
+              "measured_cycle_seconds": 4.348,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 3.0665285360000345,
+              "estimated_default_threshold_total_seconds": 5.240528536000035,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-3/stdout.log",
+                  "sha256": "c6499b6b212429c87c5e5d3bc1530776c541552a10b2853f85d704f0f8df84ec"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-3/time.json",
+                  "sha256": "d2fe19e65009519bec10c0947292a16d118083b5c4e1438adacce01bba393a6a"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe54_collinear/candidate-repeat-3/result.json",
+                  "sha256": "f23475bdbc83d2c106d57746c14c5d7936453a23ff5a6411aaba502e597fcdd1"
+                }
+              ]
+            }
+          ],
+          "median_estimated_total_seconds": 5.1539157230935695,
+          "display_estimated_seconds": "5.2",
+          "display_iterations": "46–57"
+        }
+      }
+    },
+    {
+      "case": "fe3c16_collinear",
+      "title": "Fe₃C · 16 atoms · collinear",
+      "baseline": "Native ELPA GPU",
+      "routes": {
+        "upstream": {
+          "family": "native",
+          "repetitions": [
+            {
+              "repetition": 1,
+              "final_iterations": 73,
+              "first_default_threshold_iteration": 22,
+              "printed_dm_residual_at_crossing": 7.9e-05,
+              "printed_h_residual_ev_at_crossing": 0.000854,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 152.31288163600004,
+              "measured_cycle_seconds": 147.617,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 4.695881636000053,
+              "estimated_default_threshold_total_seconds": 49.1831967044932,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-1/stdout.log",
+                  "sha256": "b7be2ea4a92e6273dd23348d96aeb2736b3d064292649854857060184c6a5e9d"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-1/time.json",
+                  "sha256": "9eb4c4089924101b0694af9271bed31092ae1e2c44ac31177f5550b875745248"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-1/result.json",
+                  "sha256": "aa43fe96349bb26066c2df1766268037e1c905eabd938a892b188ca9426238ab"
+                }
+              ]
+            },
+            {
+              "repetition": 2,
+              "final_iterations": 73,
+              "first_default_threshold_iteration": 22,
+              "printed_dm_residual_at_crossing": 7.9e-05,
+              "printed_h_residual_ev_at_crossing": 0.000854,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 135.462752691,
+              "measured_cycle_seconds": 130.85,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 4.612752690999997,
+              "estimated_default_threshold_total_seconds": 44.04699926634246,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-2/stdout.log",
+                  "sha256": "f0c627fa89e43b845f5db1e199b88a33f7093949f25e2f48fd3e7c8bf0bf0116"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-2/time.json",
+                  "sha256": "d331fc97cbe91655eaebfa283af41e8eff147c6f861b42677a5c6407c8c237c6"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-2/result.json",
+                  "sha256": "2433a7b6705f152e706779aa9fe7fc17777337ec097123b939359ca269f1ff6c"
+                }
+              ]
+            },
+            {
+              "repetition": 3,
+              "final_iterations": 73,
+              "first_default_threshold_iteration": 22,
+              "printed_dm_residual_at_crossing": 7.9e-05,
+              "printed_h_residual_ev_at_crossing": 0.000854,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 144.06467930099996,
+              "measured_cycle_seconds": 139.513,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 4.55167930099995,
+              "estimated_default_threshold_total_seconds": 46.596692999630086,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-3/stdout.log",
+                  "sha256": "8a0d17b28c9aeeab5266b77b1efffd1cf9c862830885a145729d34aa13ca8698"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-3/time.json",
+                  "sha256": "9582505f1d33ad37da9312e867564f0afaaf842accd5bf2de427c9e63e609f24"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/native-repeat-3/result.json",
+                  "sha256": "27ee017750e39c0a39c59f2ff53c935edd6a8462e72d6e4dadf3f47eabe76630"
+                }
+              ]
+            }
+          ],
+          "median_estimated_total_seconds": 46.596692999630086,
+          "display_estimated_seconds": "47",
+          "display_iterations": "22"
+        },
+        "remag": {
+          "family": "candidate",
+          "repetitions": [
+            {
+              "repetition": 1,
+              "final_iterations": 65,
+              "first_default_threshold_iteration": 23,
+              "printed_dm_residual_at_crossing": 2.7e-05,
+              "printed_h_residual_ev_at_crossing": 0.000558,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 2.834449581999934,
+              "measured_cycle_seconds": 0.889,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 1.9454495819999338,
+              "estimated_default_threshold_total_seconds": 2.2600188127691645,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-1/stdout.log",
+                  "sha256": "b0e895858e2b79a7b974529300189c0e1b83690b3928803bacaf9a17def08ecd"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-1/time.json",
+                  "sha256": "60874fb0586f48a38bd07433c936481223304e8eb93b299ba5713a8f2f6456ff"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-1/result.json",
+                  "sha256": "43f92e633ca5c8b4906bd9827faab38eb7c216cbdcd1b630ba3a27d8a8329304"
+                }
+              ]
+            },
+            {
+              "repetition": 2,
+              "final_iterations": 65,
+              "first_default_threshold_iteration": 23,
+              "printed_dm_residual_at_crossing": 2.7e-05,
+              "printed_h_residual_ev_at_crossing": 0.000557,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 2.839490099000045,
+              "measured_cycle_seconds": 0.889,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 1.950490099000045,
+              "estimated_default_threshold_total_seconds": 2.265059329769276,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-2/stdout.log",
+                  "sha256": "62b55b926b75e3cde899aaab9b605cbd9c2b113a3f325ead199767352a188c46"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-2/time.json",
+                  "sha256": "0df69255ea91b0e49a3da673f10614aa31f19aab42f27d79a8046125b8216271"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-2/result.json",
+                  "sha256": "8e43ae8df33b3113855305c8502d22dc4288f1e981b319bf8984ffd16f526b4b"
+                }
+              ]
+            },
+            {
+              "repetition": 3,
+              "final_iterations": 72,
+              "first_default_threshold_iteration": 23,
+              "printed_dm_residual_at_crossing": 2.7e-05,
+              "printed_h_residual_ev_at_crossing": 0.000559,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 2.9413141740001265,
+              "measured_cycle_seconds": 0.94,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 2.0013141740001266,
+              "estimated_default_threshold_total_seconds": 2.301591951777904,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-3/stdout.log",
+                  "sha256": "11f32e44c28fb49fdc9e4869394b01d4a330a89910ca69ec2559070ed92dd276"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-3/time.json",
+                  "sha256": "7072f3f31baa40cdc7143a5af9fb665909d09f4da9967a6b6754a65adc224d22"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_collinear/candidate-repeat-3/result.json",
+                  "sha256": "d168066444b262f0e7a3522f7c358a174074cfc94b8ed341bb722ecb932293ba"
+                }
+              ]
+            }
+          ],
+          "median_estimated_total_seconds": 2.265059329769276,
+          "display_estimated_seconds": "2.3",
+          "display_iterations": "23"
+        }
+      }
+    },
+    {
+      "case": "fe3c16_noncollinear",
+      "title": "Fe₃C · 16 atoms · noncollinear",
+      "baseline": "Native ELPA GPU",
+      "routes": {
+        "upstream": {
+          "family": "native",
+          "repetitions": [
+            {
+              "repetition": 1,
+              "final_iterations": 100,
+              "first_default_threshold_iteration": 23,
+              "printed_dm_residual_at_crossing": 7.2e-05,
+              "printed_h_residual_ev_at_crossing": 0.000735,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 360.35077029400054,
+              "measured_cycle_seconds": 356.747,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 3.603770294000526,
+              "estimated_default_threshold_total_seconds": 85.65558029400053,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-1/stdout.log",
+                  "sha256": "b0c37f58bfe9bbf03f10212a84d9adf36853dc2b664568e1151c27f42d193af5"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-1/time.json",
+                  "sha256": "70fdbb7a8bedbe89f90be3b361b4329606b97437d917d0a790fc68c89467e899"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-1/result.json",
+                  "sha256": "08ff2e1884ea22bc24a5dc1d51b0b233643a48422c008638cd97102ad66347f8"
+                }
+              ]
+            },
+            {
+              "repetition": 2,
+              "final_iterations": 100,
+              "first_default_threshold_iteration": 23,
+              "printed_dm_residual_at_crossing": 7.2e-05,
+              "printed_h_residual_ev_at_crossing": 0.000735,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 360.2013342050004,
+              "measured_cycle_seconds": 356.573,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 3.628334205000442,
+              "estimated_default_threshold_total_seconds": 85.64012420500045,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-2/stdout.log",
+                  "sha256": "9e522ce82018e6b917c6c004d64189b3320a770084475c6115a8007b5b6b7d28"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-2/time.json",
+                  "sha256": "b49ff30c772a8e69ce738e53dd54ff136c278e2e4c7fad3c90a66ca9c4e89342"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-2/result.json",
+                  "sha256": "090d495ca173a19343370da27ee4626d2d9eab3060422b0722b40fd3f2f554c6"
+                }
+              ]
+            },
+            {
+              "repetition": 3,
+              "final_iterations": 100,
+              "first_default_threshold_iteration": 23,
+              "printed_dm_residual_at_crossing": 7.2e-05,
+              "printed_h_residual_ev_at_crossing": 0.000735,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 366.6469657509997,
+              "measured_cycle_seconds": 362.942,
+              "cycle_timer": "IterSCF",
+              "retained_other_seconds": 3.7049657509996905,
+              "estimated_default_threshold_total_seconds": 87.1816257509997,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-3/stdout.log",
+                  "sha256": "a16e8274e3c1f3be3bd12cd754ba85a5ac0749818d96af73124463cae944ec57"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-3/time.json",
+                  "sha256": "a6d9c4d9e7043dbb1fe2f34cb279ec9544e77eb75f612760d8248bf699784889"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/native-repeat-3/result.json",
+                  "sha256": "2acea4edaf24777d2f7c8bd1dbd2b738b1a1988a6945510a196c8c06fe5c01ee"
+                }
+              ]
+            }
+          ],
+          "median_estimated_total_seconds": 85.65558029400053,
+          "display_estimated_seconds": "86",
+          "display_iterations": "23"
+        },
+        "remag": {
+          "family": "candidate",
+          "repetitions": [
+            {
+              "repetition": 1,
+              "final_iterations": 71,
+              "first_default_threshold_iteration": 21,
+              "printed_dm_residual_at_crossing": 5.7e-05,
+              "printed_h_residual_ev_at_crossing": 0.000743,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 3.3475332680000065,
+              "measured_cycle_seconds": 1.248,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 2.0995332680000063,
+              "estimated_default_threshold_total_seconds": 2.4686600285633866,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-1/stdout.log",
+                  "sha256": "0920f8ef48efa5e99db58a37f92878fdf9a8680413c15c165bc2efaa6b5a30dc"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-1/time.json",
+                  "sha256": "c0729759512d8e5167d566f0d86012297a3d55db090f58e4b45e3f02261063e4"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-1/result.json",
+                  "sha256": "4be466dc33c8aa67df40d692f774b633187c40cf2e5dd065833e27dc478b0a95"
+                }
+              ]
+            },
+            {
+              "repetition": 2,
+              "final_iterations": 65,
+              "first_default_threshold_iteration": 21,
+              "printed_dm_residual_at_crossing": 5.7e-05,
+              "printed_h_residual_ev_at_crossing": 0.000744,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 3.2520779189999303,
+              "measured_cycle_seconds": 1.168,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 2.08407791899993,
+              "estimated_default_threshold_total_seconds": 2.461431765153776,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-2/stdout.log",
+                  "sha256": "30f293dae0ced6cc2ba23f609fd6e7e1b93f6a51e89d4c7680efd039d55ffd43"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-2/time.json",
+                  "sha256": "fb0e916f53a9de7965f4078af19e5766e653b36cb5edae037fd9159e2085a2ea"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-2/result.json",
+                  "sha256": "c96fcc1edd4dd729103afdc6370a32194ddccc75b0cf5909f85b1a7bf8e1ebe5"
+                }
+              ]
+            },
+            {
+              "repetition": 3,
+              "final_iterations": 69,
+              "first_default_threshold_iteration": 21,
+              "printed_dm_residual_at_crossing": 5.7e-05,
+              "printed_h_residual_ev_at_crossing": 0.000743,
+              "remains_below_defaults_in_printed_history": true,
+              "measured_total_seconds": 3.2553646079995815,
+              "measured_cycle_seconds": 1.217,
+              "cycle_timer": "remag_device_cycle",
+              "retained_other_seconds": 2.0383646079995814,
+              "estimated_default_threshold_total_seconds": 2.4087559123474076,
+              "measured_default_threshold_seconds": null,
+              "default_threshold_scientific_qualification": null,
+              "sources": [
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-3/stdout.log",
+                  "sha256": "b44f40b4fe1aa81794d018e26d0f2353dcdb6c090d8db5752fe89a8dc9ee580f"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-3/time.json",
+                  "sha256": "249f3b86e37c39c1d4b2d8438ec2d184012fc5cd94be40ff87d4925bad90584c"
+                },
+                {
+                  "path": "results/easy-magnetic-campaign-v181-20261010T060613Z/fe3c16_noncollinear/candidate-repeat-3/result.json",
+                  "sha256": "2dd82f20c4e4022818e21d6878273fe9f3572a5daba75d10ab48d312e3293679"
+                }
+              ]
+            }
+          ],
+          "median_estimated_total_seconds": 2.461431765153776,
+          "display_estimated_seconds": "2.5",
+          "display_iterations": "21"
+        }
+      }
+    }
+  ]
+}

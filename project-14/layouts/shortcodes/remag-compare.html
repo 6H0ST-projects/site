@@ -1,0 +1,53 @@
+{{- $id := .Get "id" -}}
+{{- $motion := in (slice "resident-state" "solver-pool" "unique-pairs" "grid-cluster") $id -}}
+<figure class="remag-compare" id="figure-{{ $id }}"{{ if $motion }} data-remag-motion="{{ $id }}"{{ end }}>
+  <div class="remag-figure-title">{{ .Get "title" }}</div>
+  <div class="remag-comparison-scope">{{ if eq $id "resident-state" }}Architecture comparison · tested SIESTA 5.4.2 GPU routes{{ else }}Inside REMAG · kernel and data-layout refinement{{ end }}</div>
+  {{ if $motion }}
+  <div class="remag-motion-controls" hidden>
+    <div class="remag-motion-toolbar">
+      <div class="remag-motion-buttons">
+        <button type="button" data-motion-play>Play</button>
+        <button type="button" data-motion-step aria-describedby="motion-label-{{ $id }}">Step</button>
+        <button type="button" data-motion-reset>Show all</button>
+      </div>
+      <span class="remag-motion-note">Schematic · not measured time</span>
+    </div>
+    <div class="remag-motion-status">
+      <span class="remag-motion-count" data-motion-count></span>
+      <span data-motion-label id="motion-label-{{ $id }}"></span>
+    </div>
+    <span class="remag-motion-preference" data-motion-preference hidden>Reduced motion: use Step to inspect each stage.</span>
+  </div>
+  {{ end }}
+  <div class="remag-panels">
+    {{ range $side := slice "before" "after" }}
+    <div class="remag-panel remag-{{ $side }}">
+      <div class="remag-side-label">{{ if eq $id "resident-state" }}{{ if eq $side "before" }}Upstream SIESTA GPU{{ else }}REMAG{{ end }}{{ else }}{{ if eq $side "before" }}Earlier REMAG{{ else }}Optimized REMAG{{ end }}{{ end }}</div>
+      {{ with resources.Get (printf "remag/%s-%s.svg" $id $side) }}
+        {{ .Content | safeHTML }}
+      {{ else }}
+        {{ errorf "Missing REMAG diagram: %s-%s" $id $side }}
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{- $experiments := dict "solver-pool" "Eight solver workspaces" "eigenbasis" "Reuse the previous eigenbasis" "grid-cluster" "Share density work across grid clusters" "unique-pairs" "Contract unique orbital pairs" "geometry-setup" "Generate initial mesh fields on GPU" "local-solve" "Shared-memory local eigensolver" -}}
+  {{- with index $experiments $id -}}
+    {{- $experiment := . -}}
+    {{- $data := readFile "static/data/remag/benchmark-data.json" | transform.Unmarshal -}}
+    {{- range where $data.incremental_comparisons "change" $experiment -}}
+    <div class="remag-experiment" aria-label="Measured incremental comparison">
+      <div class="remag-experiment-scope">FePt16 · x/z calculation{{ if eq $id "geometry-setup" }} · initial mesh change{{ end }}</div>
+      <div class="remag-experiment-values">
+        <span><small>Earlier REMAG</small><strong>{{ printf "%.3f" .median_pair_seconds.accepted }} <em>s</em></strong></span>
+        <span class="remag-experiment-arrow" aria-hidden="true">→</span>
+        <span class="remag-experiment-after"><small>With this change</small><strong>{{ printf "%.3f" .median_pair_seconds.candidate }} <em>s</em></strong></span>
+        <span class="remag-experiment-gain"><small>Incremental gain</small><strong>{{ printf "%.3f" .incremental_speedup }}×</strong></span>
+      </div>
+      <div class="remag-experiment-note">Median of 3 paired runs · {{ if strings.Contains (index .gpu 0) "PCIe" }}A100 80GB PCIe{{ else }}A100-SXM4-80GB{{ end }} · vs previous REMAG</div>
+    </div>
+    {{- end -}}
+  {{- end -}}
+  <figcaption><strong>Figure {{ .Get "number" }}.</strong> {{ .Inner | markdownify }}</figcaption>
+</figure>

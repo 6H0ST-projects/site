@@ -1,4 +1,10 @@
 {{ define "extra-head" }}
+{{ if .Params.remagIllustrated }}
+{{ $remagStyles := resources.Get "css/remag.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $remagStyles.RelPermalink }}" integrity="{{ $remagStyles.Data.Integrity }}">
+{{ $remagMotion := resources.Get "js/remag-motion.js" | minify | fingerprint }}
+<script defer src="{{ $remagMotion.RelPermalink }}" integrity="{{ $remagMotion.Data.Integrity }}"></script>
+{{ end }}
 {{ if .Params.scfCorpus }}
 {{ $scfStyles := resources.Get "css/scf-corpus.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $scfStyles.RelPermalink }}" integrity="{{ $scfStyles.Data.Integrity }}">

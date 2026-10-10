@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 250" role="img" aria-labelledby="resident-state-after-title resident-state-after-desc" style="font-family:inherit">
+<title id="resident-state-after-title">REMAG electronic loop</title>
+<desc id="resident-state-after-desc">CPU geometry setup stages inputs once. The GPU retains matrices, fields and history, and runs solve, density, potential, convergence and mixing in a device loop. Requested outputs are exported at the end.</desc>
+<defs><marker id="resident-state-after-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#FF0860" stroke-width="1.4" /></marker></defs>
+<text x="140" y="18" font-size="12" fill="#68717B" text-anchor="middle" font-weight="300">CPU geometry setup</text>
+<path d="M140 25 V53" fill="none" stroke="#FF0860" stroke-width="1.3" marker-end="url(#resident-state-after-arrow)" />
+<rect x="8" y="57" width="264" height="149" rx="3" fill="#FFF1F6" stroke="#FF0860" />
+<text x="140" y="77" font-size="12" fill="#FF0860" text-anchor="middle" font-weight="700">GPU · persistent state</text>
+<rect x="21" y="91" width="108" height="34" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="solve" />
+<text x="75.0" y="112.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Solve</text>
+<rect x="151" y="91" width="108" height="34" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="density" />
+<text x="205.0" y="112.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Density</text>
+<rect x="151" y="151" width="108" height="34" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="potential" />
+<text x="205.0" y="172.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Potential</text>
+<rect x="21" y="151" width="108" height="34" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="mix" />
+<text x="75.0" y="172.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Check + mix</text>
+<path d="M130 108 H149" fill="none" stroke="#FF0860" stroke-width="1.3" marker-end="url(#resident-state-after-arrow)" data-motion-edge="density" />
+<path d="M205 127 V149" fill="none" stroke="#FF0860" stroke-width="1.3" marker-end="url(#resident-state-after-arrow)" data-motion-edge="potential" />
+<path d="M149 168 H131" fill="none" stroke="#FF0860" stroke-width="1.3" marker-end="url(#resident-state-after-arrow)" data-motion-edge="mix" />
+<path d="M75 149 V127" fill="none" stroke="#FF0860" stroke-width="1.3" marker-end="url(#resident-state-after-arrow)" data-motion-edge="repeat" />
+<text x="140" y="141" font-size="11" fill="#FF0860" text-anchor="middle" font-weight="300">H · D · history</text>
+<path d="M140 208 V227" fill="none" stroke="#FF0860" stroke-width="1.3" marker-end="url(#resident-state-after-arrow)" />
+<text x="140" y="243" font-size="12" fill="#68717B" text-anchor="middle" font-weight="300">Final observables + requested files</text>
+</svg>

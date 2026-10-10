@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 250" role="img" aria-labelledby="grid-cluster-before-title grid-cluster-before-desc" style="font-family:inherit">
+<title id="grid-cluster-before-title">grid cluster: before</title>
+<desc id="grid-cluster-before-desc">For each orbital pair, neighboring grid points repeat the pair lookup and density-matrix read.</desc>
+<defs><marker id="grid-cluster-before-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#68717B" stroke-width="1.4" /></marker></defs>
+<text x="140" y="20" font-size="12" fill="#68717B" text-anchor="middle" font-weight="300">For one orbital pair</text>
+<rect x="18" y="43" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-0" data-motion-meter="" />
+<text x="44.5" y="59.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M44 70 V86" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-0" />
+<circle cx="44" cy="103" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-0" />
+<text x="44" y="107" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">1</text>
+<rect x="82" y="43" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-1" data-motion-meter="" />
+<text x="108.5" y="59.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M108 70 V86" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-1" />
+<circle cx="108" cy="103" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-1" />
+<text x="108" y="107" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">2</text>
+<rect x="146" y="43" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-2" data-motion-meter="" />
+<text x="172.5" y="59.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M172 70 V86" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-2" />
+<circle cx="172" cy="103" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-2" />
+<text x="172" y="107" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">3</text>
+<rect x="210" y="43" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-3" data-motion-meter="" />
+<text x="236.5" y="59.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M236 70 V86" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-3" />
+<circle cx="236" cy="103" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-3" />
+<text x="236" y="107" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">4</text>
+<rect x="18" y="135" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-4" data-motion-meter="" />
+<text x="44.5" y="151.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M44 162 V178" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-4" />
+<circle cx="44" cy="195" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-4" />
+<text x="44" y="199" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">5</text>
+<rect x="82" y="135" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-5" data-motion-meter="" />
+<text x="108.5" y="151.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M108 162 V178" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-5" />
+<circle cx="108" cy="195" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-5" />
+<text x="108" y="199" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">6</text>
+<rect x="146" y="135" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-6" data-motion-meter="" />
+<text x="172.5" y="151.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M172 162 V178" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-6" />
+<circle cx="172" cy="195" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-6" />
+<text x="172" y="199" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">7</text>
+<rect x="210" y="135" width="53" height="25" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="read-7" data-motion-meter="" />
+<text x="236.5" y="151.5" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">Read</text>
+<path d="M236 162 V178" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#grid-cluster-before-arrow)" data-motion-edge="point-7" />
+<circle cx="236" cy="195" r="11" fill="white" stroke="#CAD0D6" data-motion-node="point-7" />
+<text x="236" y="199" font-size="11" fill="#252830" text-anchor="middle" font-weight="300">8</text>
+<text x="140" y="238" font-size="12" fill="#68717B" text-anchor="middle" font-weight="300">Eight neighboring grid points</text>
+</svg>

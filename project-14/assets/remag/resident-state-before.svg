@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 250" role="img" aria-labelledby="resident-state-before-title resident-state-before-desc" style="font-family:inherit">
+<title id="resident-state-before-title">Upstream SIESTA GPU electronic loop</title>
+<desc id="resident-state-before-desc">Upstream GPU SIESTA 5.4.2 runs grid-density, potential, convergence and mixing work on the host. Native ELPA or ELSI/ELPA offloads solver work to the GPU and returns results to the host-driven loop. Solver internals and individual library transfers are not shown.</desc>
+<defs><marker id="resident-state-before-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#68717B" stroke-width="1.4" /></marker></defs>
+<rect x="8" y="4" width="264" height="144" rx="3" fill="#F3F5F7" stroke="#68717B" />
+<text x="140" y="22" font-size="12" fill="#68717B" text-anchor="middle" font-weight="700">CPU · electronic loop</text>
+<rect x="21" y="33" width="108" height="32" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="density" />
+<text x="75.0" y="53.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Grid density</text>
+<rect x="151" y="33" width="108" height="32" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="potential" />
+<text x="205.0" y="53.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Potential</text>
+<rect x="151" y="94" width="108" height="32" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="mix" />
+<text x="205.0" y="114.0" font-size="13" fill="#252830" text-anchor="middle" font-weight="300">Check + mix</text>
+<path d="M130 49 H149" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#resident-state-before-arrow)" data-motion-edge="potential" />
+<path d="M205 67 V92" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#resident-state-before-arrow)" data-motion-edge="mix" />
+<rect x="8" y="172" width="264" height="55" rx="3" fill="#F3F5F7" stroke="#68717B" />
+<text x="140" y="187" font-size="12" fill="#68717B" text-anchor="middle" font-weight="700">GPU · solver offload</text>
+<rect x="21" y="193" width="238" height="27" rx="3" fill="white" stroke="#CAD0D6" data-motion-node="solve" />
+<text x="140.0" y="210.5" font-size="12" fill="#252830" text-anchor="middle" font-weight="300">ELPA · native / ELSI</text>
+<path d="M205 128 V191" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#resident-state-before-arrow)" data-motion-edge="upload" />
+<text x="216" y="162" font-size="11" fill="#68717B" text-anchor="start" font-weight="300">inputs</text>
+<path d="M75 191 V67" fill="none" stroke="#68717B" stroke-width="1.3" marker-end="url(#resident-state-before-arrow)" data-motion-edge="download" />
+<text x="64" y="113" font-size="11" fill="#68717B" text-anchor="end" font-weight="300">results</text>
+<text x="140" y="246" font-size="11" fill="#68717B" text-anchor="middle" font-weight="300">Host state + control between solver calls</text>
+</svg>
